@@ -1,0 +1,10 @@
+# Ignore build artifacts:
+.next
+out
+node_modules
+
+# Ignore all JavaScript files:
+*.js
+
+# Ignore specific files:
+public/*
