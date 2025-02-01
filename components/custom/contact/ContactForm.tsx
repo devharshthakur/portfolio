@@ -56,7 +56,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="mx-auto w-full max-w-2xl px-4 py-8 sm:px-6 lg:px-8">
+    <div className="mx-auto w-full max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
       <h2 className="mb-6 text-3xl font-bold tracking-tight text-primary">
         Contact Me
       </h2>
