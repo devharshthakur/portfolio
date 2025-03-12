@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ModeToggle } from "@/components/ui/mode-toogle";
+import { ModeToggle } from "@/components/mode-toogle";
 import { FaGithub } from "react-icons/fa";
 
 export function Header() {
