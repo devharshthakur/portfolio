@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toogle";
 import { FaGithub } from "react-icons/fa";
+import { FileText } from "lucide-react";
 
 export function Header() {
   return (
@@ -24,6 +25,16 @@ export function Header() {
         </Button>
         <Button variant={"outline"}>
           <Link href="/blogs">Blogs</Link>
+        </Button>
+        <Button variant={"outline"}>
+          <Link
+            href="/cv"
+            className="flex items-center gap-2 text-sm font-medium"
+            prefetch={false}
+          >
+            <FileText className="h-5 w-5" />
+            CV
+          </Link>
         </Button>
         <ModeToggle />
       </div>
