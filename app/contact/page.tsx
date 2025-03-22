@@ -23,7 +23,9 @@ import {
   Send,
   CheckCircle2,
   Loader2,
+  X,
 } from "lucide-react";
+import { FaSquareXTwitter } from "react-icons/fa6";
 import axios from "axios";
 
 type FormData = {
@@ -94,18 +96,20 @@ const ContactForm = () => {
                 <div>
                   <p className="font-medium">Email</p>
                   <p className="text-sm text-muted-foreground">
-                    contact@example.com
+                    workharshthakur2002@gmail.com
                   </p>
                 </div>
               </div>
 
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
-                  <MessageSquare className="h-5 w-5 text-primary" />
+                  <FaSquareXTwitter className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <p className="font-medium">Social Media</p>
-                  <p className="text-sm text-muted-foreground">@username</p>
+                  <p className="font-medium">X(twitter)</p>
+                  <p className="text-sm text-muted-foreground">
+                    @Harshthakur2002
+                  </p>
                 </div>
               </div>
             </div>
