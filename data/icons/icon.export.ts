@@ -1,7 +1,14 @@
 import * as Fa from "react-icons/fa";
 import * as Si from "react-icons/si";
 import skills from "../skills.data";
-import { FaGithub, FaLink, FaCalendarAlt, FaClock } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLink,
+  FaCalendarAlt,
+  FaClock,
+  FaNpm,
+  FaDownload,
+} from "react-icons/fa";
 
 // type for all possible icon libraries
 type IconLibraries = {
@@ -39,6 +46,8 @@ Icons.FaGithub = FaGithub;
 Icons.FaLink = FaLink;
 Icons.FaCalendarAlt = FaCalendarAlt;
 Icons.FaClock = FaClock;
+Icons.FaNpm = FaNpm;
+Icons.FaDownload = FaDownload;
 
 // Type for icon names based on skills data
 export type IconName = keyof typeof Icons;
