@@ -13,6 +13,7 @@ import { Badge } from "@/components/ui/badge";
 import { Icons } from "@/data/icons/icon.export";
 import Link from "next/link";
 import { Sparkles } from "lucide-react";
+import { FaNpm } from "react-icons/fa";
 
 interface PackageCardProps {
   name: string;
@@ -34,11 +35,11 @@ export function PackageCard({
   const isUnpublished = npmUrl === "#";
 
   return (
-    <Card className="flex flex-col overflow-hidden border border-gray-200 transition-all hover:border-black hover:shadow-[0_0_0_2px_rgba(0,0,0,0.8)] group max-h-[280px] w-full">
+    <Card className="flex flex-col overflow-hidden border-2 border-gray-200 transition-all hover:border-primary hover:shadow-md group max-h-[280px] w-full">
       <CardHeader className="pb-0 pt-4 relative">
         <div className="flex items-center justify-between mb-1">
           <div className="flex items-center gap-2">
-            <Sparkles className="h-4 w-4 text-black opacity-0 group-hover:opacity-100 transition-opacity" />
+            <FaNpm className="h-4 w-4 text-black opacity-0 group-hover:opacity-100 transition-opacity" />
             <CardTitle className="text-2xl font-extrabold tracking-tight group-hover:text-black transition-colors">
               {name}
             </CardTitle>
