@@ -4,7 +4,7 @@ import { ProjectCard } from "./ProjectCard";
 import { Button } from "@/components/ui/button";
 
 export function ProjectSection() {
-  // Get only the latest 4 projects
+  /* Get only the latest 4 projects **/
   const latestProjects = projects.slice(0, 4);
 
   return (

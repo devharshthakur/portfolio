@@ -1,7 +1,11 @@
 export function Footer() {
   return (
-    <footer className="bg-muted p-4 text-center text-sm text-muted-foreground">
-      &copy; 2024 John Doe. All rights reserved.
+    <footer className="bg-background text-foreground py-4">
+      <div className="container mx-auto text-center">
+        <p className="text-sm mb-2">
+          © 2023 Harsh Thakur. All rights reserved.
+        </p>
+      </div>
     </footer>
   );
 }
