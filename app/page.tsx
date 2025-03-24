@@ -2,7 +2,6 @@ import { Header } from "@/components/custom/header/Header";
 import { ProfileSection } from "@/components/custom/main/ProfileSection";
 import { ProjectSection } from "@/components/custom/main/ProjectSection";
 import { PackageSection } from "@/components/custom/main/PackageSection";
-import ContactForm from "@/components/custom/contact/ContactForm";
 
 export default function Home() {
   return (
@@ -13,7 +12,6 @@ export default function Home() {
           <ProfileSection />
           <ProjectSection />
           <PackageSection />
-          <ContactForm />
         </div>
       </main>
     </div>

@@ -72,7 +72,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="py-32 max-h-screen">
+    <div className="pt-60 max-h-screen">
       <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8 flex justify-center">
         <div className="grid gap-8 md:grid-cols-2">
           <div className="flex flex-col justify-center space-y-4">

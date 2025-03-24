@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 
 export function PackageSection() {
   return (
-    <section className="grid gap-6">
+    <section className="grid gap-6 py-3">
       <div className="flex items-center justify-between">
-        <div className="border-l-4 border-primary pl-3">
-          <h2 className="text-2xl font-bold">NPM Packages</h2>
+        <div className="pl-3">
+          <h2 className="text-2xl font-bold underline">NPM Packages</h2>
           <p className="text-sm text-muted-foreground mt-1">
             Open-source packages published to NPM
           </p>
