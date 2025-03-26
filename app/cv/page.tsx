@@ -1,20 +1,56 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
+import {
+  Download,
+  Mail,
+  Phone,
+  Link as LinkIcon,
+  GraduationCap,
+  Package,
+  User,
+} from "lucide-react";
 import { ModeToggle } from "@/components/mode-toogle";
-import { MiniProjectCard } from "@/components/custom/cv/mini-project-card";
 import { saveAs } from "file-saver";
+import Link from "next/link";
+import { FaTools, FaProjectDiagram, FaGithub } from "react-icons/fa";
+import projects from "@/data/projects.data";
+import packages from "@/data/packages.data";
+import { skills } from "./data";
 
 export default function CVPage() {
   const downloadCV = () => {
     saveAs("/cv.pdf", "harsh-thakur-cv.pdf");
   };
 
+  type ListItemLinkProps = {
+    title: string;
+    description: string;
+    link: string;
+  };
+
+  const ListItemLink = ({ title, description, link }: ListItemLinkProps) => (
+    <li className="mb-3">
+      <div className="flex items-center gap-2 mb-0.5">
+        <LinkIcon size={14} className="text-muted-foreground" />
+        <Link
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium text-foreground hover:text-primary hover:underline"
+        >
+          {title}
+        </Link>
+      </div>
+      <p className="text-sm text-muted-foreground ml-6">{description}</p>
+    </li>
+  );
+
   return (
-    <div className="min-h-screen bg-background text-foreground font-mono">
-      <div className="container mx-auto px-4 py-8 max-w-5xl">
-        <header className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold">CV</h1>
+    <div className="min-h-screen bg-background text-foreground">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12 max-w-6xl">
+        {/* Header Section */}
+        <header className="flex justify-between items-center mb-10 md:mb-12">
+          <h1 className="text-2xl font-semibold text-muted-foreground">CV</h1>
           <div className="flex items-center gap-4">
             <ModeToggle />
             <Button onClick={downloadCV} className="flex items-center gap-2">
@@ -23,135 +59,168 @@ export default function CVPage() {
             </Button>
           </div>
         </header>
-
-        <main className="cv-content space-y-8 px-1 sm:px-2 md:px-4">
-          <section className="space-y-2">
-            <h1 className="text-4xl font-bold">HARSH THAKUR</h1>
-            <h2 className="text-2xl text-muted-foreground">
-              SOFTWARE ENGINEER
+        {/* Main section */}
+        <main className="cv-content space-y-10">
+          <section className="text-center md:text-left mb-8">
+            <h1 className="text-4xl md:text-5xl font-bold font-mono tracking-tight mb-1">
+              Harsh Thakur
+            </h1>
+            <h2 className="text-xl md:text-2xl text-muted-foreground font-medium">
+              Software Engineer
             </h2>
           </section>
 
-          <section className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="md:col-span-1 space-y-8 md:pr-4">
+          <hr className="border-border" />
+
+          <section className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 pt-8">
+            <div className="md:col-span-1 space-y-8">
               <div>
-                <h3 className="text-lg font-semibold border-b border-border pb-2 mb-3">
-                  PERSONAL PROFILE
+                <h3 className="text-lg font-semibold text-primary mb-3 uppercase tracking-wider flex items-center gap-2">
+                  <User size={16} /> Profile
                 </h3>
-                <p className="text-sm leading-relaxed">
-                  A highly motivated and aspiring software engineer specializing
-                  in full-stack web development. Mainly Intrested with Backend
-                  Web devolpment but can do frontend with the help of libraries.
-                  Proficient mainly in JavaScript. Know Decent C, Basic Java &
-                  Python. Skilled in utilizing JavaScript-based technologies
-                  such as React via Next Js, Node.js, and various other JS
-                  libraries for web development.
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Highly motivated software engineer specializing in full-stack
+                  web development, with a strong interest in backend systems.
+                  Proficient in JavaScript (Node.js, React/Next.js) and related
+                  ecosystem tools (Prisma, NestJS). Familiar with C, Java,
+                  Python basics, PostgreSQL, MongoDB, Cloudflare Workers, and
+                  AWS basics. Currently expanding skills with Rust.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold border-b border-border pb-2 mb-3">
-                  CONTACT DETAILS
+                <h3 className="text-lg font-semibold text-primary mb-3 uppercase tracking-wider flex items-center gap-2">
+                  <Phone size={16} /> Contact
                 </h3>
-                <ul className="text-sm space-y-2">
-                  <li>+91 721-985-3301</li>
-                  <li>workharshthakur2002@gmail.com</li>
-                  <li>
-                    Badal C-001, Sector-3, Vasant Nagari, Vasai East, Vasai
-                    Road. PIN: 401208
+                <ul className="text-sm space-y-2.5 text-muted-foreground">
+                  <li className="flex items-center gap-2">
+                    <Phone size={14} />
+                    <span>+91 721-985-3301</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Mail size={14} />
+                    <a
+                      href="mailto:workharshthakur2002@gmail.com"
+                      className="hover:text-primary transition-colors break-all"
+                    >
+                      workharshthakur2002@gmail.com
+                    </a>
+                  </li>
+                  <li className="text-xs leading-snug">
+                    Vasai East, Maharashtra, India 401208
                   </li>
                 </ul>
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold border-b border-border pb-2 mb-3">
-                  LANGUAGES
+                <h3 className="text-lg font-semibold text-primary mb-3 uppercase tracking-wider">
+                  🗣️ Languages
                 </h3>
-                <ul className="text-sm space-y-1">
-                  <li>English</li>
-                  <li>Hindi (Fluent)</li>
+                <ul className="text-sm space-y-1 text-muted-foreground">
+                  <li>English (Professional Working Proficiency)</li>
+                  <li>Hindi (Native/Bilingual Proficiency)</li>
                 </ul>
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold border-b border-border pb-2 mb-3">
-                  MY GITHUB
+                <h3 className="text-lg font-semibold text-primary mb-3 uppercase tracking-wider flex items-center gap-2">
+                  <FaGithub size={16} /> GitHub
                 </h3>
                 <a
                   href="https://github.com/devharshthakur"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-primary hover:underline"
+                  className="text-sm text-primary hover:underline break-all"
                 >
-                  https://github.com/devharshthakur
+                  github.com/devharshthakur
                 </a>
               </div>
             </div>
 
-            <div className="md:col-span-2 space-y-8 md:pl-4">
+            <div className="md:col-span-2 space-y-8">
               <div>
-                <h3 className="text-lg font-semibold border-b border-border pb-2 mb-3">
-                  EDUCATION
+                <h3 className="text-lg font-semibold text-primary mb-3 uppercase tracking-wider flex items-center gap-2">
+                  <GraduationCap size={16} /> Education
                 </h3>
-                <div className="space-y-2">
-                  <p className="text-sm">BE Software Engineering (Pursuing)</p>
-                  <p className="text-sm">Honors Cyber Security (Pursuing)</p>
-                  <p className="text-sm">
-                    Vidyalankar Institute of Technology | 2021 – 2025
+                <div className="text-sm space-y-1.5 text-muted-foreground">
+                  <p>BE Software Engineering (Pursuing)</p>
+                  <p>Honors Cyber Security (Pursuing)</p>
+                  <p className="font-medium text-foreground flex items-center gap-1">
+                    <LinkIcon size={14} className="text-muted-foreground" />
+                    <Link
+                      href="https://www.vit.edu.in"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary transition-colors"
+                    >
+                      Vidyalankar Institute of Technology
+                    </Link>
                   </p>
+                  <p>Mumbai | 2021 – 2025</p>
                 </div>
               </div>
 
+              <hr className="border-border" />
+
               <div>
-                <h3 className="text-lg font-semibold border-b border-border pb-2 mb-3">
-                  SKILLS
+                <h3 className="text-lg font-semibold text-primary mb-3 uppercase tracking-wider flex items-center gap-2">
+                  <FaTools size={16} /> Skills{" "}
                 </h3>
-                <ol className="list-decimal list-inside text-sm space-y-1 ml-2">
-                  <li>JavaScript (Node.js)</li>
-                  <li>React/Next.js (Frontend)</li>
-                  <li>
-                    Prisma, PostgreSQL, MongoDB, Cloudflare Workers (Basics)
-                    (Backend)
-                  </li>
-                  <li>AWS (Basics)</li>
-                  <li>NestJS</li>
-                </ol>
-                <div className="mt-4">
-                  <h4 className="font-medium">Skills (Currently Studying)</h4>
-                  <p className="text-sm">Rust Programming Language</p>
+                <div className="text-sm space-y-3">
+                  <ul className="list-disc list-outside pl-5 space-y-1.5 text-muted-foreground">
+                    {skills.map((skill, index) => (
+                      <li key={index}>
+                        <span className="font-medium text-foreground">
+                          {skill.name}:
+                        </span>
+                        {skill.description}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="pt-2 mt-3 border-t border-dashed border-border/50">
+                    <h4 className="font-medium text-foreground text-xs uppercase tracking-wider mb-1">
+                      Currently Learning:
+                    </h4>
+                    <p className="text-muted-foreground">
+                      Rust Programming Language
+                    </p>
+                  </div>
                 </div>
               </div>
 
+              <hr className="border-border" />
+
               <div>
-                <h3 className="text-lg font-semibold border-b border-border pb-2 mb-2">
-                  MINI PROJECTS
+                <h3 className="text-lg font-semibold text-primary mb-4 uppercase tracking-wider flex items-center gap-2">
+                  <FaProjectDiagram size={16} /> Projects{" "}
                 </h3>
-                <ul className="text-sm space-y-2">
-                  <MiniProjectCard
-                    title="Portfolio Website"
-                    description="Live personal portfolio"
-                    link="https://devharshthakur.in"
-                  />
-                  <MiniProjectCard
-                    title="Simple Password Manager"
-                    description="Uses hashing for secure password storage"
-                    link="https://github.com/devharshthakur/secure-pass.git"
-                  />
-                  <MiniProjectCard
-                    title="BlockPredict"
-                    description="Blockchain prediction application"
-                    link="https://github.com/devharshthakur/blockpredict"
-                  />
-                  <MiniProjectCard
-                    title="Advanced Calculator"
-                    description="Built with TypeScript"
-                    link="https://github.com/devharshthakur/advanced-calculator"
-                  />
-                  <MiniProjectCard
-                    title="PDF Compressor"
-                    description="Tool for compressing PDF files"
-                    link="https://github.com/devharshthakur/orrbit.git"
-                  />
+                <ul className="space-y-4">
+                  {projects.map((project, index) => (
+                    <ListItemLink
+                      key={index}
+                      title={project.title}
+                      description={project.description}
+                      link={project.githubUrl || project.liveDemoUrl || "#"}
+                    />
+                  ))}
+                </ul>
+              </div>
+
+              <hr className="border-border" />
+
+              <div>
+                <h3 className="text-lg font-semibold text-primary mb-4 uppercase tracking-wider flex items-center gap-2">
+                  <Package size={16} /> NPM Packages
+                </h3>
+                <ul className="space-y-4">
+                  {packages.map((pkg, index) => (
+                    <ListItemLink
+                      key={index}
+                      title={pkg.name}
+                      description={pkg.description}
+                      link={pkg.npmUrl}
+                    />
+                  ))}
                 </ul>
               </div>
             </div>
