@@ -23,6 +23,18 @@ const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "Encryption", "Security"],
   },
   {
+    title: "NPM Package Checker",
+    description:
+      "A sleek, lightning-fast utility to check if an npm package name is available.",
+    longDescription:
+      "NPM Package Checker provides an elegant, intuitive interface to instantly verify if a package name is already taken on the npm registry. No more guessing or manual searching!",
+    githubUrl: "https://github.com/devharshthakur/ispub.git",
+    liveDemoUrl: "https://ispub.fun",
+    date: "2024-02",
+    duration: "3 weeks",
+    tags: ["Next.js", "TypeScript", "npm", "Package Checker"],
+  },
+  {
     title: "Legal AI PDF (In Development)",
     description: "An AI based Legal Assistant (FINAL YEAR MAJOR PROJECT)",
     longDescription:

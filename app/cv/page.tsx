@@ -37,6 +37,7 @@ export default function CVPage() {
           target="_blank"
           rel="noopener noreferrer"
           className="font-medium text-foreground hover:text-primary hover:underline"
+          prefetch={true}
         >
           {title}
         </Link>

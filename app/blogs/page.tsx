@@ -12,7 +12,9 @@ export default function ComingSoon() {
           Our blog is under construction. Stay tuned for amazing content!
         </p>
         <Button asChild variant="outline">
-          <Link href="/">Return to Home</Link>
+          <Link href="/" prefetch={true}>
+            Return to Home
+          </Link>
         </Button>
       </div>
     </div>

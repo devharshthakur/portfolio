@@ -21,6 +21,7 @@ export function MiniProjectCard({
         target="_blank"
         rel="noopener noreferrer"
         className="text-primary inline-flex items-center hover:underline font-medium"
+        prefetch={true}
       >
         GitHub Repo
         <FaGithub className="ml-1 h-4 w-4" />

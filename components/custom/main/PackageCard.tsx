@@ -103,6 +103,7 @@ export function PackageCard({
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-1.5"
+            prefetch={true}
           >
             <Icons.FaGithub
               className="h-4 w-4 transition-transform group-hover/btn:scale-110"
@@ -134,6 +135,7 @@ export function PackageCard({
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-1.5"
+              prefetch={true}
             >
               <Icons.FaNpm
                 className="h-4 w-4 transition-transform group-hover/btn:scale-110"

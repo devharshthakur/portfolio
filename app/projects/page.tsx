@@ -79,6 +79,7 @@ export default function ProjectsPage() {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      prefetch={true}
                     >
                       <Icons.FaGithub
                         className="mr-2 h-4 w-4"
@@ -124,6 +125,7 @@ export default function ProjectsPage() {
                         href={project.liveDemoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        prefetch={true}
                       >
                         <Icons.FaLink
                           className="mr-2 h-4 w-4"

@@ -188,6 +188,4 @@ Distributed under the Apache License 2.0. See `LICENSE` for more information.
 | **Stars**        | ⭐ [![GitHub stars](https://img.shields.io/github/stars/devharshthakur/portfolio?style=social)](https://github.com/devharshthakur/portfolio/stargazers) |
 | **Forks**        | 🍴 [![GitHub forks](https://img.shields.io/github/forks/devharshthakur/portfolio?style=social)](https://github.com/devharshthakur/portfolio/network/members) |
 | **Issues**       | ❗ [![GitHub issues](https://img.shields.io/github/issues/devharshthakur/portfolio)](https://github.com/devharshthakur/portfolio/issues) |
-| **Contributors** | 👥 [![GitHub contributors](https://img.shields.io/github/contributors/devharshthakur/portfolio)](https://github.com/devharshthakur/portfolio/graphs/contributors) |
-
 ---

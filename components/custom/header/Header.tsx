@@ -12,7 +12,7 @@ export function Header() {
           <Link
             href="https://github.com/devharshthakur"
             className="flex items-center gap-2"
-            prefetch={false}
+            prefetch={true}
           >
             <FaGithub className="h-5 w-5" />
             @devharshthakur
@@ -26,7 +26,7 @@ export function Header() {
           <Link
             href="/contact"
             className="flex items-center gap-2"
-            prefetch={false}
+            prefetch={true}
           >
             <MdContactPage className="h-7 w-7" />
             Contact Me
@@ -35,7 +35,7 @@ export function Header() {
       </div>
       <div className="flex items-center gap-4">
         <Button variant={"default"} asChild>
-          <Link href="/about" className="text-sm font-medium" prefetch={false}>
+          <Link href="/about" className="text-sm font-medium" prefetch={true}>
             About Me
           </Link>
         </Button>
@@ -49,7 +49,7 @@ export function Header() {
           <Link
             href="/cv"
             className="flex items-center gap-2 text-sm font-medium"
-            prefetch={false}
+            prefetch={true}
           >
             <FileText className="h-5 w-5" />
             CV
