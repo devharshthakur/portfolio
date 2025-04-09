@@ -8,6 +8,11 @@ import {
   FaClock,
   FaNpm,
   FaDownload,
+  FaTerminal,
+  FaStar,
+  FaCodeBranch,
+  FaExclamationCircle,
+  FaHistory,
 } from "react-icons/fa";
 
 // type for all possible icon libraries
@@ -48,6 +53,11 @@ Icons.FaCalendarAlt = FaCalendarAlt;
 Icons.FaClock = FaClock;
 Icons.FaNpm = FaNpm;
 Icons.FaDownload = FaDownload;
+Icons.FaTerminal = FaTerminal;
+Icons.FaStar = FaStar;
+Icons.FaCodeBranch = FaCodeBranch;
+Icons.FaExclamationCircle = FaExclamationCircle;
+Icons.FaHistory = FaHistory;
 
 // Type for icon names based on skills data
 export type IconName = keyof typeof Icons;

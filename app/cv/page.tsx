@@ -8,53 +8,66 @@ import {
   GraduationCap,
   Package,
   User,
+  ExternalLink,
+  Calendar,
+  MapPin,
+  Sparkles,
+  FileText,
+  Briefcase,
 } from "lucide-react";
 import { ModeToggle } from "@/components/mode-toogle";
 import { saveAs } from "file-saver";
 import Link from "next/link";
 import { FaTools, FaProjectDiagram, FaGithub } from "react-icons/fa";
+import { SiNpm } from "react-icons/si";
 import projects from "@/data/projects.data";
 import packages from "@/data/packages.data";
 import { skills } from "./data";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
+
+// Import custom components
+import { SectionTitle } from "./components/SectionTitle";
+import { ProjectTableRow } from "./components/helper/ProjectTableRow";
+import { SkillsTableRow } from "./components/helper/SkillsTableRow";
+import { LanguageTableRow } from "./components/helper/LanguageTableRow";
+import { AvailabilityBadge } from "./components/helper/AvailabilityBadge";
+import { EducationEntry } from "./components/helper/EducationEntry";
+import { ProfileSection } from "./components/ProfileSection";
+import { ContactInfo } from "./components/ContactInfo";
+import { GitHubLink } from "./components/GitHubLink";
+import { LearningBadge } from "./components/helper/LearningBadge";
+import { profileBulletPoints } from "./data";
 
 export default function CVPage() {
   const downloadCV = () => {
     saveAs("/cv.pdf", "harsh-thakur-cv.pdf");
   };
 
-  type ListItemLinkProps = {
-    title: string;
-    description: string;
-    link: string;
-  };
-
-  const ListItemLink = ({ title, description, link }: ListItemLinkProps) => (
-    <li className="mb-3">
-      <div className="flex items-center gap-2 mb-0.5">
-        <LinkIcon size={14} className="text-muted-foreground" />
-        <Link
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-medium text-foreground hover:text-primary hover:underline"
-          prefetch={true}
-        >
-          {title}
-        </Link>
-      </div>
-      <p className="text-sm text-muted-foreground ml-6">{description}</p>
-    </li>
-  );
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12 max-w-6xl">
         {/* Header Section */}
-        <header className="flex justify-between items-center mb-10 md:mb-12">
-          <h1 className="text-2xl font-semibold text-muted-foreground">CV</h1>
+        <header className="flex justify-between items-center mb-10 md:mb-12 border-b border-border pb-5">
+          <div className="flex items-center gap-2">
+            <div className="bg-primary/10 p-2 rounded-md">
+              <FileText size={20} className="text-primary" />
+            </div>
+            <div>
+              <h1 className="text-2xl font-semibold text-foreground">
+                Curriculum Vitae
+              </h1>
+              <p className="text-sm text-muted-foreground">
+                Professional Experience & Education
+              </p>
+            </div>
+          </div>
           <div className="flex items-center gap-4">
             <ModeToggle />
-            <Button onClick={downloadCV} className="flex items-center gap-2">
+            <Button
+              onClick={downloadCV}
+              className="flex items-center gap-2 bg-primary hover:bg-primary/90"
+            >
               <Download size={16} />
               Download CV
             </Button>
@@ -63,12 +76,22 @@ export default function CVPage() {
         {/* Main section */}
         <main className="cv-content space-y-10">
           <section className="text-center md:text-left mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold font-mono tracking-tight mb-1">
-              Harsh Thakur
-            </h1>
-            <h2 className="text-xl md:text-2xl text-muted-foreground font-medium">
-              Software Engineer
-            </h2>
+            <div className="flex flex-col md:flex-row gap-3 md:items-center justify-between">
+              <div>
+                <h1 className="text-4xl md:text-5xl font-bold font-mono tracking-tight mb-1">
+                  Harsh Thakur
+                </h1>
+                <div className="flex items-center text-primary gap-2">
+                  <Briefcase size={18} />
+                  <h2 className="text-xl md:text-2xl font-medium">
+                    Software Engineer
+                  </h2>
+                </div>
+              </div>
+              <div className="hidden md:block">
+                <AvailabilityBadge />
+              </div>
+            </div>
           </section>
 
           <hr className="border-border" />
@@ -76,153 +99,164 @@ export default function CVPage() {
           <section className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 pt-8">
             <div className="md:col-span-1 space-y-8">
               <div>
-                <h3 className="text-lg font-semibold text-primary mb-3 uppercase tracking-wider flex items-center gap-2">
-                  <User size={16} /> Profile
-                </h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  Highly motivated software engineer specializing in full-stack
-                  web development, with a strong interest in backend systems.
-                  Proficient in JavaScript (Node.js, React/Next.js) and related
-                  ecosystem tools (Prisma, NestJS). Familiar with C, Java,
-                  Python basics, PostgreSQL, MongoDB, Cloudflare Workers, and
-                  AWS basics. Currently expanding skills with Rust.
-                </p>
+                <SectionTitle icon={<User size={16} />} title="Profile" />
+                <Card>
+                  <CardContent className="p-4">
+                    <ProfileSection
+                      introduction="Highly motivated software engineer specializing in full-stack web development, with a strong interest in backend systems. Aiming to build efficient, scalable, and maintainable applications."
+                      bulletPoints={profileBulletPoints}
+                    />
+                  </CardContent>
+                </Card>
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-primary mb-3 uppercase tracking-wider flex items-center gap-2">
-                  <Phone size={16} /> Contact
-                </h3>
-                <ul className="text-sm space-y-2.5 text-muted-foreground">
-                  <li className="flex items-center gap-2">
-                    <Phone size={14} />
-                    <span>+91 721-985-3301</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Mail size={14} />
-                    <a
-                      href="mailto:workharshthakur2002@gmail.com"
-                      className="hover:text-primary transition-colors break-all"
-                    >
-                      workharshthakur2002@gmail.com
-                    </a>
-                  </li>
-                  <li className="text-xs leading-snug">
-                    Vasai East, Maharashtra, India 401208
-                  </li>
-                </ul>
+                <SectionTitle icon={<Phone size={16} />} title="Contact" />
+                <Card>
+                  <CardContent className="p-4">
+                    <ContactInfo
+                      phone="+91 721-985-3301"
+                      email="workharshthakur2002@gmail.com"
+                      address="Vasai East, Maharashtra, India 401208"
+                    />
+                  </CardContent>
+                </Card>
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-primary mb-3 uppercase tracking-wider">
-                  🗣️ Languages
-                </h3>
-                <ul className="text-sm space-y-1 text-muted-foreground">
-                  <li>English (Professional Working Proficiency)</li>
-                  <li>Hindi (Native/Bilingual Proficiency)</li>
-                </ul>
+                <SectionTitle icon={<span>🗣️</span>} title="Languages" />
+                <Card>
+                  <CardContent className="p-0">
+                    <Table>
+                      <TableBody>
+                        <LanguageTableRow
+                          language="English"
+                          proficiency="Professional Working Proficiency"
+                        />
+                        <LanguageTableRow
+                          language="Hindi"
+                          proficiency="Native/Bilingual Proficiency"
+                        />
+                      </TableBody>
+                    </Table>
+                  </CardContent>
+                </Card>
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-primary mb-3 uppercase tracking-wider flex items-center gap-2">
-                  <FaGithub size={16} /> GitHub
-                </h3>
-                <a
-                  href="https://github.com/devharshthakur"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-primary hover:underline break-all"
-                >
-                  github.com/devharshthakur
-                </a>
+                <SectionTitle icon={<FaGithub size={16} />} title="GitHub" />
+                <Card>
+                  <CardContent className="p-4">
+                    <GitHubLink username="devharshthakur" />
+                  </CardContent>
+                </Card>
               </div>
             </div>
 
             <div className="md:col-span-2 space-y-8">
               <div>
-                <h3 className="text-lg font-semibold text-primary mb-3 uppercase tracking-wider flex items-center gap-2">
-                  <GraduationCap size={16} /> Education
-                </h3>
-                <div className="text-sm space-y-1.5 text-muted-foreground">
-                  <p>BE Software Engineering (Pursuing)</p>
-                  <p>Honors Cyber Security (Pursuing)</p>
-                  <p className="font-medium text-foreground flex items-center gap-1">
-                    <LinkIcon size={14} className="text-muted-foreground" />
-                    <Link
-                      href="https://www.vit.edu.in"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-primary transition-colors"
-                    >
-                      Vidyalankar Institute of Technology
-                    </Link>
-                  </p>
-                  <p>Mumbai | 2021 – 2025</p>
+                <SectionTitle
+                  icon={<GraduationCap size={16} />}
+                  title="Education"
+                />
+                <Card>
+                  <CardContent className="p-4">
+                    <div className="space-y-4">
+                      <EducationEntry
+                        degree="BE Software Engineering"
+                        specialty="Honors in Cyber Security"
+                        period="2021 – 2025"
+                        location="Mumbai, India"
+                        institution="Vidyalankar Institute of Technology"
+                        institutionUrl="https://www.vit.edu.in"
+                        status="Pursuing"
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <hr className="border-border" />
+
+              <div>
+                <SectionTitle icon={<FaTools size={16} />} title="Skills" />
+                <Card>
+                  <CardContent className="p-0">
+                    <Table>
+                      <TableBody>
+                        {skills.map((skill, index) => (
+                          <SkillsTableRow
+                            key={index}
+                            name={skill.name}
+                            description={skill.description}
+                          />
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </CardContent>
+                </Card>
+                <div className="mt-4">
+                  <LearningBadge skill="Rust Programming Language" />
                 </div>
               </div>
 
               <hr className="border-border" />
 
               <div>
-                <h3 className="text-lg font-semibold text-primary mb-3 uppercase tracking-wider flex items-center gap-2">
-                  <FaTools size={16} /> Skills{" "}
-                </h3>
-                <div className="text-sm space-y-3">
-                  <ul className="list-disc list-outside pl-5 space-y-1.5 text-muted-foreground">
-                    {skills.map((skill, index) => (
-                      <li key={index}>
-                        <span className="font-medium text-foreground">
-                          {skill.name}:
-                        </span>
-                        {skill.description}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="pt-2 mt-3 border-t border-dashed border-border/50">
-                    <h4 className="font-medium text-foreground text-xs uppercase tracking-wider mb-1">
-                      Currently Learning:
-                    </h4>
-                    <p className="text-muted-foreground">
-                      Rust Programming Language
-                    </p>
-                  </div>
-                </div>
+                <SectionTitle
+                  icon={<FaProjectDiagram size={16} />}
+                  title="Projects"
+                />
+                <Card>
+                  <CardContent className="p-0">
+                    <Table>
+                      <TableBody>
+                        {projects.map((project, index) => (
+                          <ProjectTableRow
+                            key={index}
+                            title={project.title}
+                            description={project.description}
+                            link={
+                              project.githubUrl || project.liveDemoUrl || "#"
+                            }
+                          />
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </CardContent>
+                </Card>
               </div>
 
               <hr className="border-border" />
 
               <div>
-                <h3 className="text-lg font-semibold text-primary mb-4 uppercase tracking-wider flex items-center gap-2">
-                  <FaProjectDiagram size={16} /> Projects{" "}
-                </h3>
-                <ul className="space-y-4">
-                  {projects.map((project, index) => (
-                    <ListItemLink
-                      key={index}
-                      title={project.title}
-                      description={project.description}
-                      link={project.githubUrl || project.liveDemoUrl || "#"}
-                    />
-                  ))}
-                </ul>
-              </div>
-
-              <hr className="border-border" />
-
-              <div>
-                <h3 className="text-lg font-semibold text-primary mb-4 uppercase tracking-wider flex items-center gap-2">
-                  <Package size={16} /> NPM Packages
-                </h3>
-                <ul className="space-y-4">
-                  {packages.map((pkg, index) => (
-                    <ListItemLink
-                      key={index}
-                      title={pkg.name}
-                      description={pkg.description}
-                      link={pkg.npmUrl}
-                    />
-                  ))}
-                </ul>
+                <SectionTitle
+                  icon
+                  title={
+                    <div className="flex items-center gap-2 text-lg">
+                      <SiNpm className="text-[#cb3837] h-5 w-5" />
+                      <span className="flex items-center">
+                        <span className="text-foreground ml-1">Packages</span>
+                      </span>
+                    </div>
+                  }
+                />
+                <Card>
+                  <CardContent className="p-0">
+                    <Table>
+                      <TableBody>
+                        {packages.map((pkg, index) => (
+                          <ProjectTableRow
+                            key={index}
+                            title={pkg.name}
+                            description={pkg.description}
+                            link={pkg.npmUrl}
+                          />
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </section>

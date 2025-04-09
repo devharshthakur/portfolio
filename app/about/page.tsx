@@ -1,11 +1,8 @@
-"use client";
-
 import { FaGithub, FaLinkedin, FaDownload } from "react-icons/fa";
 import { Mail } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
 
 export default function AboutPage() {
   return (
@@ -95,12 +92,12 @@ export default function AboutPage() {
           <p className="text-base md:text-lg leading-relaxed">
             I am a full stack web developer based in India and an undergraduate
             student at{" "}
-            <Link
+            <a
               href="https://vit.edu.in/"
               className="font-semibold text-primary hover:underline"
             >
               Vidyalankar Institute of Technology
-            </Link>
+            </a>
             , pursuing BE in Computer Engineering.
           </p>
           <p className="text-base md:text-lg leading-relaxed">
