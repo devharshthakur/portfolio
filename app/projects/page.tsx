@@ -15,6 +15,7 @@ import {
 } from "@/app/projects/functions/get-image-props";
 import { NoteDialog } from "./components/note-dialog";
 import { TechBadge } from "./components/tech-badge";
+import { ModeToggle } from "@/components/mode-toogle";
 
 interface ProjectStats {
   stars: number;
@@ -45,6 +46,11 @@ export default function ProjectsPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/10 py-12">
+      {/* Theme Toggle */}
+      <div className="absolute top-4 right-4 z-50">
+        <ModeToggle />
+      </div>
+
       <div className="container mx-auto px-4">
         <header className="mb-16">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">

@@ -23,7 +23,7 @@ export function PackageSection() {
           asChild
           className="border-2 border-purple-400/50 hover:border-purple-500 dark:border-purple-600/30 dark:hover:border-purple-500/60 shadow-sm"
         >
-          <Link href="/packages" target="_blank">
+          <Link href="/packages" target="_blank" prefetch={true}>
             View All Packages
           </Link>
         </Button>

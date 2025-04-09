@@ -99,8 +99,17 @@ export default function CVPage() {
           <section className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 pt-8">
             <div className="md:col-span-1 space-y-8">
               <div>
-                <SectionTitle icon={<User size={16} />} title="Profile" />
-                <Card>
+                <SectionTitle
+                  icon={
+                    <User
+                      size={16}
+                      className="text-yellow-700 dark:text-yellow-400"
+                    />
+                  }
+                  title="Profile"
+                  colorClassName="border-yellow-400 text-yellow-700 dark:border-yellow-600 dark:text-yellow-400"
+                />
+                <Card className="border-2 border-yellow-400 dark:border-yellow-600 bg-yellow-50/30 dark:bg-yellow-950/10">
                   <CardContent className="p-4">
                     <ProfileSection
                       introduction="Highly motivated software engineer specializing in full-stack web development, with a strong interest in backend systems. Aiming to build efficient, scalable, and maintainable applications."
@@ -111,8 +120,17 @@ export default function CVPage() {
               </div>
 
               <div>
-                <SectionTitle icon={<Phone size={16} />} title="Contact" />
-                <Card>
+                <SectionTitle
+                  icon={
+                    <Phone
+                      size={16}
+                      className="text-blue-700 dark:text-blue-400"
+                    />
+                  }
+                  title="Contact"
+                  colorClassName="border-blue-400 text-blue-700 dark:border-blue-600 dark:text-blue-400"
+                />
+                <Card className="border-2 border-blue-400 dark:border-blue-600 bg-blue-50/30 dark:bg-blue-950/10">
                   <CardContent className="p-4">
                     <ContactInfo
                       phone="+91 721-985-3301"
@@ -124,8 +142,16 @@ export default function CVPage() {
               </div>
 
               <div>
-                <SectionTitle icon={<span>🗣️</span>} title="Languages" />
-                <Card>
+                <SectionTitle
+                  icon={
+                    <span className="text-amber-700 dark:text-amber-400">
+                      🗣️
+                    </span>
+                  }
+                  title="Languages"
+                  colorClassName="border-amber-400 text-amber-700 dark:border-amber-600 dark:text-amber-400"
+                />
+                <Card className="border-2 border-amber-400 dark:border-amber-600 bg-amber-50/30 dark:bg-amber-950/10">
                   <CardContent className="p-0">
                     <Table>
                       <TableBody>
@@ -144,8 +170,17 @@ export default function CVPage() {
               </div>
 
               <div>
-                <SectionTitle icon={<FaGithub size={16} />} title="GitHub" />
-                <Card>
+                <SectionTitle
+                  icon={
+                    <FaGithub
+                      size={16}
+                      className="text-purple-700 dark:text-purple-400"
+                    />
+                  }
+                  title="GitHub"
+                  colorClassName="border-purple-400 text-purple-700 dark:border-purple-600 dark:text-purple-400"
+                />
+                <Card className="border-2 border-purple-400 dark:border-purple-600 bg-purple-50/30 dark:bg-purple-950/10">
                   <CardContent className="p-4">
                     <GitHubLink username="devharshthakur" />
                   </CardContent>
@@ -156,10 +191,16 @@ export default function CVPage() {
             <div className="md:col-span-2 space-y-8">
               <div>
                 <SectionTitle
-                  icon={<GraduationCap size={16} />}
+                  icon={
+                    <GraduationCap
+                      size={16}
+                      className="text-yellow-700 dark:text-yellow-400"
+                    />
+                  }
                   title="Education"
+                  colorClassName="border-yellow-400 text-yellow-700 dark:border-yellow-600 dark:text-yellow-400"
                 />
-                <Card>
+                <Card className="border-2 border-yellow-400 dark:border-yellow-600 bg-yellow-50/30 dark:bg-yellow-950/10">
                   <CardContent className="p-4">
                     <div className="space-y-4">
                       <EducationEntry
@@ -179,8 +220,17 @@ export default function CVPage() {
               <hr className="border-border" />
 
               <div>
-                <SectionTitle icon={<FaTools size={16} />} title="Skills" />
-                <Card>
+                <SectionTitle
+                  icon={
+                    <FaTools
+                      size={16}
+                      className="text-indigo-700 dark:text-indigo-400"
+                    />
+                  }
+                  title="Skills"
+                  colorClassName="border-indigo-400 text-indigo-700 dark:border-indigo-600 dark:text-indigo-400"
+                />
+                <Card className="border-2 border-indigo-400 dark:border-indigo-600 bg-indigo-50/30 dark:bg-indigo-950/10">
                   <CardContent className="p-0">
                     <Table>
                       <TableBody>
@@ -204,10 +254,16 @@ export default function CVPage() {
 
               <div>
                 <SectionTitle
-                  icon={<FaProjectDiagram size={16} />}
+                  icon={
+                    <FaProjectDiagram
+                      size={16}
+                      className="text-blue-700 dark:text-blue-400"
+                    />
+                  }
                   title="Projects"
+                  colorClassName="border-blue-400 text-blue-700 dark:border-blue-600 dark:text-blue-400"
                 />
-                <Card>
+                <Card className="border-2 border-blue-400 dark:border-blue-600 bg-blue-50/30 dark:bg-blue-950/10">
                   <CardContent className="p-0">
                     <Table>
                       <TableBody>
@@ -231,17 +287,19 @@ export default function CVPage() {
 
               <div>
                 <SectionTitle
-                  icon
+                  icon={
+                    <SiNpm className="text-rose-700 dark:text-rose-400 h-5 w-5" />
+                  }
                   title={
                     <div className="flex items-center gap-2 text-lg">
-                      <SiNpm className="text-[#cb3837] h-5 w-5" />
                       <span className="flex items-center">
-                        <span className="text-foreground ml-1">Packages</span>
+                        <span className="ml-1">Packages</span>
                       </span>
                     </div>
                   }
+                  colorClassName="border-rose-400 text-rose-700 dark:border-rose-600 dark:text-rose-400"
                 />
-                <Card>
+                <Card className="border-2 border-rose-400 dark:border-rose-600 bg-rose-50/30 dark:bg-rose-950/10">
                   <CardContent className="p-0">
                     <Table>
                       <TableBody>

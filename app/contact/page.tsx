@@ -36,6 +36,7 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import axios from "axios";
 import { socialLinks } from "./data";
 import { SocialIcon } from "./components/SocialIcon";
+import { ModeToggle } from "@/components/mode-toogle";
 
 type FormData = {
   name: string;
@@ -93,6 +94,11 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
+      {/* Theme Toggle */}
+      <div className="absolute top-4 right-4 z-50">
+        <ModeToggle />
+      </div>
+
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 pt-12 pb-8">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
@@ -101,46 +107,46 @@ export default function ContactPage() {
           <div className="mx-auto max-w-3xl text-center">
             <Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
               <PopoverTrigger asChild>
-                <div className="inline-flex items-center gap-2 rounded-lg bg-zinc-100 dark:bg-zinc-800 px-4 py-2 text-sm font-medium text-zinc-800 dark:text-zinc-200 mb-6 animate-fade-in cursor-pointer hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-all border border-zinc-200 dark:border-zinc-700">
+                <div className="inline-flex items-center gap-2 rounded-lg bg-green-100 dark:bg-green-900/40 px-4 py-2 text-sm font-medium text-green-800 dark:text-green-200 mb-6 animate-fade-in cursor-pointer hover:bg-green-200 dark:hover:bg-green-800/60 transition-all border border-green-300 dark:border-green-700/60">
                   <Briefcase className="h-4 w-4" />
                   <span>Available for Opportunities</span>
                 </div>
               </PopoverTrigger>
-              <PopoverContent className="w-64 p-0 bg-white border-zinc-200 dark:border-zinc-700 dark:bg-zinc-800 shadow-lg animate-in fade-in-0 zoom-in-95">
+              <PopoverContent className="w-64 p-0 bg-white border-green-200 dark:border-green-700 dark:bg-zinc-800 shadow-lg animate-in fade-in-0 zoom-in-95">
                 <div className="p-4">
-                  <h4 className="font-medium text-sm text-zinc-800 dark:text-zinc-200 border-b border-zinc-200 dark:border-zinc-700 pb-2 mb-3">
+                  <h4 className="font-medium text-sm text-zinc-800 dark:text-zinc-200 border-b border-green-200 dark:border-green-700/60 pb-2 mb-3">
                     Available for opportunities
                   </h4>
                   <div className="space-y-3">
-                    <div className="flex items-center gap-3 p-2 rounded-md bg-zinc-100 dark:bg-zinc-900">
-                      <div className="h-8 w-8 rounded-full bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center">
-                        <Briefcase className="h-4 w-4 text-zinc-800 dark:text-zinc-200" />
+                    <div className="flex items-center gap-3 p-2 rounded-md bg-green-50 dark:bg-green-900/30">
+                      <div className="h-8 w-8 rounded-full bg-green-100 dark:bg-green-800/60 flex items-center justify-center">
+                        <Briefcase className="h-4 w-4 text-green-700 dark:text-green-300" />
                       </div>
                       <span className="text-sm">Full-time Roles</span>
                     </div>
-                    <div className="flex items-center gap-3 p-2 rounded-md bg-zinc-100 dark:bg-zinc-900">
-                      <div className="h-8 w-8 rounded-full bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center">
-                        <GraduationCap className="h-4 w-4 text-zinc-800 dark:text-zinc-200" />
+                    <div className="flex items-center gap-3 p-2 rounded-md bg-green-50 dark:bg-green-900/30">
+                      <div className="h-8 w-8 rounded-full bg-green-100 dark:bg-green-800/60 flex items-center justify-center">
+                        <GraduationCap className="h-4 w-4 text-green-700 dark:text-green-300" />
                       </div>
                       <span className="text-sm">Paid Internships</span>
                     </div>
-                    <div className="flex items-center gap-3 p-2 rounded-md bg-zinc-100 dark:bg-zinc-900">
-                      <div className="h-8 w-8 rounded-full bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center">
-                        <MapPin className="h-4 w-4 text-zinc-800 dark:text-zinc-200" />
+                    <div className="flex items-center gap-3 p-2 rounded-md bg-green-50 dark:bg-green-900/30">
+                      <div className="h-8 w-8 rounded-full bg-green-100 dark:bg-green-800/60 flex items-center justify-center">
+                        <MapPin className="h-4 w-4 text-green-700 dark:text-green-300" />
                       </div>
                       <span className="text-sm">New Opportunities</span>
                     </div>
                   </div>
-                  <div className="mt-3 pt-2 border-t border-zinc-200 dark:border-zinc-700 text-xs text-muted-foreground text-center">
+                  <div className="mt-3 pt-2 border-t border-green-200 dark:border-green-700/60 text-xs text-muted-foreground text-center">
                     Expected graduation: June 2025
                   </div>
                 </div>
               </PopoverContent>
             </Popover>
 
-            <h1 className="bg-gradient-to-r from-zinc-800 to-zinc-600 dark:from-zinc-100 dark:to-zinc-300 bg-clip-text text-transparent text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl animate-fade-in-up font-mono relative">
+            <h1 className="bg-gradient-to-r from-slate-800 to-slate-600 dark:from-slate-100 dark:to-slate-300 bg-clip-text text-transparent text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl animate-fade-in-up font-mono relative">
               Eager to Learn & Gain Experience
-              <div className="absolute -bottom-2 left-1/4 right-1/4 h-3 w-1/2 bg-blue-500/20 dark:bg-blue-400/20 -z-10 rounded-full blur-sm mx-auto"></div>
+              <div className="absolute -bottom-2 left-1/4 right-1/4 h-3 w-1/2 bg-slate-500/20 dark:bg-slate-400/20 -z-10 rounded-full blur-sm mx-auto"></div>
             </h1>
 
             <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 animate-fade-in-up animation-delay-200">
@@ -155,10 +161,10 @@ export default function ContactPage() {
       <section className="container mx-auto px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-3">
           {/* Education Card */}
-          <div className="group relative overflow-hidden rounded-xl bg-white p-1 shadow-sm transition-all duration-300 hover:shadow-md dark:bg-zinc-900 border-2 border-blue-200 dark:border-blue-700/60">
+          <div className="group relative overflow-hidden rounded-xl bg-white p-1 shadow-sm transition-all duration-300 hover:shadow-md dark:bg-zinc-900 border-2 border-yellow-300 dark:border-yellow-700/60">
             <div className="relative flex h-full flex-col items-center rounded-lg bg-white p-6 text-center dark:bg-zinc-900">
-              <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-blue-50 dark:bg-blue-900/40 transition-transform duration-300 group-hover:scale-110 border border-blue-200 dark:border-blue-700/60">
-                <GraduationCap className="h-10 w-10 text-blue-600 dark:text-blue-400 transition-transform duration-300 group-hover:scale-110" />
+              <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-yellow-50 dark:bg-yellow-900/40 transition-transform duration-300 group-hover:scale-110 border border-yellow-200 dark:border-yellow-700/60">
+                <GraduationCap className="h-10 w-10 text-yellow-600 dark:text-yellow-400 transition-transform duration-300 group-hover:scale-110" />
               </div>
               <h3 className="mb-3 text-2xl font-bold text-zinc-800 dark:text-zinc-100">
                 Education
@@ -167,7 +173,7 @@ export default function ContactPage() {
                 Final Year / Last Semester
               </p>
               <div className="mt-auto">
-                <span className="inline-flex items-center rounded-full bg-blue-50 dark:bg-blue-900/30 px-4 py-1.5 text-sm font-medium text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-700/40">
+                <span className="inline-flex items-center rounded-full bg-yellow-50 dark:bg-yellow-900/30 px-4 py-1.5 text-sm font-medium text-yellow-700 dark:text-yellow-300 border border-yellow-200 dark:border-yellow-700/40">
                   Bachelor of Engineering (BE)
                 </span>
               </div>
@@ -175,10 +181,10 @@ export default function ContactPage() {
           </div>
 
           {/* Career Status Card */}
-          <div className="group relative overflow-hidden rounded-xl bg-white p-1 shadow-sm transition-all duration-300 hover:shadow-md dark:bg-zinc-900 border-2 border-amber-200 dark:border-amber-700/60">
+          <div className="group relative overflow-hidden rounded-xl bg-white p-1 shadow-sm transition-all duration-300 hover:shadow-md dark:bg-zinc-900 border-2 border-indigo-300 dark:border-indigo-700/60">
             <div className="relative flex h-full flex-col items-center rounded-lg bg-white p-6 text-center dark:bg-zinc-900">
-              <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-amber-50 dark:bg-amber-900/40 transition-transform duration-300 group-hover:scale-110 border border-amber-200 dark:border-amber-700/60">
-                <Briefcase className="h-10 w-10 text-amber-600 dark:text-amber-400 transition-transform duration-300 group-hover:scale-110" />
+              <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-indigo-50 dark:bg-indigo-900/40 transition-transform duration-300 group-hover:scale-110 border border-indigo-200 dark:border-indigo-700/60">
+                <Briefcase className="h-10 w-10 text-indigo-600 dark:text-indigo-400 transition-transform duration-300 group-hover:scale-110" />
               </div>
               <h3 className="mb-3 text-2xl font-bold text-zinc-800 dark:text-zinc-100">
                 Career Status
@@ -187,7 +193,7 @@ export default function ContactPage() {
                 Fresher with no industry experience
               </p>
               <div className="mt-auto">
-                <span className="inline-flex items-center rounded-full bg-amber-50 dark:bg-amber-900/30 px-4 py-1.5 text-sm font-medium text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-700/40">
+                <span className="inline-flex items-center rounded-full bg-indigo-50 dark:bg-indigo-900/30 px-4 py-1.5 text-sm font-medium text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-700/40">
                   Seeking Full-time & Paid Internships
                 </span>
               </div>
@@ -195,10 +201,10 @@ export default function ContactPage() {
           </div>
 
           {/* Location Card */}
-          <div className="group relative overflow-hidden rounded-xl bg-white p-1 shadow-sm transition-all duration-300 hover:shadow-md dark:bg-zinc-900 border-2 border-emerald-200 dark:border-emerald-700/60">
+          <div className="group relative overflow-hidden rounded-xl bg-white p-1 shadow-sm transition-all duration-300 hover:shadow-md dark:bg-zinc-900 border-2 border-rose-300 dark:border-rose-700/60">
             <div className="relative flex h-full flex-col items-center rounded-lg bg-white p-6 text-center dark:bg-zinc-900">
-              <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-emerald-50 dark:bg-emerald-900/40 transition-transform duration-300 group-hover:scale-110 border border-emerald-200 dark:border-emerald-700/60">
-                <MapPin className="h-10 w-10 text-emerald-600 dark:text-emerald-400 transition-transform duration-300 group-hover:scale-110" />
+              <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-rose-50 dark:bg-rose-900/40 transition-transform duration-300 group-hover:scale-110 border border-rose-200 dark:border-rose-700/60">
+                <MapPin className="h-10 w-10 text-rose-600 dark:text-rose-400 transition-transform duration-300 group-hover:scale-110" />
               </div>
               <h3 className="mb-3 text-2xl font-bold text-zinc-800 dark:text-zinc-100">
                 Location Preference
@@ -207,7 +213,7 @@ export default function ContactPage() {
                 Remote, Hybrid, or In-office
               </p>
               <div className="mt-auto">
-                <span className="inline-flex items-center rounded-full bg-emerald-50 dark:bg-emerald-900/30 px-4 py-1.5 text-sm font-medium text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-700/40">
+                <span className="inline-flex items-center rounded-full bg-rose-50 dark:bg-rose-900/30 px-4 py-1.5 text-sm font-medium text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-700/40">
                   Prefer Mumbai, Pune, Delhi for in-office
                 </span>
               </div>
@@ -221,17 +227,17 @@ export default function ContactPage() {
         id="contact-form"
         className="container mx-auto px-4 py-16 sm:px-6 lg:px-8"
       >
-        <div className="mx-auto max-w-6xl overflow-hidden rounded-2xl bg-white shadow-sm border border-zinc-200 dark:border-zinc-800 dark:bg-zinc-900">
+        <div className="mx-auto max-w-6xl overflow-hidden rounded-2xl bg-white shadow-sm dark:bg-zinc-900">
           <div className="grid gap-0 md:grid-cols-2">
             {/* Contact Information Section */}
-            <div className="relative overflow-hidden bg-white dark:bg-zinc-900 p-8 md:p-10 border-r border-zinc-100 dark:border-zinc-800">
+            <div className="relative overflow-hidden bg-white dark:bg-zinc-900 p-8 md:p-10 rounded-l-2xl shadow-sm border-2 border-yellow-300 dark:border-yellow-700/60">
               <div className="relative z-10 flex h-full flex-col justify-between space-y-8">
                 <div className="space-y-6">
                   <div>
                     <h2 className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 font-mono">
                       Contact Me
                     </h2>
-                    <div className="mt-2 h-1.5 w-24 rounded-full bg-blue-500/20"></div>
+                    <div className="mt-2 h-1.5 w-24 rounded-full bg-yellow-500/20"></div>
                   </div>
 
                   <p className="text-lg text-zinc-600 dark:text-zinc-400">
@@ -243,8 +249,8 @@ export default function ContactPage() {
 
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-purple-50 dark:bg-purple-900/40 shadow-sm border border-purple-200 dark:border-purple-700/60">
-                      <Mail className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-indigo-50 dark:bg-indigo-900/40 shadow-sm border border-indigo-200 dark:border-indigo-700/60">
+                      <Mail className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
                     </div>
                     <div>
                       <p className="font-medium text-zinc-800 dark:text-zinc-100">
@@ -252,7 +258,7 @@ export default function ContactPage() {
                       </p>
                       <a
                         href="mailto:workharshthakur2002@gmail.com"
-                        className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors"
+                        className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-indigo-700 dark:hover:text-indigo-400 transition-colors"
                       >
                         workharshthakur2002@gmail.com
                       </a>
@@ -260,8 +266,8 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 dark:bg-blue-900/40 shadow-sm border border-blue-200 dark:border-blue-700/60">
-                      <FaSquareXTwitter className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-indigo-50 dark:bg-indigo-900/40 shadow-sm border border-indigo-200 dark:border-indigo-700/60">
+                      <FaSquareXTwitter className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
                     </div>
                     <div>
                       <p className="font-medium text-zinc-800 dark:text-zinc-100">
@@ -271,7 +277,7 @@ export default function ContactPage() {
                         href="https://twitter.com/Harshthakur2002"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
+                        className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-indigo-700 dark:hover:text-indigo-400 transition-colors"
                       >
                         @Harshthakur2002
                       </a>
@@ -284,21 +290,14 @@ export default function ContactPage() {
                   <h3 className="text-lg font-semibold">
                     Professional Profiles
                   </h3>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
                     {socialLinks.map((link) => (
                       <a
                         key={link.name}
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium shadow-sm transition-all border
-                          ${
-                            link.name === "GitHub"
-                              ? "border-neutral-200 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-800 dark:text-neutral-300"
-                              : link.name === "LinkedIn"
-                                ? "border-blue-200 dark:border-blue-700 bg-blue-100 dark:bg-blue-900/50 hover:bg-blue-200 dark:hover:bg-blue-800 text-blue-800 dark:text-blue-300"
-                                : "border-emerald-200 dark:border-emerald-700 bg-emerald-100 dark:bg-emerald-900/50 hover:bg-emerald-200 dark:hover:bg-emerald-800 text-emerald-800 dark:text-emerald-300"
-                          }`}
+                        className="flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium shadow-sm transition-all border bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200"
                       >
                         <SocialIcon iconType={link.iconType} />
                         {link.name}
@@ -308,7 +307,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Availability Status */}
-                <div className="rounded-xl bg-green-50 dark:bg-zinc-800 p-4 shadow-sm border border-green-200 dark:border-green-700/40">
+                <div className="rounded-xl bg-green-50 dark:bg-green-900/20 p-4 shadow-sm border border-green-200 dark:border-green-700/40">
                   <div className="flex items-center gap-2">
                     <div className="h-3 w-3 rounded-full bg-green-500 animate-pulse"></div>
                     <p className="text-sm font-medium text-green-700 dark:text-green-400">
@@ -324,7 +323,7 @@ export default function ContactPage() {
             </div>
 
             {/* Form Section */}
-            <div className="flex flex-col justify-center p-8 md:p-10 bg-gray-50 dark:bg-zinc-800/50 border-t md:border-t-0 md:border-l border-zinc-200 dark:border-zinc-700">
+            <div className="flex flex-col justify-center p-8 md:p-10 bg-gray-50 dark:bg-zinc-800/50 rounded-r-2xl shadow-sm border-2 border-yellow-300 dark:border-yellow-700/60">
               <div className="mb-8">
                 <h3 className="text-2xl font-bold font-mono text-zinc-800 dark:text-zinc-100">
                   Send a Message
@@ -336,89 +335,108 @@ export default function ContactPage() {
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-2">
-                  <Label htmlFor="name" className="text-sm font-medium">
-                    Name
-                  </Label>
-                  <div className="relative">
-                    <User className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                    <Input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="pl-10 border border-zinc-200 dark:border-zinc-700 focus:border-primary focus:ring-1 focus:ring-primary/30 dark:text-zinc-200 transition-colors rounded-lg"
-                      placeholder="Your name"
-                    />
+                <div className="space-y-10">
+                  <div>
+                    <div className="flex items-center space-x-2">
+                      <User
+                        className="h-5 w-5 text-slate-600 dark:text-slate-400"
+                        aria-hidden="true"
+                      />
+                      <Label
+                        htmlFor="name"
+                        className="text-zinc-800 dark:text-zinc-200"
+                      >
+                        Name
+                      </Label>
+                    </div>
+                    <div className="mt-1.5">
+                      <Input
+                        id="name"
+                        name="name"
+                        placeholder="Your name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="bg-white dark:bg-zinc-900 border-zinc-300 dark:border-zinc-700 focus:border-slate-500 focus:ring-slate-500/20 transition-colors"
+                      />
+                    </div>
                   </div>
-                </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="email" className="text-sm font-medium">
-                    Email
-                  </Label>
-                  <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                    <Input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="pl-10 border border-zinc-200 dark:border-zinc-700 focus:border-primary focus:ring-1 focus:ring-primary/30 dark:text-zinc-200 transition-colors rounded-lg"
-                      placeholder="your.email@example.com"
-                    />
+                  <div>
+                    <div className="flex items-center space-x-2">
+                      <Mail
+                        className="h-5 w-5 text-slate-600 dark:text-slate-400"
+                        aria-hidden="true"
+                      />
+                      <Label
+                        htmlFor="email"
+                        className="text-zinc-800 dark:text-zinc-200"
+                      >
+                        Email
+                      </Label>
+                    </div>
+                    <div className="mt-1.5">
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="your.email@example.com"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="bg-white dark:bg-zinc-900 border-zinc-300 dark:border-zinc-700 focus:border-slate-500 focus:ring-slate-500/20 transition-colors"
+                      />
+                    </div>
                   </div>
-                </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="message" className="text-sm font-medium">
-                    Message
-                  </Label>
-                  <div className="relative">
-                    <MessageSquare className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      className="min-h-[150px] pl-10 border border-zinc-200 dark:border-zinc-700 focus:border-primary focus:ring-1 focus:ring-primary/30 dark:text-zinc-200 transition-colors rounded-lg"
-                      placeholder="Describe your job opportunity or internship position..."
-                    />
+                  <div>
+                    <div className="flex items-center space-x-2">
+                      <MessageSquare
+                        className="h-5 w-5 text-slate-600 dark:text-slate-400"
+                        aria-hidden="true"
+                      />
+                      <Label
+                        htmlFor="message"
+                        className="text-zinc-800 dark:text-zinc-200"
+                      >
+                        Message
+                      </Label>
+                    </div>
+                    <div className="mt-1.5">
+                      <Textarea
+                        id="message"
+                        name="message"
+                        placeholder="Your message here..."
+                        rows={5}
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                        className="bg-white dark:bg-zinc-900 border-zinc-300 dark:border-zinc-700 focus:border-slate-500 focus:ring-slate-500/20 transition-colors"
+                      />
+                    </div>
                   </div>
-                </div>
 
-                <Button
-                  type="submit"
-                  disabled={status === "loading"}
-                  className="w-full group relative overflow-hidden rounded-lg py-6 transition-all hover:bg-primary/90 border border-zinc-200 dark:border-zinc-700 shadow-sm"
-                >
-                  <span className="relative z-10 flex items-center justify-center gap-2">
+                  <Button
+                    type="submit"
+                    className="w-full bg-slate-800 hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors"
+                    disabled={status === "loading"}
+                  >
                     {status === "loading" ? (
-                      <>
-                        <Loader2 className="h-4 w-4 animate-spin" />
-                        Sending...
-                      </>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                     ) : (
-                      <>
-                        Send Message
-                        <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                      </>
+                      <Send className="mr-2 h-4 w-4" />
                     )}
-                  </span>
-                </Button>
-              </form>
+                    Send Message
+                  </Button>
+                </div>
 
-              <div className="mt-4 text-center">
-                <p className="text-xs text-muted-foreground">
-                  Your information is securely processed and never shared with
-                  third parties.
-                </p>
-              </div>
+                <div className="mt-4 text-center">
+                  <p className="text-xs text-muted-foreground">
+                    Your information is securely processed and never shared with
+                    third parties.
+                  </p>
+                </div>
+              </form>
             </div>
           </div>
         </div>

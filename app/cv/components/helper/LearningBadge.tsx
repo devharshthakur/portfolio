@@ -6,8 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
  * LearningBadge Component
  *
  * @description A component that displays a visually distinctive badge highlighting
- * technologies or skills currently being learned. Uses amber/yellow color scheme
- * to draw attention and indicate "in progress" status.
+ * technologies or skills currently being learned. Uses indigo color scheme
+ * to match the Skills section it appears under.
  *
  * @component
  * @param {Object} props - Component props
@@ -26,12 +26,15 @@ export function LearningBadge({
   skill: string;
 }): React.ReactElement {
   return (
-    <Card className="border-l-4 border-l-amber-500 bg-amber-500/5">
+    <Card className="border-l-4 border-l-indigo-500 bg-indigo-50/30 dark:bg-indigo-950/10 border border-indigo-200 dark:border-indigo-800/40">
       <CardContent className="p-3">
         <div className="flex items-start gap-2">
-          <Sparkles size={18} className="text-amber-500 mt-0.5" />
+          <Sparkles
+            size={18}
+            className="text-indigo-600 dark:text-indigo-400 mt-0.5"
+          />
           <div>
-            <h4 className="text-amber-700 dark:text-amber-400 font-medium text-xs uppercase tracking-wider mb-1">
+            <h4 className="text-indigo-700 dark:text-indigo-400 font-medium text-xs uppercase tracking-wider mb-1">
               Currently Learning:
             </h4>
             <p className="text-sm text-foreground font-medium">{skill}</p>

@@ -22,19 +22,28 @@ export function ModeToggle() {
   };
   if (!mounted) {
     return (
-      <Button variant="outline" size="icon">
-        <Sun className="h-[1.2rem] w-[1.2rem] transition-all" />
+      <Button
+        variant="outline"
+        size="icon"
+        className="border-teal-300 dark:border-teal-700 hover:bg-teal-50 dark:hover:bg-teal-900/30 hover:text-teal-600 dark:hover:text-teal-400"
+      >
+        <Sun className="h-[1.2rem] w-[1.2rem] transition-all text-teal-500 dark:text-teal-400" />
         <span className="sr-only">Toggle theme</span>
       </Button>
     );
   }
 
   return (
-    <Button variant="outline" size="icon" onClick={toggleTheme}>
+    <Button
+      variant="outline"
+      size="icon"
+      onClick={toggleTheme}
+      className="border-teal-300 dark:border-teal-700 hover:bg-teal-50 dark:hover:bg-teal-900/30 hover:text-teal-600 dark:hover:text-teal-400"
+    >
       {resolvedTheme === "light" ? (
-        <Sun className="h-[1.2rem] w-[1.2rem] transition-all" />
+        <Sun className="h-[1.2rem] w-[1.2rem] transition-all text-teal-500 dark:text-teal-400" />
       ) : (
-        <Moon className="h-[1.2rem] w-[1.2rem] transition-all" />
+        <Moon className="h-[1.2rem] w-[1.2rem] transition-all text-teal-500 dark:text-teal-400" />
       )}
       <span className="sr-only">Toggle theme</span>
     </Button>

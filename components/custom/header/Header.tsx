@@ -11,16 +11,15 @@ export function Header() {
         <Button
           variant="outline"
           asChild
-          className="border-slate-300 hover:border-slate-500 dark:border-slate-700 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-100/50 dark:hover:bg-slate-800/30"
+          className="border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-500 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 shadow-sm"
         >
-          <Link
+          <a
             href="https://github.com/devharshthakur"
             className="flex items-center gap-2"
-            prefetch={true}
           >
-            <FaGithub className="h-5 w-5" />
+            <FaGithub className="h-5 w-5 text-slate-600 dark:text-slate-400" />
             @devharshthakur
-          </Link>
+          </a>
         </Button>
         <Button
           variant="outline"
@@ -51,7 +50,9 @@ export function Header() {
           variant="outline"
           className="border-indigo-300 hover:border-indigo-500 dark:border-indigo-700 hover:text-indigo-700 dark:hover:text-indigo-300 hover:bg-indigo-100/50 dark:hover:bg-indigo-900/30"
         >
-          <Link href="/blogs">Blogs</Link>
+          <Link href="/blogs" prefetch={true}>
+            Blogs
+          </Link>
         </Button>
         <Button
           variant="outline"

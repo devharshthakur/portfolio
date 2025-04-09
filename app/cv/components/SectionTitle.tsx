@@ -11,12 +11,13 @@ import { Card, CardHeader, CardTitle } from "@/components/ui/card";
  * @param {Object} props - Component props
  * @param {React.ReactNode} props.icon - Icon element to display next to the title
  * @param {React.ReactNode} props.title - The title text or element to display
+ * @param {string} [props.colorClassName] - Optional CSS class name for custom border and text colors
  *
  * @example
  * ```tsx
  * <SectionTitle icon={<User size={16} />} title="Profile" />
- * // Or with a React element as title
- * <SectionTitle icon={<User size={16} />} title={<CustomTitle />} />
+ * // With custom color
+ * <SectionTitle icon={<User size={16} />} title="Profile" colorClassName="border-yellow-400 text-yellow-700 dark:border-yellow-600 dark:text-yellow-400" />
  * ```
  *
  * @returns {React.ReactElement} A styled section title in a card with icon
@@ -24,14 +25,16 @@ import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 export function SectionTitle({
   icon,
   title,
+  colorClassName = "border-primary/30 text-primary",
 }: {
   icon: React.ReactNode;
   title: React.ReactNode;
+  colorClassName?: string;
 }): React.ReactElement {
   return (
-    <Card className="mb-4 border-2 border-primary/30 bg-card">
+    <Card className={`mb-4 border-2 ${colorClassName} bg-card`}>
       <CardHeader className="py-2 px-4">
-        <CardTitle className="text-lg font-semibold text-primary uppercase tracking-wider flex items-center gap-2">
+        <CardTitle className="text-lg font-semibold uppercase tracking-wider flex items-center gap-2">
           {icon} {title}
         </CardTitle>
       </CardHeader>
