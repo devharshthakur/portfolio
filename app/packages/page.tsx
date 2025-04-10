@@ -33,9 +33,8 @@ export default function DevelopmentPage() {
 
           <div className="w-full max-w-lg mx-auto mb-8">
             <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 mb-6">
-              We're currently working on building useful packages for the
-              developer community. Please check back soon to explore our
-              open-source contributions.
+              I am currently working on create this page. This Page showcase all
+              the pakages i have made. Stay tuned
             </p>
 
             <div className="relative h-2.5 bg-purple-100 dark:bg-purple-900/30 rounded-full overflow-hidden max-w-xs mx-auto mb-8 border border-purple-200 dark:border-purple-800/50">
