@@ -1,12 +1,14 @@
-interface Project {
+export interface Project {
   title: string;
   description: string;
   longDescription: string;
   githubUrl: string;
-  liveDemoUrl: string;
+  liveDemoUrl?: string;
+  imageUrl?: string;
   date: string;
   duration: string;
   tags: string[];
+  isInDevelopment?: boolean;
 }
 
 const projects: Project[] = [
@@ -33,9 +35,11 @@ const projects: Project[] = [
     date: "2024-02",
     duration: "3 weeks",
     tags: ["Next.js", "TypeScript", "npm", "Package Checker"],
+    imageUrl:
+      "https://upf2833czf.ufs.sh/f/5esi0CuHtzvb13Dt3MdlX0ewzUr8IgHD534qfWcJTGjdv7Ap",
   },
   {
-    title: "Legal AI PDF (In Development)",
+    title: "Legal AI PDF",
     description: "An AI based Legal Assistant (FINAL YEAR MAJOR PROJECT)",
     longDescription:
       "A comprehensive AI-driven legal assistant designed to streamline legal document processing and provide intelligent insights.",
@@ -44,6 +48,7 @@ const projects: Project[] = [
     date: "2024-04",
     duration: "6 months",
     tags: ["AI", "Legal Tech", "Machine Learning"],
+    isInDevelopment: true,
   },
   {
     title: "BlockPredict",

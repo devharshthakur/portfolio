@@ -17,7 +17,7 @@ const packages: Package[] = [
       "This cli creates a ts project with a pre-defined structure with some options on project structure",
     githubUrl: "https://github.com/devharshthakur/ht-create-tsapp.git",
     npmUrl: "https://www.npmjs.com/package/ht-create-tsapp",
-    downloads: "0",
+    downloads: "2",
     version: "1.2.0",
     tags: ["React", "UI Component", "Data Table", "TypeScript"],
   },
@@ -26,11 +26,11 @@ const packages: Package[] = [
     description:
       "A zero-dependency TypeScript utility for tuple-based error handling.",
     longDescription:
-      "Simplifies synchronous and asynchronous error handling in JavaScript/TypeScript by replacing try...catch blocks with a consistent [error, result] tuple pattern, resulting in cleaner and more predictable code.",
+      "Simplifies synchronous and asynchronous error handling in JavaScript/TypeScript by replacing try...catch blocks with a consistent [result,error] tuple pattern, resulting in cleaner and more predictable code.",
     githubUrl: "https://github.com/devharshthakur/trycatch-lib.git",
     npmUrl: "https://www.npmjs.com/package/trycatch-lib",
-    downloads: "0",
-    version: "0.1.0-alpha.1",
+    downloads: "240",
+    version: "0.1.0-alpha.2.1",
     tags: ["TypeScript", "Error Handling", "Async/Await", "Utility", "Promise"],
   },
 ];

@@ -16,3 +16,20 @@ export const skills = [
     description: "C (Decent), Java (Basic), Python (Basic)",
   },
 ];
+
+export const profileBulletPoints = [
+  {
+    label: "Proficient in",
+    content:
+      "JavaScript (Node.js, React/Next.js) and related ecosystem tools (Prisma, NestJS).",
+  },
+  {
+    label: "Familiar with",
+    content:
+      "C, Java, Python basics, PostgreSQL, MongoDB, Cloudflare Workers, and AWS basics.",
+  },
+  {
+    label: "Currently exploring",
+    content: "Rust programming language.",
+  },
+];

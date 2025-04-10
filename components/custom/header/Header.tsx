@@ -1,60 +1,37 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toogle";
-import { FaGithub } from "react-icons/fa";
-import { FileText } from "lucide-react";
-import { MdContactPage } from "react-icons/md";
+import { ColoredButton } from "@/components/ui/colored-button";
+import {
+  HEADER_LEFT_NAV,
+  HEADER_RIGHT_NAV,
+} from "@/components/custom/header/lib/constants";
+
 export function Header() {
   return (
     <header className="flex items-center justify-between py-3 sm:px-6 md:px-8">
       <div className="space-x-4">
-        <Button variant="outline" asChild>
-          <Link
-            href="https://github.com/devharshthakur"
-            className="flex items-center gap-2"
-            prefetch={true}
-          >
-            <FaGithub className="h-5 w-5" />
-            @devharshthakur
-          </Link>
-        </Button>
-        <Button
-          variant="outline"
-          asChild
-          className="border-dashed border-2 border-muted-foreground"
-        >
-          <Link
-            href="/contact"
-            className="flex items-center gap-2"
-            prefetch={true}
-          >
-            <MdContactPage className="h-7 w-7" />
-            Contact Me
-          </Link>
-        </Button>
+        {HEADER_LEFT_NAV.map((item) => (
+          <ColoredButton
+            key={item.href}
+            href={item.href}
+            label={item.label}
+            icon={item.icon}
+            colorScheme={item.colorScheme}
+            variant="outline"
+            isExternal={item.isExternal}
+          />
+        ))}
       </div>
       <div className="flex items-center gap-4">
-        <Button variant={"default"} asChild>
-          <Link href="/about" className="text-sm font-medium" prefetch={true}>
-            About Me
-          </Link>
-        </Button>
-        <Button variant={"outline"}>
-          <Link href="/blogs">Blogs</Link>
-        </Button>
-        <Button
-          variant={"outline"}
-          className="border-dashed border-2 border-muted-foreground"
-        >
-          <Link
-            href="/cv"
-            className="flex items-center gap-2 text-sm font-medium"
-            prefetch={true}
-          >
-            <FileText className="h-5 w-5" />
-            CV
-          </Link>
-        </Button>
+        {HEADER_RIGHT_NAV.map((item) => (
+          <ColoredButton
+            key={item.href}
+            href={item.href}
+            label={item.label}
+            icon={item.icon}
+            colorScheme={item.colorScheme}
+            variant={item.variant || "outline"}
+          />
+        ))}
         <ModeToggle />
       </div>
     </header>
