@@ -32,15 +32,21 @@ export function GitHubLink({
 
   return (
     <div className="flex items-center">
-      <FaGithub className="text-muted-foreground mr-2" size={16} />
+      <FaGithub
+        className="text-purple-600 dark:text-purple-400 mr-2"
+        size={16}
+      />
       <a
         href={githubUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-sm text-primary border-b border-primary/30 pb-0.5 flex items-center"
+        className="text-sm text-purple-700 dark:text-purple-400 border-b border-purple-300 dark:border-purple-700/50 pb-0.5 flex items-center hover:text-purple-800 dark:hover:text-purple-300 transition-colors"
       >
         github.com/{username}
-        <ExternalLink size={12} className="ml-1 text-muted-foreground" />
+        <ExternalLink
+          size={12}
+          className="ml-1 text-purple-500 dark:text-purple-500"
+        />
       </a>
     </div>
   );

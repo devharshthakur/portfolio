@@ -13,7 +13,7 @@ import {
   getProjectImageProps,
   type ProjectImageProps,
 } from "@/app/projects/functions/get-image-props";
-import { NoteDialog } from "./components/note-dialog";
+import { NoteDialog } from "./components/dailogs/project-section-home-dailog";
 import { TechBadge } from "./components/tech-badge";
 import { ModeToggle } from "@/components/mode-toogle";
 

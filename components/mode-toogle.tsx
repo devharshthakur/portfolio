@@ -2,8 +2,10 @@
 import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { COLOR_SCHEMES } from "@/components/custom/header/lib/constants";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 export function ModeToggle() {
   const [mounted, setMounted] = useState(false);
@@ -20,31 +22,25 @@ export function ModeToggle() {
       setTheme("light");
     }
   };
-  if (!mounted) {
-    return (
-      <Button
-        variant="outline"
-        size="icon"
-        className="border-teal-300 dark:border-teal-700 hover:bg-teal-50 dark:hover:bg-teal-900/30 hover:text-teal-600 dark:hover:text-teal-400"
-      >
-        <Sun className="h-[1.2rem] w-[1.2rem] transition-all text-teal-500 dark:text-teal-400" />
-        <span className="sr-only">Toggle theme</span>
-      </Button>
-    );
-  }
+
+  const colorScheme = COLOR_SCHEMES.teal;
+  const buttonClasses = cn(
+    "border-teal-300 dark:border-teal-700",
+    colorScheme.hover,
+  );
+
+  const IconComponent = mounted && resolvedTheme === "light" ? Sun : Moon;
 
   return (
     <Button
       variant="outline"
       size="icon"
-      onClick={toggleTheme}
-      className="border-teal-300 dark:border-teal-700 hover:bg-teal-50 dark:hover:bg-teal-900/30 hover:text-teal-600 dark:hover:text-teal-400"
+      onClick={mounted ? toggleTheme : undefined}
+      className={buttonClasses}
     >
-      {resolvedTheme === "light" ? (
-        <Sun className="h-[1.2rem] w-[1.2rem] transition-all text-teal-500 dark:text-teal-400" />
-      ) : (
-        <Moon className="h-[1.2rem] w-[1.2rem] transition-all text-teal-500 dark:text-teal-400" />
-      )}
+      <IconComponent
+        className={cn("h-[1.2rem] w-[1.2rem] transition-all", colorScheme.icon)}
+      />
       <span className="sr-only">Toggle theme</span>
     </Button>
   );

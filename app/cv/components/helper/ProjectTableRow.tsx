@@ -15,6 +15,7 @@ import { Link as LinkIcon } from "lucide-react";
  * @param {string} props.title - The project or package title
  * @param {string} props.description - Brief description of the project or package
  * @param {string} props.link - URL to the project repository or package
+ * @param {string} [props.colorScheme="blue"] - Color scheme to use for styling
  *
  * @example
  * ```tsx
@@ -31,27 +32,47 @@ export function ProjectTableRow({
   title,
   description,
   link,
+  colorScheme = "blue",
 }: {
   title: string;
   description: string;
   link: string;
+  colorScheme?: "blue" | "rose";
 }): React.ReactElement {
+  // Define color classes based on the color scheme
+  const hoverBgClass =
+    colorScheme === "blue"
+      ? "hover:bg-blue-50/50 dark:hover:bg-blue-950/10"
+      : "hover:bg-rose-50/50 dark:hover:bg-rose-950/10";
+
+  const iconClass =
+    colorScheme === "blue"
+      ? "text-blue-600 dark:text-blue-400"
+      : "text-rose-600 dark:text-rose-400";
+
+  const linkHoverClass =
+    colorScheme === "blue"
+      ? "hover:text-blue-700 dark:hover:text-blue-400"
+      : "hover:text-rose-700 dark:hover:text-rose-400";
+
   return (
-    <TableRow>
+    <TableRow className={hoverBgClass}>
       <TableCell>
         <div className="flex items-start gap-2 mb-0.5">
-          <LinkIcon size={14} className="text-muted-foreground mt-1" />
+          <LinkIcon size={14} className={`${iconClass} mt-1`} />
           <div>
             <Link
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-foreground hover:text-primary hover:underline block"
+              className={`font-medium text-slate-800 dark:text-slate-200 ${linkHoverClass} hover:underline block`}
               prefetch={true}
             >
               {title}
             </Link>
-            <p className="text-sm text-muted-foreground">{description}</p>
+            <p className="text-sm text-slate-600 dark:text-slate-400">
+              {description}
+            </p>
           </div>
         </div>
       </TableCell>

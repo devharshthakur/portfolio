@@ -50,14 +50,17 @@ export default function CVPage() {
         {/* Header Section */}
         <header className="flex justify-between items-center mb-10 md:mb-12 border-b border-border pb-5">
           <div className="flex items-center gap-2">
-            <div className="bg-primary/10 p-2 rounded-md">
-              <FileText size={20} className="text-primary" />
+            <div className="bg-purple-100 dark:bg-purple-900/30 p-2 rounded-md border border-purple-200 dark:border-purple-800/50">
+              <FileText
+                size={20}
+                className="text-purple-600 dark:text-purple-400"
+              />
             </div>
             <div>
-              <h1 className="text-2xl font-semibold text-foreground">
+              <h1 className="text-2xl font-semibold text-slate-800 dark:text-slate-200">
                 Curriculum Vitae
               </h1>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-slate-600 dark:text-slate-400">
                 Professional Experience & Education
               </p>
             </div>
@@ -66,7 +69,7 @@ export default function CVPage() {
             <ModeToggle />
             <Button
               onClick={downloadCV}
-              className="flex items-center gap-2 bg-primary hover:bg-primary/90"
+              className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 dark:bg-purple-700 dark:hover:bg-purple-600"
             >
               <Download size={16} />
               Download CV
@@ -78,10 +81,10 @@ export default function CVPage() {
           <section className="text-center md:text-left mb-8">
             <div className="flex flex-col md:flex-row gap-3 md:items-center justify-between">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold font-mono tracking-tight mb-1">
+                <h1 className="text-4xl md:text-5xl font-bold font-mono tracking-tight mb-1 text-slate-800 dark:text-slate-200">
                   Harsh Thakur
                 </h1>
-                <div className="flex items-center text-primary gap-2">
+                <div className="flex items-center text-purple-600 dark:text-purple-400 gap-2">
                   <Briefcase size={18} />
                   <h2 className="text-xl md:text-2xl font-medium">
                     Software Engineer
@@ -194,13 +197,13 @@ export default function CVPage() {
                   icon={
                     <GraduationCap
                       size={16}
-                      className="text-yellow-700 dark:text-yellow-400"
+                      className="text-green-700 dark:text-green-400"
                     />
                   }
                   title="Education"
-                  colorClassName="border-yellow-400 text-yellow-700 dark:border-yellow-600 dark:text-yellow-400"
+                  colorClassName="border-green-400 text-green-700 dark:border-green-600 dark:text-green-400"
                 />
-                <Card className="border-2 border-yellow-400 dark:border-yellow-600 bg-yellow-50/30 dark:bg-yellow-950/10">
+                <Card className="border-2 border-green-400 dark:border-green-600 bg-green-50/30 dark:bg-green-950/10">
                   <CardContent className="p-4">
                     <div className="space-y-4">
                       <EducationEntry

@@ -55,7 +55,7 @@ export default function AboutPage() {
                 </div>
 
                 <div className="w-full max-w-[220px] border-2 border-yellow-300 dark:border-yellow-700/60 rounded-md overflow-hidden bg-yellow-50/50 dark:bg-yellow-900/10 shadow-sm">
-                  <div className="bg-yellow-100/70 dark:bg-yellow-900/30 px-3 py-1.5 text-center border-b border-yellow-200 dark:border-yellow-800/40">
+                  <div className="bg-yellow-100 dark:bg-yellow-900/30 px-3 py-1.5 text-center border-b border-yellow-200 dark:border-yellow-800/40">
                     <span className="text-xs font-medium uppercase tracking-wider text-yellow-700 dark:text-yellow-300">
                       Personal Info
                     </span>
@@ -63,30 +63,30 @@ export default function AboutPage() {
                   <table className="w-full">
                     <tbody>
                       <tr className="border-b border-yellow-200 dark:border-yellow-800/40">
-                        <td className="px-4 py-3 text-center">
-                          <div className="flex items-center justify-center gap-2.5">
-                            <div className="bg-yellow-100 dark:bg-yellow-900/40 p-1.5 rounded-full">
+                        <td className="px-4 py-2 text-center">
+                          <div className="flex items-center justify-center gap-1.5">
+                            <div className="bg-yellow-100 dark:bg-yellow-900/40 p-1.5 rounded-full flex items-center justify-center">
                               <MapPin
-                                size={14}
+                                size={12}
                                 className="text-yellow-600 dark:text-yellow-400"
                               />
                             </div>
-                            <span className="text-sm font-medium text-foreground">
+                            <span className="text-xs font-medium text-foreground">
                               Mumbai, India
                             </span>
                           </div>
                         </td>
                       </tr>
                       <tr>
-                        <td className="px-4 py-3 text-center">
-                          <div className="flex items-center justify-center gap-2.5">
-                            <div className="bg-yellow-100 dark:bg-yellow-900/40 p-1.5 rounded-full">
+                        <td className="px-4 py-2 text-center">
+                          <div className="flex items-center justify-center gap-1.5">
+                            <div className="bg-yellow-100 dark:bg-yellow-900/40 p-1.5 rounded-full flex items-center justify-center">
                               <Calendar
-                                size={14}
+                                size={12}
                                 className="text-yellow-600 dark:text-yellow-400"
                               />
                             </div>
-                            <span className="text-sm font-medium text-foreground">
+                            <span className="text-xs font-medium text-foreground">
                               Final Year Student
                             </span>
                           </div>

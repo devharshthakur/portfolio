@@ -2,7 +2,7 @@ import Link from "next/link";
 import projects from "@/data/projects.data";
 import { ProjectCard } from "./ProjectCard";
 import { Button } from "@/components/ui/button";
-import { ProjectNotesButton } from "@/app/projects/components/note";
+import { ProjectNotesButton } from "@/app/projects/components/dailogs/project-secition-cv-dialog";
 import { SectionTitle } from "@/components/ui/section-title";
 import { FolderGit2 } from "lucide-react";
 import { Card } from "@/components/ui/card";

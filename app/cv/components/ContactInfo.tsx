@@ -37,29 +37,29 @@ export function ContactInfo({
   return (
     <ul className="space-y-3">
       <li className="flex items-center gap-2 group">
-        <div className="bg-primary/10 p-1.5 rounded-md text-primary">
+        <div className="bg-blue-100 dark:bg-blue-900/30 p-1.5 rounded-md text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800/50">
           <Phone size={14} />
         </div>
-        <span className="text-sm text-foreground group-hover:text-primary transition-colors">
+        <span className="text-sm text-slate-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
           {phone}
         </span>
       </li>
       <li className="flex items-center gap-2 group">
-        <div className="bg-primary/10 p-1.5 rounded-md text-primary">
+        <div className="bg-blue-100 dark:bg-blue-900/30 p-1.5 rounded-md text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800/50">
           <Mail size={14} />
         </div>
         <a
           href={`mailto:${email}`}
-          className="text-sm text-foreground group-hover:text-primary transition-colors break-all"
+          className="text-sm text-slate-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors break-all"
         >
           {email}
         </a>
       </li>
       <li className="flex items-start gap-2 mt-2">
-        <div className="bg-primary/10 p-1.5 rounded-md text-primary mt-0.5">
+        <div className="bg-blue-100 dark:bg-blue-900/30 p-1.5 rounded-md text-blue-600 dark:text-blue-400 mt-0.5 border border-blue-200 dark:border-blue-800/50">
           <MapPin size={14} />
         </div>
-        <span className="text-xs text-muted-foreground leading-tight">
+        <span className="text-xs text-slate-600 dark:text-slate-400 leading-tight">
           {address}
         </span>
       </li>

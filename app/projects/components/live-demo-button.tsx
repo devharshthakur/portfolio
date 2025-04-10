@@ -43,7 +43,11 @@ export function LiveDemoButton({ project }: LiveDemoButtonProps) {
 
   if (hasLiveDemo) {
     return (
-      <Button size="sm" asChild>
+      <Button
+        size="sm"
+        asChild
+        className="bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600"
+      >
         <a
           href={project.liveDemoUrl}
           target="_blank"
@@ -60,22 +64,25 @@ export function LiveDemoButton({ project }: LiveDemoButtonProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button size="sm" className="flex items-center">
+        <Button
+          size="sm"
+          className="flex items-center bg-purple-600 hover:bg-purple-700 dark:bg-purple-700 dark:hover:bg-purple-600"
+        >
           <BsCpuFill className="mr-1 h-4 w-4" />
           Run Locally
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-2xl p-0 rounded-md border border-border">
-        <div className="grid grid-cols-[1fr_auto] gap-4 p-4 pb-2">
+      <DialogContent className="sm:max-w-2xl p-0 rounded-md border-2 border-purple-300 dark:border-purple-700 shadow-sm">
+        <div className="grid grid-cols-[1fr_auto] gap-4 p-4 pb-2 bg-purple-50/50 dark:bg-purple-950/10">
           <div className="flex items-center gap-2">
-            <div className="rounded-sm bg-primary/10 p-1.5">
-              <BsCpuFill className="h-4 w-4 text-primary" />
+            <div className="rounded-sm bg-purple-100 dark:bg-purple-900/30 p-1.5 border border-purple-200 dark:border-purple-800/50">
+              <BsCpuFill className="h-4 w-4 text-purple-600 dark:text-purple-400" />
             </div>
             <div>
-              <DialogTitle className="text-base">
+              <DialogTitle className="text-base text-slate-800 dark:text-slate-200">
                 {project.isInDevelopment ? "In Development" : "Local Project"}
               </DialogTitle>
-              <DialogDescription className="text-xs">
+              <DialogDescription className="text-xs text-slate-600 dark:text-slate-400">
                 {project.isInDevelopment
                   ? "This project is currently under development"
                   : "This project is not deployed so you have to set it up locally"}
@@ -85,7 +92,7 @@ export function LiveDemoButton({ project }: LiveDemoButtonProps) {
           {project.isInDevelopment && (
             <Badge
               variant="outline"
-              className="h-fit bg-primary/5 text-primary border-primary/20"
+              className="h-fit bg-purple-100/80 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 border-purple-300 dark:border-purple-700/50"
             >
               In Progress
             </Badge>
@@ -93,12 +100,14 @@ export function LiveDemoButton({ project }: LiveDemoButtonProps) {
         </div>
 
         <div className="px-4 py-2 grid grid-cols-[2fr_1fr] gap-4">
-          <div className="rounded-sm bg-muted p-3">
+          <div className="rounded-sm bg-slate-50 dark:bg-slate-800/40 p-3 border border-slate-200 dark:border-slate-700">
             <div className="flex items-center gap-2 mb-1.5">
-              <Terminal className="h-3.5 w-3.5 text-primary" />
-              <h3 className="font-medium text-sm">How to run locally</h3>
+              <Terminal className="h-3.5 w-3.5 text-purple-600 dark:text-purple-400" />
+              <h3 className="font-medium text-sm text-slate-800 dark:text-slate-200">
+                How to run locally
+              </h3>
             </div>
-            <ol className="ml-5 list-decimal text-xs text-muted-foreground space-y-0.5">
+            <ol className="ml-5 list-decimal text-xs text-slate-600 dark:text-slate-400 space-y-0.5">
               <li>Clone the repository from GitHub</li>
               <li>Install dependencies using npm or yarn</li>
               <li>Follow setup instructions in the README</li>
@@ -112,30 +121,35 @@ export function LiveDemoButton({ project }: LiveDemoButtonProps) {
                   <Badge
                     key={index}
                     variant="secondary"
-                    className="text-xs px-1.5 py-0 h-5"
+                    className="text-xs px-1.5 py-0 h-5 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
                   >
                     {tag}
                   </Badge>
                 ))}
             </div>
 
-            <div className="flex items-center gap-3 text-xs text-muted-foreground">
+            <div className="flex items-center gap-3 text-xs text-slate-600 dark:text-slate-400">
               <div className="flex items-center gap-1">
-                <Calendar className="h-3 w-3" />
+                <Calendar className="h-3 w-3 text-slate-500 dark:text-slate-500" />
                 <span>{project.date}</span>
               </div>
               <div className="flex items-center gap-1">
-                <Clock className="h-3 w-3" />
+                <Clock className="h-3 w-3 text-slate-500 dark:text-slate-500" />
                 <span>{project.duration}</span>
               </div>
             </div>
           </div>
         </div>
 
-        <Separator />
+        <Separator className="border-slate-200 dark:border-slate-700/50" />
 
-        <DialogFooter className="flex justify-between p-3">
-          <Button variant="outline" size="sm" asChild className="h-8">
+        <DialogFooter className="flex justify-between p-3 bg-slate-50/80 dark:bg-slate-800/30">
+          <Button
+            variant="outline"
+            size="sm"
+            asChild
+            className="h-8 border-purple-300 dark:border-purple-700 hover:bg-purple-50 dark:hover:bg-purple-900/20 hover:border-purple-400 dark:hover:border-purple-600 text-purple-700 dark:text-purple-300"
+          >
             <a
               href={project.githubUrl}
               target="_blank"
@@ -147,7 +161,10 @@ export function LiveDemoButton({ project }: LiveDemoButtonProps) {
             </a>
           </Button>
           <DialogTrigger asChild>
-            <Button size="sm" className="h-8">
+            <Button
+              size="sm"
+              className="h-8 bg-purple-600 hover:bg-purple-700 dark:bg-purple-700 dark:hover:bg-purple-600"
+            >
               Got it
             </Button>
           </DialogTrigger>

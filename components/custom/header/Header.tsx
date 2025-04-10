@@ -1,72 +1,37 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toogle";
-import { FaGithub } from "react-icons/fa";
-import { FileText } from "lucide-react";
-import { MdContactPage } from "react-icons/md";
+import { ColoredButton } from "@/components/ui/colored-button";
+import {
+  HEADER_LEFT_NAV,
+  HEADER_RIGHT_NAV,
+} from "@/components/custom/header/lib/constants";
+
 export function Header() {
   return (
     <header className="flex items-center justify-between py-3 sm:px-6 md:px-8">
       <div className="space-x-4">
-        <Button
-          variant="outline"
-          asChild
-          className="border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-500 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 shadow-sm"
-        >
-          <a
-            href="https://github.com/devharshthakur"
-            className="flex items-center gap-2"
-          >
-            <FaGithub className="h-5 w-5 text-slate-600 dark:text-slate-400" />
-            @devharshthakur
-          </a>
-        </Button>
-        <Button
-          variant="outline"
-          asChild
-          className="border-orange-300 hover:border-orange-500 dark:border-orange-700 hover:text-orange-700 dark:hover:text-orange-300 hover:bg-orange-100/50 dark:hover:bg-orange-900/30"
-        >
-          <Link
-            href="/contact"
-            className="flex items-center gap-2"
-            prefetch={true}
-          >
-            <MdContactPage className="h-7 w-7 text-orange-600 dark:text-orange-400" />
-            Contact Me
-          </Link>
-        </Button>
+        {HEADER_LEFT_NAV.map((item) => (
+          <ColoredButton
+            key={item.href}
+            href={item.href}
+            label={item.label}
+            icon={item.icon}
+            colorScheme={item.colorScheme}
+            variant="outline"
+            isExternal={item.isExternal}
+          />
+        ))}
       </div>
       <div className="flex items-center gap-4">
-        <Button
-          variant="default"
-          asChild
-          className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600"
-        >
-          <Link href="/about" className="text-sm font-medium" prefetch={true}>
-            About Me
-          </Link>
-        </Button>
-        <Button
-          variant="outline"
-          className="border-indigo-300 hover:border-indigo-500 dark:border-indigo-700 hover:text-indigo-700 dark:hover:text-indigo-300 hover:bg-indigo-100/50 dark:hover:bg-indigo-900/30"
-        >
-          <Link href="/blogs" prefetch={true}>
-            Blogs
-          </Link>
-        </Button>
-        <Button
-          variant="outline"
-          className="border-purple-300 hover:border-purple-500 dark:border-purple-700 hover:text-purple-700 dark:hover:text-purple-300 hover:bg-purple-100/50 dark:hover:bg-purple-900/30"
-        >
-          <Link
-            href="/cv"
-            className="flex items-center gap-2 text-sm font-medium"
-            prefetch={true}
-          >
-            <FileText className="h-5 w-5 text-purple-600 dark:text-purple-400" />
-            CV
-          </Link>
-        </Button>
+        {HEADER_RIGHT_NAV.map((item) => (
+          <ColoredButton
+            key={item.href}
+            href={item.href}
+            label={item.label}
+            icon={item.icon}
+            colorScheme={item.colorScheme}
+            variant={item.variant || "outline"}
+          />
+        ))}
         <ModeToggle />
       </div>
     </header>
