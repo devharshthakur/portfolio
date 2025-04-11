@@ -10,20 +10,17 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Icons } from "@/data/icons/icon.export";
+import { Icons } from "@/components/custom/home/skills-section/utils/icon.export";
 import Link from "next/link";
 import { FaNpm } from "react-icons/fa";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Package, Tag } from "lucide-react";
+import { Package as PackageType } from "../data/packages";
 
-interface PackageCardProps {
-  name: string;
-  description: string;
-  githubUrl: string;
-  npmUrl: string;
-  downloads?: string;
-  version?: string;
+interface PackageCardProps
+  extends Omit<PackageType, "longDescription" | "tags"> {
+  // Props come from PackageType with omitted properties
 }
 
 export function PackageCard({

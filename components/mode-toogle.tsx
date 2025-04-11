@@ -7,7 +7,12 @@ import { COLOR_SCHEMES } from "@/components/custom/header/lib/constants";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
-export function ModeToggle() {
+interface ModeToggleProps {
+  className?: string;
+  iconClassName?: string;
+}
+
+export function ModeToggle({ className, iconClassName }: ModeToggleProps) {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
@@ -27,6 +32,12 @@ export function ModeToggle() {
   const buttonClasses = cn(
     "border-teal-300 dark:border-teal-700",
     colorScheme.hover,
+    className,
+  );
+
+  const iconClasses = cn(
+    "h-[1.2rem] w-[1.2rem] transition-all",
+    iconClassName || colorScheme.icon,
   );
 
   const IconComponent = mounted && resolvedTheme === "light" ? Sun : Moon;
@@ -38,9 +49,7 @@ export function ModeToggle() {
       onClick={mounted ? toggleTheme : undefined}
       className={buttonClasses}
     >
-      <IconComponent
-        className={cn("h-[1.2rem] w-[1.2rem] transition-all", colorScheme.icon)}
-      />
+      <IconComponent className={iconClasses} />
       <span className="sr-only">Toggle theme</span>
     </Button>
   );

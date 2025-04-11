@@ -1,3 +1,17 @@
+/**
+ * Header component that renders the navigation bar for the application.
+ * It includes left and right navigation buttons, as well as a mode toggle
+ * for switching between light and dark themes.
+ *
+ * The left navigation buttons are defined in the `HEADER_LEFT_NAV` constant,
+ * while the right navigation buttons are defined in the `HEADER_RIGHT_NAV` constant.
+ *
+ * Each button is rendered using the `ColoredButton` component, which accepts
+ * properties such as `href`, `label`, `icon`, `colorScheme`, `variant`, and
+ * `isExternal` to customize its appearance and behavior.
+ *
+ * @returns {JSX.Element} The rendered header component.
+ */
 import { ModeToggle } from "@/components/mode-toogle";
 import { ColoredButton } from "@/components/ui/colored-button";
 import {

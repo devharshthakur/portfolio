@@ -1,51 +1,52 @@
-"use client";
-import { Button } from "@/components/ui/button";
 import {
-  Download,
-  Mail,
   Phone,
-  Link as LinkIcon,
   GraduationCap,
-  Package,
   User,
-  ExternalLink,
-  Calendar,
-  MapPin,
-  Sparkles,
   FileText,
   Briefcase,
+  Home,
 } from "lucide-react";
-import { ModeToggle } from "@/components/mode-toogle";
-import { saveAs } from "file-saver";
-import Link from "next/link";
 import { FaTools, FaProjectDiagram, FaGithub } from "react-icons/fa";
 import { SiNpm } from "react-icons/si";
-import projects from "@/data/projects.data";
-import packages from "@/data/packages.data";
-import { skills } from "./data";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
-
-// Import custom components
+import projects from "@/components/custom/home/project-section/data/projects.data";
+import packages from "@/components/custom/home/package-section/data/packages";
+import { skills } from "./data/cv.data";
+import { Card, CardContent } from "@/components/ui/card";
+import { Table, TableBody } from "@/components/ui/table";
 import { SectionTitle } from "./components/SectionTitle";
-import { ProjectTableRow } from "./components/helper/ProjectTableRow";
-import { SkillsTableRow } from "./components/helper/SkillsTableRow";
-import { LanguageTableRow } from "./components/helper/LanguageTableRow";
-import { AvailabilityBadge } from "./components/helper/AvailabilityBadge";
-import { EducationEntry } from "./components/helper/EducationEntry";
+import { ProjectTableRow } from "./components/util/ProjectTableRow";
+import { SkillsTableRow } from "./components/util/SkillsTableRow";
+import { LanguageTableRow } from "./components/util/LanguageTableRow";
+import { AvailabilityBadge } from "./components/util/AvailabilityBadge";
+import { EducationEntry } from "./components/util/EducationEntry";
 import { ProfileSection } from "./components/ProfileSection";
 import { ContactInfo } from "./components/ContactInfo";
 import { GitHubLink } from "./components/GitHubLink";
-import { LearningBadge } from "./components/helper/LearningBadge";
-import { profileBulletPoints } from "./data";
+import { LearningBadge } from "./components/util/LearningBadge";
+import { profileBulletPoints } from "./data/cv.data";
+import { DownloadButton } from "./components/util/DownloadButton";
+import { ModeToggle } from "@/components/mode-toogle";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function CVPage() {
-  const downloadCV = () => {
-    saveAs("/cv.pdf", "harsh-thakur-cv.pdf");
-  };
-
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground relative">
+      {/* Home Button */}
+      <div className="absolute top-6 left-6">
+        <Button
+          asChild
+          variant="outline"
+          size="icon"
+          className="border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800"
+        >
+          <Link href="/">
+            <Home className="h-[1.2rem] w-[1.2rem] text-slate-700 dark:text-slate-300" />
+            <span className="sr-only">Go to home</span>
+          </Link>
+        </Button>
+      </div>
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12 max-w-6xl">
         {/* Header Section */}
         <header className="flex justify-between items-center mb-10 md:mb-12 border-b border-border pb-5">
@@ -67,13 +68,7 @@ export default function CVPage() {
           </div>
           <div className="flex items-center gap-4">
             <ModeToggle />
-            <Button
-              onClick={downloadCV}
-              className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 dark:bg-purple-700 dark:hover:bg-purple-600"
-            >
-              <Download size={16} />
-              Download CV
-            </Button>
+            <DownloadButton />
           </div>
         </header>
         {/* Main section */}

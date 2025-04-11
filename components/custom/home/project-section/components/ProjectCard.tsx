@@ -5,7 +5,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Icons } from "@/data/icons/icon.export";
+import { Icons } from "@/components/custom/home/skills-section/utils/icon.export";
 
 interface ProjectCardProps {
   title: string;
@@ -40,14 +40,14 @@ export function ProjectCard({
   const isComingSoon = liveDemoUrl === "#";
 
   return (
-    <Card className="flex h-full max-h-[24rem] w-full flex-col border-2 border-slate-300 dark:border-slate-700/60 bg-card overflow-hidden transition-all hover:border-slate-500 hover:shadow-md dark:hover:border-slate-500">
-      <div className="flex items-center justify-between border-b bg-slate-100/50 dark:bg-slate-800/30 px-4 py-2.5">
+    <Card className="flex h-full max-h-[24rem] w-full flex-col border border-emerald-200/60 dark:border-emerald-800/60 bg-white/70 dark:bg-slate-900/70 overflow-hidden transition-all hover:border-emerald-300 hover:shadow-md dark:hover:border-emerald-700/60 backdrop-blur-sm">
+      <div className="flex items-center justify-between border-b border-emerald-200/40 dark:border-emerald-800/40 bg-emerald-50/50 dark:bg-emerald-900/10 px-4 py-2.5">
         <div className="flex-1 truncate font-mono text-base font-extrabold text-slate-700 dark:text-slate-300">
           {title}
         </div>
         <Badge
           variant="outline"
-          className="ml-auto font-mono text-xs border-slate-300 dark:border-slate-700/50 text-slate-800 dark:text-slate-300"
+          className="ml-auto font-mono text-xs border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300"
         >
           v1.0.0
         </Badge>
@@ -55,27 +55,27 @@ export function ProjectCard({
 
       <Tabs
         defaultValue="info"
-        className="flex-1 flex flex-col min-h-0 border-t border-slate-200/50 dark:border-slate-700/30"
+        className="flex-1 flex flex-col min-h-0 border-t border-emerald-200/40 dark:border-emerald-800/40"
       >
-        <TabsList className="grid w-full grid-cols-2 rounded-none bg-slate-50/80 dark:bg-slate-800/40 p-1.5 border-b border-slate-200 dark:border-slate-700/30">
+        <TabsList className="grid w-full grid-cols-2 rounded-none bg-emerald-50/80 dark:bg-emerald-900/20 p-1.5 border-b border-emerald-200/40 dark:border-emerald-800/40">
           <TabsTrigger
             value="info"
-            className="font-mono text-xs border border-transparent data-[state=active]:border-slate-400/30 data-[state=active]:bg-background dark:data-[state=active]:bg-background/10 data-[state=active]:text-slate-700 dark:data-[state=active]:text-slate-300 data-[state=active]:shadow-sm transition-all duration-300 hover:bg-background/80 hover:text-slate-600/80"
+            className="font-mono text-xs border border-transparent data-[state=active]:border-emerald-300/40 data-[state=active]:bg-white/90 dark:data-[state=active]:bg-slate-900/40 data-[state=active]:text-emerald-700 dark:data-[state=active]:text-emerald-400 data-[state=active]:shadow-sm transition-all duration-300 hover:bg-white/70 dark:hover:bg-slate-900/30 hover:text-emerald-600 dark:hover:text-emerald-300"
           >
             Info
           </TabsTrigger>
           <TabsTrigger
             value="stats"
-            className="font-mono text-xs border border-transparent data-[state=active]:border-slate-400/30 data-[state=active]:bg-background dark:data-[state=active]:bg-background/10 data-[state=active]:text-slate-700 dark:data-[state=active]:text-slate-300 data-[state=active]:shadow-sm transition-all duration-300 hover:bg-background/80 hover:text-slate-600/80"
+            className="font-mono text-xs border border-transparent data-[state=active]:border-emerald-300/40 data-[state=active]:bg-white/90 dark:data-[state=active]:bg-slate-900/40 data-[state=active]:text-emerald-700 dark:data-[state=active]:text-emerald-400 data-[state=active]:shadow-sm transition-all duration-300 hover:bg-white/70 dark:hover:bg-slate-900/30 hover:text-emerald-600 dark:hover:text-emerald-300"
           >
             Stats
           </TabsTrigger>
         </TabsList>
 
-        <CardContent className="p-0 my-0 flex-1 overflow-y-auto bg-background dark:bg-background/5">
+        <CardContent className="p-0 my-0 flex-1 overflow-y-auto bg-white/70 dark:bg-slate-900/70">
           <TabsContent
             value="info"
-            className="mt-0 animate-in border-0 p-4 duration-300 fade-in-50 h-full bg-card dark:bg-transparent"
+            className="mt-0 animate-in border-0 p-4 duration-300 fade-in-50 h-full bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm"
           >
             <h3 className="mb-2 font-mono text-base font-extrabold text-slate-700 dark:text-slate-300">
               {title}
@@ -88,7 +88,7 @@ export function ProjectCard({
                 <Badge
                   key={tech}
                   variant="secondary"
-                  className="font-mono text-xs px-2 py-0.5 bg-slate-100/80 dark:bg-slate-800/50 text-slate-700 dark:text-slate-300"
+                  className="font-mono text-xs px-2 py-0.5 bg-emerald-100 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-300 hover:bg-emerald-200 dark:hover:bg-emerald-800/60"
                 >
                   {tech}
                 </Badge>
@@ -96,7 +96,7 @@ export function ProjectCard({
               {techStack.length > 5 && (
                 <Badge
                   variant="outline"
-                  className="font-mono text-xs px-2 py-0.5 border-slate-300 dark:border-slate-700/50 text-slate-700 dark:text-slate-300"
+                  className="font-mono text-xs px-2 py-0.5 border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300"
                 >
                   +{techStack.length - 5} more
                 </Badge>
@@ -106,10 +106,10 @@ export function ProjectCard({
 
           <TabsContent
             value="stats"
-            className="mt-0 animate-in border-0 p-4 duration-300 fade-in-50 h-full bg-card dark:bg-transparent"
+            className="mt-0 animate-in border-0 p-4 duration-300 fade-in-50 h-full bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm"
           >
             <div className="grid grid-cols-2 gap-3">
-              <div className="flex flex-col items-center justify-center rounded-md bg-slate-50/80 dark:bg-slate-800/40 p-3 transition-all hover:bg-slate-100 dark:hover:bg-slate-800/60">
+              <div className="flex flex-col items-center justify-center rounded-md bg-emerald-50/80 dark:bg-emerald-900/20 p-3 transition-all hover:bg-emerald-100/80 dark:hover:bg-emerald-900/40">
                 <div className="flex items-center gap-1.5 text-yellow-500">
                   <Icons.FaStar className="h-4 w-4" />
                   <span className="font-mono text-base font-bold">
@@ -121,7 +121,7 @@ export function ProjectCard({
                 </span>
               </div>
 
-              <div className="flex flex-col items-center justify-center rounded-md bg-slate-50/80 dark:bg-slate-800/40 p-3 transition-all hover:bg-slate-100 dark:hover:bg-slate-800/60">
+              <div className="flex flex-col items-center justify-center rounded-md bg-emerald-50/80 dark:bg-emerald-900/20 p-3 transition-all hover:bg-emerald-100/80 dark:hover:bg-emerald-900/40">
                 <div className="flex items-center gap-1.5 text-blue-500">
                   <Icons.FaCodeBranch className="h-4 w-4" />
                   <span className="font-mono text-base font-bold">
@@ -133,7 +133,7 @@ export function ProjectCard({
                 </span>
               </div>
 
-              <div className="flex flex-col items-center justify-center rounded-md bg-slate-50/80 dark:bg-slate-800/40 p-3 transition-all hover:bg-slate-100 dark:hover:bg-slate-800/60">
+              <div className="flex flex-col items-center justify-center rounded-md bg-emerald-50/80 dark:bg-emerald-900/20 p-3 transition-all hover:bg-emerald-100/80 dark:hover:bg-emerald-900/40">
                 <div className="flex items-center gap-1.5 text-orange-500">
                   <Icons.FaExclamationCircle className="h-4 w-4" />
                   <span className="font-mono text-base font-bold">
@@ -145,7 +145,7 @@ export function ProjectCard({
                 </span>
               </div>
 
-              <div className="flex flex-col items-center justify-center rounded-md bg-slate-50/80 dark:bg-slate-800/40 p-3 transition-all hover:bg-slate-100 dark:hover:bg-slate-800/60">
+              <div className="flex flex-col items-center justify-center rounded-md bg-emerald-50/80 dark:bg-emerald-900/20 p-3 transition-all hover:bg-emerald-100/80 dark:hover:bg-emerald-900/40">
                 <div className="flex items-center gap-1.5 text-purple-500">
                   <Icons.FaHistory className="h-4 w-4" />
                   <span className="font-mono text-xs font-medium">
@@ -161,11 +161,11 @@ export function ProjectCard({
         </CardContent>
       </Tabs>
 
-      <CardFooter className="flex flex-col gap-2 border-t bg-slate-50/80 dark:bg-slate-800/30 p-2.5 sm:flex-row sm:gap-2.5 sm:p-3">
+      <CardFooter className="flex flex-col gap-2 border-t border-emerald-200/40 dark:border-emerald-800/40 bg-emerald-50/50 dark:bg-emerald-900/10 p-2.5 sm:flex-row sm:gap-2.5 sm:p-3">
         <Button
           variant="outline"
           size="sm"
-          className="w-full font-mono text-xs sm:text-xs bg-background/80 dark:bg-background/10 hover:bg-background dark:hover:bg-background/20 border-slate-300 dark:border-slate-700/50 hover:border-slate-500 dark:hover:border-slate-600"
+          className="w-full font-mono text-xs sm:text-xs bg-white/80 dark:bg-slate-900/40 hover:bg-white dark:hover:bg-slate-900/60 border-emerald-300 dark:border-emerald-700 hover:border-emerald-400 dark:hover:border-emerald-600"
           asChild
         >
           <Link href={githubUrl} prefetch={false}>
@@ -180,7 +180,7 @@ export function ProjectCard({
           <Button
             variant="secondary"
             size="sm"
-            className="w-full font-mono text-xs sm:text-xs bg-slate-100/80 dark:bg-slate-700/50 hover:bg-slate-200 dark:hover:bg-slate-700/70 text-slate-700 dark:text-slate-300"
+            className="w-full font-mono text-xs sm:text-xs bg-emerald-100/80 dark:bg-emerald-900/40 hover:bg-emerald-200 dark:hover:bg-emerald-800/60 text-emerald-800 dark:text-emerald-300"
             disabled
           >
             <Icons.FaTerminal
@@ -193,28 +193,28 @@ export function ProjectCard({
           <Button
             variant="default"
             size="sm"
-            className="w-full font-mono text-xs sm:text-xs bg-slate-600 hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600"
+            className="w-full font-mono text-xs sm:text-xs bg-emerald-100/80 dark:bg-emerald-900/40 hover:bg-emerald-200 dark:hover:bg-emerald-800/60 text-emerald-800 dark:text-emerald-300"
             onClick={handleLocalDemo}
           >
             <Icons.FaTerminal
               className="mr-1 h-3 w-3 sm:mr-2 sm:h-4 sm:w-4"
               aria-hidden="true"
             />
-            <span className="flex-1">$ npm run start</span>
+            <span className="flex-1">$ npm run dev</span>
           </Button>
         ) : (
           <Button
             variant="default"
             size="sm"
-            className="w-full font-mono text-xs sm:text-xs bg-slate-600 hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600"
+            className="w-full font-mono text-xs sm:text-xs bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white"
             asChild
           >
             <Link href={liveDemoUrl} prefetch={false}>
-              <Icons.FaLink
+              <Icons.FaGlobe
                 className="mr-1 h-3 w-3 sm:mr-2 sm:h-4 sm:w-4"
                 aria-hidden="true"
               />
-              <span className="flex-1">View Live</span>
+              <span className="flex-1">Live Demo</span>
             </Link>
           </Button>
         )}

@@ -1,13 +1,10 @@
 import Image from "next/image";
-import skills from "@/data/skills.data";
 import { Badge } from "@/components/ui/badge";
-import { SkillItem } from "./SkillItem";
-import { Layers, Briefcase, User } from "lucide-react";
-import { AvailabilityBadge } from "./AvailabilityBadge";
-import { SectionTitle } from "@/components/ui/section-title";
+import { Layers } from "lucide-react";
+import { AvailabilityBadge } from "./utils/AvailabilityBadge";
 import { Card } from "@/components/ui/card";
 
-export function ProfileSection() {
+export function Profile() {
   return (
     <section className="space-y-8" aria-labelledby="profile-heading">
       <Card className="border-2 border-slate-500 dark:border-slate-600 p-4 shadow-sm bg-slate-100/50 dark:bg-slate-800/30">
@@ -49,27 +46,6 @@ export function ProfileSection() {
               Building efficient, scalable and maintainable web applications
               with modern technologies.
             </p>
-          </div>
-        </div>
-      </Card>
-
-      <Card className="border-2 border-indigo-400 dark:border-indigo-600 p-4 shadow-sm bg-indigo-50/30 dark:bg-indigo-950/10">
-        <div className="space-y-4">
-          <SectionTitle
-            icon={
-              <Briefcase
-                size={20}
-                className="text-indigo-600 dark:text-indigo-400"
-              />
-            }
-          >
-            Skills & Technologies
-          </SectionTitle>
-
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-            {skills.map((skill, index) => (
-              <SkillItem key={index} skill={skill} />
-            ))}
           </div>
         </div>
       </Card>

@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
-import UpdatePopup from "@/components/update/update-popup";
+import UpdatePopup from "@/components/custom/update/update-popup";
 
 interface ProvidersProps {
   children: React.ReactNode;
