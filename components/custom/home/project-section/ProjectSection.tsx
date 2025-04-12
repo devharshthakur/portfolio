@@ -6,14 +6,15 @@ import { SectionTitle } from "@/components/ui/section-title";
 import { Code2 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export function Projects() {
   const topProjects = projects.slice(0, 4);
 
   return (
-    <Card className="border-2 border-emerald-300/60 dark:border-emerald-600/60 p-4 shadow-md bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm">
+    <Card className="border-2 border-emerald-300/60 dark:border-emerald-600/60 p-4 shadow-md bg-emerald-50/50 dark:bg-emerald-900/20 backdrop-blur-sm">
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:justify-between">
           <SectionTitle
             icon={
               <Code2
@@ -21,16 +22,18 @@ export function Projects() {
                 className="text-emerald-700 dark:text-emerald-400"
               />
             }
+            backgroundClassName="bg-emerald-100/80 dark:bg-emerald-900/30"
+            borderClassName="border-emerald-500 dark:border-emerald-600"
           >
             Projects
           </SectionTitle>
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <NoteDialog />
             <Button
               asChild
               variant="outline"
               size="sm"
-              className="text-emerald-700 hover:text-emerald-800 border-emerald-300 hover:border-emerald-400 dark:text-emerald-400 dark:hover:text-emerald-300 dark:border-emerald-700 dark:hover:border-emerald-600 hover:bg-emerald-100 dark:hover:bg-emerald-900/30"
+              className="text-xs sm:text-sm text-emerald-700 hover:text-emerald-800 border-emerald-300 hover:border-emerald-400 dark:text-emerald-400 dark:hover:text-emerald-300 dark:border-emerald-700 dark:hover:border-emerald-600 hover:bg-emerald-100 dark:hover:bg-emerald-900/30"
             >
               <Link href="/projects">View All Projects</Link>
             </Button>
