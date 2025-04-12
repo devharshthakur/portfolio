@@ -71,14 +71,15 @@ export function ColoredButton({
     scheme.hover,
     scheme.text,
     scheme.shadow,
+    "text-sm whitespace-nowrap sm:text-base",
     className,
   );
 
   // Create the content with icon if present
   const content = (
     <>
-      {Icon && <Icon className={cn("h-5 w-5", scheme.icon)} />}
-      {label}
+      {Icon && <Icon className={cn("h-4 w-4 sm:h-5 sm:w-5", scheme.icon)} />}
+      <span className="truncate">{label}</span>
     </>
   );
 
@@ -95,7 +96,7 @@ export function ColoredButton({
   if (isExternal) {
     return (
       <Button variant={variant} asChild className={buttonClasses} {...props}>
-        <a href={href} className="flex items-center gap-2">
+        <a href={href} className="flex items-center gap-1.5 sm:gap-2">
           {content}
         </a>
       </Button>
@@ -105,7 +106,11 @@ export function ColoredButton({
   // Internal Next.js link
   return (
     <Button variant={variant} asChild className={buttonClasses} {...props}>
-      <Link href={href} className="flex items-center gap-2" prefetch={true}>
+      <Link
+        href={href}
+        className="flex items-center gap-1.5 sm:gap-2"
+        prefetch={true}
+      >
         {content}
       </Link>
     </Button>

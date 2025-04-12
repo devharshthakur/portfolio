@@ -4,7 +4,7 @@
  */
 
 import { FaGithub } from "react-icons/fa";
-import { FileText } from "lucide-react";
+import { FileText, History } from "lucide-react";
 import { MdContactPage } from "react-icons/md";
 import { NavItem, ColorScheme, ColorSchemeStyles } from "../types/types";
 
@@ -17,7 +17,7 @@ export const HEADER_LEFT_NAV: NavItem[] = [
     href: "https://github.com/devharshthakur",
     label: "@devharshthakur",
     icon: FaGithub,
-    colorScheme: "slate",
+    colorScheme: "teal",
     isExternal: true,
   },
   {
@@ -49,6 +49,12 @@ export const HEADER_RIGHT_NAV: NavItem[] = [
     label: "CV",
     icon: FileText,
     colorScheme: "purple",
+  },
+  {
+    href: "/changelog",
+    label: "Changelog",
+    icon: History,
+    colorScheme: "slate",
   },
 ];
 
@@ -117,6 +123,17 @@ export const COLOR_SCHEMES: Record<ColorScheme, ColorSchemeStyles> = {
       "hover:border-purple-500 dark:hover:border-purple-500 hover:text-purple-700 dark:hover:text-purple-300 hover:bg-purple-100/50 dark:hover:bg-purple-900/30",
     text: "",
     icon: "text-purple-600 dark:text-purple-400",
+    shadow: "",
+  },
+  /**
+   * Amber color scheme for changelog
+   */
+  amber: {
+    border: "border-amber-300 dark:border-amber-700",
+    hover:
+      "hover:border-amber-500 dark:hover:border-amber-500 hover:text-amber-700 dark:hover:text-amber-300 hover:bg-amber-100/50 dark:hover:bg-amber-900/30",
+    text: "",
+    icon: "text-amber-600 dark:text-amber-400",
     shadow: "",
   },
   /**

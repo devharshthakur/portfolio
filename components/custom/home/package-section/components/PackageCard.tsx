@@ -1,5 +1,32 @@
 "use client";
 
+/**
+ * PackageCard Component
+ *
+ * This component represents a card that displays information about a package.
+ * It includes details such as the package name, description, version,
+ * download statistics, and links to the package's GitHub repository and NPM page.
+ *
+ * @component
+ * @param {Object} props - The properties for the PackageCard component.
+ * @param {string} props.name - The name of the package.
+ * @param {string} props.description - A brief description of the package.
+ * @param {string} props.githubUrl - The URL to the package's GitHub repository.
+ * @param {string} props.npmUrl - The URL to the package's NPM page.
+ * @param {number} [props.downloads] - The number of weekly downloads for the package.
+ * @param {string} [props.version] - The version of the package.
+ *
+ * @example
+ * <PackageCard
+ *   name="my-awesome-package"
+ *   description="This package does amazing things."
+ *   githubUrl="https://github.com/my-awesome-package"
+ *   npmUrl="https://www.npmjs.com/package/my-awesome-package"
+ *   downloads={150}
+ *   version="1.0.0"
+ * />
+ */
+
 import {
   Card,
   CardHeader,
@@ -10,20 +37,17 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Icons } from "@/data/icons/icon.export";
+import { Icons } from "@/components/custom/home/skills-section/utils/icon.export";
 import Link from "next/link";
 import { FaNpm } from "react-icons/fa";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Package, Tag } from "lucide-react";
+import { Package as PackageType } from "../data/packages";
 
-interface PackageCardProps {
-  name: string;
-  description: string;
-  githubUrl: string;
-  npmUrl: string;
-  downloads?: string;
-  version?: string;
+interface PackageCardProps
+  extends Omit<PackageType, "longDescription" | "tags"> {
+  // Props come from PackageType with omitted properties
 }
 
 export function PackageCard({

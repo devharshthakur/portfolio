@@ -5,13 +5,22 @@ import {
   FaCode,
   FaServer,
 } from "react-icons/fa";
-import { Mail, User, MapPin, BookOpen, Calendar, Award } from "lucide-react";
+import {
+  Mail,
+  User,
+  MapPin,
+  BookOpen,
+  Calendar,
+  Award,
+  Home,
+} from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ModeToggle } from "@/components/mode-toogle";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
@@ -19,6 +28,21 @@ export default function AboutPage() {
       {/* Theme Toggle */}
       <div className="absolute top-4 right-4 z-50">
         <ModeToggle />
+      </div>
+
+      {/* Home Button */}
+      <div className="absolute top-4 left-4 z-50">
+        <Button
+          asChild
+          variant="outline"
+          size="icon"
+          className="border-yellow-300 dark:border-yellow-700 hover:bg-yellow-100 dark:hover:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400"
+        >
+          <Link href="/">
+            <Home className="h-[1.2rem] w-[1.2rem] transition-all" />
+            <span className="sr-only">Back to home</span>
+          </Link>
+        </Button>
       </div>
 
       <div className="container mx-auto max-w-4xl px-6 py-12 md:px-8">
@@ -243,8 +267,16 @@ export default function AboutPage() {
 
         {/* Skills Section */}
         <section>
-          <div className="flex items-center gap-2 mb-6">
-            <h2 className="text-2xl font-bold">Technical Skills</h2>
+          <div className="flex items-center mb-6">
+            <h2 className="text-2xl font-bold mr-4">Technical Skills</h2>
+            <Button
+              asChild
+              variant="outline"
+              size="sm"
+              className="mr-4 text-green-600 hover:text-green-700 border-green-600 hover:border-green-700 dark:text-green-400 dark:hover:text-green-300 dark:border-green-600 dark:hover:border-green-500"
+            >
+              <Link href="/skills">View All Skills</Link>
+            </Button>
             <div className="h-1.5 flex-1 bg-slate-400/30 dark:bg-slate-600/30 rounded-full"></div>
           </div>
 

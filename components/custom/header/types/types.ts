@@ -42,7 +42,8 @@ export type ColorScheme =
   | "blue"
   | "indigo"
   | "purple"
-  | "teal";
+  | "teal"
+  | "amber";
 
 /**
  * Defines the CSS classes for each aspect of a color scheme

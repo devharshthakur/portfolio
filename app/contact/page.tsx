@@ -1,102 +1,34 @@
-"use client";
-
 import type React from "react";
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import {
-  User,
-  Mail,
-  MessageSquare,
-  Send,
-  CheckCircle2,
-  Loader2,
-  MapPin,
-  Briefcase,
-  GraduationCap,
-} from "lucide-react";
+import { MapPin, Briefcase, GraduationCap, Mail, Home } from "lucide-react";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import axios from "axios";
 import { socialLinks } from "./data";
 import { SocialIcon } from "./components/SocialIcon";
 import { ModeToggle } from "@/components/mode-toogle";
+import { ContactForm } from "./components/ContactForm";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
-type FormData = {
-  name: string;
-  email: string;
-  message: string;
-};
-
-export default function ContactPage() {
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
-  const [isAlertOpen, setIsAlertOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("loading");
-
-    try {
-      const response = await axios.post("/api/contact", formData);
-
-      if (response.status === 200) {
-        setStatus("success");
-        setFormData({ name: "", email: "", message: "" });
-        setIsAlertOpen(true);
-      } else {
-        setStatus("error");
-      }
-    } catch (error) {
-      console.error(error);
-      setStatus("error");
-    }
-  };
-
+export default function ContactPage(): React.ReactElement {
   return (
     <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
       {/* Theme Toggle */}
       <div className="absolute top-4 right-4 z-50">
         <ModeToggle />
+      </div>
+
+      {/* Home Button */}
+      <div className="absolute top-4 left-4 z-50">
+        <Button
+          asChild
+          variant="outline"
+          size="icon"
+          className="border-yellow-300 dark:border-yellow-700 hover:bg-yellow-100 dark:hover:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400"
+        >
+          <Link href="/">
+            <Home className="h-[1.2rem] w-[1.2rem] transition-all" />
+            <span className="sr-only">Back to home</span>
+          </Link>
+        </Button>
       </div>
 
       {/* Hero Section */}
@@ -105,44 +37,10 @@ export default function ContactPage() {
 
         <div className="container relative mx-auto px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
-              <PopoverTrigger asChild>
-                <div className="inline-flex items-center gap-2 rounded-lg bg-green-100 dark:bg-green-900/40 px-4 py-2 text-sm font-medium text-green-800 dark:text-green-200 mb-6 animate-fade-in cursor-pointer hover:bg-green-200 dark:hover:bg-green-800/60 transition-all border border-green-300 dark:border-green-700/60">
-                  <Briefcase className="h-4 w-4" />
-                  <span>Available for Opportunities</span>
-                </div>
-              </PopoverTrigger>
-              <PopoverContent className="w-64 p-0 bg-white border-green-200 dark:border-green-700 dark:bg-zinc-800 shadow-lg animate-in fade-in-0 zoom-in-95">
-                <div className="p-4">
-                  <h4 className="font-medium text-sm text-zinc-800 dark:text-zinc-200 border-b border-green-200 dark:border-green-700/60 pb-2 mb-3">
-                    Available for opportunities
-                  </h4>
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3 p-2 rounded-md bg-green-50 dark:bg-green-900/30">
-                      <div className="h-8 w-8 rounded-full bg-green-100 dark:bg-green-800/60 flex items-center justify-center">
-                        <Briefcase className="h-4 w-4 text-green-700 dark:text-green-300" />
-                      </div>
-                      <span className="text-sm">Full-time Roles</span>
-                    </div>
-                    <div className="flex items-center gap-3 p-2 rounded-md bg-green-50 dark:bg-green-900/30">
-                      <div className="h-8 w-8 rounded-full bg-green-100 dark:bg-green-800/60 flex items-center justify-center">
-                        <GraduationCap className="h-4 w-4 text-green-700 dark:text-green-300" />
-                      </div>
-                      <span className="text-sm">Paid Internships</span>
-                    </div>
-                    <div className="flex items-center gap-3 p-2 rounded-md bg-green-50 dark:bg-green-900/30">
-                      <div className="h-8 w-8 rounded-full bg-green-100 dark:bg-green-800/60 flex items-center justify-center">
-                        <MapPin className="h-4 w-4 text-green-700 dark:text-green-300" />
-                      </div>
-                      <span className="text-sm">New Opportunities</span>
-                    </div>
-                  </div>
-                  <div className="mt-3 pt-2 border-t border-green-200 dark:border-green-700/60 text-xs text-muted-foreground text-center">
-                    Expected graduation: June 2025
-                  </div>
-                </div>
-              </PopoverContent>
-            </Popover>
+            <div className="inline-flex items-center gap-2 rounded-lg bg-green-100 dark:bg-green-900/40 px-4 py-2 text-sm font-medium text-green-800 dark:text-green-200 mb-6 animate-fade-in cursor-pointer hover:bg-green-200 dark:hover:bg-green-800/60 transition-all border border-green-300 dark:border-green-700/60">
+              <Briefcase className="h-4 w-4" />
+              <span>Available for Opportunities</span>
+            </div>
 
             <h1 className="bg-gradient-to-r from-slate-800 to-slate-600 dark:from-slate-100 dark:to-slate-300 bg-clip-text text-transparent text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl animate-fade-in-up font-mono relative">
               Eager to Learn & Gain Experience
@@ -322,168 +220,11 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Form Section */}
-            <div className="flex flex-col justify-center p-8 md:p-10 bg-gray-50 dark:bg-zinc-800/50 rounded-r-2xl shadow-sm border-2 border-yellow-300 dark:border-yellow-700/60">
-              <div className="mb-8">
-                <h3 className="text-2xl font-bold font-mono text-zinc-800 dark:text-zinc-100">
-                  Send a Message
-                </h3>
-                <p className="text-zinc-600 dark:text-zinc-400">
-                  Please provide details about your job opportunity or
-                  internship position.
-                </p>
-              </div>
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-10">
-                  <div>
-                    <div className="flex items-center space-x-2">
-                      <User
-                        className="h-5 w-5 text-slate-600 dark:text-slate-400"
-                        aria-hidden="true"
-                      />
-                      <Label
-                        htmlFor="name"
-                        className="text-zinc-800 dark:text-zinc-200"
-                      >
-                        Name
-                      </Label>
-                    </div>
-                    <div className="mt-1.5">
-                      <Input
-                        id="name"
-                        name="name"
-                        placeholder="Your name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="bg-white dark:bg-zinc-900 border-zinc-300 dark:border-zinc-700 focus:border-slate-500 focus:ring-slate-500/20 transition-colors"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="flex items-center space-x-2">
-                      <Mail
-                        className="h-5 w-5 text-slate-600 dark:text-slate-400"
-                        aria-hidden="true"
-                      />
-                      <Label
-                        htmlFor="email"
-                        className="text-zinc-800 dark:text-zinc-200"
-                      >
-                        Email
-                      </Label>
-                    </div>
-                    <div className="mt-1.5">
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="your.email@example.com"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="bg-white dark:bg-zinc-900 border-zinc-300 dark:border-zinc-700 focus:border-slate-500 focus:ring-slate-500/20 transition-colors"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="flex items-center space-x-2">
-                      <MessageSquare
-                        className="h-5 w-5 text-slate-600 dark:text-slate-400"
-                        aria-hidden="true"
-                      />
-                      <Label
-                        htmlFor="message"
-                        className="text-zinc-800 dark:text-zinc-200"
-                      >
-                        Message
-                      </Label>
-                    </div>
-                    <div className="mt-1.5">
-                      <Textarea
-                        id="message"
-                        name="message"
-                        placeholder="Your message here..."
-                        rows={5}
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                        className="bg-white dark:bg-zinc-900 border-zinc-300 dark:border-zinc-700 focus:border-slate-500 focus:ring-slate-500/20 transition-colors"
-                      />
-                    </div>
-                  </div>
-
-                  <Button
-                    type="submit"
-                    className="w-full bg-slate-800 hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors"
-                    disabled={status === "loading"}
-                  >
-                    {status === "loading" ? (
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    ) : (
-                      <Send className="mr-2 h-4 w-4" />
-                    )}
-                    Send Message
-                  </Button>
-                </div>
-
-                <div className="mt-4 text-center">
-                  <p className="text-xs text-muted-foreground">
-                    Your information is securely processed and never shared with
-                    third parties.
-                  </p>
-                </div>
-              </form>
-            </div>
+            {/* the ContactForm component */}
+            <ContactForm />
           </div>
         </div>
       </section>
-
-      {/* Success Dialog */}
-      <AlertDialog open={isAlertOpen} onOpenChange={setIsAlertOpen}>
-        <AlertDialogContent className="max-w-md bg-card border-border">
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-            <CheckCircle2 className="h-8 w-8 text-primary" />
-          </div>
-          <AlertDialogHeader className="mt-4 text-center">
-            <AlertDialogTitle className="text-2xl font-bold">
-              Message Sent Successfully!
-            </AlertDialogTitle>
-            <AlertDialogDescription className="mt-2 text-base">
-              Thank you for reaching out. I&apos;ve received your message and
-              will get back to you as soon as possible.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter className="flex justify-center">
-            <AlertDialogAction
-              className="px-8 py-2.5 rounded-lg"
-              onClick={() => setIsAlertOpen(false)}
-            >
-              Close
-            </AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
-
-      {/* Error Alert */}
-      {status === "error" && (
-        <Alert
-          variant="destructive"
-          className="fixed bottom-4 right-4 max-w-md animate-in fade-in slide-in-from-bottom-5"
-        >
-          <AlertTitle className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-destructive-foreground"></span>
-            Error Sending Message
-          </AlertTitle>
-          <AlertDescription>
-            There was a problem sending your message. Please try again or
-            contact me directly via email.
-          </AlertDescription>
-        </Alert>
-      )}
     </main>
   );
 }

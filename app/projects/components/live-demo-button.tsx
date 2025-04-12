@@ -7,15 +7,7 @@
  * @param {Project} props.project - The project object containing details such as live demo URL, development status, and tags.
  */
 "use client";
-
-import {
-  ExternalLink,
-  Github,
-  MonitorSmartphone,
-  Terminal,
-  Clock,
-  Calendar,
-} from "lucide-react";
+import { ExternalLink, Github, Terminal, Clock, Calendar } from "lucide-react";
 import { BsCpuFill } from "react-icons/bs";
 import { Button } from "@/components/ui/button";
 import {
@@ -26,10 +18,9 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import type { Project } from "@/data/projects.data";
+import type { Project } from "@/components/custom/home/project-section/data/projects.data";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import Link from "next/link";
 
 interface LiveDemoButtonProps {
   project: Project;
