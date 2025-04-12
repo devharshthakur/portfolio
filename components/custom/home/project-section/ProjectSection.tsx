@@ -3,7 +3,7 @@ import projects from "./data/projects.data";
 import { ProjectCard } from "./components/ProjectCard";
 import { Card } from "@/components/ui/card";
 import { SectionTitle } from "@/components/ui/section-title";
-import { Code2 } from "lucide-react";
+import { Hammer, Construction, Building2 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -17,13 +17,13 @@ export function Projects() {
         <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:justify-between">
           <SectionTitle
             icon={
-              <Code2
+              <Building2
                 size={20}
                 className="text-emerald-700 dark:text-emerald-400"
               />
             }
-            backgroundClassName="bg-emerald-100/80 dark:bg-emerald-900/30"
-            borderClassName="border-emerald-500 dark:border-emerald-600"
+            backgroundClassName="bg-transparent"
+            borderClassName="border-transparent"
           >
             Projects
           </SectionTitle>

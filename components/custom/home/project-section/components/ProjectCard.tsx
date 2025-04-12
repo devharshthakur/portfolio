@@ -37,6 +37,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Icons } from "@/components/custom/home/skills-section/utils/icon.export";
+import { TechBadge } from "./TechBadge";
 
 interface ProjectCardProps {
   title: string;
@@ -116,18 +117,12 @@ export function ProjectCard({
             </p>
             <div className="flex flex-wrap gap-1 sm:gap-1.5">
               {techStack.slice(0, 5).map((tech) => (
-                <Badge
-                  key={tech}
-                  variant="secondary"
-                  className="font-mono text-[10px] xs:text-xs px-1.5 py-0.5 sm:px-2 bg-emerald-100 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-300 hover:bg-emerald-200 dark:hover:bg-emerald-800/60"
-                >
-                  {tech}
-                </Badge>
+                <TechBadge key={tech} tech={tech} />
               ))}
               {techStack.length > 5 && (
                 <Badge
                   variant="outline"
-                  className="font-mono text-[10px] xs:text-xs px-1.5 py-0.5 sm:px-2 border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300"
+                  className="font-mono text-[10px] xs:text-xs px-1.5 py-0.5 sm:px-2 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300"
                 >
                   +{techStack.length - 5} more
                 </Badge>

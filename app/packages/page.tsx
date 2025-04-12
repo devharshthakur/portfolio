@@ -52,7 +52,7 @@ export default function DevelopmentPage() {
 
           <h1 className="text-3xl md:text-5xl font-bold text-slate-800 dark:text-slate-200 mb-6">
             <span className="relative">
-              Packages Coming Soon
+              Detailed Packages Coming Soon
               <span className="absolute -bottom-1 left-0 right-0 h-1 bg-purple-300 dark:bg-purple-700 opacity-50"></span>
             </span>
           </h1>

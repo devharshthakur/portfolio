@@ -55,7 +55,7 @@ export default function ChangelogPage() {
 
           <h1 className="text-3xl md:text-5xl font-bold text-slate-800 dark:text-slate-200 mb-6">
             <span className="relative">
-              Changelog Coming Soon
+              Changelog Page Coming Soon
               <span className="absolute -bottom-1 left-0 right-0 h-1 bg-[#404040]/50 dark:bg-[#404040]/60 opacity-50"></span>
             </span>
           </h1>

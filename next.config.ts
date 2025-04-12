@@ -2,8 +2,19 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["upf2833czf.ufs.sh", "github.com", "raw.githubusercontent.com"],
     remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "upf2833czf.ufs.sh",
+      },
+      {
+        protocol: "https",
+        hostname: "github.com",
+      },
+      {
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
+      },
       {
         protocol: "https",
         hostname: "**",
