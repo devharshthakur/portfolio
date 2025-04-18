@@ -27,6 +27,13 @@ This portfolio showcases my work as a developer, highlighting my skills, project
 - **BlockPredict**: ML-based prediction simulation using Blockchain.
 - **Orrbit**: A web-based PDF compression tool with client-side processing.
 
+### 📦 Open Source NPM Packages
+
+I've created and published several npm packages that are featured in the packages section:
+
+- **ht-create-tsapp**: A CLI tool for creating TypeScript projects with pre-defined structure.
+- **trycatch-lib**: A zero-dependency TypeScript utility for tuple-based error handling.
+
 ## 🛠️ Tech Stack
 
 | Technology | Purpose |
@@ -43,242 +50,6 @@ This portfolio showcases my work as a developer, highlighting my skills, project
 | [next-themes](https://github.com/pacocoursey/next-themes) | Theme management |
 
 ## 📂 Project Structure
-
-<div style="background-color: #282c34; border-radius: 8px; padding: 20px; font-family: 'Consolas', 'Courier New', monospace; line-height: 1.6; margin-bottom: 20px;">
-  <div style="color: #e6e6e6; font-weight: bold; margin-bottom: 10px;">📁 portfolio/</div>
-  
-  <div style="margin-left: 20px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📁</span>
-    <span style="color: #c678dd; font-weight: bold;">app/</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Next.js app directory with routes</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📁</span>
-    <span style="color: #e5c07b;">about/</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">About page</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📁</span>
-    <span style="color: #e5c07b;">api/</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">API routes</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📁</span>
-    <span style="color: #e5c07b;">blogs/</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Blogs section</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📁</span>
-    <span style="color: #e5c07b;">changelog/</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Changelog section</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📁</span>
-    <span style="color: #e5c07b;">contact/</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Contact page</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📁</span>
-    <span style="color: #e5c07b;">cv/</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">CV/Resume page</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📁</span>
-    <span style="color: #e5c07b;">packages/</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Packages section</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📁</span>
-    <span style="color: #e5c07b;">projects/</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Projects section</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📁</span>
-    <span style="color: #e5c07b;">skills/</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Skills section</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📄</span>
-    <span style="color: #56b6c2;">globals.css</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Global CSS styles</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📄</span>
-    <span style="color: #56b6c2;">layout.tsx</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Root layout component</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📄</span>
-    <span style="color: #56b6c2;">page.tsx</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Home page</span>
-  </div>
-  
-  <div style="margin-left: 20px; display: flex; align-items: baseline; margin-top: 15px;">
-    <span style="color: #61dafb; margin-right: 10px;">📁</span>
-    <span style="color: #c678dd; font-weight: bold;">components/</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Reusable UI components</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📁</span>
-    <span style="color: #e5c07b;">custom/</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Custom components</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📁</span>
-    <span style="color: #e5c07b;">ui/</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">UI components</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📄</span>
-    <span style="color: #56b6c2;">mode-toogle.tsx</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Theme toggle component</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📄</span>
-    <span style="color: #56b6c2;">providers.tsx</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">React context providers</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📄</span>
-    <span style="color: #56b6c2;">theme-provider.tsx</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Theme provider component</span>
-  </div>
-  
-  <div style="margin-left: 20px; display: flex; align-items: baseline; margin-top: 15px;">
-    <span style="color: #61dafb; margin-right: 10px;">📁</span>
-    <span style="color: #c678dd; font-weight: bold;">hooks/</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Custom React hooks</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📄</span>
-    <span style="color: #56b6c2;">use-mobile.tsx</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Mobile detection hook</span>
-  </div>
-  
-  <div style="margin-left: 20px; display: flex; align-items: baseline; margin-top: 15px;">
-    <span style="color: #61dafb; margin-right: 10px;">📁</span>
-    <span style="color: #c678dd; font-weight: bold;">lib/</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Utility functions and libraries</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📄</span>
-    <span style="color: #56b6c2;">colors.ts</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Color definitions</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📄</span>
-    <span style="color: #56b6c2;">utils.ts</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Utility functions</span>
-  </div>
-  
-  <div style="margin-left: 20px; display: flex; align-items: baseline; margin-top: 15px;">
-    <span style="color: #61dafb; margin-right: 10px;">📁</span>
-    <span style="color: #c678dd; font-weight: bold;">public/</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Static assets</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📁</span>
-    <span style="color: #e5c07b;">projects/</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Project images</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📄</span>
-    <span style="color: #56b6c2;">dev-pfp.jpeg</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Profile picture</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📄</span>
-    <span style="color: #56b6c2;">cv.pdf</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Resume/CV file</span>
-  </div>
-  
-  <div style="margin-left: 40px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📄</span>
-    <span style="color: #56b6c2;">favicon.ico</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Site favicon</span>
-  </div>
-  
-  <div style="margin-left: 20px; display: flex; align-items: baseline; margin-top: 15px;">
-    <span style="color: #61dafb; margin-right: 10px;">📄</span>
-    <span style="color: #56b6c2;">.env</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Environment variables</span>
-  </div>
-  
-  <div style="margin-left: 20px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📄</span>
-    <span style="color: #56b6c2;">.gitignore</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Git ignore file</span>
-  </div>
-  
-  <div style="margin-left: 20px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📄</span>
-    <span style="color: #56b6c2;">components.json</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Components configuration</span>
-  </div>
-  
-  <div style="margin-left: 20px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📄</span>
-    <span style="color: #56b6c2;">next.config.ts</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Next.js configuration</span>
-  </div>
-  
-  <div style="margin-left: 20px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📄</span>
-    <span style="color: #56b6c2;">package.json</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Project dependencies</span>
-  </div>
-  
-  <div style="margin-left: 20px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📄</span>
-    <span style="color: #56b6c2;">postcss.config.mjs</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">PostCSS configuration</span>
-  </div>
-  
-  <div style="margin-left: 20px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📄</span>
-    <span style="color: #56b6c2;">prettier.config.ts</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Prettier configuration</span>
-  </div>
-  
-  <div style="margin-left: 20px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📄</span>
-    <span style="color: #56b6c2;">tailwind.config.ts</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">Tailwind CSS configuration</span>
-  </div>
-  
-  <div style="margin-left: 20px; display: flex; align-items: baseline;">
-    <span style="color: #61dafb; margin-right: 10px;">📄</span>
-    <span style="color: #56b6c2;">tsconfig.json</span>
-    <span style="color: #98c379; margin-left: 10px; font-style: italic;">TypeScript configuration</span>
-  </div>
-</div>
-
-<details>
-<summary style="cursor: pointer; font-weight: bold; color: #3498db;">📋 Alternative Simple View</summary>
-
 ```
 portfolio/
 ├── app/                    # Next.js app directory with routes
@@ -289,14 +60,27 @@ portfolio/
 │   ├── contact/            # Contact page
 │   ├── cv/                 # CV/Resume page
 │   ├── packages/           # Packages section
+│   │   ├── components/     # Package-specific components
+│   │   │   ├── HeroSection.tsx     # Hero section component
+│   │   │   ├── PackageCard.tsx     # Individual package card
+│   │   │   └── PackageStats.tsx    # Package statistics component
+│   │   ├── data/           # Package data
+│   │   │   └── packages.ts  # NPM packages information
+│   │   └── page.tsx        # Main packages page
 │   ├── projects/           # Projects section
 │   ├── skills/             # Skills section
+│   │   ├── components/     # Skill-specific components
+│   │   ├── config/         # Skills configuration
+│   │   ├── data/           # Skills data
+│   │   └── page.tsx        # Main skills page
 │   ├── globals.css         # Global CSS styles
 │   ├── layout.tsx          # Root layout component
 │   └── page.tsx            # Home page
 │
 ├── components/             # Reusable UI components
 │   ├── custom/             # Custom components
+│   │   ├── home/           # Home page components
+│   │   │   └── package-section/ # Package section for home page
 │   ├── ui/                 # UI components
 │   ├── mode-toogle.tsx     # Theme toggle component
 │   ├── providers.tsx       # React context providers
@@ -325,7 +109,6 @@ portfolio/
 ├── tailwind.config.ts      # Tailwind CSS configuration
 └── tsconfig.json           # TypeScript configuration
 ```
-</details>
 
 ## ⚙️ Getting Started
 
@@ -379,10 +162,14 @@ pnpm start
 - **Responsive Design**: Optimized for devices of all sizes
 - **Dark/Light Mode**: Toggle between themes for better user experience
 - **Dynamic Project Display**: Projects displayed with detailed information
+- **Skills Showcase**: Detailed skills section with proficiency levels and experience
+- **NPM Packages Gallery**: Interactive display of published npm packages with installation commands
 - **Contact Form**: Direct messaging functionality
 - **Blog Section**: Share your thoughts and insights
 - **CV/Resume Download**: Easy access to your professional resume
 - **SEO Optimized**: Improved search engine visibility
+- **Timeline Visualization**: Visual representation of package publication and update history
+- **Copy-to-Clipboard**: One-click copying of npm installation commands
 
 ## 📫 Contact
 
