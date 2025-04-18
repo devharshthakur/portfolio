@@ -2,37 +2,19 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import projects from "@/components/custom/home/project-section/data/projects.data";
-import { Calendar, Star, GitFork, Github, Home } from "lucide-react";
+import { Building, Building2, Home, Sparkles } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
-import Image from "next/image";
-import { LiveDemoButton } from "@/app/projects/components/live-demo-button";
-import {
-  getProjectImageProps,
-  type ProjectImageProps,
-} from "@/app/projects/functions/get-image-props";
 import { NoteDialog } from "./components/dailogs/project-section-home-dailog";
-import { TechBadge } from "./components/tech-badge";
 import { ModeToggle } from "@/components/mode-toogle";
-import { getProjectUrl } from "@/app/projects/functions/get-project-url";
-import { ProjectLinkHoverIndicator } from "@/app/projects/components/util/get-project-link-icon";
+import { projectTheme } from "./config/theme";
+import { ProjectCard } from "./components/project-card";
 
 interface ProjectStats {
   stars: number;
   forks: number;
 }
-
-function formatDate(dateString: string): string {
-  return new Date(dateString).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
-
-const DEFAULT_PLACEHOLDER = "/placeholder.svg";
 
 export default function ProjectsPage() {
   const { resolvedTheme } = useTheme();
@@ -49,269 +31,171 @@ export default function ProjectsPage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen w-full bg-gradient-to-b from-background to-emerald-50/20 dark:to-emerald-950/10 overflow-hidden">
-      {/* Theme Toggle */}
-      <div className="absolute top-4 right-4 z-50">
-        <ModeToggle
-          className="border-emerald-300 dark:border-emerald-700 hover:bg-emerald-100 dark:hover:bg-emerald-900/30"
-          iconClassName="text-emerald-700 dark:text-emerald-400"
-        />
-      </div>
-
-      {/* Home Button */}
-      <div className="absolute top-4 left-4 z-50">
+    <main className="relative min-h-screen w-full bg-gradient-to-b from-background to-emerald-100/20 dark:to-emerald-950/10 overflow-hidden">
+      {/* Controls - Fixed to top on mobile */}
+      <nav className="sticky top-0 left-0 right-0 flex justify-between items-center z-50 p-4 bg-background/80 backdrop-blur-sm border-b border-slate-200/50 dark:border-slate-800/50">
         <Button
           asChild
           variant="outline"
           size="icon"
-          className="border-emerald-300 dark:border-emerald-700 hover:bg-emerald-100 dark:hover:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400"
+          className={`${projectTheme.colors.primary.light.border} ${projectTheme.colors.primary.dark.border} ${projectTheme.colors.primary.light.bgHoverButton} ${projectTheme.colors.primary.dark.bgHoverButton} ${projectTheme.colors.primary.light.text} ${projectTheme.colors.primary.dark.text}`}
         >
           <Link href="/">
             <Home className="h-[1.2rem] w-[1.2rem] transition-all" />
             <span className="sr-only">Back to home</span>
           </Link>
         </Button>
-      </div>
 
-      {/* Background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-emerald-100 dark:bg-emerald-900/20 rounded-full opacity-20 blur-2xl"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-emerald-200 dark:bg-emerald-800/20 rounded-full opacity-20 blur-2xl"></div>
-      </div>
+        <ModeToggle
+          className={`${projectTheme.colors.primary.light.border} ${projectTheme.colors.primary.dark.border} ${projectTheme.colors.primary.light.bgHoverButton} ${projectTheme.colors.primary.dark.bgHoverButton}`}
+          iconClassName={`${projectTheme.colors.primary.light.text} ${projectTheme.colors.primary.dark.text}`}
+        />
+      </nav>
 
-      <div className="container mx-auto px-4 py-12 relative z-10">
-        <header className="mb-16">
-          <div className="relative p-6 rounded-2xl bg-gradient-to-r from-emerald-50/80 to-transparent dark:from-emerald-950/50 dark:to-transparent border border-emerald-200/40 dark:border-emerald-800/40 backdrop-blur-sm shadow-sm">
-            <div className="absolute top-0 right-0 h-24 w-24 bg-emerald-100/30 dark:bg-emerald-800/20 rounded-full -mt-6 -mr-6 blur-2xl"></div>
+      {/* Background decorative elements */}
+      <span
+        className={`fixed -z-10 top-1/4 left-1/4 w-48 h-48 ${projectTheme.colors.background.light.secondary} ${projectTheme.colors.background.dark.secondary} rounded-full ${projectTheme.opacity.subtle} blur-2xl`}
+        aria-hidden="true"
+      />
+      <span
+        className={`fixed -z-10 bottom-1/3 right-1/3 w-64 h-64 ${projectTheme.colors.background.light.tertiary} ${projectTheme.colors.background.dark.tertiary} rounded-full ${projectTheme.opacity.subtle} blur-2xl`}
+        aria-hidden="true"
+      />
 
-            <div className="flex items-start">
-              <div className="w-1.5 h-12 bg-gradient-to-b from-emerald-400 to-emerald-600 dark:from-emerald-500 dark:to-emerald-700 rounded-full mr-4 mt-2 hidden md:block"></div>
+      <div className="container max-w-5xl mx-auto px-4 py-6 md:py-12 relative z-10">
+        <header className="mb-8 md:mb-16">
+          <section
+            className={`relative p-6 md:p-8 rounded-xl md:rounded-2xl ${projectTheme.colors.background.light.gradient} ${projectTheme.colors.background.dark.gradient} ${projectTheme.border.light.subtle} ${projectTheme.border.dark.subtle} backdrop-blur-sm shadow-md overflow-hidden`}
+          >
+            {/* Decorative elements */}
+            <span
+              className={`absolute top-0 right-0 h-32 w-32 ${projectTheme.colors.background.light.blur} ${projectTheme.colors.background.dark.blur} rounded-full -mt-8 -mr-8 blur-3xl opacity-70`}
+              aria-hidden="true"
+            />
+            <span
+              className={`absolute bottom-0 left-1/4 h-40 w-40 ${projectTheme.colors.primary.light.gradient.from} ${projectTheme.colors.primary.dark.gradient.from} rounded-full opacity-10 blur-3xl -mb-10`}
+              aria-hidden="true"
+            />
 
-              <div className="space-y-6 max-w-3xl relative">
-                <div className="relative inline-block">
-                  <span className="absolute -inset-1 w-full h-full bg-emerald-100 dark:bg-emerald-900/30 rounded-lg -skew-y-1 -z-10"></span>
-                  <h1 className="text-4xl md:text-5xl font-bold tracking-tight relative z-10 text-slate-800 dark:text-slate-100">
-                    My Projects
-                  </h1>
-                </div>
-
-                <div className="flex gap-2 items-center">
-                  <div className="w-8 h-0.5 bg-emerald-400 dark:bg-emerald-500"></div>
-                  <span className="text-sm font-medium text-emerald-600 dark:text-emerald-400">
-                    Portfolio Showcase
-                  </span>
-                </div>
-
+            <div className="flex flex-col md:flex-row md:items-start gap-6">
+              <div className="space-y-6 w-full max-w-3xl">
+                {/* Title with accent */}
                 <div className="relative">
-                  <p className="text-base md:text-lg text-slate-700 dark:text-slate-300 leading-relaxed pl-0 md:pl-2 border-l-2 border-emerald-200 dark:border-emerald-800 italic">
-                    A comprehensive collection of my work, showcasing various
-                    technologies and solutions I've built. Each project reflects
-                    my problem-solving approach and technical expertise.
-                  </p>
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span
+                        className={`hidden sm:flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br ${projectTheme.colors.primary.light.gradient.from} ${projectTheme.colors.primary.light.gradient.to} ${projectTheme.colors.primary.dark.gradient.from} ${projectTheme.colors.primary.dark.gradient.to} shadow-md`}
+                      >
+                        <Building2 className="w-4 h-4 text-white" />
+                      </span>
+                      <span
+                        className={`inline-block py-1 px-3 rounded-full text-sm font-medium bg-slate-100/80 dark:bg-slate-800/80 ${projectTheme.colors.primary.light.text} ${projectTheme.colors.primary.dark.text}`}
+                      >
+                        Portfolio Showcase
+                      </span>
+                    </div>
+
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-800 dark:text-slate-100 mb-1">
+                      <span className="inline-block">My</span>{" "}
+                      <span
+                        className={`inline-block relative bg-clip-text text-transparent bg-gradient-to-r ${projectTheme.colors.primary.light.gradient.from} ${projectTheme.colors.primary.light.gradient.to} ${projectTheme.colors.primary.dark.gradient.from} ${projectTheme.colors.primary.dark.gradient.to}`}
+                      >
+                        Projects
+                        <span
+                          className={`absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r ${projectTheme.colors.primary.light.gradient.from} ${projectTheme.colors.primary.light.gradient.to} ${projectTheme.colors.primary.dark.gradient.from} ${projectTheme.colors.primary.dark.gradient.to} rounded-full`}
+                          aria-hidden="true"
+                        />
+                      </span>
+                    </h1>
+
+                    <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">
+                      Showcasing {projects.length} innovative solutions
+                    </p>
+                  </div>
                 </div>
 
-                <div className="flex gap-2">
-                  <Badge className="bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300 hover:bg-emerald-200 dark:hover:bg-emerald-800/60">
+                {/* Description */}
+                <div className="relative mt-8">
+                  <blockquote
+                    className={`relative p-4 md:p-5 rounded-lg bg-slate-50/50 dark:bg-slate-900/50 border-l-4 ${projectTheme.colors.primary.light.border} ${projectTheme.colors.primary.dark.border}`}
+                  >
+                    <p className="text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed italic">
+                      A comprehensive collection of my work, showcasing various
+                      technologies and solutions I've built. Each project
+                      reflects my problem-solving approach and technical
+                      expertise.
+                    </p>
+                  </blockquote>
+                </div>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 items-center mt-4">
+                  <Badge
+                    className={`${projectTheme.colors.primary.light.bg} text-emerald-800 ${projectTheme.colors.primary.dark.bg} dark:text-emerald-300 ${projectTheme.colors.primary.light.bgHover} ${projectTheme.colors.primary.dark.bgHover}`}
+                  >
                     {projects.length} Projects
                   </Badge>
                   <Badge
                     variant="outline"
-                    className="border-emerald-200 dark:border-emerald-800"
+                    className={`${projectTheme.colors.primary.light.borderLight} ${projectTheme.colors.primary.dark.borderLight}`}
                   >
                     Full Stack
                   </Badge>
                   <Badge
                     variant="outline"
-                    className="border-emerald-200 dark:border-emerald-800"
+                    className={`${projectTheme.colors.primary.light.borderLight} ${projectTheme.colors.primary.dark.borderLight}`}
                   >
                     Open Source
                   </Badge>
                 </div>
               </div>
             </div>
-          </div>
+          </section>
         </header>
 
-        <div className="w-full max-w-7xl mx-auto mb-10">
-          <div className="flex items-center justify-between pb-4">
-            <div className="flex items-center gap-3">
-              <div className="w-1 h-8 bg-gradient-to-b from-emerald-400 to-emerald-600 dark:from-emerald-500 dark:to-emerald-700 rounded-full"></div>
-              <h2 className="text-xl font-bold text-slate-800 dark:text-slate-200">
-                Project List
-              </h2>
-            </div>
+        <section className="w-full mx-auto mb-6 md:mb-10">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4">
+            <h2 className="text-xl font-bold text-slate-800 dark:text-slate-200 flex items-center gap-3">
+              <span
+                className={`w-1 h-8 ${projectTheme.colors.primary.light.gradient.bg} ${projectTheme.colors.primary.dark.gradient.bg} rounded-full`}
+                aria-hidden="true"
+              />
+              Project List
+            </h2>
             <NoteDialog />
           </div>
-          <div className="h-px bg-gradient-to-r from-emerald-300/80 via-emerald-300/40 to-transparent dark:from-emerald-700/80 dark:via-emerald-700/40 dark:to-transparent w-full"></div>
-        </div>
+          <hr
+            className={`${projectTheme.colors.effects.light.fade} ${projectTheme.colors.effects.dark.fade}`}
+          />
+        </section>
 
-        <div className="mx-auto max-w-7xl relative">
+        <section className="mx-auto relative">
           {/* Subtle glow effect */}
-          <div className="absolute -inset-1 bg-emerald-300/20 dark:bg-emerald-700/20 rounded-xl blur-xl opacity-50"></div>
+          <span
+            className={`absolute -inset-1 ${projectTheme.colors.effects.light.glow} ${projectTheme.colors.effects.dark.glow} rounded-xl blur-xl opacity-50`}
+            aria-hidden="true"
+          />
 
-          <div className="rounded-xl overflow-hidden border-2 border-emerald-300/80 dark:border-emerald-700/80 shadow-md bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm ring-1 ring-emerald-200/50 dark:ring-emerald-800/50 relative z-10">
-            {projects.map((project, index) => {
-              const imageProps = getProjectImageProps(
-                project,
-                mounted,
-                resolvedTheme,
-              );
-              const projectUrl = getProjectUrl(project);
-              const imageSrc = imageProps.src || DEFAULT_PLACEHOLDER;
-              return (
-                <div key={index}>
-                  <div className="bg-card transition-all duration-300 relative">
-                    {/* Project header with gradient */}
-                    <div className="px-6 py-4 md:px-8 md:py-5 border-b-2 border-emerald-200/60 dark:border-emerald-800/60 bg-gradient-to-r from-emerald-50/80 via-emerald-50/40 to-transparent dark:from-emerald-900/30 dark:via-emerald-900/10 dark:to-transparent">
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                        <div className="flex items-center gap-2 flex-wrap">
-                          <h2 className="text-xl md:text-2xl font-bold font-mono text-slate-800 dark:text-slate-200 transition-colors">
-                            {project.title}
-                          </h2>
-                          {project.isInDevelopment && (
-                            <Badge variant="destructive" className="text-xs">
-                              In Development
-                            </Badge>
-                          )}
-                        </div>
-                        <div className="flex items-center flex-wrap text-sm text-slate-500 dark:text-slate-400 gap-4">
-                          <span className="flex items-center">
-                            <Calendar className="mr-1 h-3 w-3" />
-                            {formatDate(project.date)}
-                          </span>
-                          <span className="flex items-center">
-                            <Star className="mr-1 h-3 w-3" />
-                            {projectStats[index]?.stars || 0} stars
-                          </span>
-                          <span className="flex items-center">
-                            <GitFork className="mr-1 h-3 w-3" />
-                            {projectStats[index]?.forks || 0} forks
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Project content */}
-                    <div className="p-6 md:p-8">
-                      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-                        <div className="hidden lg:block lg:col-span-2">
-                          <Link
-                            href={projectUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="aspect-video overflow-hidden rounded-lg border-2 border-emerald-200/60 dark:border-emerald-800/60 bg-card relative group block hover:border-emerald-400 dark:hover:border-emerald-600 transition-colors"
-                          >
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
-                              <ProjectLinkHoverIndicator project={project} />
-                            </div>
-                            <Image
-                              src={imageSrc}
-                              alt={project.title}
-                              width={600}
-                              height={340}
-                              className={`h-full w-full ${imageProps.objectFitClass} transition-transform duration-300 group-hover:scale-105`}
-                            />
-                            {project.isInDevelopment && (
-                              <div className="absolute top-3 left-3 z-20">
-                                <Badge
-                                  variant="destructive"
-                                  className="text-xs"
-                                >
-                                  In Development
-                                </Badge>
-                              </div>
-                            )}
-                          </Link>
-                        </div>
-
-                        {/* Project Details */}
-                        <div className="lg:col-span-3 space-y-5">
-                          <div className="flex justify-end">
-                            <div className="flex space-x-2">
-                              <Button
-                                size="sm"
-                                variant="outline"
-                                asChild
-                                className="border-emerald-300 dark:border-emerald-700 hover:bg-emerald-100 dark:hover:bg-emerald-900/30"
-                              >
-                                <a
-                                  href={project.githubUrl}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="flex items-center"
-                                >
-                                  <Github className="mr-1 h-4 w-4" />
-                                  Code
-                                </a>
-                              </Button>
-                              <LiveDemoButton project={project} />
-                            </div>
-                          </div>
-
-                          {/* Project image for mobile only */}
-                          <Link
-                            href={projectUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="lg:hidden aspect-video overflow-hidden rounded-lg border-2 border-emerald-200/60 dark:border-emerald-800/60 bg-card relative block group hover:border-emerald-400 dark:hover:border-emerald-600 transition-colors"
-                          >
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
-                              <ProjectLinkHoverIndicator project={project} />
-                            </div>
-                            <Image
-                              src={imageSrc}
-                              alt={project.title}
-                              width={400}
-                              height={225}
-                              className={`h-full w-full ${imageProps.objectFitClass} transition-transform duration-300 group-hover:scale-105`}
-                            />
-                            {project.isInDevelopment && (
-                              <div className="absolute top-3 left-3 z-10">
-                                <Badge
-                                  variant="destructive"
-                                  className="text-xs"
-                                >
-                                  In Development
-                                </Badge>
-                              </div>
-                            )}
-                          </Link>
-
-                          <div className="relative pl-3 border-l-2 border-emerald-200 dark:border-emerald-800">
-                            <p className="text-base text-slate-600 dark:text-slate-300">
-                              {project.longDescription}
-                            </p>
-                          </div>
-
-                          {/* Tech Stack */}
-                          <div className="pt-1">
-                            <h3 className="text-sm font-semibold mb-2 text-slate-700 dark:text-slate-300 flex items-center">
-                              <div className="w-2 h-2 bg-emerald-500 dark:bg-emerald-400 rounded-full mr-2"></div>
-                              Tech Stack
-                            </h3>
-                            <div className="flex flex-wrap gap-2">
-                              {project.tags.map((tag, tagIndex) => (
-                                <TechBadge
-                                  key={tagIndex}
-                                  tech={tag}
-                                  index={tagIndex}
-                                />
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {index < projects.length - 1 && (
-                    <div className="h-0.5 bg-emerald-200/40 dark:bg-emerald-800/40 w-full" />
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
+          <article
+            className={`rounded-xl overflow-hidden border-2 ${projectTheme.border.light.primary} ${projectTheme.border.dark.primary} shadow-md ${projectTheme.colors.background.light.primary} ${projectTheme.colors.background.dark.primary} backdrop-blur-sm ${projectTheme.shadow.light} ${projectTheme.shadow.dark} relative z-10`}
+          >
+            <ul className="divide-y divide-slate-200/50 dark:divide-slate-800/50">
+              {projects.map((project, index) => (
+                <li key={index}>
+                  <ProjectCard
+                    project={project}
+                    projectStats={projectStats[index]}
+                    index={index}
+                    totalProjects={projects.length}
+                    mounted={mounted}
+                    resolvedTheme={resolvedTheme}
+                  />
+                </li>
+              ))}
+            </ul>
+          </article>
+        </section>
       </div>
-    </div>
+    </main>
   );
 }

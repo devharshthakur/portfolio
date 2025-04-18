@@ -3,10 +3,9 @@ import projects from "./data/projects.data";
 import { ProjectCard } from "./components/ProjectCard";
 import { Card } from "@/components/ui/card";
 import { SectionTitle } from "@/components/ui/section-title";
-import { Hammer, Construction, Building2 } from "lucide-react";
+import { Building2 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 export function Projects() {
   const topProjects = projects.slice(0, 4);
