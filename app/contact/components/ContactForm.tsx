@@ -70,7 +70,7 @@ export function ContactForm(): React.ReactElement {
 
   return (
     <>
-      <div className="flex flex-col justify-center p-8 md:p-10 bg-gray-50 dark:bg-zinc-800/50 rounded-r-2xl shadow-sm border-2 border-yellow-300 dark:border-yellow-700/60">
+      <div className="flex flex-col justify-center p-8 md:p-10 bg-gray-50 dark:bg-zinc-800/50 rounded-r-2xl shadow-xs border-2 border-yellow-300 dark:border-yellow-700/60">
         <div className="mb-8">
           <h3 className="text-2xl font-bold font-mono text-zinc-800 dark:text-zinc-100">
             Send a Message

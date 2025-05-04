@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export function Skills() {
   return (
-    <Card className="border-2 border-indigo-400 dark:border-indigo-600 p-4 shadow-sm bg-indigo-50/30 dark:bg-indigo-950/10">
+    <Card className="border-2 border-indigo-400 dark:border-indigo-600 p-4 shadow-xs bg-indigo-50/30 dark:bg-indigo-950/10">
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <SectionTitle

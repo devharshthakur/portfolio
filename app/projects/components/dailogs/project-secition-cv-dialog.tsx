@@ -40,7 +40,7 @@ export function ProjectNotesButton(): React.ReactElement {
           <span className="sr-only">Project Stats Information</span>
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-md border-2 border-indigo-300 dark:border-indigo-700 shadow-sm">
+      <DialogContent className="sm:max-w-md border-2 border-indigo-300 dark:border-indigo-700 shadow-xs">
         <DialogHeader className="bg-indigo-50/50 dark:bg-indigo-950/10 p-4 -m-6 mb-4">
           <div className="flex items-center gap-2">
             <AlertCircleIcon className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />

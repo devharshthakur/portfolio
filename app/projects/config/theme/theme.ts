@@ -16,7 +16,7 @@ export const Theme: ThemeConfig = {
         gradient: {
           from: "from-emerald-500",
           to: "to-emerald-600",
-          bg: "bg-gradient-to-b from-emerald-500 to-emerald-600",
+          bg: "bg-linear-to-b from-emerald-500 to-emerald-600",
         },
       },
       dark: {
@@ -31,7 +31,7 @@ export const Theme: ThemeConfig = {
         gradient: {
           from: "dark:from-emerald-500",
           to: "dark:to-emerald-700",
-          bg: "dark:bg-gradient-to-b dark:from-emerald-500 dark:to-emerald-700",
+          bg: "dark:bg-linear-to-b dark:from-emerald-500 dark:to-emerald-700",
         },
       },
     },
@@ -41,7 +41,7 @@ export const Theme: ThemeConfig = {
         secondary: "bg-emerald-200",
         tertiary: "bg-emerald-300",
         gradient:
-          "bg-gradient-to-r from-emerald-100/80 via-emerald-100/40 to-transparent",
+          "bg-linear-to-r from-emerald-100/80 via-emerald-100/40 to-transparent",
         blur: "bg-emerald-200/30",
       },
       dark: {
@@ -49,18 +49,18 @@ export const Theme: ThemeConfig = {
         secondary: "dark:bg-emerald-900/20",
         tertiary: "dark:bg-emerald-800/20",
         gradient:
-          "dark:bg-gradient-to-r dark:from-emerald-900/30 dark:via-emerald-900/10 dark:to-transparent",
+          "dark:bg-linear-to-r dark:from-emerald-900/30 dark:via-emerald-900/10 dark:to-transparent",
         blur: "dark:bg-emerald-800/20",
       },
     },
     effects: {
       light: {
         glow: "bg-emerald-400/20",
-        fade: "bg-gradient-to-r from-emerald-400/80 via-emerald-400/40 to-transparent",
+        fade: "bg-linear-to-r from-emerald-400/80 via-emerald-400/40 to-transparent",
       },
       dark: {
         glow: "dark:bg-emerald-700/20",
-        fade: "dark:bg-gradient-to-r dark:from-emerald-700/80 dark:via-emerald-700/40 dark:to-transparent",
+        fade: "dark:bg-linear-to-r dark:from-emerald-700/80 dark:via-emerald-700/40 dark:to-transparent",
       },
     },
   },

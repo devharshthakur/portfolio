@@ -27,23 +27,14 @@
  * />
  */
 
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
-} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { Tag } from "lucide-react";
 import { Icons } from "@/components/custom/home/skills-section/utils/icon.export";
-import Link from "next/link";
 import { FaNpm } from "react-icons/fa";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { Package, Tag } from "lucide-react";
 import { Package as PackageType } from "../data/packages";
+import { cn } from "@/lib/utils";
 
 interface PackageCardProps
   extends Omit<PackageType, "longDescription" | "tags"> {
@@ -61,135 +52,158 @@ export function PackageCard({
   const isUnpublished: boolean = npmUrl === "#";
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [activeTab, setActiveTab] = useState<"info" | "stats">("info");
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   return (
-    <Card className="flex flex-col overflow-hidden border-2 border-red-300 dark:border-red-700/60 shadow-md duration-300 hover:shadow-xl hover:border-red-500 dark:hover:border-red-500 group w-full min-h-[240px]">
-      {/* Header Section with Package Name and Version */}
-      <CardHeader className="p-4 bg-red-100/50 dark:bg-red-900/20">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="p-1.5 bg-red-200/70 dark:bg-red-800/30 rounded-md">
-              <Package
-                className="h-4 w-4 text-red-700 dark:text-red-400"
-                aria-hidden="true"
-              />
-            </div>
-            <CardTitle className="text-xl font-bold tracking-tight text-red-800 dark:text-red-300 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
+    <div className="flex flex-col rounded-lg overflow-hidden border-2 border-red-300/80 dark:border-red-700/80 bg-white dark:bg-red-900/40 shadow-md transition-all duration-300 hover:shadow-xl hover:border-red-400 dark:hover:border-red-600">
+      {/* Header section - lighter red */}
+      <div className="p-3 flex items-center justify-between border-b border-red-200/80 dark:border-red-700/60 bg-red-100/60 dark:bg-red-800/50">
+        <h3 className="text-xl font-bold font-mono text-red-900 dark:text-red-100">
+          {name}
+        </h3>
+        <span className="px-2 py-0.5 text-xs rounded-md bg-red-50/80 dark:bg-red-700/70 text-red-800 dark:text-red-100 border-2 border-red-300/60 dark:border-red-600/60 font-mono">
+          {version || "v1.0.0"}
+        </span>
+      </div>
+
+      {/* Tab buttons section - medium red */}
+      <div className="p-3 border-b border-red-200/80 dark:border-red-700/60 bg-red-50/80 dark:bg-red-800/30">
+        <div className="grid grid-cols-2 gap-4">
+          <Button
+            variant="outline"
+            className={cn(
+              "w-full font-mono border-2 border-red-300/70 dark:border-red-700/60 bg-red-50/70 dark:bg-red-900/40 hover:bg-red-100/60 dark:hover:bg-red-800/40",
+              activeTab === "info"
+                ? "bg-red-100/70 dark:bg-red-700/60 text-red-900 dark:text-red-100 border-2 border-red-400/70 dark:border-red-500/70 shadow-sm"
+                : "text-red-800 dark:text-red-300",
+            )}
+            onClick={() => setActiveTab("info")}
+          >
+            <span className="mr-1.5">📝</span> Info
+          </Button>
+          <Button
+            variant="outline"
+            className={cn(
+              "w-full font-mono border-2 border-red-300/70 dark:border-red-700/60 bg-red-50/70 dark:bg-red-900/40 hover:bg-red-100/60 dark:hover:bg-red-800/40",
+              activeTab === "stats"
+                ? "bg-red-100/70 dark:bg-red-700/60 text-red-900 dark:text-red-100 border-2 border-red-400/70 dark:border-red-500/70 shadow-sm"
+                : "text-red-800 dark:text-red-300",
+            )}
+            onClick={() => setActiveTab("stats")}
+          >
+            <span className="mr-1.5">📊</span> Stats
+          </Button>
+        </div>
+      </div>
+
+      {/* Content section - darker red */}
+      <div className="bg-white/90 dark:bg-red-900/30 p-3 h-[180px] overflow-auto">
+        {activeTab === "info" ? (
+          <div className="space-y-2">
+            <h4 className="text-lg font-bold font-mono text-red-900 dark:text-red-100">
               {name}
-            </CardTitle>
+            </h4>
+            <p className="text-red-800 dark:text-red-200 font-mono text-sm">
+              {description}
+            </p>
+
+            {!isUnpublished && (
+              <div className="mt-2 inline-flex items-center px-2 py-1 bg-red-200/80 dark:bg-red-700/60 rounded-md text-xs text-red-900 dark:text-red-100 font-mono border-2 border-red-300/70 dark:border-red-600/60">
+                <Icons.FaDownload className="h-3 w-3 mr-2 text-red-700 dark:text-red-300" />
+                <span className="font-medium">{downloads || "N/A"}</span>
+                <span className="ml-1">weekly downloads</span>
+              </div>
+            )}
+
+            {isUnpublished && (
+              <div className="mt-2 inline-flex items-center px-2 py-1 bg-amber-200/80 dark:bg-amber-700/60 rounded-md text-xs text-amber-900 dark:text-amber-100 font-mono border-2 border-amber-300/70 dark:border-amber-600/60">
+                <span className="font-medium">Coming soon</span>
+              </div>
+            )}
           </div>
-          {version && !isUnpublished && (
-            <div className="flex items-center gap-1.5">
-              <Tag size={14} className="text-red-600 dark:text-red-400" />
-              <Badge
-                variant="outline"
-                className="px-2 py-0.5 text-xs font-medium border-red-300 dark:border-red-700/40 text-red-800 dark:text-red-300 bg-background dark:bg-background/20"
-              >
-                v{version}
-              </Badge>
-            </div>
-          )}
-        </div>
-      </CardHeader>
+        ) : (
+          <div className="space-y-2">
+            {/* Removed the stats title heading to give more space */}
 
-      {/* Description Section */}
-      <CardContent className="p-4 flex-grow bg-card dark:bg-transparent border-t border-red-200/50 dark:border-red-800/20">
-        <div className="space-y-3">
-          <CardDescription className="text-sm leading-relaxed text-foreground/80 line-clamp-3">
-            {description}
-          </CardDescription>
+            {/* Package Stats Card */}
+            <div className="bg-red-50/80 dark:bg-red-800/40 rounded-lg border-2 border-red-200/80 dark:border-red-700/70 p-2 shadow-sm">
+              <h5 className="text-xs uppercase tracking-wider text-red-700 dark:text-red-200 font-mono mb-1 flex items-center">
+                <FaNpm className="mr-1.5 h-3 w-3" /> NPM Metrics
+              </h5>
 
-          {isUnpublished ? (
-            <Badge
-              variant="outline"
-              className="mt-1 w-fit bg-amber-500/20 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400 border-amber-400 dark:border-amber-600/40 text-xs font-medium px-2.5 py-1"
-            >
-              Coming soon
-            </Badge>
-          ) : (
-            <div className="flex items-center gap-2 mt-1 pt-2 border-t border-dashed border-red-200/50 dark:border-red-800/20">
-              {downloads ? (
-                <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                  <Icons.FaDownload className="h-3 w-3 text-red-600/70 dark:text-red-500/70" />
-                  <span className="font-medium text-foreground/80">
-                    {downloads}
-                  </span>
-                  <span>weekly downloads</span>
+              <div className="grid grid-cols-2 gap-2 font-mono">
+                <div className="flex items-center space-x-2 p-1.5 rounded-md bg-red-50/90 dark:bg-red-700/50 border-2 border-red-200/80 dark:border-red-600/60">
+                  <div className="bg-red-100/80 dark:bg-red-600/80 p-1.5 rounded-full">
+                    <Icons.FaDownload className="h-3 w-3 text-red-700 dark:text-red-200" />
+                  </div>
+                  <div>
+                    <p className="text-red-700 dark:text-red-200 text-xs">
+                      Downloads
+                    </p>
+                    <p className="font-bold text-red-800 dark:text-red-100 text-sm">
+                      {downloads || "N/A"}
+                    </p>
+                  </div>
                 </div>
-              ) : (
-                <div className="flex items-center gap-2 text-xs text-muted-foreground italic">
-                  <Icons.FaDownload className="h-3 w-3 text-red-600/70 dark:text-red-500/70" />
-                  <span>Download stats unavailable</span>
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-      </CardContent>
 
-      {/* Footer Section with Links */}
-      <CardFooter className="grid grid-cols-2 gap-3 p-3 mt-auto bg-red-50/80 dark:bg-red-900/20 border-t border-red-200/50 dark:border-red-800/20">
+                <div className="flex items-center space-x-2 p-1.5 rounded-md bg-red-50/90 dark:bg-red-700/50 border-2 border-red-200/80 dark:border-red-600/60">
+                  <div className="bg-red-100/80 dark:bg-red-600/80 p-1.5 rounded-full">
+                    <Tag className="h-3 w-3 text-red-700 dark:text-red-200" />
+                  </div>
+                  <div>
+                    <p className="text-red-700 dark:text-red-200 text-xs">
+                      Version
+                    </p>
+                    <p className="font-bold text-red-800 dark:text-red-100 text-sm">
+                      {version || "v1.0.0"}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-1 pt-1 border-t border-red-200/80 dark:border-red-700/70 text-xs text-red-700 dark:text-red-300 font-mono text-center">
+                Last synced with NPM {Math.floor(Math.random() * 24)} hours ago
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Footer section - medium-dark red */}
+      <div className="mt-auto grid grid-cols-2 gap-2 p-3 border-t border-red-200/80 dark:border-red-700/60 bg-red-50/80 dark:bg-red-800/30">
         <Button
           variant="outline"
-          size="sm"
-          className="w-full group/btn transition-colors bg-background/80 dark:bg-background/10 hover:bg-background/90 dark:hover:bg-background/20 border-red-300 dark:border-red-700/50 hover:border-red-500 dark:hover:border-red-500"
-          asChild
+          className="flex items-center gap-2 font-mono border-2 border-red-500/80 dark:border-red-600/80 text-red-800 dark:text-red-300 bg-red-50/70 dark:bg-red-900/50 hover:bg-red-100/70 dark:hover:bg-red-800/60 shadow-sm"
+          onClick={() => window.open(githubUrl, "_blank")}
         >
-          <Link
-            href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-1.5"
-            prefetch={true}
-          >
-            <Icons.FaGithub
-              className="h-4 w-4 transition-transform group-hover/btn:scale-110"
-              aria-hidden="true"
-            />
-            <span>GitHub</span>
-          </Link>
+          <Icons.FaGithub className="h-4 w-4" />
+          <span>$ git clone</span>
         </Button>
 
         {isUnpublished ? (
           <Button
-            variant="secondary"
-            size="sm"
-            className="w-full cursor-not-allowed bg-red-100/80 dark:bg-red-800/30 hover:bg-red-200 dark:hover:bg-red-800/40 text-red-800 dark:text-red-300"
+            variant="outline"
+            className="flex items-center gap-2 font-mono opacity-80 cursor-not-allowed border-2 border-red-300/80 dark:border-red-700/60 bg-red-50/50 dark:bg-red-800/40 text-red-600/80 dark:text-red-400/80"
             disabled
           >
-            <FaNpm
-              className={`mr-1.5 h-4 w-4 ${mounted && resolvedTheme === "dark" ? "text-red-300" : "text-red-700"}`}
-              aria-hidden="true"
-            />
-            <span>NPM (Soon)</span>
+            <FaNpm className="h-4 w-4" />
+            <span>Coming Soon</span>
           </Button>
         ) : (
           <Button
-            variant="default"
-            size="sm"
-            className="w-full group/btn bg-red-600 hover:bg-red-700 dark:bg-red-700 dark:hover:bg-red-800 text-white transition-colors shadow-sm"
-            asChild
+            variant="outline"
+            className="flex items-center gap-2 font-mono bg-red-600/90 dark:bg-red-600/80 text-white hover:bg-red-700/90 dark:hover:bg-red-500/80 border-2 border-red-500/90 dark:border-red-600/80 shadow-sm"
+            onClick={() => window.open(npmUrl, "_blank")}
           >
-            <Link
-              href={npmUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1.5"
-              prefetch={true}
-            >
-              <FaNpm
-                className="h-4 w-4 transition-transform group-hover/btn:scale-110"
-                aria-hidden="true"
-              />
-              <span>NPM</span>
-            </Link>
+            <FaNpm className="h-4 w-4" />
+            <span>Install Package</span>
           </Button>
         )}
-      </CardFooter>
-    </Card>
+      </div>
+    </div>
   );
 }

@@ -57,16 +57,16 @@ export function ProficiencyBar({
   return (
     <div className={`w-full ${className}`}>
       <div className="flex justify-between items-center mb-1.5 text-xs">
-        <span className="font-semibold text-gray-700 dark:text-white bg-white dark:bg-gray-700/80 px-3 py-1.5 rounded-md shadow-sm">
+        <span className="font-semibold text-gray-700 dark:text-white bg-white dark:bg-gray-700/80 px-3 py-1.5 rounded-md shadow-xs">
           {getLabel()}
         </span>
-        <span className="text-gray-600 dark:text-white bg-white dark:bg-gray-700/80 px-3 py-1.5 rounded-md shadow-sm">
+        <span className="text-gray-600 dark:text-white bg-white dark:bg-gray-700/80 px-3 py-1.5 rounded-md shadow-xs">
           {proficiency}/{maxLevel}
         </span>
       </div>
       <div className="relative w-full h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden shadow-inner">
         <div
-          className={`absolute left-0 top-0 h-full ${fixedProgressColor} ${fixedDarkProgressColor} rounded-full shadow-sm transition-all duration-1000 ease-out`}
+          className={`absolute left-0 top-0 h-full ${fixedProgressColor} ${fixedDarkProgressColor} rounded-full shadow-xs transition-all duration-1000 ease-out`}
           style={{ width: `${width}%` }}
         />
       </div>

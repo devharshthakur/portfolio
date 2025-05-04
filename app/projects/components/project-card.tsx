@@ -79,11 +79,11 @@ export function ProjectCard({
       <div className="bg-card transition-all duration-300 relative">
         {/* Project header with gradient */}
         <div
-          className={`px-6 py-4 md:px-8 md:py-5 ${projectTheme.colors.background.light.gradient} ${projectTheme.colors.background.dark.gradient}`}
+          className={`px-6 py-4 md:px-8 md:py-6 ${projectTheme.colors.background.light.gradient} ${projectTheme.colors.background.dark.gradient}`}
         >
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-center gap-2 flex-wrap">
-              <h2 className="text-xl md:text-2xl font-bold font-mono text-slate-800 dark:text-slate-200 transition-colors">
+              <h2 className="text-xl md:text-2xl font-bold font-mono text-slate-800 dark:text-slate-100 transition-colors">
                 {project.title}
               </h2>
               {project.isInDevelopment && (
@@ -92,22 +92,22 @@ export function ProjectCard({
                 </Badge>
               )}
             </div>
-            <div className="flex items-center flex-wrap text-sm text-slate-500 dark:text-slate-400 gap-4">
-              <span className="flex items-center bg-purple-50 dark:bg-purple-950/30 px-2 py-1 rounded-md">
-                <Calendar className="mr-1 h-3 w-3 text-purple-600 dark:text-purple-400" />
-                <span className="text-purple-700 dark:text-purple-300 font-medium">
+            <div className="flex items-center flex-wrap text-sm text-slate-500 dark:text-slate-300 gap-4">
+              <span className="flex items-center bg-purple-50 dark:bg-purple-900/40 px-2.5 py-1.5 rounded-md border border-purple-100 dark:border-purple-700/40">
+                <Calendar className="mr-1.5 h-3.5 w-3.5 text-purple-600 dark:text-purple-300" />
+                <span className="text-purple-700 dark:text-purple-200 font-medium">
                   {formatDate(project.date)}
                 </span>
               </span>
-              <span className="flex items-center bg-emerald-50 dark:bg-emerald-950/30 px-2 py-1 rounded-md">
-                <Star className="mr-1 h-3 w-3 text-emerald-600 dark:text-emerald-400" />
-                <span className="text-emerald-700 dark:text-emerald-300 font-medium">
+              <span className="flex items-center bg-emerald-50 dark:bg-emerald-900/40 px-2.5 py-1.5 rounded-md border border-emerald-100 dark:border-emerald-700/40">
+                <Star className="mr-1.5 h-3.5 w-3.5 text-emerald-600 dark:text-emerald-300" />
+                <span className="text-emerald-700 dark:text-emerald-200 font-medium">
                   {projectStats?.stars || 0} stars
                 </span>
               </span>
-              <span className="flex items-center bg-blue-50 dark:bg-blue-950/30 px-2 py-1 rounded-md">
-                <GitFork className="mr-1 h-3 w-3 text-blue-600 dark:text-blue-400" />
-                <span className="text-blue-700 dark:text-blue-300 font-medium">
+              <span className="flex items-center bg-blue-50 dark:bg-blue-900/40 px-2.5 py-1.5 rounded-md border border-blue-100 dark:border-blue-700/40">
+                <GitFork className="mr-1.5 h-3.5 w-3.5 text-blue-600 dark:text-blue-300" />
+                <span className="text-blue-700 dark:text-blue-200 font-medium">
                   {projectStats?.forks || 0} forks
                 </span>
               </span>
@@ -117,27 +117,31 @@ export function ProjectCard({
 
         {/* Project content */}
         <div className="p-6 md:p-8">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-            <div className="hidden lg:block lg:col-span-2">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            {/* Image Column - Wider on larger screens */}
+            <div className="hidden lg:block lg:col-span-5">
               <Link
                 href={projectUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`aspect-video overflow-hidden rounded-lg border-2 ${projectTheme.border.light.secondary} ${projectTheme.border.dark.secondary} bg-card relative group block ${projectTheme.hover.light.border} ${projectTheme.hover.dark.border} transition-colors`}
+                className={`aspect-video overflow-hidden rounded-lg border-2 ${projectTheme.border.light.secondary} ${projectTheme.border.dark.secondary} bg-card relative group block ${projectTheme.hover.light.border} ${projectTheme.hover.dark.border} transition-colors shadow-md`}
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
                   <ProjectLinkHoverIndicator project={project} />
                 </div>
                 <Image
                   src={imageSrc}
                   alt={project.title}
-                  width={600}
-                  height={340}
+                  width={800}
+                  height={450}
                   className={`h-full w-full ${imageProps.objectFitClass} transition-transform duration-300 group-hover:scale-105`}
                 />
                 {project.isInDevelopment && (
                   <div className="absolute top-3 left-3 z-20">
-                    <Badge variant="destructive" className="text-xs">
+                    <Badge
+                      variant="destructive"
+                      className="text-xs font-medium px-2.5 py-1"
+                    >
                       In Development
                     </Badge>
                   </div>
@@ -145,15 +149,15 @@ export function ProjectCard({
               </Link>
             </div>
 
-            {/* Project Details */}
-            <div className="lg:col-span-3 space-y-5">
+            {/* Project Details - Adjusted column width */}
+            <div className="lg:col-span-7 space-y-5">
               <div className="flex justify-end">
-                <div className="flex space-x-2">
+                <div className="flex space-x-3">
                   <Button
                     size="sm"
                     variant="outline"
                     asChild
-                    className={`${projectTheme.colors.primary.light.border} ${projectTheme.colors.primary.dark.border} ${projectTheme.colors.primary.light.bgHoverButton} ${projectTheme.colors.primary.dark.bgHoverButton}`}
+                    className={`${projectTheme.colors.primary.light.border} ${projectTheme.colors.primary.dark.border} ${projectTheme.colors.primary.light.bgHoverButton} ${projectTheme.colors.primary.dark.bgHoverButton} shadow-sm font-medium`}
                   >
                     <a
                       href={project.githubUrl}
@@ -161,7 +165,7 @@ export function ProjectCard({
                       rel="noopener noreferrer"
                       className="flex items-center"
                     >
-                      <Github className="mr-1 h-4 w-4" />
+                      <Github className="mr-1.5 h-4 w-4" />
                       Code
                     </a>
                   </Button>
@@ -174,21 +178,24 @@ export function ProjectCard({
                 href={projectUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`lg:hidden aspect-video overflow-hidden rounded-lg border-2 ${projectTheme.border.light.secondary} ${projectTheme.border.dark.secondary} bg-card relative block group ${projectTheme.hover.light.border} ${projectTheme.hover.dark.border} transition-colors`}
+                className={`lg:hidden aspect-video overflow-hidden rounded-lg border-2 ${projectTheme.border.light.secondary} ${projectTheme.border.dark.secondary} bg-card relative block group ${projectTheme.hover.light.border} ${projectTheme.hover.dark.border} transition-colors shadow-md`}
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
                   <ProjectLinkHoverIndicator project={project} />
                 </div>
                 <Image
                   src={imageSrc}
                   alt={project.title}
-                  width={400}
-                  height={225}
+                  width={600}
+                  height={340}
                   className={`h-full w-full ${imageProps.objectFitClass} transition-transform duration-300 group-hover:scale-105`}
                 />
                 {project.isInDevelopment && (
                   <div className="absolute top-3 left-3 z-10">
-                    <Badge variant="destructive" className="text-xs">
+                    <Badge
+                      variant="destructive"
+                      className="text-xs font-medium px-2.5 py-1"
+                    >
                       In Development
                     </Badge>
                   </div>
@@ -196,22 +203,22 @@ export function ProjectCard({
               </Link>
 
               <div
-                className={`relative pl-3 border-l-2 ${projectTheme.colors.primary.light.borderLight} ${projectTheme.colors.primary.dark.borderLight}`}
+                className={`relative pl-4 border-l-3 ${projectTheme.colors.primary.light.borderLight} ${projectTheme.colors.primary.dark.borderLight}`}
               >
-                <p className="text-base text-slate-600 dark:text-slate-300">
+                <p className="text-base leading-relaxed text-slate-700 dark:text-slate-200">
                   {project.longDescription}
                 </p>
               </div>
 
               {/* Tech Stack */}
-              <div className="pt-1">
-                <h3 className="text-sm font-semibold mb-2 text-slate-700 dark:text-slate-300 flex items-center">
+              <div className="pt-3">
+                <h3 className="text-sm font-semibold mb-3 text-slate-700 dark:text-slate-200 flex items-center">
                   <div
-                    className={`w-2 h-2 ${projectTheme.colors.primary.light.accent} ${projectTheme.colors.primary.dark.accent} rounded-full mr-2`}
+                    className={`w-2.5 h-2.5 ${projectTheme.colors.primary.light.accent} ${projectTheme.colors.primary.dark.accent} rounded-full mr-2`}
                   />
                   Tech Stack
                 </h3>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2.5">
                   {project.tags.map((tag, tagIndex) => (
                     <TechBadge key={tagIndex} tech={tag} index={tagIndex} />
                   ))}

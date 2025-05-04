@@ -9,6 +9,13 @@ export interface Project {
   duration: string;
   tags: string[];
   isInDevelopment?: boolean;
+  version?: string;
+  stats?: {
+    stars: number;
+    forks: number;
+    issues: number;
+    lastUpdated: string;
+  };
 }
 
 const projects: Project[] = [
@@ -23,6 +30,13 @@ const projects: Project[] = [
     date: "2024-03",
     duration: "1 week",
     tags: ["Next.js", "TypeScript", "Encryption", "Security"],
+    version: "v1.0.0",
+    stats: {
+      stars: 12,
+      forks: 3,
+      issues: 2,
+      lastUpdated: "3 days ago",
+    },
   },
   {
     title: "NPM Package Checker",
@@ -37,6 +51,13 @@ const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "npm", "Package Checker"],
     imageUrl:
       "https://upf2833czf.ufs.sh/f/5esi0CuHtzvb13Dt3MdlX0ewzUr8IgHD534qfWcJTGjdv7Ap",
+    version: "v1.2.0",
+    stats: {
+      stars: 25,
+      forks: 5,
+      issues: 1,
+      lastUpdated: "1 week ago",
+    },
   },
   {
     title: "Legal AI PDF",
@@ -49,6 +70,13 @@ const projects: Project[] = [
     duration: "6 months",
     tags: ["AI", "Legal Tech", "Machine Learning"],
     isInDevelopment: true,
+    version: "v0.9.0",
+    stats: {
+      stars: 8,
+      forks: 2,
+      issues: 4,
+      lastUpdated: "2 days ago",
+    },
   },
   {
     title: "BlockPredict",
@@ -60,6 +88,13 @@ const projects: Project[] = [
     date: "2024-05",
     duration: "1 month",
     tags: ["Machine Learning", "Blockchain", "Simulation"],
+    version: "v1.0.1",
+    stats: {
+      stars: 15,
+      forks: 4,
+      issues: 3,
+      lastUpdated: "5 days ago",
+    },
   },
   {
     title: "Orrbit",
@@ -72,6 +107,13 @@ const projects: Project[] = [
     date: "2024-03",
     duration: "2 months",
     tags: ["Next.js", "NestJS", "TypeScript", "PDF Processing", "Prisma"],
+    version: "v1.1.0",
+    stats: {
+      stars: 20,
+      forks: 6,
+      issues: 2,
+      lastUpdated: "1 day ago",
+    },
   },
 ];
 

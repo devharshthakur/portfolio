@@ -3,9 +3,11 @@
  * @description Centralizes type definitions to ensure type safety across the application
  */
 
-import { ButtonProps } from "@/components/ui/button";
+import * as React from "react";
+import { type VariantProps } from "class-variance-authority";
 import { LucideIcon } from "lucide-react";
 import { IconType } from "react-icons";
+import { buttonVariants } from "@/components/ui/button";
 
 /**
  * Represents an icon component from either Lucide React or React Icons
@@ -67,17 +69,23 @@ export interface ColorSchemeStyles {
 /**
  * Props for the ColoredButton component
  * @interface ColoredButtonProps
- * @extends ButtonProps
+ * @extends React.ComponentProps<"button">
+ * @extends VariantProps<typeof buttonVariants>
  * @property {ColorScheme} [colorScheme="slate"] - Color scheme to apply to the button
  * @property {string} [href] - Optional URL for the button to link to
  * @property {IconComponent} [icon] - Optional icon to display with the button text
  * @property {string} label - Text to display on the button
  * @property {boolean} [isExternal=false] - Whether the link points to an external resource
+ * @property {"default" | "outline"} [variant="outline"] - Button variant
+ * @property {string} [className] - Additional CSS classes to apply
  */
-export interface ColoredButtonProps extends ButtonProps {
+export interface ColoredButtonProps {
   colorScheme?: ColorScheme;
   href?: string;
   icon?: IconComponent;
   label: string;
   isExternal?: boolean;
+  variant?: "default" | "outline";
+  className?: string;
+  asChild?: boolean;
 }

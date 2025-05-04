@@ -31,9 +31,9 @@ export default function ProjectsPage() {
   }, []);
 
   return (
-    <main className="relative min-h-screen w-full bg-gradient-to-b from-background to-emerald-100/20 dark:to-emerald-950/10 overflow-hidden">
+    <main className="relative min-h-screen w-full bg-linear-to-b from-background to-emerald-100/20 dark:to-emerald-950/10 overflow-hidden">
       {/* Controls - Fixed to top on mobile */}
-      <nav className="sticky top-0 left-0 right-0 flex justify-between items-center z-50 p-4 bg-background/80 backdrop-blur-sm border-b border-slate-200/50 dark:border-slate-800/50">
+      <nav className="sticky top-0 left-0 right-0 flex justify-between items-center z-50 p-4 bg-background/80 backdrop-blur-xs border-b border-slate-200/50 dark:border-slate-800/50">
         <Button
           asChild
           variant="outline"
@@ -62,10 +62,10 @@ export default function ProjectsPage() {
         aria-hidden="true"
       />
 
-      <div className="container max-w-5xl mx-auto px-4 py-6 md:py-12 relative z-10">
+      <div className="container max-w-6xl mx-auto px-4 py-6 md:py-12 relative z-10">
         <header className="mb-8 md:mb-16">
           <section
-            className={`relative p-6 md:p-8 rounded-xl md:rounded-2xl ${projectTheme.colors.background.light.gradient} ${projectTheme.colors.background.dark.gradient} ${projectTheme.border.light.subtle} ${projectTheme.border.dark.subtle} backdrop-blur-sm shadow-md overflow-hidden`}
+            className={`relative p-6 md:p-8 rounded-xl md:rounded-2xl ${projectTheme.colors.background.light.gradient} ${projectTheme.colors.background.dark.gradient} ${projectTheme.border.light.subtle} ${projectTheme.border.dark.subtle} backdrop-blur-xs shadow-md overflow-hidden`}
           >
             {/* Decorative elements */}
             <span
@@ -84,7 +84,7 @@ export default function ProjectsPage() {
                   <div className="relative z-10">
                     <div className="flex items-center gap-2 mb-2">
                       <span
-                        className={`hidden sm:flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br ${projectTheme.colors.primary.light.gradient.from} ${projectTheme.colors.primary.light.gradient.to} ${projectTheme.colors.primary.dark.gradient.from} ${projectTheme.colors.primary.dark.gradient.to} shadow-md`}
+                        className={`hidden sm:flex items-center justify-center w-8 h-8 rounded-full bg-linear-to-br ${projectTheme.colors.primary.light.gradient.from} ${projectTheme.colors.primary.light.gradient.to} ${projectTheme.colors.primary.dark.gradient.from} ${projectTheme.colors.primary.dark.gradient.to} shadow-md`}
                       >
                         <Building2 className="w-4 h-4 text-white" />
                       </span>
@@ -98,11 +98,11 @@ export default function ProjectsPage() {
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-800 dark:text-slate-100 mb-1">
                       <span className="inline-block">My</span>{" "}
                       <span
-                        className={`inline-block relative bg-clip-text text-transparent bg-gradient-to-r ${projectTheme.colors.primary.light.gradient.from} ${projectTheme.colors.primary.light.gradient.to} ${projectTheme.colors.primary.dark.gradient.from} ${projectTheme.colors.primary.dark.gradient.to}`}
+                        className={`inline-block relative bg-clip-text text-transparent bg-linear-to-r ${projectTheme.colors.primary.light.gradient.from} ${projectTheme.colors.primary.light.gradient.to} ${projectTheme.colors.primary.dark.gradient.from} ${projectTheme.colors.primary.dark.gradient.to}`}
                       >
                         Projects
                         <span
-                          className={`absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r ${projectTheme.colors.primary.light.gradient.from} ${projectTheme.colors.primary.light.gradient.to} ${projectTheme.colors.primary.dark.gradient.from} ${projectTheme.colors.primary.dark.gradient.to} rounded-full`}
+                          className={`absolute -bottom-1 left-0 w-full h-1 bg-linear-to-r ${projectTheme.colors.primary.light.gradient.from} ${projectTheme.colors.primary.light.gradient.to} ${projectTheme.colors.primary.dark.gradient.from} ${projectTheme.colors.primary.dark.gradient.to} rounded-full`}
                           aria-hidden="true"
                         />
                       </span>
@@ -177,9 +177,12 @@ export default function ProjectsPage() {
           />
 
           <article
-            className={`rounded-xl overflow-hidden border-2 ${projectTheme.border.light.primary} ${projectTheme.border.dark.primary} shadow-md ${projectTheme.colors.background.light.primary} ${projectTheme.colors.background.dark.primary} backdrop-blur-sm ${projectTheme.shadow.light} ${projectTheme.shadow.dark} relative z-10`}
+            className={`rounded-xl overflow-hidden border-2 ${projectTheme.border.light.primary} ${projectTheme.border.dark.primary} shadow-md ${projectTheme.colors.background.light.primary} ${projectTheme.colors.background.dark.primary} backdrop-blur-xs ${projectTheme.shadow.light} ${projectTheme.shadow.dark} relative z-10 backdrop-saturate-[1.2] backdrop-brightness-[1.02] backdrop-contrast-[1.05]`}
           >
-            <ul className="divide-y divide-slate-200/50 dark:divide-slate-800/50">
+            {/* Green tint overlay */}
+            <div className="absolute inset-0 bg-green-500/10 dark:bg-green-800/20 mix-blend-multiply pointer-events-none"></div>
+
+            <ul className="divide-y divide-slate-200/50 dark:divide-slate-800/50 relative z-10">
               {projects.map((project, index) => (
                 <li key={index}>
                   <ProjectCard

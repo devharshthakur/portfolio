@@ -7,9 +7,9 @@ import { Card } from "@/components/ui/card";
 export function Profile() {
   return (
     <section className="space-y-8" aria-labelledby="profile-heading">
-      <Card className="border-2 border-slate-500 dark:border-slate-600 p-4 shadow-sm bg-slate-100/50 dark:bg-slate-800/30">
+      <Card className="border-2 border-slate-500 dark:border-slate-600 p-4 shadow-xs bg-slate-100/50 dark:bg-slate-800/30">
         <div className="flex flex-col sm:flex-row gap-6">
-          <div className="flex-shrink-0 sm:border-r border-slate-300 dark:border-slate-700 sm:pr-6">
+          <div className="shrink-0 sm:border-r border-slate-300 dark:border-slate-700 sm:pr-6">
             <Image
               src="/dev-pfp.jpeg"
               width={128}
@@ -35,7 +35,7 @@ export function Profile() {
 
               <Badge
                 variant="default"
-                className="text-xs px-2 py-0.5 shadow-sm flex items-center gap-1 w-fit bg-orange-600 hover:bg-orange-700 dark:bg-orange-700"
+                className="text-xs px-2 py-0.5 shadow-xs flex items-center gap-1 w-fit bg-orange-600 hover:bg-orange-700 dark:bg-orange-700"
               >
                 <Layers size={12} className="text-primary-foreground" />
                 <span>Full Stack Web Developer</span>

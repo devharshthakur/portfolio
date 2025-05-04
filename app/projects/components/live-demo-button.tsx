@@ -1,6 +1,7 @@
 /**
  * LiveDemoButton component renders a button that links to a live demo of a project if available.
- * If the project does not have a live demo, it opens a dialog with information on how to run the project locally.
+ * If the project does not have a live demo, it shows a striked-through "See Live" button that,
+ * when clicked, opens a dialog with information on how to run the project locally.
  * The dialog includes details about the project's status (e.g., "In Development") and instructions for local setup.
  *
  * @param {Object} props - The component props.
@@ -37,7 +38,7 @@ export function LiveDemoButton({ project }: LiveDemoButtonProps) {
       <Button
         size="sm"
         asChild
-        className="bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600"
+        className="bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600 border-2 border-green-500 dark:border-green-600"
       >
         <a
           href={project.liveDemoUrl}
@@ -57,13 +58,13 @@ export function LiveDemoButton({ project }: LiveDemoButtonProps) {
       <DialogTrigger asChild>
         <Button
           size="sm"
-          className="flex items-center bg-purple-600 hover:bg-purple-700 dark:bg-purple-700 dark:hover:bg-purple-600"
+          className="flex items-center bg-purple-100 hover:bg-purple-200 dark:bg-purple-900/40 dark:hover:bg-purple-800/60 border-2 border-purple-500 dark:border-purple-600 text-purple-700 dark:text-purple-400"
         >
-          <BsCpuFill className="mr-1 h-4 w-4" />
-          Run Locally
+          <ExternalLink className="mr-1 h-4 w-4" />
+          <span className="line-through decoration-1">See Live</span>
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-2xl p-0 rounded-md border-2 border-purple-300 dark:border-purple-700 shadow-sm">
+      <DialogContent className="sm:max-w-2xl p-0 rounded-md border-2 border-purple-300 dark:border-purple-700 shadow-xs">
         <div className="grid grid-cols-[1fr_auto] gap-4 p-4 pb-2 bg-purple-50/50 dark:bg-purple-950/10">
           <div className="flex items-center gap-2">
             <div className="rounded-sm bg-purple-100 dark:bg-purple-900/30 p-1.5 border border-purple-200 dark:border-purple-800/50">
@@ -76,7 +77,7 @@ export function LiveDemoButton({ project }: LiveDemoButtonProps) {
               <DialogDescription className="text-xs text-slate-600 dark:text-slate-400">
                 {project.isInDevelopment
                   ? "This project is currently under development"
-                  : "This project is not deployed so you have to set it up locally"}
+                  : "This project is not deployed but can be run locally"}
               </DialogDescription>
             </div>
           </div>
@@ -95,13 +96,19 @@ export function LiveDemoButton({ project }: LiveDemoButtonProps) {
             <div className="flex items-center gap-2 mb-1.5">
               <Terminal className="h-3.5 w-3.5 text-purple-600 dark:text-purple-400" />
               <h3 className="font-medium text-sm text-slate-800 dark:text-slate-200">
-                How to run locally
+                Run locally instead
               </h3>
             </div>
             <ol className="ml-5 list-decimal text-xs text-slate-600 dark:text-slate-400 space-y-0.5">
               <li>Clone the repository from GitHub</li>
               <li>Install dependencies using npm or yarn</li>
               <li>Follow setup instructions in the README</li>
+              <li>
+                Run the development server with{" "}
+                <code className="text-purple-700 dark:text-purple-300 bg-purple-100/50 dark:bg-purple-900/30 px-1 rounded">
+                  npm run dev
+                </code>
+              </li>
             </ol>
           </div>
 
@@ -148,15 +155,15 @@ export function LiveDemoButton({ project }: LiveDemoButtonProps) {
               className="flex items-center"
             >
               <Github className="mr-1 h-3.5 w-3.5" />
-              Repository
+              View Repository
             </a>
           </Button>
           <DialogTrigger asChild>
             <Button
               size="sm"
-              className="h-8 bg-purple-600 hover:bg-purple-700 dark:bg-purple-700 dark:hover:bg-purple-600"
+              className="h-8 bg-purple-600 hover:bg-purple-700 dark:bg-purple-700 dark:hover:bg-purple-600 border border-purple-500 dark:border-purple-600"
             >
-              Got it
+              I Understand
             </Button>
           </DialogTrigger>
         </DialogFooter>

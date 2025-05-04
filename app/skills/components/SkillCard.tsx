@@ -59,7 +59,9 @@ export function SkillCard({ skill, index }: SkillCardProps) {
   );
 
   // Determine if this is a programming language skill by checking the categories array
-  const isProgrammingLanguage = skill.categories.includes("languages");
+  const isProgrammingLanguage =
+    skill.category === "languages" ||
+    (skill.relatedCategories?.includes("languages") ?? false);
 
   // Function to enhance colors for programming language icons in dark mode
   const getEnhancedIconColor = () => {
@@ -100,12 +102,12 @@ export function SkillCard({ skill, index }: SkillCardProps) {
           {/* Years Experience or Learning Badge */}
           <div className="flex flex-col items-end">
             {skill.learningStatus === "learning" ? (
-              <span className="flex items-center gap-1 text-sm font-medium px-2.5 py-1.5 rounded-md bg-white dark:bg-amber-900/20 text-amber-600 dark:text-amber-300 border border-amber-200 dark:border-amber-700/50 shadow-sm">
+              <span className="flex items-center gap-1 text-sm font-medium px-2.5 py-1.5 rounded-md bg-white dark:bg-amber-900/20 text-amber-600 dark:text-amber-300 border border-amber-200 dark:border-amber-700/50 shadow-xs">
                 <BookOpen className="h-4 w-4" />
               </span>
             ) : (
               <span
-                className={`flex items-center gap-1 text-sm font-medium px-2.5 py-1.5 rounded-md bg-white dark:bg-gray-700/60 ${skill.color.light} dark:text-white border border-gray-100 dark:border-gray-600 shadow-sm`}
+                className={`flex items-center gap-1 text-sm font-medium px-2.5 py-1.5 rounded-md bg-white dark:bg-gray-700/60 ${skill.color.light} dark:text-white border border-gray-100 dark:border-gray-600 shadow-xs`}
               >
                 <Clock className="h-3.5 w-3.5" />
                 {skill.yearsExperience}{" "}
@@ -123,7 +125,7 @@ export function SkillCard({ skill, index }: SkillCardProps) {
         </div>
 
         {/* Description */}
-        <CardDescription className="text-sm leading-relaxed text-gray-600 dark:text-gray-300 mb-5 bg-card/50 dark:bg-gray-700/30 p-4 rounded-md border border-border h-auto shadow-sm">
+        <CardDescription className="text-sm leading-relaxed text-gray-600 dark:text-gray-300 mb-5 bg-card/50 dark:bg-gray-700/30 p-4 rounded-md border border-border h-auto shadow-xs">
           {skill.description}
         </CardDescription>
       </CardContent>
@@ -134,7 +136,7 @@ export function SkillCard({ skill, index }: SkillCardProps) {
           href={skill.officialUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className={`text-sm flex items-center gap-1 ${skill.color.light} dark:text-white transition-colors px-3.5 py-2 rounded-md bg-white dark:bg-gray-700/50 border border-current hover:bg-gray-50 dark:hover:bg-gray-700/80 font-medium shadow-sm`}
+          className={`text-sm flex items-center gap-1 ${skill.color.light} dark:text-white transition-colors px-3.5 py-2 rounded-md bg-white dark:bg-gray-700/50 border border-current hover:bg-gray-50 dark:hover:bg-gray-700/80 font-medium shadow-xs`}
         >
           Visit
           <ArrowUpRight className="h-3.5 w-3.5" />

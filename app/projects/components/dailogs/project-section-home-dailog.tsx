@@ -38,7 +38,7 @@ export function NoteDialog() {
           <span className="sr-only">Project Stats Information</span>
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-md border-2 border-blue-300 dark:border-blue-700 shadow-sm">
+      <DialogContent className="sm:max-w-md border-2 border-blue-300 dark:border-blue-700 shadow-xs">
         <DialogHeader className="bg-blue-50/50 dark:bg-blue-950/10 p-4 -m-6 mb-4">
           <div className="flex items-center gap-2">
             <AlertCircleIcon className="h-5 w-5 text-blue-600 dark:text-blue-400" />

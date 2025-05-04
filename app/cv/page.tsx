@@ -47,9 +47,9 @@ export default function CVPage() {
         </Button>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12 max-w-6xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10 max-w-6xl">
         {/* Header Section */}
-        <header className="flex justify-between items-center mb-10 md:mb-12 border-b border-border pb-5">
+        <header className="flex justify-between items-center mb-8 md:mb-10 border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <div className="bg-purple-100 dark:bg-purple-900/30 p-2 rounded-md border border-purple-200 dark:border-purple-800/50">
               <FileText
@@ -72,8 +72,8 @@ export default function CVPage() {
           </div>
         </header>
         {/* Main section */}
-        <main className="cv-content space-y-10">
-          <section className="text-center md:text-left mb-8">
+        <main className="cv-content space-y-8">
+          <section className="text-center md:text-left mb-6">
             <div className="flex flex-col md:flex-row gap-3 md:items-center justify-between">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold font-mono tracking-tight mb-1 text-slate-800 dark:text-slate-200">
@@ -94,8 +94,8 @@ export default function CVPage() {
 
           <hr className="border-border" />
 
-          <section className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 pt-8">
-            <div className="md:col-span-1 space-y-8">
+          <section className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 pt-6">
+            <div className="md:col-span-1 space-y-6">
               <div>
                 <SectionTitle
                   icon={
@@ -108,7 +108,7 @@ export default function CVPage() {
                   colorClassName="border-yellow-400 text-yellow-700 dark:border-yellow-600 dark:text-yellow-400"
                 />
                 <Card className="border-2 border-yellow-400 dark:border-yellow-600 bg-yellow-50/30 dark:bg-yellow-950/10">
-                  <CardContent className="p-4">
+                  <CardContent className="p-3">
                     <ProfileSection
                       introduction="Highly motivated software engineer specializing in full-stack web development, with a strong interest in backend systems. Aiming to build efficient, scalable, and maintainable applications."
                       bulletPoints={profileBulletPoints}
@@ -129,7 +129,7 @@ export default function CVPage() {
                   colorClassName="border-blue-400 text-blue-700 dark:border-blue-600 dark:text-blue-400"
                 />
                 <Card className="border-2 border-blue-400 dark:border-blue-600 bg-blue-50/30 dark:bg-blue-950/10">
-                  <CardContent className="p-4">
+                  <CardContent className="p-3">
                     <ContactInfo
                       phone="+91 721-985-3301"
                       email="workharshthakur2002@gmail.com"
@@ -179,14 +179,14 @@ export default function CVPage() {
                   colorClassName="border-purple-400 text-purple-700 dark:border-purple-600 dark:text-purple-400"
                 />
                 <Card className="border-2 border-purple-400 dark:border-purple-600 bg-purple-50/30 dark:bg-purple-950/10">
-                  <CardContent className="p-4">
+                  <CardContent className="p-3">
                     <GitHubLink username="devharshthakur" />
                   </CardContent>
                 </Card>
               </div>
             </div>
 
-            <div className="md:col-span-2 space-y-8">
+            <div className="md:col-span-2 space-y-6">
               <div>
                 <SectionTitle
                   icon={
@@ -199,7 +199,7 @@ export default function CVPage() {
                   colorClassName="border-green-400 text-green-700 dark:border-green-600 dark:text-green-400"
                 />
                 <Card className="border-2 border-green-400 dark:border-green-600 bg-green-50/30 dark:bg-green-950/10">
-                  <CardContent className="p-4">
+                  <CardContent className="p-3">
                     <div className="space-y-4">
                       <EducationEntry
                         degree="BE Software Engineering"
@@ -243,7 +243,7 @@ export default function CVPage() {
                     </Table>
                   </CardContent>
                 </Card>
-                <div className="mt-4">
+                <div className="mt-3">
                   <LearningBadge skill="Rust Programming Language" />
                 </div>
               </div>

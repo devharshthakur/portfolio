@@ -111,7 +111,7 @@ const UpdatePopup: React.FC = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="sm:max-w-md p-0 rounded-lg border-2 border-slate-300 dark:border-slate-700 overflow-hidden shadow-sm">
+      <DialogContent className="sm:max-w-md p-0 rounded-lg border-2 border-slate-300 dark:border-slate-700 overflow-hidden shadow-xs">
         {popupType === "welcome" ? (
           <>
             <div className="bg-blue-50/30 dark:bg-blue-950/10 p-6">

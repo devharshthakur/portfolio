@@ -36,7 +36,7 @@ export const HEADER_RIGHT_NAV: NavItem[] = [
   {
     href: "/about",
     label: "About Me",
-    variant: "default",
+    variant: "outline",
     colorScheme: "blue",
   },
   {
@@ -81,7 +81,7 @@ export const COLOR_SCHEMES: Record<ColorScheme, ColorSchemeStyles> = {
       "hover:border-slate-500 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800",
     text: "text-slate-700 dark:text-slate-300",
     icon: "text-slate-600 dark:text-slate-400",
-    shadow: "shadow-sm",
+    shadow: "shadow-xs",
   },
   /**
    * Orange color scheme
@@ -99,9 +99,12 @@ export const COLOR_SCHEMES: Record<ColorScheme, ColorSchemeStyles> = {
    */
   blue: {
     bg: "bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600",
-    text: "",
+    border: "border-blue-300 dark:border-blue-700",
+    hover:
+      "hover:border-blue-500 dark:hover:border-blue-500 hover:text-blue-700 dark:hover:text-blue-300 hover:bg-blue-100/50 dark:hover:bg-blue-900/30",
+    text: "text-black-300",
     icon: "text-blue-600 dark:text-blue-400",
-    shadow: "",
+    shadow: "shadow-xs",
   },
   /**
    * Indigo color scheme

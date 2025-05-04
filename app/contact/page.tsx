@@ -42,9 +42,9 @@ export default function ContactPage(): React.ReactElement {
               <span>Available for Opportunities</span>
             </div>
 
-            <h1 className="bg-gradient-to-r from-slate-800 to-slate-600 dark:from-slate-100 dark:to-slate-300 bg-clip-text text-transparent text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl animate-fade-in-up font-mono relative">
+            <h1 className="bg-linear-to-r from-slate-800 to-slate-600 dark:from-slate-100 dark:to-slate-300 bg-clip-text text-transparent text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl animate-fade-in-up font-mono relative">
               Eager to Learn & Gain Experience
-              <div className="absolute -bottom-2 left-1/4 right-1/4 h-3 w-1/2 bg-slate-500/20 dark:bg-slate-400/20 -z-10 rounded-full blur-sm mx-auto"></div>
+              <div className="absolute -bottom-2 left-1/4 right-1/4 h-3 w-1/2 bg-slate-500/20 dark:bg-slate-400/20 -z-10 rounded-full blur-xs mx-auto"></div>
             </h1>
 
             <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 animate-fade-in-up animation-delay-200">
@@ -59,7 +59,7 @@ export default function ContactPage(): React.ReactElement {
       <section className="container mx-auto px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-3">
           {/* Education Card */}
-          <div className="group relative overflow-hidden rounded-xl bg-white p-1 shadow-sm transition-all duration-300 hover:shadow-md dark:bg-zinc-900 border-2 border-yellow-300 dark:border-yellow-700/60">
+          <div className="group relative overflow-hidden rounded-xl bg-white p-1 shadow-xs transition-all duration-300 hover:shadow-md dark:bg-zinc-900 border-2 border-yellow-300 dark:border-yellow-700/60">
             <div className="relative flex h-full flex-col items-center rounded-lg bg-white p-6 text-center dark:bg-zinc-900">
               <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-yellow-50 dark:bg-yellow-900/40 transition-transform duration-300 group-hover:scale-110 border border-yellow-200 dark:border-yellow-700/60">
                 <GraduationCap className="h-10 w-10 text-yellow-600 dark:text-yellow-400 transition-transform duration-300 group-hover:scale-110" />
@@ -79,7 +79,7 @@ export default function ContactPage(): React.ReactElement {
           </div>
 
           {/* Career Status Card */}
-          <div className="group relative overflow-hidden rounded-xl bg-white p-1 shadow-sm transition-all duration-300 hover:shadow-md dark:bg-zinc-900 border-2 border-indigo-300 dark:border-indigo-700/60">
+          <div className="group relative overflow-hidden rounded-xl bg-white p-1 shadow-xs transition-all duration-300 hover:shadow-md dark:bg-zinc-900 border-2 border-indigo-300 dark:border-indigo-700/60">
             <div className="relative flex h-full flex-col items-center rounded-lg bg-white p-6 text-center dark:bg-zinc-900">
               <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-indigo-50 dark:bg-indigo-900/40 transition-transform duration-300 group-hover:scale-110 border border-indigo-200 dark:border-indigo-700/60">
                 <Briefcase className="h-10 w-10 text-indigo-600 dark:text-indigo-400 transition-transform duration-300 group-hover:scale-110" />
@@ -99,7 +99,7 @@ export default function ContactPage(): React.ReactElement {
           </div>
 
           {/* Location Card */}
-          <div className="group relative overflow-hidden rounded-xl bg-white p-1 shadow-sm transition-all duration-300 hover:shadow-md dark:bg-zinc-900 border-2 border-rose-300 dark:border-rose-700/60">
+          <div className="group relative overflow-hidden rounded-xl bg-white p-1 shadow-xs transition-all duration-300 hover:shadow-md dark:bg-zinc-900 border-2 border-rose-300 dark:border-rose-700/60">
             <div className="relative flex h-full flex-col items-center rounded-lg bg-white p-6 text-center dark:bg-zinc-900">
               <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-rose-50 dark:bg-rose-900/40 transition-transform duration-300 group-hover:scale-110 border border-rose-200 dark:border-rose-700/60">
                 <MapPin className="h-10 w-10 text-rose-600 dark:text-rose-400 transition-transform duration-300 group-hover:scale-110" />
@@ -125,10 +125,10 @@ export default function ContactPage(): React.ReactElement {
         id="contact-form"
         className="container mx-auto px-4 py-16 sm:px-6 lg:px-8"
       >
-        <div className="mx-auto max-w-6xl overflow-hidden rounded-2xl bg-white shadow-sm dark:bg-zinc-900">
+        <div className="mx-auto max-w-6xl overflow-hidden rounded-2xl bg-white shadow-xs dark:bg-zinc-900">
           <div className="grid gap-0 md:grid-cols-2">
             {/* Contact Information Section */}
-            <div className="relative overflow-hidden bg-white dark:bg-zinc-900 p-8 md:p-10 rounded-l-2xl shadow-sm border-2 border-yellow-300 dark:border-yellow-700/60">
+            <div className="relative overflow-hidden bg-white dark:bg-zinc-900 p-8 md:p-10 rounded-l-2xl shadow-xs border-2 border-yellow-300 dark:border-yellow-700/60">
               <div className="relative z-10 flex h-full flex-col justify-between space-y-8">
                 <div className="space-y-6">
                   <div>
@@ -147,7 +147,7 @@ export default function ContactPage(): React.ReactElement {
 
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-indigo-50 dark:bg-indigo-900/40 shadow-sm border border-indigo-200 dark:border-indigo-700/60">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-indigo-50 dark:bg-indigo-900/40 shadow-xs border border-indigo-200 dark:border-indigo-700/60">
                       <Mail className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
                     </div>
                     <div>
@@ -164,7 +164,7 @@ export default function ContactPage(): React.ReactElement {
                   </div>
 
                   <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-indigo-50 dark:bg-indigo-900/40 shadow-sm border border-indigo-200 dark:border-indigo-700/60">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-indigo-50 dark:bg-indigo-900/40 shadow-xs border border-indigo-200 dark:border-indigo-700/60">
                       <FaSquareXTwitter className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
                     </div>
                     <div>
@@ -195,7 +195,7 @@ export default function ContactPage(): React.ReactElement {
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium shadow-sm transition-all border bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200"
+                        className="flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium shadow-xs transition-all border bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200"
                       >
                         <SocialIcon iconType={link.iconType} />
                         {link.name}
@@ -205,7 +205,7 @@ export default function ContactPage(): React.ReactElement {
                 </div>
 
                 {/* Availability Status */}
-                <div className="rounded-xl bg-green-50 dark:bg-green-900/20 p-4 shadow-sm border border-green-200 dark:border-green-700/40">
+                <div className="rounded-xl bg-green-50 dark:bg-green-900/20 p-4 shadow-xs border border-green-200 dark:border-green-700/40">
                   <div className="flex items-center gap-2">
                     <div className="h-3 w-3 rounded-full bg-green-500 animate-pulse"></div>
                     <p className="text-sm font-medium text-green-700 dark:text-green-400">

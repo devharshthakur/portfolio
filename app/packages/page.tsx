@@ -24,9 +24,9 @@ export default function PackagesPage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen w-full bg-gradient-to-b from-background to-purple-50/20 dark:to-purple-950/10 overflow-hidden">
+    <div className="relative min-h-screen w-full bg-linear-to-b from-background to-purple-50/20 dark:to-purple-950/10 overflow-hidden">
       {/* Navigation */}
-      <nav className="sticky top-0 left-0 right-0 flex justify-between items-center z-50 p-4 bg-background/80 backdrop-blur-sm">
+      <nav className="sticky top-0 left-0 right-0 flex justify-between items-center z-50 p-4 bg-background/80 backdrop-blur-xs">
         <Button
           asChild
           variant="outline"
@@ -54,7 +54,7 @@ export default function PackagesPage() {
         <HeroSection packages={packages} />
 
         {/* Documentation Coming Soon Banner */}
-        <div className="mb-10 p-4 rounded-lg border-2 border-indigo-200 dark:border-indigo-800/50 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/30 dark:to-purple-900/30 shadow-sm">
+        <div className="mb-10 p-4 rounded-lg border-2 border-indigo-200 dark:border-indigo-800/50 bg-linear-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/30 dark:to-purple-900/30 shadow-xs">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="p-2 rounded-full bg-indigo-100 dark:bg-indigo-900/50">
@@ -74,7 +74,7 @@ export default function PackagesPage() {
               asChild
               variant="default"
               size="sm"
-              className="bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm hover:shadow-md transition-all duration-300"
+              className="bg-indigo-500 hover:bg-indigo-600 text-white shadow-xs hover:shadow-md transition-all duration-300"
             >
               <Link
                 href="https://htpkgs.info"

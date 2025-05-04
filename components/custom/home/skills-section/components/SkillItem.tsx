@@ -53,7 +53,7 @@ export function SkillItem({ skill }: SkillItemProps) {
   return (
     <a href={skill.url || "#"}>
       <motion.div
-        className={`flex flex-col items-center gap-2 rounded-md border-2 p-3 bg-background/50 dark:bg-background/20 shadow-sm ${getBorderColor(skill.name)}`}
+        className={`flex flex-col items-center gap-2 rounded-md border-2 p-3 bg-background/50 dark:bg-background/20 shadow-xs ${getBorderColor(skill.name)}`}
         whileHover={{
           scale: 1.05,
           boxShadow: "0 0 12px rgba(0, 0, 0, 0.15)",
