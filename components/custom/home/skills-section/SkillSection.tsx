@@ -1,6 +1,6 @@
 import skills from './data/skills.data';
 import { SkillItem } from './components/SkillItem';
-import { Briefcase } from 'lucide-react';
+import { Briefcase, Hammer } from 'lucide-react';
 import { SectionTitle } from '@/components/ui/section-title';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -19,7 +19,10 @@ export function Skills() {
             size="sm"
             className="text-indigo-600 hover:text-indigo-700 border-indigo-600 hover:border-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 dark:border-indigo-600 dark:hover:border-indigo-500"
           >
-            <Link href="/skills">View All Skills</Link>
+            <Link href="/skills" className="flex items-center gap-1.5">
+              <Hammer className="h-3.5 w-3.5" />
+              <span>View All Skills</span>
+            </Link>
           </Button>
         </div>
 

@@ -33,8 +33,6 @@ import { Project } from '@/components/custom/home/project-section/data/projects.
 import { getTechColor } from './util/tech-color-utils';
 import { formatDate, getRowBackground, getRowBorderClass, shouldShowRunLocallyButton, getLinkButtonText } from './util/project-display-utils';
 
-const DEFAULT_PLACEHOLDER = '/placeholder.svg';
-
 interface ProjectStats {
   stars: number;
   forks: number;
@@ -102,9 +100,8 @@ export function ProjectCard({ project, projectStats = { stars: 0, forks: 0 }, in
                       {project.duration}
                     </span>
                     {project.version && (
-                      <span className="flex items-center">
-                        <Code className="mr-1 h-3 w-3" />
-                        {project.version}
+                      <span className="flex items-center px-2 py-0.5 rounded-md bg-teal-100 dark:bg-teal-800/70 text-teal-900 dark:text-teal-50 border border-teal-200 dark:border-teal-700 shadow-sm">
+                        <Code className="mr-1 h-3 w-3 text-teal-700 dark:text-teal-300" />v{project.version}
                       </span>
                     )}
                   </div>
@@ -112,24 +109,24 @@ export function ProjectCard({ project, projectStats = { stars: 0, forks: 0 }, in
 
                 {/* Project Stats Box */}
                 {project.githubUrl && (
-                  <div className="flex items-center gap-3 py-1 px-3 rounded-lg bg-white/80 shadow-sm dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700">
+                  <div className="flex items-center gap-3 py-1 px-3 rounded-lg bg-emerald-50/80 dark:bg-emerald-900/40 shadow-sm border border-emerald-200 dark:border-emerald-800">
                     <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100 transition-colors"
+                      className="flex items-center text-emerald-700 hover:text-emerald-900 dark:text-emerald-300 dark:hover:text-emerald-100 transition-colors"
                     >
                       <Github className="h-4 w-4 mr-1.5" />
                       <span className="text-xs font-medium">GitHub</span>
                     </a>
-                    <div className="h-4 w-px bg-slate-200 dark:bg-zinc-600"></div>
-                    <div className="flex items-center text-amber-600 dark:text-amber-400 font-medium">
-                      <Star className="h-3.5 w-3.5 mr-1" />
-                      <span className="text-xs">{projectStats.stars}</span>
+                    <div className="h-4 w-px bg-emerald-200 dark:bg-emerald-700"></div>
+                    <div className="flex items-center px-1.5 py-0.5 rounded-md bg-yellow-100 dark:bg-yellow-800/70 text-yellow-900 dark:text-yellow-50 border border-yellow-200 dark:border-yellow-700 shadow-sm">
+                      <Star className="h-3.5 w-3.5 mr-1 text-yellow-600 dark:text-yellow-300" />
+                      <span className="text-xs font-medium">{projectStats.stars}</span>
                     </div>
-                    <div className="flex items-center text-indigo-600 dark:text-indigo-400 font-medium">
-                      <GitFork className="h-3.5 w-3.5 mr-1" />
-                      <span className="text-xs">{projectStats.forks}</span>
+                    <div className="flex items-center px-1.5 py-0.5 rounded-md bg-blue-100 dark:bg-blue-800/70 text-blue-900 dark:text-blue-50 border border-blue-200 dark:border-blue-700 shadow-sm">
+                      <GitFork className="h-3.5 w-3.5 mr-1 text-blue-600 dark:text-blue-300" />
+                      <span className="text-xs font-medium">{projectStats.forks}</span>
                     </div>
                   </div>
                 )}
@@ -258,12 +255,12 @@ export function ProjectCard({ project, projectStats = { stars: 0, forks: 0 }, in
 
                         {project.version && (
                           <div className="flex items-center p-2 rounded-md bg-white/80 dark:bg-zinc-800/80 border border-slate-100 dark:border-zinc-700/80 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/10 transition-colors group">
-                            <span className="w-8 h-8 rounded-md bg-amber-50 dark:bg-amber-900/20 flex items-center justify-center mr-3 group-hover:bg-amber-100 dark:group-hover:bg-amber-900/30 transition-colors">
-                              <Code className="h-4 w-4 text-amber-600 dark:text-amber-400" />
+                            <span className="w-8 h-8 rounded-md bg-teal-100 dark:bg-teal-800/50 flex items-center justify-center mr-3 group-hover:bg-teal-200 dark:group-hover:bg-teal-800/70 transition-colors">
+                              <Code className="h-4 w-4 text-teal-600 dark:text-teal-300" />
                             </span>
                             <div>
                               <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Current Version</p>
-                              <p className="text-sm font-medium text-slate-700 dark:text-slate-200">{project.version}</p>
+                              <p className="text-sm font-medium text-teal-700 dark:text-teal-300">v{project.version}</p>
                             </div>
                           </div>
                         )}

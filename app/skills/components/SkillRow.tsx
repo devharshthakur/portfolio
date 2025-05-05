@@ -67,13 +67,13 @@ export function SkillRow({ skill, index }: SkillRowProps) {
     if (hasDarkIcon) {
       switch (skill.id) {
         case 'nextjs':
-          return 'text-black dark:text-black';
+          return 'text-black dark:text-gray-900';
         case 'vercel':
-          return 'text-black dark:text-black';
+          return 'text-black dark:text-gray-900';
         case 'github':
-          return 'text-black dark:text-black';
+          return 'text-black dark:text-gray-900';
         case 'express':
-          return 'text-gray-800 dark:text-gray-800';
+          return 'text-gray-800 dark:text-gray-900';
         default:
           return `${skill.color.light} ${skill.color.dark}`;
       }

@@ -66,9 +66,14 @@ export function ProjectCard(props: Project) {
   return (
     <Card className="flex flex-col overflow-hidden border border-emerald-800/30 bg-emerald-950/80 rounded-lg">
       {/* Title Section */}
-      <div className="flex items-center justify-between px-4 py-2 border-b border-emerald-800/40">
-        <h3 className="font-mono text-base font-bold text-emerald-100">{title}</h3>
-        <Badge variant="outline" className="font-mono text-xs border-emerald-700/50 bg-emerald-900/70 text-emerald-400">
+      <div className="relative flex items-center justify-between px-4 py-3 border-b border-emerald-800/40 bg-gradient-to-r from-emerald-950 via-emerald-900/80 to-emerald-950">
+        <div className="flex items-center space-x-2">
+          <div className="h-3 w-3 rounded-full bg-gradient-to-br from-teal-400 to-emerald-600 shadow-sm shadow-emerald-400/20"></div>
+          <h3 className="font-mono text-base font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 via-teal-200 to-emerald-200 tracking-tight">
+            {title}
+          </h3>
+        </div>
+        <Badge variant="outline" className="font-mono text-xs px-2 py-0.5 border-teal-600 bg-teal-900/90 text-teal-200 shadow-sm">
           {version}
         </Badge>
       </div>
@@ -94,7 +99,7 @@ export function ProjectCard(props: Project) {
           value="info"
           className="mt-0 border-0 p-3 bg-emerald-900/80 min-h-[120px] data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=active]:slide-in-from-left-5"
         >
-          <p className="font-mono text-sm text-emerald-200 leading-relaxed mb-2">{description}</p>
+          <p className="font-mono text-sm text-emerald-200 leading-relaxed mb-2 max-w-[95%] mx-auto text-pretty">{description}</p>
           <div className="flex flex-wrap gap-1.5">
             {tags.map((tech) => (
               <Badge
@@ -117,32 +122,32 @@ export function ProjectCard(props: Project) {
           className="mt-0 border-0 p-3 bg-emerald-900/80 min-h-[120px] data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=active]:slide-in-from-right-5"
         >
           <div className="grid grid-cols-2 gap-2">
-            <div className="flex flex-col items-center justify-center rounded-md bg-emerald-800/60 p-1.5">
-              <div className="flex items-center gap-1 text-yellow-500">
+            <div className="flex flex-col items-center justify-center rounded-md bg-emerald-800/60 p-1.5 border border-yellow-700/30 shadow-sm">
+              <div className="flex items-center gap-1 text-yellow-400">
                 <Icons.FaStar className="h-3 w-3" />
                 <span className="font-mono text-xs font-bold">{stats.stars}</span>
               </div>
               <span className="mt-0.5 font-mono text-[10px] text-emerald-300">Stars</span>
             </div>
 
-            <div className="flex flex-col items-center justify-center rounded-md bg-emerald-800/60 p-1.5">
-              <div className="flex items-center gap-1 text-blue-500">
+            <div className="flex flex-col items-center justify-center rounded-md bg-emerald-800/60 p-1.5 border border-blue-700/30 shadow-sm">
+              <div className="flex items-center gap-1 text-blue-400">
                 <Icons.FaCodeBranch className="h-3 w-3" />
                 <span className="font-mono text-xs font-bold">{stats.forks}</span>
               </div>
               <span className="mt-0.5 font-mono text-[10px] text-emerald-300">Forks</span>
             </div>
 
-            <div className="flex flex-col items-center justify-center rounded-md bg-emerald-800/60 p-1.5">
-              <div className="flex items-center gap-1 text-orange-500">
+            <div className="flex flex-col items-center justify-center rounded-md bg-emerald-800/60 p-1.5 border border-orange-700/30 shadow-sm">
+              <div className="flex items-center gap-1 text-orange-400">
                 <Icons.FaExclamationCircle className="h-3 w-3" />
                 <span className="font-mono text-xs font-bold">{stats.issues}</span>
               </div>
               <span className="mt-0.5 font-mono text-[10px] text-emerald-300">Issues</span>
             </div>
 
-            <div className="flex flex-col items-center justify-center rounded-md bg-emerald-800/60 p-1.5">
-              <div className="flex items-center gap-1 text-purple-500">
+            <div className="flex flex-col items-center justify-center rounded-md bg-emerald-800/60 p-1.5 border border-purple-700/30 shadow-sm">
+              <div className="flex items-center gap-1 text-purple-400">
                 <Icons.FaHistory className="h-3 w-3" />
                 <span className="font-mono text-[10px] font-medium">{stats.lastUpdated}</span>
               </div>

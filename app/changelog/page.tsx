@@ -25,23 +25,23 @@ export default function ChangelogPage() {
     <div className="relative min-h-screen w-full bg-gradient-to-b from-background to-slate-100/30 dark:to-slate-900/30">
       {/* Fixed header with controls */}
       <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 dark:border-slate-800/80 bg-background/90 backdrop-blur-sm">
-        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 flex h-14 items-center justify-between">
+        <div className="w-full mx-auto px-4 sm:px-6 flex h-14 items-center justify-between">
           <Button
             asChild
             variant="outline"
-            className="flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+            size="icon"
+            className="ml-2 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
           >
             <Link href="/">
-              <Home className="h-4 w-4" />
+              <Home className="h-[1.2rem] w-[1.2rem]" />
+              <span className="sr-only">Back to home</span>
             </Link>
           </Button>
 
-          <div className="flex items-center">
-            <ModeToggle
-              className="border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800"
-              iconClassName="text-slate-700 dark:text-slate-300"
-            />
-          </div>
+          <ModeToggle
+            className="mr-2 border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800"
+            iconClassName="text-slate-700 dark:text-slate-300"
+          />
         </div>
       </header>
 

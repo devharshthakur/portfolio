@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin, FaDownload, FaCode, FaServer, FaGraduationCap } from 'react-icons/fa';
-import { Mail, User, MapPin, BookOpen, Calendar, Award, Home, Send, Briefcase, ExternalLink, Sparkles } from 'lucide-react';
+import { Mail, User, MapPin, BookOpen, Calendar, Award, Home, Send, Briefcase, ExternalLink, Sparkles, Hammer } from 'lucide-react';
+import { SiGo, SiVitest } from 'react-icons/si';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -11,7 +12,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-tr from-background via-background to-indigo-50/10 dark:to-indigo-950/10 overflow-hidden">
       {/* Fixed Navigation Bar */}
-      <nav className="sticky top-0 left-0 right-0 flex justify-between items-center z-50 p-4 bg-background/80 backdrop-blur-sm border-b border-slate-200/50 dark:border-slate-800/50">
+      <nav className="sticky top-0 left-0 right-0 flex justify-between items-center z-50 p-4 bg-gradient-to-tr from-background via-background to-indigo-50/10 dark:to-indigo-950/10 backdrop-blur-sm">
         <Button
           asChild
           variant="outline"
@@ -214,7 +215,7 @@ export default function AboutPage() {
                         className="border-blue-300 dark:border-blue-700 bg-blue-50/50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 hover:bg-blue-100/60 dark:hover:bg-blue-900/30"
                       >
                         <Link href="/skills" className="flex items-center gap-1.5">
-                          <Sparkles className="h-3.5 w-3.5" />
+                          <Hammer className="h-3.5 w-3.5" />
                           <span>View All Skills</span>
                         </Link>
                       </Button>
@@ -335,15 +336,34 @@ export default function AboutPage() {
                       </Badge>
                     </div>
 
+                    {/* Go Language */}
+                    <div className="pl-8 relative mb-6">
+                      <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-rose-300 to-rose-300/0 dark:from-rose-700 dark:to-rose-700/0"></div>
+                      <div className="absolute left-0 top-0 h-3 w-3 rounded-full bg-rose-400 dark:bg-rose-600 transform -translate-x-1.5"></div>
+
+                      <div>
+                        <h3 className="font-semibold text-rose-700 dark:text-rose-400 mb-2 flex items-center gap-2">
+                          <SiGo className="h-4 w-4" /> Go Programming Language
+                        </h3>
+                        <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                          Learning Go for its simplicity, efficiency, and excellent concurrency support. Exploring its potential for building
+                          high-performance backend services and microservices.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Vitest/JS Testing */}
                     <div className="pl-8 relative">
                       <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-rose-300 to-rose-300/0 dark:from-rose-700 dark:to-rose-700/0"></div>
                       <div className="absolute left-0 top-0 h-3 w-3 rounded-full bg-rose-400 dark:bg-rose-600 transform -translate-x-1.5"></div>
 
                       <div>
-                        <h3 className="font-semibold text-rose-700 dark:text-rose-400 mb-2">Rust Programming Language</h3>
+                        <h3 className="font-semibold text-rose-700 dark:text-rose-400 mb-2 flex items-center gap-2">
+                          <SiVitest className="h-4 w-4" /> Vitest/JS Testing
+                        </h3>
                         <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                          Exploring systems programming with Rust for performance-critical applications and gaining a deeper understanding of memory
-                          management concepts.
+                          Diving into JavaScript testing with Vitest, focusing on writing effective unit and integration tests for frontend and
+                          backend applications to improve code quality and reliability.
                         </p>
                       </div>
                     </div>

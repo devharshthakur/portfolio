@@ -54,7 +54,7 @@ export function SkillCard({ skill, index }: SkillCardProps) {
 
   // Function to enhance colors for programming language icons in dark mode
   const getEnhancedIconColor = () => {
-    if (isDarkIcon) return 'dark:text-gray-800';
+    if (isDarkIcon) return 'dark:text-gray-900';
 
     if (isProgrammingLanguage) {
       // Extract the color and make it more vibrant
@@ -72,7 +72,9 @@ export function SkillCard({ skill, index }: SkillCardProps) {
         <div className="flex flex-row justify-between">
           <div className="flex items-center space-x-3">
             <div
-              className={`p-2.5 rounded-lg ${isProgrammingLanguage ? 'bg-white dark:bg-gray-200' : 'bg-white dark:bg-white'} border-2 border-gray-100 dark:border-gray-300 shadow-md hover:shadow-lg transition-all duration-300`}
+              className={`p-2.5 rounded-lg ${
+                isProgrammingLanguage ? 'bg-white dark:bg-gray-200' : isDarkIcon ? 'bg-white dark:bg-gray-300/90' : 'bg-white dark:bg-gray-300/90'
+              } border-2 border-gray-100 dark:border-gray-300 shadow-md hover:shadow-lg transition-all duration-300`}
             >
               <Icon className={`h-6 w-6 ${skill.color.light} ${getEnhancedIconColor()}`} />
             </div>

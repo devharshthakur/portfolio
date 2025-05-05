@@ -55,7 +55,7 @@ export function PackageCard({ name, description, githubUrl, npmUrl, downloads, v
       {/* Header section - lighter red */}
       <div className="p-3 flex items-center justify-between border-b border-red-200/80 dark:border-red-700/60 bg-red-100/60 dark:bg-red-800/50">
         <h3 className="text-xl font-bold font-mono text-red-900 dark:text-red-100">{name}</h3>
-        <span className="px-2 py-0.5 text-xs rounded-md bg-red-50/80 dark:bg-red-700/70 text-red-800 dark:text-red-100 border-2 border-red-300/60 dark:border-red-600/60 font-mono">
+        <span className="px-2 py-0.5 text-xs rounded-md bg-amber-100 dark:bg-amber-700/70 text-amber-900 dark:text-amber-50 border-2 border-amber-300 dark:border-amber-600/70 font-mono shadow-sm">
           {version || 'v1.0.0'}
         </span>
       </div>
@@ -98,8 +98,8 @@ export function PackageCard({ name, description, githubUrl, npmUrl, downloads, v
             <p className="text-red-800 dark:text-red-200 font-mono text-sm">{description}</p>
 
             {!isUnpublished && (
-              <div className="mt-2 inline-flex items-center px-2 py-1 bg-red-200/80 dark:bg-red-700/60 rounded-md text-xs text-red-900 dark:text-red-100 font-mono border-2 border-red-300/70 dark:border-red-600/60">
-                <Icons.FaDownload className="h-3 w-3 mr-2 text-red-700 dark:text-red-300" />
+              <div className="mt-2 inline-flex items-center px-2 py-1 bg-amber-400/90 dark:bg-amber-500/50 rounded-md text-xs text-amber-950 dark:text-amber-50 font-mono border-2 border-amber-500/70 dark:border-amber-600/80 shadow-sm">
+                <Icons.FaDownload className="h-3 w-3 mr-2 text-amber-800 dark:text-amber-200" />
                 <span className="font-medium">{downloads || 'N/A'}</span>
                 <span className="ml-1">weekly downloads</span>
               </div>
@@ -123,22 +123,22 @@ export function PackageCard({ name, description, githubUrl, npmUrl, downloads, v
 
               <div className="grid grid-cols-2 gap-2 font-mono">
                 <div className="flex items-center space-x-2 p-1.5 rounded-md bg-red-50/90 dark:bg-red-700/50 border-2 border-red-200/80 dark:border-red-600/60">
-                  <div className="bg-red-100/80 dark:bg-red-600/80 p-1.5 rounded-full">
-                    <Icons.FaDownload className="h-3 w-3 text-red-700 dark:text-red-200" />
+                  <div className="bg-amber-400/90 dark:bg-amber-500/90 p-1.5 rounded-full">
+                    <Icons.FaDownload className="h-3 w-3 text-amber-800 dark:text-amber-200" />
                   </div>
                   <div>
                     <p className="text-red-700 dark:text-red-200 text-xs">Downloads</p>
-                    <p className="font-bold text-red-800 dark:text-red-100 text-sm">{downloads || 'N/A'}</p>
+                    <p className="font-bold text-amber-900 dark:text-amber-100 text-sm">{downloads || 'N/A'}</p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-2 p-1.5 rounded-md bg-red-50/90 dark:bg-red-700/50 border-2 border-red-200/80 dark:border-red-600/60">
-                  <div className="bg-red-100/80 dark:bg-red-600/80 p-1.5 rounded-full">
-                    <Tag className="h-3 w-3 text-red-700 dark:text-red-200" />
+                  <div className="bg-amber-100 dark:bg-amber-700/80 p-1.5 rounded-full">
+                    <Tag className="h-3 w-3 text-amber-700 dark:text-amber-200" />
                   </div>
                   <div>
                     <p className="text-red-700 dark:text-red-200 text-xs">Version</p>
-                    <p className="font-bold text-red-800 dark:text-red-100 text-sm">{version || 'v1.0.0'}</p>
+                    <p className="font-bold text-amber-900 dark:text-amber-100 text-sm">{version || 'v1.0.0'}</p>
                   </div>
                 </div>
               </div>

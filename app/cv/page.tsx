@@ -1,6 +1,6 @@
 import { Phone, GraduationCap, User, FileText, Briefcase, Home } from 'lucide-react';
-import { FaTools, FaProjectDiagram, FaGithub } from 'react-icons/fa';
-import { SiNpm } from 'react-icons/si';
+import { FaTools, FaProjectDiagram, FaGithub, FaCode } from 'react-icons/fa';
+import { SiNpm, SiGo, SiVitest } from 'react-icons/si';
 import projects from '@/components/custom/home/project-section/data/projects.data';
 import packages from '@/components/custom/home/package-section/data/packages';
 import { skills } from './data/cv.data';
@@ -21,6 +21,7 @@ import { DownloadButton } from './components/util/DownloadButton';
 import { ModeToggle } from '@/components/mode-toogle';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { Sparkles } from 'lucide-react';
 
 export default function CVPage() {
   return (
@@ -80,7 +81,7 @@ export default function CVPage() {
                   colorClassName="border-yellow-400 text-yellow-700 dark:border-yellow-600 dark:text-yellow-400"
                 />
                 <Card className="border-2 border-yellow-400 dark:border-yellow-600 bg-yellow-50/30 dark:bg-yellow-950/10">
-                  <CardContent className="p-3">
+                  <CardContent className="p-4 pt-0 pb-0">
                     <ProfileSection
                       introduction="Highly motivated software engineer specializing in full-stack web development, with a strong interest in backend systems. Aiming to build efficient, scalable, and maintainable applications."
                       bulletPoints={profileBulletPoints}
@@ -126,11 +127,9 @@ export default function CVPage() {
                   title="GitHub"
                   colorClassName="border-purple-400 text-purple-700 dark:border-purple-600 dark:text-purple-400"
                 />
-                <Card className="border-2 border-purple-400 dark:border-purple-600 bg-purple-50/30 dark:bg-purple-950/10">
-                  <CardContent className="p-3">
-                    <GitHubLink username="devharshthakur" />
-                  </CardContent>
-                </Card>
+                <div className="ml-2 mt-2 transition-all hover:-translate-y-0.5 duration-200">
+                  <GitHubLink username="devharshthakur" />
+                </div>
               </div>
             </div>
 
@@ -173,13 +172,36 @@ export default function CVPage() {
                         {skills.map((skill, index) => (
                           <SkillsTableRow key={index} name={skill.name} description={skill.description} />
                         ))}
+                        <tr className="border-t border-border">
+                          <td colSpan={2} className="p-0">
+                            <div className="p-3 pb-0">
+                              <h4 className="text-xs uppercase tracking-wider font-medium text-indigo-700 dark:text-indigo-400 mb-2 flex items-center">
+                                <div className="bg-indigo-100 dark:bg-indigo-900/40 p-1 rounded-full mr-2">
+                                  <Sparkles size={12} className="text-indigo-600 dark:text-indigo-400" />
+                                </div>
+                                Currently Learning
+                              </h4>
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <div className="flex items-center gap-2">
+                                  <div className="bg-indigo-100 dark:bg-indigo-900/40 p-1.5 rounded-full">
+                                    <SiGo className="text-indigo-600 dark:text-indigo-400" size={12} />
+                                  </div>
+                                  <div className="text-sm text-slate-800 dark:text-slate-200">Go Programming Language</div>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                  <div className="bg-indigo-100 dark:bg-indigo-900/40 p-1.5 rounded-full">
+                                    <SiVitest className="text-indigo-600 dark:text-indigo-400" size={12} />
+                                  </div>
+                                  <div className="text-sm text-slate-800 dark:text-slate-200">Vitest/JS Testing</div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
                       </TableBody>
                     </Table>
                   </CardContent>
                 </Card>
-                <div className="mt-3">
-                  <LearningBadge skill="Rust Programming Language" />
-                </div>
               </div>
 
               <hr className="border-border" />
