@@ -12,12 +12,9 @@
  *
  * @returns {JSX.Element} The rendered header component.
  */
-import { ModeToggle } from "@/components/mode-toogle";
-import { ColoredButton } from "@/components/ui/colored-button";
-import {
-  HEADER_LEFT_NAV,
-  HEADER_RIGHT_NAV,
-} from "@/components/custom/header/lib/constants";
+import { ModeToggle } from '@/components/mode-toogle';
+import { ColoredButton } from '@/components/ui/colored-button';
+import { HEADER_LEFT_NAV, HEADER_RIGHT_NAV } from '@/components/custom/header/lib/constants';
 
 export function Header() {
   return (
@@ -43,7 +40,7 @@ export function Header() {
             label={item.label}
             icon={item.icon}
             colorScheme={item.colorScheme}
-            variant={item.variant || "outline"}
+            variant={item.variant || 'outline'}
           />
         ))}
         <ModeToggle />

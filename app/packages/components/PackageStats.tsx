@@ -6,8 +6,8 @@
  * - Total downloads
  * - Number of technologies used
  */
-import { Package } from "../data/packages";
-import { PackageIcon, Download, Code } from "lucide-react";
+import { Package } from '../data/packages';
+import { PackageIcon, Download, Code } from 'lucide-react';
 
 interface PackageStatsProps {
   packages: Package[];
@@ -15,16 +15,10 @@ interface PackageStatsProps {
 
 export function PackageStats({ packages }: PackageStatsProps) {
   // Calculate total downloads
-  const totalDownloads = packages.reduce(
-    (total: number, pkg: Package) =>
-      total + (parseInt(pkg.downloads || "0") || 0),
-    0,
-  );
+  const totalDownloads = packages.reduce((total: number, pkg: Package) => total + (parseInt(pkg.downloads || '0') || 0), 0);
 
   // Calculate unique technologies
-  const uniqueTechnologies = Array.from(
-    new Set(packages.flatMap((pkg) => pkg.tags || [])),
-  ).length;
+  const uniqueTechnologies = Array.from(new Set(packages.flatMap((pkg) => pkg.tags || []))).length;
 
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 pt-2">
@@ -34,9 +28,7 @@ export function PackageStats({ packages }: PackageStatsProps) {
           <PackageIcon className="h-4 w-4" />
           Total Packages
         </div>
-        <div className="text-2xl font-bold text-purple-800 dark:text-purple-200">
-          {packages.length}
-        </div>
+        <div className="text-2xl font-bold text-purple-800 dark:text-purple-200">{packages.length}</div>
       </div>
 
       {/* Total Downloads */}
@@ -45,9 +37,7 @@ export function PackageStats({ packages }: PackageStatsProps) {
           <Download className="h-4 w-4" />
           Total Downloads
         </div>
-        <div className="text-2xl font-bold text-blue-800 dark:text-blue-200">
-          {totalDownloads}
-        </div>
+        <div className="text-2xl font-bold text-blue-800 dark:text-blue-200">{totalDownloads}</div>
       </div>
 
       {/* Technologies */}
@@ -56,9 +46,7 @@ export function PackageStats({ packages }: PackageStatsProps) {
           <Code className="h-4 w-4" />
           Technologies
         </div>
-        <div className="text-2xl font-bold text-amber-800 dark:text-amber-200">
-          {uniqueTechnologies}
-        </div>
+        <div className="text-2xl font-bold text-amber-800 dark:text-amber-200">{uniqueTechnologies}</div>
       </div>
     </div>
   );

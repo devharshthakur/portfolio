@@ -3,11 +3,11 @@
  * @description Centralizes type definitions to ensure type safety across the application
  */
 
-import * as React from "react";
-import { type VariantProps } from "class-variance-authority";
-import { LucideIcon } from "lucide-react";
-import { IconType } from "react-icons";
-import { buttonVariants } from "@/components/ui/button";
+import * as React from 'react';
+import { type VariantProps } from 'class-variance-authority';
+import { LucideIcon } from 'lucide-react';
+import { IconType } from 'react-icons';
+import { buttonVariants } from '@/components/ui/button';
 
 /**
  * Represents an icon component from either Lucide React or React Icons
@@ -29,7 +29,7 @@ export interface NavItem {
   href: string;
   label: string;
   icon?: IconComponent;
-  variant?: "default" | "outline";
+  variant?: 'default' | 'outline';
   colorScheme?: ColorScheme;
   isExternal?: boolean;
 }
@@ -38,14 +38,7 @@ export interface NavItem {
  * Available color schemes for UI components
  * @typedef {string} ColorScheme
  */
-export type ColorScheme =
-  | "slate"
-  | "orange"
-  | "blue"
-  | "indigo"
-  | "purple"
-  | "teal"
-  | "amber";
+export type ColorScheme = 'slate' | 'orange' | 'blue' | 'indigo' | 'purple' | 'teal' | 'amber';
 
 /**
  * Defines the CSS classes for each aspect of a color scheme
@@ -85,7 +78,7 @@ export interface ColoredButtonProps {
   icon?: IconComponent;
   label: string;
   isExternal?: boolean;
-  variant?: "default" | "outline";
+  variant?: 'default' | 'outline';
   className?: string;
   asChild?: boolean;
 }

@@ -3,7 +3,7 @@
  *
  * A simplified progress bar component that shows skill proficiency levels with a single fixed color.
  */
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 interface ProficiencyBarProps {
   proficiency: number;
@@ -12,12 +12,7 @@ interface ProficiencyBarProps {
   animated?: boolean;
 }
 
-export function ProficiencyBar({
-  proficiency,
-  maxLevel = 5,
-  className = "",
-  animated = true,
-}: ProficiencyBarProps) {
+export function ProficiencyBar({ proficiency, maxLevel = 5, className = '', animated = true }: ProficiencyBarProps) {
   const [width, setWidth] = useState<number>(0);
 
   // Animate the progress bar on mount
@@ -42,17 +37,17 @@ export function ProficiencyBar({
 
   // Simple mapping of proficiency level to label
   const getLabel = (): string => {
-    if (proficiency === 0) return "Not Started";
-    if (proficiency === maxLevel) return "Expert";
-    if (proficiency >= maxLevel * 0.8) return "Advanced";
-    if (proficiency >= maxLevel * 0.6) return "Intermediate";
-    if (proficiency >= maxLevel * 0.4) return "Basic";
-    return "Beginner";
+    if (proficiency === 0) return 'Not Started';
+    if (proficiency === maxLevel) return 'Expert';
+    if (proficiency >= maxLevel * 0.8) return 'Advanced';
+    if (proficiency >= maxLevel * 0.6) return 'Intermediate';
+    if (proficiency >= maxLevel * 0.4) return 'Basic';
+    return 'Beginner';
   };
 
   // Define the single fixed color for the progress bar
-  const fixedProgressColor = "bg-red-500";
-  const fixedDarkProgressColor = "dark:bg-red-400";
+  const fixedProgressColor = 'bg-red-500';
+  const fixedDarkProgressColor = 'dark:bg-red-400';
 
   return (
     <div className={`w-full ${className}`}>

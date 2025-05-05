@@ -1,8 +1,8 @@
-import Image from "next/image";
-import { Badge } from "@/components/ui/badge";
-import { Layers } from "lucide-react";
-import { AvailabilityBadge } from "./utils/AvailabilityBadge";
-import { Card } from "@/components/ui/card";
+import Image from 'next/image';
+import { Badge } from '@/components/ui/badge';
+import { Layers } from 'lucide-react';
+import { AvailabilityBadge } from './utils/AvailabilityBadge';
+import { Card } from '@/components/ui/card';
 
 export function Profile() {
   return (
@@ -16,7 +16,7 @@ export function Profile() {
               height={128}
               alt="Profile Picture of Harsh Thakur"
               className="rounded-full shadow-md border-2 border-slate-400 dark:border-slate-600"
-              style={{ aspectRatio: "1/1", objectFit: "cover" }}
+              style={{ aspectRatio: '1/1', objectFit: 'cover' }}
               priority
             />
           </div>
@@ -24,10 +24,7 @@ export function Profile() {
           <div className="flex flex-col justify-center space-y-3">
             <header>
               <div className="flex flex-wrap items-center gap-2 mb-1">
-                <h1
-                  id="profile-heading"
-                  className="text-3xl font-bold text-slate-800 dark:text-slate-200"
-                >
+                <h1 id="profile-heading" className="text-3xl font-bold text-slate-800 dark:text-slate-200">
                   Harsh Thakur
                 </h1>
                 <AvailabilityBadge />
@@ -43,8 +40,7 @@ export function Profile() {
             </header>
 
             <p className="text-sm text-muted-foreground max-w-prose">
-              Building efficient, scalable and maintainable web applications
-              with modern technologies.
+              Building efficient, scalable and maintainable web applications with modern technologies.
             </p>
           </div>
         </div>

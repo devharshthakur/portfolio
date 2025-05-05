@@ -1,6 +1,6 @@
-import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Sparkles } from "lucide-react";
+import React from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Sparkles } from 'lucide-react';
 
 /**
  * AvailabilityBadge Component
@@ -20,11 +20,7 @@ import { Sparkles } from "lucide-react";
  *
  * @returns {React.ReactElement} A styled card displaying availability status
  */
-export function AvailabilityBadge({
-  status = "Available for hire",
-}: {
-  status?: string;
-}): React.ReactElement {
+export function AvailabilityBadge({ status = 'Available for hire' }: { status?: string }): React.ReactElement {
   return (
     <div className="relative group">
       <div className="absolute -inset-1 bg-yellow-400/30 dark:bg-yellow-600/30 rounded-md blur-sm opacity-70 group-hover:opacity-100 transition-all duration-300"></div>

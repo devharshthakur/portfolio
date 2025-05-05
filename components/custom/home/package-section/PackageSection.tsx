@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import packages from "./data/packages";
-import { PackageCard } from "./components/PackageCard";
-import { Archive } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import packages from './data/packages';
+import { PackageCard } from './components/PackageCard';
+import { Archive } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export function Packages() {
   // Show only top packages on home page
@@ -19,9 +19,7 @@ export function Packages() {
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
             <Archive className="h-6 w-6 text-red-700 dark:text-red-400" />
-            <h2 className="text-3xl font-bold tracking-tight font-mono text-red-900 dark:text-red-300">
-              NPM Packages
-            </h2>
+            <h2 className="text-3xl font-bold tracking-tight font-mono text-red-900 dark:text-red-300">NPM Packages</h2>
           </div>
           <Button
             variant="outline"

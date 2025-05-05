@@ -8,30 +8,14 @@
  * - Technology tags
  * - Links to GitHub and npm
  */
-import Link from "next/link";
-import { useState } from "react";
-import { Package } from "../data/packages";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import {
-  Download,
-  ArrowUpRight,
-  Tag,
-  Github,
-  Calendar,
-  Clock,
-  Copy,
-  Check,
-  History,
-} from "lucide-react";
-import { FaNpm } from "react-icons/fa";
-import { Button } from "@/components/ui/button";
+import Link from 'next/link';
+import { useState } from 'react';
+import { Package } from '../data/packages';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Download, ArrowUpRight, Tag, Github, Calendar, Clock, Copy, Check, History } from 'lucide-react';
+import { FaNpm } from 'react-icons/fa';
+import { Button } from '@/components/ui/button';
 
 interface PackageCardProps {
   pkg: Package;
@@ -77,8 +61,7 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
           {pkg.downloads && (
             <div className="flex items-center gap-1 px-2.5 py-1.5 rounded-md bg-linear-to-r from-blue-50 to-cyan-50 dark:from-blue-900/30 dark:to-cyan-900/30 text-blue-600 dark:text-blue-300 border border-blue-200 dark:border-blue-700/50 shadow-xs text-sm font-medium">
               <Download className="h-3.5 w-3.5" />
-              {pkg.downloads}{" "}
-              {parseInt(pkg.downloads) === 1 ? "download" : "downloads"}
+              {pkg.downloads} {parseInt(pkg.downloads) === 1 ? 'download' : 'downloads'}
             </div>
           )}
         </div>
@@ -89,9 +72,7 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
         <div className="flex items-center justify-between rounded-lg border border-gray-200 dark:border-gray-700/50 bg-gray-50 dark:bg-gray-800/50 p-2 overflow-hidden">
           <div className="flex items-center space-x-2 pl-2">
             <FaNpm className="h-4 w-4 text-red-500 dark:text-red-400 shrink-0" />
-            <code className="text-sm font-mono text-gray-800 dark:text-gray-200 truncate">
-              {installCommand}
-            </code>
+            <code className="text-sm font-mono text-gray-800 dark:text-gray-200 truncate">{installCommand}</code>
           </div>
           <Button
             size="sm"
@@ -125,12 +106,8 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
                     <Calendar className="h-4 w-4 text-green-500 dark:text-green-400" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-xs font-semibold text-gray-700 dark:text-gray-200">
-                      Published
-                    </span>
-                    <span className="text-xs text-gray-500 dark:text-gray-400">
-                      {pkg.publishedDate}
-                    </span>
+                    <span className="text-xs font-semibold text-gray-700 dark:text-gray-200">Published</span>
+                    <span className="text-xs text-gray-500 dark:text-gray-400">{pkg.publishedDate}</span>
                   </div>
                 </div>
               )}
@@ -138,12 +115,8 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
                 <div className="flex items-center space-x-2 px-3 py-1.5 bg-white/70 dark:bg-gray-700/50 rounded border border-gray-200 dark:border-gray-600/50 shadow-xs">
                   <Clock className="h-4 w-4 text-blue-500 dark:text-blue-400" />
                   <div className="flex flex-col">
-                    <span className="text-xs font-semibold text-gray-700 dark:text-gray-200">
-                      Last Updated
-                    </span>
-                    <span className="text-xs text-gray-500 dark:text-gray-400">
-                      {pkg.lastUpdated}
-                    </span>
+                    <span className="text-xs font-semibold text-gray-700 dark:text-gray-200">Last Updated</span>
+                    <span className="text-xs text-gray-500 dark:text-gray-400">{pkg.lastUpdated}</span>
                   </div>
                 </div>
               )}

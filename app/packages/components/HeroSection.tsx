@@ -6,9 +6,9 @@
  * - Description
  * - Package statistics
  */
-import { Package } from "../data/packages";
-import { PackageStats } from "./PackageStats";
-import { PackageIcon } from "lucide-react";
+import { Package } from '../data/packages';
+import { PackageStats } from './PackageStats';
+import { PackageIcon } from 'lucide-react';
 
 interface HeroSectionProps {
   packages: Package[];
@@ -31,24 +31,20 @@ export function HeroSection({ packages }: HeroSectionProps) {
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-800 dark:text-white mb-1">
-              <span className="inline-block">My</span>{" "}
+              <span className="inline-block">My</span>{' '}
               <span className="inline-block relative bg-clip-text text-transparent bg-linear-to-r from-purple-400 to-indigo-500 dark:from-purple-400 dark:to-indigo-400">
                 Packages
                 <span className="absolute -bottom-1 left-0 w-full h-1 bg-linear-to-r from-purple-400 to-indigo-500 dark:from-purple-400 dark:to-indigo-400 rounded-full" />
               </span>
             </h1>
 
-            <p className="text-sm text-gray-500 dark:text-gray-300 mt-2">
-              Showing {packages.length} published npm packages
-            </p>
+            <p className="text-sm text-gray-500 dark:text-gray-300 mt-2">Showing {packages.length} published npm packages</p>
           </div>
 
           {/* Description */}
           <p className="text-base sm:text-lg text-gray-700 dark:text-white leading-relaxed">
-            A collection of TypeScript/JavaScript libraries and tools I've
-            developed and published to the npm registry. Each package is
-            designed with type-safety, performance, and developer experience in
-            mind.
+            A collection of TypeScript/JavaScript libraries and tools I've developed and published to the npm registry. Each package is designed with
+            type-safety, performance, and developer experience in mind.
           </p>
 
           {/* Stats */}

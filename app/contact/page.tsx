@@ -1,12 +1,12 @@
-import type React from "react";
-import { MapPin, Briefcase, GraduationCap, Mail, Home } from "lucide-react";
-import { FaSquareXTwitter } from "react-icons/fa6";
-import { socialLinks } from "./data";
-import { SocialIcon } from "./components/SocialIcon";
-import { ModeToggle } from "@/components/mode-toogle";
-import { ContactForm } from "./components/ContactForm";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import type React from 'react';
+import { MapPin, Briefcase, GraduationCap, Mail, Home } from 'lucide-react';
+import { FaSquareXTwitter } from 'react-icons/fa6';
+import { socialLinks } from './data';
+import { SocialIcon } from './components/SocialIcon';
+import { ModeToggle } from '@/components/mode-toogle';
+import { ContactForm } from './components/ContactForm';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function ContactPage(): React.ReactElement {
   return (
@@ -48,8 +48,7 @@ export default function ContactPage(): React.ReactElement {
             </h1>
 
             <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 animate-fade-in-up animation-delay-200">
-              I'm a final year engineering student seeking full-time positions
-              or paid internships to kickstart my career in tech.
+              I'm a final year engineering student seeking full-time positions or paid internships to kickstart my career in tech.
             </p>
           </div>
         </div>
@@ -64,12 +63,8 @@ export default function ContactPage(): React.ReactElement {
               <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-yellow-50 dark:bg-yellow-900/40 transition-transform duration-300 group-hover:scale-110 border border-yellow-200 dark:border-yellow-700/60">
                 <GraduationCap className="h-10 w-10 text-yellow-600 dark:text-yellow-400 transition-transform duration-300 group-hover:scale-110" />
               </div>
-              <h3 className="mb-3 text-2xl font-bold text-zinc-800 dark:text-zinc-100">
-                Education
-              </h3>
-              <p className="mb-4 text-zinc-600 dark:text-zinc-400">
-                Final Year / Last Semester
-              </p>
+              <h3 className="mb-3 text-2xl font-bold text-zinc-800 dark:text-zinc-100">Education</h3>
+              <p className="mb-4 text-zinc-600 dark:text-zinc-400">Final Year / Last Semester</p>
               <div className="mt-auto">
                 <span className="inline-flex items-center rounded-full bg-yellow-50 dark:bg-yellow-900/30 px-4 py-1.5 text-sm font-medium text-yellow-700 dark:text-yellow-300 border border-yellow-200 dark:border-yellow-700/40">
                   Bachelor of Engineering (BE)
@@ -84,12 +79,8 @@ export default function ContactPage(): React.ReactElement {
               <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-indigo-50 dark:bg-indigo-900/40 transition-transform duration-300 group-hover:scale-110 border border-indigo-200 dark:border-indigo-700/60">
                 <Briefcase className="h-10 w-10 text-indigo-600 dark:text-indigo-400 transition-transform duration-300 group-hover:scale-110" />
               </div>
-              <h3 className="mb-3 text-2xl font-bold text-zinc-800 dark:text-zinc-100">
-                Career Status
-              </h3>
-              <p className="mb-4 text-zinc-600 dark:text-zinc-400">
-                Fresher with no industry experience
-              </p>
+              <h3 className="mb-3 text-2xl font-bold text-zinc-800 dark:text-zinc-100">Career Status</h3>
+              <p className="mb-4 text-zinc-600 dark:text-zinc-400">Fresher with no industry experience</p>
               <div className="mt-auto">
                 <span className="inline-flex items-center rounded-full bg-indigo-50 dark:bg-indigo-900/30 px-4 py-1.5 text-sm font-medium text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-700/40">
                   Seeking Full-time & Paid Internships
@@ -104,12 +95,8 @@ export default function ContactPage(): React.ReactElement {
               <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-rose-50 dark:bg-rose-900/40 transition-transform duration-300 group-hover:scale-110 border border-rose-200 dark:border-rose-700/60">
                 <MapPin className="h-10 w-10 text-rose-600 dark:text-rose-400 transition-transform duration-300 group-hover:scale-110" />
               </div>
-              <h3 className="mb-3 text-2xl font-bold text-zinc-800 dark:text-zinc-100">
-                Location Preference
-              </h3>
-              <p className="mb-4 text-zinc-600 dark:text-zinc-400">
-                Remote, Hybrid, or In-office
-              </p>
+              <h3 className="mb-3 text-2xl font-bold text-zinc-800 dark:text-zinc-100">Location Preference</h3>
+              <p className="mb-4 text-zinc-600 dark:text-zinc-400">Remote, Hybrid, or In-office</p>
               <div className="mt-auto">
                 <span className="inline-flex items-center rounded-full bg-rose-50 dark:bg-rose-900/30 px-4 py-1.5 text-sm font-medium text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-700/40">
                   Prefer Mumbai, Pune, Delhi for in-office
@@ -121,10 +108,7 @@ export default function ContactPage(): React.ReactElement {
       </section>
 
       {/* Contact Form Section */}
-      <section
-        id="contact-form"
-        className="container mx-auto px-4 py-16 sm:px-6 lg:px-8"
-      >
+      <section id="contact-form" className="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl overflow-hidden rounded-2xl bg-white shadow-xs dark:bg-zinc-900">
           <div className="grid gap-0 md:grid-cols-2">
             {/* Contact Information Section */}
@@ -132,16 +116,13 @@ export default function ContactPage(): React.ReactElement {
               <div className="relative z-10 flex h-full flex-col justify-between space-y-8">
                 <div className="space-y-6">
                   <div>
-                    <h2 className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 font-mono">
-                      Contact Me
-                    </h2>
+                    <h2 className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 font-mono">Contact Me</h2>
                     <div className="mt-2 h-1.5 w-24 rounded-full bg-yellow-500/20"></div>
                   </div>
 
                   <p className="text-lg text-zinc-600 dark:text-zinc-400">
-                    I'm actively looking for full-time positions and paid
-                    internships as I complete my engineering degree. I'm eager
-                    to apply my skills in a professional environment.
+                    I'm actively looking for full-time positions and paid internships as I complete my engineering degree. I'm eager to apply my
+                    skills in a professional environment.
                   </p>
                 </div>
 
@@ -151,9 +132,7 @@ export default function ContactPage(): React.ReactElement {
                       <Mail className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
                     </div>
                     <div>
-                      <p className="font-medium text-zinc-800 dark:text-zinc-100">
-                        Email
-                      </p>
+                      <p className="font-medium text-zinc-800 dark:text-zinc-100">Email</p>
                       <a
                         href="mailto:workharshthakur2002@gmail.com"
                         className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-indigo-700 dark:hover:text-indigo-400 transition-colors"
@@ -168,9 +147,7 @@ export default function ContactPage(): React.ReactElement {
                       <FaSquareXTwitter className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
                     </div>
                     <div>
-                      <p className="font-medium text-zinc-800 dark:text-zinc-100">
-                        X (Twitter)
-                      </p>
+                      <p className="font-medium text-zinc-800 dark:text-zinc-100">X (Twitter)</p>
                       <a
                         href="https://twitter.com/Harshthakur2002"
                         target="_blank"
@@ -185,9 +162,7 @@ export default function ContactPage(): React.ReactElement {
 
                 {/* Professional Links */}
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold">
-                    Professional Profiles
-                  </h3>
+                  <h3 className="text-lg font-semibold">Professional Profiles</h3>
                   <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
                     {socialLinks.map((link) => (
                       <a
@@ -208,9 +183,7 @@ export default function ContactPage(): React.ReactElement {
                 <div className="rounded-xl bg-green-50 dark:bg-green-900/20 p-4 shadow-xs border border-green-200 dark:border-green-700/40">
                   <div className="flex items-center gap-2">
                     <div className="h-3 w-3 rounded-full bg-green-500 animate-pulse"></div>
-                    <p className="text-sm font-medium text-green-700 dark:text-green-400">
-                      Available for Opportunities
-                    </p>
+                    <p className="text-sm font-medium text-green-700 dark:text-green-400">Available for Opportunities</p>
                   </div>
                   <div className="mt-1 text-xs text-zinc-600 dark:text-zinc-400 px-4">
                     Expected graduation: May end 2025

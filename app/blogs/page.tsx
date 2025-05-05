@@ -1,17 +1,9 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { ModeToggle } from "@/components/mode-toogle";
-import {
-  Home,
-  ArrowRight,
-  BookOpen,
-  PenSquare,
-  Clock,
-  Tag,
-  Construction,
-} from "lucide-react";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { ModeToggle } from '@/components/mode-toogle';
+import { Home, ArrowRight, BookOpen, PenSquare, Clock, Tag, Construction } from 'lucide-react';
+import { Card } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 export default function BlogsPage() {
   return (
@@ -69,12 +61,9 @@ export default function BlogsPage() {
                 <div className="bg-white dark:bg-zinc-800 p-2 rounded-full mb-3 border border-indigo-200 dark:border-indigo-700/40">
                   <PenSquare className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">
-                  Technical Articles
-                </h3>
+                <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">Technical Articles</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-400">
-                  In-depth tutorials and guides about web development,
-                  frameworks, and best practices.
+                  In-depth tutorials and guides about web development, frameworks, and best practices.
                 </p>
               </div>
 
@@ -82,12 +71,9 @@ export default function BlogsPage() {
                 <div className="bg-white dark:bg-zinc-800 p-2 rounded-full mb-3 border border-indigo-200 dark:border-indigo-700/40">
                   <Clock className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">
-                  Weekly Updates
-                </h3>
+                <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">Weekly Updates</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-400">
-                  Regular posts about my learning journey, new technologies, and
-                  project progress.
+                  Regular posts about my learning journey, new technologies, and project progress.
                 </p>
               </div>
 
@@ -95,12 +81,9 @@ export default function BlogsPage() {
                 <div className="bg-white dark:bg-zinc-800 p-2 rounded-full mb-3 border border-indigo-200 dark:border-indigo-700/40">
                   <Tag className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">
-                  Categorized Content
-                </h3>
+                <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">Categorized Content</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-400">
-                  Easily browse articles by categories like JavaScript, React,
-                  NextJS, and more with filtering options.
+                  Easily browse articles by categories like JavaScript, React, NextJS, and more with filtering options.
                 </p>
               </div>
             </div>
@@ -109,25 +92,19 @@ export default function BlogsPage() {
           <div className="mb-8">
             <div className="flex items-center justify-center gap-2 mb-3">
               <div className="h-px w-16 bg-indigo-300 dark:bg-indigo-700"></div>
-              <span className="text-xs font-medium text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">
-                Progress
-              </span>
+              <span className="text-xs font-medium text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">Progress</span>
               <div className="h-px w-16 bg-indigo-300 dark:bg-indigo-700"></div>
             </div>
             <div className="relative h-2.5 bg-indigo-100 dark:bg-indigo-900/30 rounded-full overflow-hidden max-w-xs mx-auto border border-indigo-200 dark:border-indigo-800/50">
               <div className="absolute top-0 left-0 h-full w-1/3 bg-linear-to-r from-indigo-400 to-indigo-600 dark:from-indigo-500 dark:to-indigo-700 animate-pulse rounded-full"></div>
             </div>
-            <p className="mt-3 text-xs text-slate-500 dark:text-slate-500">
-              First articles expected soon
-            </p>
+            <p className="mt-3 text-xs text-slate-500 dark:text-slate-500">First articles expected soon</p>
           </div>
         </div>
 
         {/* Footer */}
         <footer className="absolute bottom-4 w-full text-center">
-          <p className="text-xs text-slate-500 dark:text-slate-500">
-            &copy; {new Date().getFullYear()} devharshthakur.in
-          </p>
+          <p className="text-xs text-slate-500 dark:text-slate-500">&copy; {new Date().getFullYear()} devharshthakur.in</p>
         </footer>
       </div>
     </div>

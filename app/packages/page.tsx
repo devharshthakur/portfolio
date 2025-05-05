@@ -5,16 +5,16 @@
  * Each package is presented with details including name, description,
  * download statistics, version information, and links to GitHub and npm.
  */
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { ModeToggle } from "@/components/mode-toogle";
-import { Home, ExternalLink, BookOpen } from "lucide-react";
-import packages from "./data/packages";
-import { HeroSection } from "./components/HeroSection";
-import { PackageCard } from "./components/PackageCard";
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { ModeToggle } from '@/components/mode-toogle';
+import { Home, ExternalLink, BookOpen } from 'lucide-react';
+import packages from './data/packages';
+import { HeroSection } from './components/HeroSection';
+import { PackageCard } from './components/PackageCard';
 
 export default function PackagesPage() {
   const [mounted, setMounted] = useState(false);
@@ -61,12 +61,9 @@ export default function PackagesPage() {
                 <BookOpen className="h-5 w-5 text-indigo-500 dark:text-indigo-300" />
               </div>
               <div>
-                <h3 className="text-sm font-medium text-indigo-700 dark:text-indigo-300">
-                  Detailed documentation coming soon!
-                </h3>
+                <h3 className="text-sm font-medium text-indigo-700 dark:text-indigo-300">Detailed documentation coming soon!</h3>
                 <p className="text-xs text-indigo-600/70 dark:text-indigo-400/70">
-                  Comprehensive guides, API references, and examples will be
-                  available.
+                  Comprehensive guides, API references, and examples will be available.
                 </p>
               </div>
             </div>
@@ -76,11 +73,7 @@ export default function PackagesPage() {
               size="sm"
               className="bg-indigo-500 hover:bg-indigo-600 text-white shadow-xs hover:shadow-md transition-all duration-300"
             >
-              <Link
-                href="https://htpkgs.info"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link href="https://htpkgs.info" target="_blank" rel="noopener noreferrer">
                 Visit htpkgs.info
                 <ExternalLink className="h-3.5 w-3.5 ml-1.5" />
               </Link>
@@ -97,9 +90,7 @@ export default function PackagesPage() {
 
         {/* Footer */}
         <footer className="mt-16 md:mt-20 pt-6 md:pt-8 border-t border-gray-200/50 dark:border-gray-700/50 text-center">
-          <p className="text-sm text-gray-500 dark:text-gray-300">
-            &copy; {new Date().getFullYear()} devharshthakur.in
-          </p>
+          <p className="text-sm text-gray-500 dark:text-gray-300">&copy; {new Date().getFullYear()} devharshthakur.in</p>
         </footer>
       </main>
     </div>

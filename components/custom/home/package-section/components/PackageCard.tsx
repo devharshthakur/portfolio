@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 /**
  * PackageCard Component
@@ -27,32 +27,24 @@
  * />
  */
 
-import { Button } from "@/components/ui/button";
-import { Tag } from "lucide-react";
-import { Icons } from "@/components/custom/home/skills-section/utils/icon.export";
-import { FaNpm } from "react-icons/fa";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
-import { Package as PackageType } from "../data/packages";
-import { cn } from "@/lib/utils";
+import { Button } from '@/components/ui/button';
+import { Tag } from 'lucide-react';
+import { Icons } from '@/components/custom/home/skills-section/utils/icon.export';
+import { FaNpm } from 'react-icons/fa';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
+import { Package as PackageType } from '../data/packages';
+import { cn } from '@/lib/utils';
 
-interface PackageCardProps
-  extends Omit<PackageType, "longDescription" | "tags"> {
+interface PackageCardProps extends Omit<PackageType, 'longDescription' | 'tags'> {
   // Props come from PackageType with omitted properties
 }
 
-export function PackageCard({
-  name,
-  description,
-  githubUrl,
-  npmUrl,
-  downloads,
-  version,
-}: PackageCardProps) {
-  const isUnpublished: boolean = npmUrl === "#";
+export function PackageCard({ name, description, githubUrl, npmUrl, downloads, version }: PackageCardProps) {
+  const isUnpublished: boolean = npmUrl === '#';
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [activeTab, setActiveTab] = useState<"info" | "stats">("info");
+  const [activeTab, setActiveTab] = useState<'info' | 'stats'>('info');
 
   useEffect(() => {
     setMounted(true);
@@ -62,11 +54,9 @@ export function PackageCard({
     <div className="flex flex-col rounded-lg overflow-hidden border-2 border-red-300/80 dark:border-red-700/80 bg-white dark:bg-red-900/40 shadow-md transition-all duration-300 hover:shadow-xl hover:border-red-400 dark:hover:border-red-600">
       {/* Header section - lighter red */}
       <div className="p-3 flex items-center justify-between border-b border-red-200/80 dark:border-red-700/60 bg-red-100/60 dark:bg-red-800/50">
-        <h3 className="text-xl font-bold font-mono text-red-900 dark:text-red-100">
-          {name}
-        </h3>
+        <h3 className="text-xl font-bold font-mono text-red-900 dark:text-red-100">{name}</h3>
         <span className="px-2 py-0.5 text-xs rounded-md bg-red-50/80 dark:bg-red-700/70 text-red-800 dark:text-red-100 border-2 border-red-300/60 dark:border-red-600/60 font-mono">
-          {version || "v1.0.0"}
+          {version || 'v1.0.0'}
         </span>
       </div>
 
@@ -76,24 +66,24 @@ export function PackageCard({
           <Button
             variant="outline"
             className={cn(
-              "w-full font-mono border-2 border-red-300/70 dark:border-red-700/60 bg-red-50/70 dark:bg-red-900/40 hover:bg-red-100/60 dark:hover:bg-red-800/40",
-              activeTab === "info"
-                ? "bg-red-100/70 dark:bg-red-700/60 text-red-900 dark:text-red-100 border-2 border-red-400/70 dark:border-red-500/70 shadow-sm"
-                : "text-red-800 dark:text-red-300",
+              'w-full font-mono border-2 border-red-300/70 dark:border-red-700/60 bg-red-50/70 dark:bg-red-900/40 hover:bg-red-100/60 dark:hover:bg-red-800/40',
+              activeTab === 'info'
+                ? 'bg-red-100/70 dark:bg-red-700/60 text-red-900 dark:text-red-100 border-2 border-red-400/70 dark:border-red-500/70 shadow-sm'
+                : 'text-red-800 dark:text-red-300',
             )}
-            onClick={() => setActiveTab("info")}
+            onClick={() => setActiveTab('info')}
           >
             <span className="mr-1.5">📝</span> Info
           </Button>
           <Button
             variant="outline"
             className={cn(
-              "w-full font-mono border-2 border-red-300/70 dark:border-red-700/60 bg-red-50/70 dark:bg-red-900/40 hover:bg-red-100/60 dark:hover:bg-red-800/40",
-              activeTab === "stats"
-                ? "bg-red-100/70 dark:bg-red-700/60 text-red-900 dark:text-red-100 border-2 border-red-400/70 dark:border-red-500/70 shadow-sm"
-                : "text-red-800 dark:text-red-300",
+              'w-full font-mono border-2 border-red-300/70 dark:border-red-700/60 bg-red-50/70 dark:bg-red-900/40 hover:bg-red-100/60 dark:hover:bg-red-800/40',
+              activeTab === 'stats'
+                ? 'bg-red-100/70 dark:bg-red-700/60 text-red-900 dark:text-red-100 border-2 border-red-400/70 dark:border-red-500/70 shadow-sm'
+                : 'text-red-800 dark:text-red-300',
             )}
-            onClick={() => setActiveTab("stats")}
+            onClick={() => setActiveTab('stats')}
           >
             <span className="mr-1.5">📊</span> Stats
           </Button>
@@ -102,19 +92,15 @@ export function PackageCard({
 
       {/* Content section - darker red */}
       <div className="bg-white/90 dark:bg-red-900/30 p-3 h-[180px] overflow-auto">
-        {activeTab === "info" ? (
+        {activeTab === 'info' ? (
           <div className="space-y-2">
-            <h4 className="text-lg font-bold font-mono text-red-900 dark:text-red-100">
-              {name}
-            </h4>
-            <p className="text-red-800 dark:text-red-200 font-mono text-sm">
-              {description}
-            </p>
+            <h4 className="text-lg font-bold font-mono text-red-900 dark:text-red-100">{name}</h4>
+            <p className="text-red-800 dark:text-red-200 font-mono text-sm">{description}</p>
 
             {!isUnpublished && (
               <div className="mt-2 inline-flex items-center px-2 py-1 bg-red-200/80 dark:bg-red-700/60 rounded-md text-xs text-red-900 dark:text-red-100 font-mono border-2 border-red-300/70 dark:border-red-600/60">
                 <Icons.FaDownload className="h-3 w-3 mr-2 text-red-700 dark:text-red-300" />
-                <span className="font-medium">{downloads || "N/A"}</span>
+                <span className="font-medium">{downloads || 'N/A'}</span>
                 <span className="ml-1">weekly downloads</span>
               </div>
             )}
@@ -141,12 +127,8 @@ export function PackageCard({
                     <Icons.FaDownload className="h-3 w-3 text-red-700 dark:text-red-200" />
                   </div>
                   <div>
-                    <p className="text-red-700 dark:text-red-200 text-xs">
-                      Downloads
-                    </p>
-                    <p className="font-bold text-red-800 dark:text-red-100 text-sm">
-                      {downloads || "N/A"}
-                    </p>
+                    <p className="text-red-700 dark:text-red-200 text-xs">Downloads</p>
+                    <p className="font-bold text-red-800 dark:text-red-100 text-sm">{downloads || 'N/A'}</p>
                   </div>
                 </div>
 
@@ -155,12 +137,8 @@ export function PackageCard({
                     <Tag className="h-3 w-3 text-red-700 dark:text-red-200" />
                   </div>
                   <div>
-                    <p className="text-red-700 dark:text-red-200 text-xs">
-                      Version
-                    </p>
-                    <p className="font-bold text-red-800 dark:text-red-100 text-sm">
-                      {version || "v1.0.0"}
-                    </p>
+                    <p className="text-red-700 dark:text-red-200 text-xs">Version</p>
+                    <p className="font-bold text-red-800 dark:text-red-100 text-sm">{version || 'v1.0.0'}</p>
                   </div>
                 </div>
               </div>
@@ -178,7 +156,7 @@ export function PackageCard({
         <Button
           variant="outline"
           className="flex items-center gap-2 font-mono border-2 border-red-500/80 dark:border-red-600/80 text-red-800 dark:text-red-300 bg-red-50/70 dark:bg-red-900/50 hover:bg-red-100/70 dark:hover:bg-red-800/60 shadow-sm"
-          onClick={() => window.open(githubUrl, "_blank")}
+          onClick={() => window.open(githubUrl, '_blank')}
         >
           <Icons.FaGithub className="h-4 w-4" />
           <span>$ git clone</span>
@@ -197,7 +175,7 @@ export function PackageCard({
           <Button
             variant="outline"
             className="flex items-center gap-2 font-mono bg-red-600/90 dark:bg-red-600/80 text-white hover:bg-red-700/90 dark:hover:bg-red-500/80 border-2 border-red-500/90 dark:border-red-600/80 shadow-sm"
-            onClick={() => window.open(npmUrl, "_blank")}
+            onClick={() => window.open(npmUrl, '_blank')}
           >
             <FaNpm className="h-4 w-4" />
             <span>Install Package</span>

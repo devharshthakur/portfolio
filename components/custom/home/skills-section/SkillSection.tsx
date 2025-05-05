@@ -1,26 +1,17 @@
-import skills from "./data/skills.data";
-import { SkillItem } from "./components/SkillItem";
-import { Briefcase } from "lucide-react";
-import { SectionTitle } from "@/components/ui/section-title";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import skills from './data/skills.data';
+import { SkillItem } from './components/SkillItem';
+import { Briefcase } from 'lucide-react';
+import { SectionTitle } from '@/components/ui/section-title';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export function Skills() {
   return (
     <Card className="border-2 border-indigo-400 dark:border-indigo-600 p-4 shadow-xs bg-indigo-50/30 dark:bg-indigo-950/10">
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <SectionTitle
-            icon={
-              <Briefcase
-                size={20}
-                className="text-indigo-600 dark:text-indigo-400"
-              />
-            }
-          >
-            Skills & Technologies
-          </SectionTitle>
+          <SectionTitle icon={<Briefcase size={20} className="text-indigo-600 dark:text-indigo-400" />}>Skills & Technologies</SectionTitle>
 
           <Button
             asChild

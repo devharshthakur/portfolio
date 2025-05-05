@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 /**
  * ProjectCard Component
@@ -31,51 +31,44 @@
  * />
  */
 
-import Link from "next/link";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Icons } from "@/components/custom/home/skills-section/utils/icon.export";
-import type { Project } from "../data/projects.data";
+import Link from 'next/link';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Icons } from '@/components/custom/home/skills-section/utils/icon.export';
+import type { Project } from '../data/projects.data';
 
 export function ProjectCard(props: Project) {
   const {
     title,
     description,
     githubUrl,
-    liveDemoUrl = "#",
+    liveDemoUrl = '#',
     tags,
-    version = "v1.0.0",
+    version = 'v1.0.0',
     stats = {
       stars: 0,
       forks: 0,
       issues: 0,
-      lastUpdated: "Not available",
+      lastUpdated: 'Not available',
     },
   } = props;
 
   const handleLocalDemo = () => {
-    alert(
-      "This project needs to be run locally. Please follow the instructions in the GitHub repository.",
-    );
+    alert('This project needs to be run locally. Please follow the instructions in the GitHub repository.');
   };
 
-  const isDeployed = liveDemoUrl !== "#" && liveDemoUrl !== "local";
-  const isLocal = liveDemoUrl === "local";
-  const isComingSoon = liveDemoUrl === "#";
+  const isDeployed = liveDemoUrl !== '#' && liveDemoUrl !== 'local';
+  const isLocal = liveDemoUrl === 'local';
+  const isComingSoon = liveDemoUrl === '#';
 
   return (
     <Card className="flex flex-col overflow-hidden border border-emerald-800/30 bg-emerald-950/80 rounded-lg">
       {/* Title Section */}
       <div className="flex items-center justify-between px-4 py-2 border-b border-emerald-800/40">
-        <h3 className="font-mono text-base font-bold text-emerald-100">
-          {title}
-        </h3>
-        <Badge
-          variant="outline"
-          className="font-mono text-xs border-emerald-700/50 bg-emerald-900/70 text-emerald-400"
-        >
+        <h3 className="font-mono text-base font-bold text-emerald-100">{title}</h3>
+        <Badge variant="outline" className="font-mono text-xs border-emerald-700/50 bg-emerald-900/70 text-emerald-400">
           {version}
         </Badge>
       </div>
@@ -101,9 +94,7 @@ export function ProjectCard(props: Project) {
           value="info"
           className="mt-0 border-0 p-3 bg-emerald-900/80 min-h-[120px] data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=active]:slide-in-from-left-5"
         >
-          <p className="font-mono text-sm text-emerald-200 leading-relaxed mb-2">
-            {description}
-          </p>
+          <p className="font-mono text-sm text-emerald-200 leading-relaxed mb-2">{description}</p>
           <div className="flex flex-wrap gap-1.5">
             {tags.map((tech) => (
               <Badge
@@ -111,7 +102,7 @@ export function ProjectCard(props: Project) {
                 className="px-2 py-0.5 text-[10px] font-medium bg-opacity-20 text-white"
                 style={{
                   backgroundColor: getBadgeColor(tech),
-                  borderColor: "transparent",
+                  borderColor: 'transparent',
                 }}
                 variant="outline"
               >
@@ -129,49 +120,33 @@ export function ProjectCard(props: Project) {
             <div className="flex flex-col items-center justify-center rounded-md bg-emerald-800/60 p-1.5">
               <div className="flex items-center gap-1 text-yellow-500">
                 <Icons.FaStar className="h-3 w-3" />
-                <span className="font-mono text-xs font-bold">
-                  {stats.stars}
-                </span>
+                <span className="font-mono text-xs font-bold">{stats.stars}</span>
               </div>
-              <span className="mt-0.5 font-mono text-[10px] text-emerald-300">
-                Stars
-              </span>
+              <span className="mt-0.5 font-mono text-[10px] text-emerald-300">Stars</span>
             </div>
 
             <div className="flex flex-col items-center justify-center rounded-md bg-emerald-800/60 p-1.5">
               <div className="flex items-center gap-1 text-blue-500">
                 <Icons.FaCodeBranch className="h-3 w-3" />
-                <span className="font-mono text-xs font-bold">
-                  {stats.forks}
-                </span>
+                <span className="font-mono text-xs font-bold">{stats.forks}</span>
               </div>
-              <span className="mt-0.5 font-mono text-[10px] text-emerald-300">
-                Forks
-              </span>
+              <span className="mt-0.5 font-mono text-[10px] text-emerald-300">Forks</span>
             </div>
 
             <div className="flex flex-col items-center justify-center rounded-md bg-emerald-800/60 p-1.5">
               <div className="flex items-center gap-1 text-orange-500">
                 <Icons.FaExclamationCircle className="h-3 w-3" />
-                <span className="font-mono text-xs font-bold">
-                  {stats.issues}
-                </span>
+                <span className="font-mono text-xs font-bold">{stats.issues}</span>
               </div>
-              <span className="mt-0.5 font-mono text-[10px] text-emerald-300">
-                Issues
-              </span>
+              <span className="mt-0.5 font-mono text-[10px] text-emerald-300">Issues</span>
             </div>
 
             <div className="flex flex-col items-center justify-center rounded-md bg-emerald-800/60 p-1.5">
               <div className="flex items-center gap-1 text-purple-500">
                 <Icons.FaHistory className="h-3 w-3" />
-                <span className="font-mono text-[10px] font-medium">
-                  {stats.lastUpdated}
-                </span>
+                <span className="font-mono text-[10px] font-medium">{stats.lastUpdated}</span>
               </div>
-              <span className="mt-0.5 font-mono text-[10px] text-emerald-300">
-                Updated
-              </span>
+              <span className="mt-0.5 font-mono text-[10px] text-emerald-300">Updated</span>
             </div>
           </div>
         </TabsContent>
@@ -212,11 +187,7 @@ export function ProjectCard(props: Project) {
               className="h-8 w-full justify-center rounded-md bg-emerald-700 font-mono text-xs text-white hover:bg-emerald-600 border-0 border-t border-emerald-800/40"
               asChild
             >
-              <Link
-                href={liveDemoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link href={liveDemoUrl} target="_blank" rel="noopener noreferrer">
                 <Icons.FaGlobe className="mr-2 h-4 w-4" aria-hidden="true" />
                 <span>Live Demo</span>
               </Link>
@@ -231,25 +202,25 @@ export function ProjectCard(props: Project) {
 // Helper function to get badge colors based on tech
 function getBadgeColor(tech: string): string {
   const colorMap: Record<string, string> = {
-    "Next.js": "#0070f3",
-    TypeScript: "#3178c6",
-    React: "#61dafb",
-    JavaScript: "#f7df1e",
-    Node: "#68a063",
-    npm: "#cb3837",
-    NestJS: "#e0234e",
-    Prisma: "#5a67d8",
-    Security: "#e11d48",
-    Encryption: "#6366f1",
-    "Machine Learning": "#8b5cf6",
-    AI: "#a855f7",
-    Blockchain: "#059669",
-    Simulation: "#0ea5e9",
-    "Package Checker": "#f59e0b",
-    "Legal Tech": "#6366f1",
-    "PDF Processing": "#f43f5e",
-    Docker: "#2496ed",
+    'Next.js': '#0070f3',
+    TypeScript: '#3178c6',
+    React: '#61dafb',
+    JavaScript: '#f7df1e',
+    Node: '#68a063',
+    npm: '#cb3837',
+    NestJS: '#e0234e',
+    Prisma: '#5a67d8',
+    Security: '#e11d48',
+    Encryption: '#6366f1',
+    'Machine Learning': '#8b5cf6',
+    AI: '#a855f7',
+    Blockchain: '#059669',
+    Simulation: '#0ea5e9',
+    'Package Checker': '#f59e0b',
+    'Legal Tech': '#6366f1',
+    'PDF Processing': '#f43f5e',
+    Docker: '#2496ed',
   };
 
-  return colorMap[tech] || "#64748b"; // Default slate color
+  return colorMap[tech] || '#64748b'; // Default slate color
 }

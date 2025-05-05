@@ -1,6 +1,6 @@
-import React from "react";
-import { Sparkles } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import React from 'react';
+import { Sparkles } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 /**
  * LearningBadge Component
@@ -15,11 +15,7 @@ import { Card, CardContent } from "@/components/ui/card";
  *
  * @returns {React.ReactElement} A styled card highlighting a skill in learning
  */
-export function LearningBadge({
-  skill,
-}: {
-  skill: string;
-}): React.ReactElement {
+export function LearningBadge({ skill }: { skill: string }): React.ReactElement {
   return (
     <div className="relative">
       <div className="absolute -inset-1 bg-indigo-400/20 dark:bg-indigo-600/20 rounded-md blur-sm"></div>
@@ -27,18 +23,11 @@ export function LearningBadge({
         <CardContent className="p-2">
           <div className="flex items-start gap-2">
             <div className="bg-indigo-100 dark:bg-indigo-900/40 p-1 rounded-full">
-              <Sparkles
-                size={14}
-                className="text-indigo-600 dark:text-indigo-400"
-              />
+              <Sparkles size={14} className="text-indigo-600 dark:text-indigo-400" />
             </div>
             <div>
-              <h4 className="text-xs uppercase tracking-wider font-medium text-indigo-700 dark:text-indigo-400 mb-0.5">
-                Currently Learning
-              </h4>
-              <p className="text-sm font-medium text-slate-800 dark:text-slate-200">
-                {skill}
-              </p>
+              <h4 className="text-xs uppercase tracking-wider font-medium text-indigo-700 dark:text-indigo-400 mb-0.5">Currently Learning</h4>
+              <p className="text-sm font-medium text-slate-800 dark:text-slate-200">{skill}</p>
             </div>
           </div>
         </CardContent>

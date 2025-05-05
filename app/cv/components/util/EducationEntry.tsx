@@ -1,6 +1,6 @@
-import React from "react";
-import Link from "next/link";
-import { Calendar, MapPin, Link as LinkIcon } from "lucide-react";
+import React from 'react';
+import Link from 'next/link';
+import { Calendar, MapPin, Link as LinkIcon } from 'lucide-react';
 
 /**
  * EducationEntry Component
@@ -41,7 +41,7 @@ export function EducationEntry({
   location,
   institution,
   institutionUrl,
-  status = "Pursuing",
+  status = 'Pursuing',
 }: {
   degree: string;
   specialty: string;
@@ -55,12 +55,8 @@ export function EducationEntry({
     <div className="border-l-2 border-green-400 dark:border-green-600 pl-4">
       <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-1">
         <div>
-          <h4 className="font-medium text-slate-800 dark:text-slate-200">
-            {degree}
-          </h4>
-          <p className="text-sm text-slate-600 dark:text-slate-400">
-            {specialty}
-          </p>
+          <h4 className="font-medium text-slate-800 dark:text-slate-200">{degree}</h4>
+          <p className="text-sm text-slate-600 dark:text-slate-400">{specialty}</p>
         </div>
         <div className="text-sm md:text-right">
           <div className="flex items-center gap-1.5 text-green-700 dark:text-green-400">
@@ -85,9 +81,7 @@ export function EducationEntry({
             {institution}
           </Link>
         </div>
-        <p className="text-xs text-slate-500 dark:text-slate-500 mt-1 italic">
-          {status}
-        </p>
+        <p className="text-xs text-slate-500 dark:text-slate-500 mt-1 italic">{status}</p>
       </div>
     </div>
   );
