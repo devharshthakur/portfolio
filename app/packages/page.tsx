@@ -5,16 +5,16 @@
  * Each package is presented with details including name, description,
  * download statistics, version information, and links to GitHub and npm.
  */
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { ModeToggle } from "@/components/mode-toogle";
-import { Home, ExternalLink, BookOpen } from "lucide-react";
-import packages from "./data/packages";
-import { HeroSection } from "./components/HeroSection";
-import { PackageCard } from "./components/PackageCard";
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { ModeToggle } from '@/components/mode-toogle';
+import { Home, ExternalLink, BookOpen } from 'lucide-react';
+import packages from './data/packages';
+import { HeroSection } from './components/HeroSection';
+import { PackageCard } from './components/PackageCard';
 
 export default function PackagesPage() {
   const [mounted, setMounted] = useState(false);
@@ -24,9 +24,9 @@ export default function PackagesPage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen w-full bg-gradient-to-b from-background to-purple-50/20 dark:to-purple-950/10 overflow-hidden">
+    <div className="relative min-h-screen w-full bg-linear-to-b from-background to-purple-50/20 dark:to-purple-950/10 overflow-hidden">
       {/* Navigation */}
-      <nav className="sticky top-0 left-0 right-0 flex justify-between items-center z-50 p-4 bg-background/80 backdrop-blur-sm">
+      <nav className="sticky top-0 left-0 right-0 flex justify-between items-center z-50 p-4 bg-background/80 backdrop-blur-xs">
         <Button
           asChild
           variant="outline"
@@ -54,19 +54,16 @@ export default function PackagesPage() {
         <HeroSection packages={packages} />
 
         {/* Documentation Coming Soon Banner */}
-        <div className="mb-10 p-4 rounded-lg border-2 border-indigo-200 dark:border-indigo-800/50 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/30 dark:to-purple-900/30 shadow-sm">
+        <div className="mb-10 p-4 rounded-lg border-2 border-indigo-200 dark:border-indigo-800/50 bg-linear-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/30 dark:to-purple-900/30 shadow-xs">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="p-2 rounded-full bg-indigo-100 dark:bg-indigo-900/50">
                 <BookOpen className="h-5 w-5 text-indigo-500 dark:text-indigo-300" />
               </div>
               <div>
-                <h3 className="text-sm font-medium text-indigo-700 dark:text-indigo-300">
-                  Detailed documentation coming soon!
-                </h3>
+                <h3 className="text-sm font-medium text-indigo-700 dark:text-indigo-300">Detailed documentation coming soon!</h3>
                 <p className="text-xs text-indigo-600/70 dark:text-indigo-400/70">
-                  Comprehensive guides, API references, and examples will be
-                  available.
+                  Comprehensive guides, API references, and examples will be available.
                 </p>
               </div>
             </div>
@@ -74,13 +71,9 @@ export default function PackagesPage() {
               asChild
               variant="default"
               size="sm"
-              className="bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm hover:shadow-md transition-all duration-300"
+              className="bg-indigo-500 hover:bg-indigo-600 text-white shadow-xs hover:shadow-md transition-all duration-300"
             >
-              <Link
-                href="https://htpkgs.info"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link href="https://htpkgs.info" target="_blank" rel="noopener noreferrer">
                 Visit htpkgs.info
                 <ExternalLink className="h-3.5 w-3.5 ml-1.5" />
               </Link>
@@ -97,9 +90,7 @@ export default function PackagesPage() {
 
         {/* Footer */}
         <footer className="mt-16 md:mt-20 pt-6 md:pt-8 border-t border-gray-200/50 dark:border-gray-700/50 text-center">
-          <p className="text-sm text-gray-500 dark:text-gray-300">
-            &copy; {new Date().getFullYear()} devharshthakur.in
-          </p>
+          <p className="text-sm text-gray-500 dark:text-gray-300">&copy; {new Date().getFullYear()} devharshthakur.in</p>
         </footer>
       </main>
     </div>

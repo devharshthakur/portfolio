@@ -1,8 +1,8 @@
-import { type Project } from "@/components/custom/home/project-section/data/projects.data";
+import { type Project } from '@/components/custom/home/project-section/data/projects.data';
 
 export interface ProjectImageProps {
   src: string;
-  objectFitClass: "object-contain p-4" | "object-cover";
+  objectFitClass: 'object-contain p-4' | 'object-cover';
 }
 
 /**
@@ -18,30 +18,22 @@ export interface ProjectImageProps {
  * @param {string | undefined} resolvedTheme - The current theme ('dark' or 'light')
  * @returns {ProjectImageProps} The image properties including the source and object fit class.
  */
-export function getProjectImageProps(
-  project: Project,
-  mounted: boolean,
-  resolvedTheme: string | undefined,
-): ProjectImageProps {
-  const placeholder = "/placeholder.svg";
-  const gitLogoLight = "/projects/images/gitLogo_DarkMode.png";
-  const gitLogoDark = "/projects/images/gitLogo_LightMode.png";
+export function getProjectImageProps(project: Project, mounted: boolean, resolvedTheme: string | undefined): ProjectImageProps {
+  const placeholder = '/placeholder.svg';
+  const gitLogoLight = '/projects/images/gitLogo_DarkMode.png';
+  const gitLogoDark = '/projects/images/gitLogo_LightMode.png';
 
-  const gitLogo = mounted
-    ? resolvedTheme === "dark"
-      ? gitLogoDark
-      : gitLogoLight
-    : gitLogoLight;
-  const devImage = "/projects/images/inDevelopment.jpg";
+  const gitLogo = mounted ? (resolvedTheme === 'dark' ? gitLogoDark : gitLogoLight) : gitLogoLight;
+  const devImage = '/projects/images/inDevelopment.jpg';
 
   if (project.isInDevelopment) {
-    return { src: devImage, objectFitClass: "object-cover" };
+    return { src: devImage, objectFitClass: 'object-cover' };
   }
   if (project.imageUrl) {
-    return { src: project.imageUrl, objectFitClass: "object-cover" };
+    return { src: project.imageUrl, objectFitClass: 'object-cover' };
   }
-  if (project.liveDemoUrl === "local") {
-    return { src: gitLogo, objectFitClass: "object-contain p-4" };
+  if (project.liveDemoUrl === 'local') {
+    return { src: gitLogo, objectFitClass: 'object-contain p-4' };
   }
-  return { src: placeholder, objectFitClass: "object-cover" };
+  return { src: placeholder, objectFitClass: 'object-cover' };
 }

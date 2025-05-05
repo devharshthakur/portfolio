@@ -1,6 +1,6 @@
-import { Badge } from "@/components/ui/badge";
-import { cn } from "@/lib/utils";
-import { useMemo } from "react";
+import { Badge } from '@/components/ui/badge';
+import { cn } from '@/lib/utils';
+import { useMemo } from 'react';
 
 /**
  * Tech Badge Component
@@ -25,18 +25,18 @@ interface TechBadgeProps {
 
 // Pre-defined color classes - less verbose, same visual effect
 const colors = [
-  "bg-blue-100 text-blue-800 dark:bg-blue-950/40 dark:text-blue-300",
-  "bg-green-100 text-green-800 dark:bg-green-950/40 dark:text-green-300",
-  "bg-amber-100 text-amber-800 dark:bg-amber-950/40 dark:text-amber-300",
-  "bg-indigo-100 text-indigo-800 dark:bg-indigo-950/40 dark:text-indigo-300",
-  "bg-violet-100 text-violet-800 dark:bg-violet-950/40 dark:text-violet-300",
-  "bg-pink-100 text-pink-800 dark:bg-pink-950/40 dark:text-pink-300",
-  "bg-cyan-100 text-cyan-800 dark:bg-cyan-950/40 dark:text-cyan-300",
-  "bg-orange-100 text-orange-800 dark:bg-orange-950/40 dark:text-orange-300",
-  "bg-purple-100 text-purple-800 dark:bg-purple-950/40 dark:text-purple-300",
-  "bg-red-100 text-red-800 dark:bg-red-950/40 dark:text-red-300",
-  "bg-teal-100 text-teal-800 dark:bg-teal-950/40 dark:text-teal-300",
-  "bg-emerald-100 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300",
+  'bg-blue-100 text-blue-800 border-blue-200 dark:bg-blue-900/30 dark:text-blue-200 dark:border-blue-700/50',
+  'bg-green-100 text-green-800 border-green-200 dark:bg-green-900/30 dark:text-green-200 dark:border-green-700/50',
+  'bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-900/30 dark:text-amber-200 dark:border-amber-700/50',
+  'bg-indigo-100 text-indigo-800 border-indigo-200 dark:bg-indigo-900/30 dark:text-indigo-200 dark:border-indigo-700/50',
+  'bg-violet-100 text-violet-800 border-violet-200 dark:bg-violet-900/30 dark:text-violet-200 dark:border-violet-700/50',
+  'bg-pink-100 text-pink-800 border-pink-200 dark:bg-pink-900/30 dark:text-pink-200 dark:border-pink-700/50',
+  'bg-cyan-100 text-cyan-800 border-cyan-200 dark:bg-cyan-900/30 dark:text-cyan-200 dark:border-cyan-700/50',
+  'bg-orange-100 text-orange-800 border-orange-200 dark:bg-orange-900/30 dark:text-orange-200 dark:border-orange-700/50',
+  'bg-purple-100 text-purple-800 border-purple-200 dark:bg-purple-900/30 dark:text-purple-200 dark:border-purple-700/50',
+  'bg-red-100 text-red-800 border-red-200 dark:bg-red-900/30 dark:text-red-200 dark:border-red-700/50',
+  'bg-teal-100 text-teal-800 border-teal-200 dark:bg-teal-900/30 dark:text-teal-200 dark:border-teal-700/50',
+  'bg-emerald-100 text-emerald-800 border-emerald-200 dark:bg-emerald-900/30 dark:text-emerald-200 dark:border-emerald-700/50',
 ];
 
 export function TechBadge({ tech, className, index = 0 }: TechBadgeProps) {
@@ -50,14 +50,7 @@ export function TechBadge({ tech, className, index = 0 }: TechBadgeProps) {
   }, [tech, index]);
 
   return (
-    <Badge
-      variant="outline"
-      className={cn(
-        "border px-2.5 py-0.5 text-xs font-medium",
-        colorClass,
-        className,
-      )}
-    >
+    <Badge variant="outline" className={cn('border px-2.5 py-0.5 text-xs font-medium shadow-sm', colorClass, className)}>
       {tech}
     </Badge>
   );

@@ -1,6 +1,6 @@
-import * as Fa from "react-icons/fa";
-import * as Si from "react-icons/si";
-import skills from "../data/skills.data";
+import * as Fa from 'react-icons/fa';
+import * as Si from 'react-icons/si';
+import skills from '../data/skills.data';
 import {
   FaGithub,
   FaLink,
@@ -14,8 +14,8 @@ import {
   FaExclamationCircle,
   FaHistory,
   FaGlobe,
-} from "react-icons/fa";
-import { ComponentType, SVGProps } from "react";
+} from 'react-icons/fa';
+import { ComponentType, SVGProps } from 'react';
 
 /**
  * Type definition for icon libraries.

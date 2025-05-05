@@ -1,4 +1,4 @@
-import type { Project } from "@/components/custom/home/project-section/data/projects.data";
+import type { Project } from '@/components/custom/home/project-section/data/projects.data';
 
 /**
  * Returns the appropriate URL for a project based on its details.
@@ -10,11 +10,7 @@ import type { Project } from "@/components/custom/home/project-section/data/proj
  * @returns {string} The URL to navigate to when clicking on the project image
  */
 export function getProjectUrl(project: Project): string {
-  if (
-    project.liveDemoUrl &&
-    project.liveDemoUrl !== "local" &&
-    project.liveDemoUrl !== "#"
-  ) {
+  if (project.liveDemoUrl && project.liveDemoUrl !== 'local' && project.liveDemoUrl !== '#') {
     return project.liveDemoUrl;
   }
   return project.githubUrl;

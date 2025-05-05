@@ -1,7 +1,7 @@
-import React from "react";
-import { TableRow, TableCell } from "@/components/ui/table";
-import Link from "next/link";
-import { Link as LinkIcon } from "lucide-react";
+import React from 'react';
+import { TableRow, TableCell } from '@/components/ui/table';
+import Link from 'next/link';
+import { Link as LinkIcon } from 'lucide-react';
 
 /**
  * ProjectTableRow Component
@@ -32,28 +32,19 @@ export function ProjectTableRow({
   title,
   description,
   link,
-  colorScheme = "blue",
+  colorScheme = 'blue',
 }: {
   title: string;
   description: string;
   link: string;
-  colorScheme?: "blue" | "rose";
+  colorScheme?: 'blue' | 'rose';
 }): React.ReactElement {
   // Define color classes based on the color scheme
-  const hoverBgClass =
-    colorScheme === "blue"
-      ? "hover:bg-blue-50/50 dark:hover:bg-blue-950/10"
-      : "hover:bg-rose-50/50 dark:hover:bg-rose-950/10";
+  const hoverBgClass = colorScheme === 'blue' ? 'hover:bg-blue-50/50 dark:hover:bg-blue-950/10' : 'hover:bg-rose-50/50 dark:hover:bg-rose-950/10';
 
-  const iconClass =
-    colorScheme === "blue"
-      ? "text-blue-600 dark:text-blue-400"
-      : "text-rose-600 dark:text-rose-400";
+  const iconClass = colorScheme === 'blue' ? 'text-blue-600 dark:text-blue-400' : 'text-rose-600 dark:text-rose-400';
 
-  const linkHoverClass =
-    colorScheme === "blue"
-      ? "hover:text-blue-700 dark:hover:text-blue-400"
-      : "hover:text-rose-700 dark:hover:text-rose-400";
+  const linkHoverClass = colorScheme === 'blue' ? 'hover:text-blue-700 dark:hover:text-blue-400' : 'hover:text-rose-700 dark:hover:text-rose-400';
 
   return (
     <TableRow className={hoverBgClass}>
@@ -70,9 +61,7 @@ export function ProjectTableRow({
             >
               {title}
             </Link>
-            <p className="text-sm text-slate-600 dark:text-slate-400">
-              {description}
-            </p>
+            <p className="text-sm text-slate-600 dark:text-slate-400">{description}</p>
           </div>
         </div>
       </TableCell>

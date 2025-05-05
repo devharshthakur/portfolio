@@ -22,31 +22,31 @@ export interface Skill {
 
 export const skills: Skill[] = [
   {
-    name: "HTML",
-    icon: "FaHtml5",
-    url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    name: 'HTML',
+    icon: 'FaHtml5',
+    url: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
   },
   {
-    name: "CSS",
-    icon: "FaCss3Alt",
-    url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+    name: 'CSS',
+    icon: 'FaCss3Alt',
+    url: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
   },
   {
-    name: "JavaScript",
-    icon: "FaJsSquare",
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    name: 'JavaScript',
+    icon: 'FaJsSquare',
+    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
   },
-  { name: "React", icon: "FaReact", url: "https://reactjs.org/" },
-  { name: "Tailwind", icon: "SiTailwindcss", url: "https://tailwindcss.com/" },
-  { name: "NextJs", icon: "SiNextdotjs", url: "https://nextjs.org/" },
+  { name: 'React', icon: 'FaReact', url: 'https://reactjs.org/' },
+  { name: 'Tailwind', icon: 'SiTailwindcss', url: 'https://tailwindcss.com/' },
+  { name: 'NextJs', icon: 'SiNextdotjs', url: 'https://nextjs.org/' },
   {
-    name: "Typescript",
-    icon: "SiTypescript",
-    url: "https://www.typescriptlang.org/",
+    name: 'Typescript',
+    icon: 'SiTypescript',
+    url: 'https://www.typescriptlang.org/',
   },
-  { name: "Prisma", icon: "SiPrisma", url: "https://www.prisma.io/" },
-  { name: "NestJs", icon: "SiNestjs", url: "https://nestjs.com/" },
-  { name: "Docker", icon: "SiDocker", url: "https://www.docker.com/" },
+  { name: 'Prisma', icon: 'SiPrisma', url: 'https://www.prisma.io/' },
+  { name: 'NestJs', icon: 'SiNestjs', url: 'https://nestjs.com/' },
+  { name: 'Docker', icon: 'SiDocker', url: 'https://www.docker.com/' },
 ];
 
 export default skills;

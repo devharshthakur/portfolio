@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from "next/server";
-import nodemailer, { SendMailOptions } from "nodemailer";
+import { NextRequest, NextResponse } from 'next/server';
+import nodemailer, { SendMailOptions } from 'nodemailer';
 
 interface ContactFormData {
   name: string;
@@ -13,15 +13,12 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     const { name, email, message } = body;
 
     if (!name || !email || !message) {
-      return NextResponse.json(
-        { message: "All fields are required." },
-        { status: 400 },
-      );
+      return NextResponse.json({ message: 'All fields are required.' }, { status: 400 });
     }
 
     // Configure the Nodemailer transporter
     const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
+      host: 'smtp.gmail.com',
       port: 465,
       secure: true,
       auth: {
@@ -46,15 +43,9 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     // Send the email
     await transporter.sendMail(mailOptions);
 
-    return NextResponse.json(
-      { message: "Email Sent Sucessfully!" },
-      { status: 200 },
-    );
+    return NextResponse.json({ message: 'Email Sent Sucessfully!' }, { status: 200 });
   } catch (error) {
-    console.error("Error Sending an email:", error);
-    return NextResponse.json(
-      { message: "Internal server error." },
-      { status: 500 },
-    );
+    console.error('Error Sending an email:', error);
+    return NextResponse.json({ message: 'Internal server error.' }, { status: 500 });
   }
 }

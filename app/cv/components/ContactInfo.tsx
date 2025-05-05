@@ -1,5 +1,5 @@
-import React from "react";
-import { Phone, Mail, MapPin } from "lucide-react";
+import React from 'react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 
 /**
  * ContactInfo Component
@@ -25,15 +25,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
  *
  * @returns {React.ReactElement} A styled list of contact information
  */
-export function ContactInfo({
-  phone,
-  email,
-  address,
-}: {
-  phone: string;
-  email: string;
-  address: string;
-}): React.ReactElement {
+export function ContactInfo({ phone, email, address }: { phone: string; email: string; address: string }): React.ReactElement {
   return (
     <ul className="space-y-3">
       <li className="flex items-center gap-2 group">
@@ -59,9 +51,7 @@ export function ContactInfo({
         <div className="bg-blue-100 dark:bg-blue-900/30 p-1.5 rounded-md text-blue-600 dark:text-blue-400 mt-0.5 border border-blue-200 dark:border-blue-800/50">
           <MapPin size={14} />
         </div>
-        <span className="text-xs text-slate-600 dark:text-slate-400 leading-tight">
-          {address}
-        </span>
+        <span className="text-xs text-slate-600 dark:text-slate-400 leading-tight">{address}</span>
       </li>
     </ul>
   );

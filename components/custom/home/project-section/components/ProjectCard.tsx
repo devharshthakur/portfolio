@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 /**
  * ProjectCard Component
@@ -31,220 +31,201 @@
  * />
  */
 
-import Link from "next/link";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Icons } from "@/components/custom/home/skills-section/utils/icon.export";
-import { TechBadge } from "./TechBadge";
+import Link from 'next/link';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Icons } from '@/components/custom/home/skills-section/utils/icon.export';
+import type { Project } from '../data/projects.data';
 
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  githubUrl: string;
-  liveDemoUrl: string;
-  techStack?: string[];
-  stats?: {
-    stars: number;
-    forks: number;
-    issues: number;
-    lastUpdated?: string;
-  };
-}
+export function ProjectCard(props: Project) {
+  const {
+    title,
+    description,
+    githubUrl,
+    liveDemoUrl = '#',
+    tags,
+    version = 'v1.0.0',
+    stats = {
+      stars: 0,
+      forks: 0,
+      issues: 0,
+      lastUpdated: 'Not available',
+    },
+  } = props;
 
-export function ProjectCard({
-  title,
-  description,
-  githubUrl,
-  liveDemoUrl,
-  techStack = ["TypeScript", "React", "Next.js"],
-  stats = { stars: 0, forks: 0, issues: 0, lastUpdated: "2 days ago" },
-}: ProjectCardProps) {
   const handleLocalDemo = () => {
-    alert(
-      "This project needs to be run locally. Please follow the instructions in the GitHub repository.",
-    );
+    alert('This project needs to be run locally. Please follow the instructions in the GitHub repository.');
   };
 
-  const isDeployed = liveDemoUrl !== "#" && liveDemoUrl !== "local";
-  const isLocal = liveDemoUrl === "local";
-  const isComingSoon = liveDemoUrl === "#";
+  const isDeployed = liveDemoUrl !== '#' && liveDemoUrl !== 'local';
+  const isLocal = liveDemoUrl === 'local';
+  const isComingSoon = liveDemoUrl === '#';
 
   return (
-    <Card className="flex h-full max-h-[24rem] w-full flex-col border border-emerald-200/60 dark:border-emerald-800/60 bg-white/70 dark:bg-slate-900/70 overflow-hidden transition-all hover:border-emerald-300 hover:shadow-md dark:hover:border-emerald-700/60 backdrop-blur-sm">
-      <div className="flex flex-col xs:flex-row xs:items-center xs:justify-between gap-1 xs:gap-0 border-b border-emerald-200/40 dark:border-emerald-800/40 bg-emerald-50/50 dark:bg-emerald-900/10 px-3 py-2 sm:px-4 sm:py-2.5">
-        <div className="truncate font-mono text-sm sm:text-base font-extrabold text-slate-700 dark:text-slate-300">
-          {title}
+    <Card className="flex flex-col overflow-hidden border border-emerald-800/30 bg-emerald-950/80 rounded-lg">
+      {/* Title Section */}
+      <div className="relative flex items-center justify-between px-4 py-3 border-b border-emerald-800/40 bg-gradient-to-r from-emerald-950 via-emerald-900/80 to-emerald-950">
+        <div className="flex items-center space-x-2">
+          <div className="h-3 w-3 rounded-full bg-gradient-to-br from-teal-400 to-emerald-600 shadow-sm shadow-emerald-400/20"></div>
+          <h3 className="font-mono text-base font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 via-teal-200 to-emerald-200 tracking-tight">
+            {title}
+          </h3>
         </div>
-        <Badge
-          variant="outline"
-          className="self-start xs:self-center xs:ml-auto font-mono text-[10px] xs:text-xs border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300"
-        >
-          v1.0.0
+        <Badge variant="outline" className="font-mono text-xs px-2 py-0.5 border-teal-600 bg-teal-900/90 text-teal-200 shadow-sm">
+          {version}
         </Badge>
       </div>
 
-      <Tabs
-        defaultValue="info"
-        className="flex-1 flex flex-col min-h-0 border-t border-emerald-200/40 dark:border-emerald-800/40"
-      >
-        <TabsList className="grid w-full grid-cols-2 rounded-none bg-emerald-50/80 dark:bg-emerald-900/20 p-1 sm:p-1.5 border-b border-emerald-200/40 dark:border-emerald-800/40">
+      {/* Tabs Section */}
+      <Tabs defaultValue="info" className="flex flex-col rounded-md">
+        <TabsList className="flex w-full h-7 rounded-md bg-emerald-900/40 border-b border-emerald-800/40 p-0">
           <TabsTrigger
             value="info"
-            className="font-mono text-[10px] xs:text-xs border border-transparent data-[state=active]:border-emerald-300/40 data-[state=active]:bg-white/90 dark:data-[state=active]:bg-slate-900/40 data-[state=active]:text-emerald-700 dark:data-[state=active]:text-emerald-400 data-[state=active]:shadow-sm transition-all duration-300 hover:bg-white/70 dark:hover:bg-slate-900/30 hover:text-emerald-600 dark:hover:text-emerald-300"
+            className="flex-1 font-mono text-xs border-0 rounded-none data-[state=active]:bg-emerald-800/80 data-[state=active]:text-emerald-300 py-0.5"
           >
             Info
           </TabsTrigger>
           <TabsTrigger
             value="stats"
-            className="font-mono text-[10px] xs:text-xs border border-transparent data-[state=active]:border-emerald-300/40 data-[state=active]:bg-white/90 dark:data-[state=active]:bg-slate-900/40 data-[state=active]:text-emerald-700 dark:data-[state=active]:text-emerald-400 data-[state=active]:shadow-sm transition-all duration-300 hover:bg-white/70 dark:hover:bg-slate-900/30 hover:text-emerald-600 dark:hover:text-emerald-300"
+            className="flex-1 font-mono text-xs border-0 rounded-none data-[state=active]:bg-emerald-800/80 data-[state=active]:text-emerald-300 py-0.5"
           >
             Stats
           </TabsTrigger>
         </TabsList>
 
-        <CardContent className="p-0 my-0 flex-1 overflow-y-auto bg-white/70 dark:bg-slate-900/70">
-          <TabsContent
-            value="info"
-            className="mt-0 animate-in border-0 p-3 sm:p-4 duration-300 fade-in-50 h-full bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm"
-          >
-            <h3 className="mb-1 sm:mb-2 font-mono text-sm sm:text-base font-extrabold text-slate-700 dark:text-slate-300">
-              {title}
-            </h3>
-            <p className="mb-2 sm:mb-3 font-mono text-xs sm:text-sm leading-relaxed text-foreground line-clamp-3">
-              {description}
-            </p>
-            <div className="flex flex-wrap gap-1 sm:gap-1.5">
-              {techStack.slice(0, 5).map((tech) => (
-                <TechBadge key={tech} tech={tech} />
-              ))}
-              {techStack.length > 5 && (
-                <Badge
-                  variant="outline"
-                  className="font-mono text-[10px] xs:text-xs px-1.5 py-0.5 sm:px-2 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300"
-                >
-                  +{techStack.length - 5} more
-                </Badge>
-              )}
+        <TabsContent
+          value="info"
+          className="mt-0 border-0 p-3 bg-emerald-900/80 min-h-[120px] data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=active]:slide-in-from-left-5"
+        >
+          <p className="font-mono text-sm text-emerald-200 leading-relaxed mb-2 max-w-[95%] mx-auto text-pretty">{description}</p>
+          <div className="flex flex-wrap gap-1.5">
+            {tags.map((tech) => (
+              <Badge
+                key={tech}
+                className="px-2 py-0.5 text-[10px] font-medium bg-opacity-20 text-white"
+                style={{
+                  backgroundColor: getBadgeColor(tech),
+                  borderColor: 'transparent',
+                }}
+                variant="outline"
+              >
+                {tech}
+              </Badge>
+            ))}
+          </div>
+        </TabsContent>
+
+        <TabsContent
+          value="stats"
+          className="mt-0 border-0 p-3 bg-emerald-900/80 min-h-[120px] data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=active]:slide-in-from-right-5"
+        >
+          <div className="grid grid-cols-2 gap-2">
+            <div className="flex flex-col items-center justify-center rounded-md bg-emerald-800/60 p-1.5 border border-yellow-700/30 shadow-sm">
+              <div className="flex items-center gap-1 text-yellow-400">
+                <Icons.FaStar className="h-3 w-3" />
+                <span className="font-mono text-xs font-bold">{stats.stars}</span>
+              </div>
+              <span className="mt-0.5 font-mono text-[10px] text-emerald-300">Stars</span>
             </div>
-          </TabsContent>
 
-          <TabsContent
-            value="stats"
-            className="mt-0 animate-in border-0 p-3 sm:p-4 duration-300 fade-in-50 h-full bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm"
-          >
-            <div className="grid grid-cols-2 gap-2 sm:gap-3">
-              <div className="flex flex-col items-center justify-center rounded-md bg-emerald-50/80 dark:bg-emerald-900/20 p-2 sm:p-3 transition-all hover:bg-emerald-100/80 dark:hover:bg-emerald-900/40">
-                <div className="flex items-center gap-1 sm:gap-1.5 text-yellow-500">
-                  <Icons.FaStar className="h-3 w-3 sm:h-4 sm:w-4" />
-                  <span className="font-mono text-sm sm:text-base font-bold">
-                    {stats.stars}
-                  </span>
-                </div>
-                <span className="mt-0.5 font-mono text-[10px] xs:text-xs text-muted-foreground">
-                  Stars
-                </span>
+            <div className="flex flex-col items-center justify-center rounded-md bg-emerald-800/60 p-1.5 border border-blue-700/30 shadow-sm">
+              <div className="flex items-center gap-1 text-blue-400">
+                <Icons.FaCodeBranch className="h-3 w-3" />
+                <span className="font-mono text-xs font-bold">{stats.forks}</span>
               </div>
-
-              <div className="flex flex-col items-center justify-center rounded-md bg-emerald-50/80 dark:bg-emerald-900/20 p-2 sm:p-3 transition-all hover:bg-emerald-100/80 dark:hover:bg-emerald-900/40">
-                <div className="flex items-center gap-1 sm:gap-1.5 text-blue-500">
-                  <Icons.FaCodeBranch className="h-3 w-3 sm:h-4 sm:w-4" />
-                  <span className="font-mono text-sm sm:text-base font-bold">
-                    {stats.forks}
-                  </span>
-                </div>
-                <span className="mt-0.5 font-mono text-[10px] xs:text-xs text-muted-foreground">
-                  Forks
-                </span>
-              </div>
-
-              <div className="flex flex-col items-center justify-center rounded-md bg-emerald-50/80 dark:bg-emerald-900/20 p-2 sm:p-3 transition-all hover:bg-emerald-100/80 dark:hover:bg-emerald-900/40">
-                <div className="flex items-center gap-1 sm:gap-1.5 text-orange-500">
-                  <Icons.FaExclamationCircle className="h-3 w-3 sm:h-4 sm:w-4" />
-                  <span className="font-mono text-sm sm:text-base font-bold">
-                    {stats.issues}
-                  </span>
-                </div>
-                <span className="mt-0.5 font-mono text-[10px] xs:text-xs text-muted-foreground">
-                  Issues
-                </span>
-              </div>
-
-              <div className="flex flex-col items-center justify-center rounded-md bg-emerald-50/80 dark:bg-emerald-900/20 p-2 sm:p-3 transition-all hover:bg-emerald-100/80 dark:hover:bg-emerald-900/40">
-                <div className="flex items-center gap-1 sm:gap-1.5 text-purple-500">
-                  <Icons.FaHistory className="h-3 w-3 sm:h-4 sm:w-4" />
-                  <span className="font-mono text-[10px] xs:text-xs sm:text-sm font-medium">
-                    {stats.lastUpdated}
-                  </span>
-                </div>
-                <span className="mt-0.5 font-mono text-[10px] xs:text-xs text-muted-foreground">
-                  Updated
-                </span>
-              </div>
+              <span className="mt-0.5 font-mono text-[10px] text-emerald-300">Forks</span>
             </div>
-          </TabsContent>
-        </CardContent>
+
+            <div className="flex flex-col items-center justify-center rounded-md bg-emerald-800/60 p-1.5 border border-orange-700/30 shadow-sm">
+              <div className="flex items-center gap-1 text-orange-400">
+                <Icons.FaExclamationCircle className="h-3 w-3" />
+                <span className="font-mono text-xs font-bold">{stats.issues}</span>
+              </div>
+              <span className="mt-0.5 font-mono text-[10px] text-emerald-300">Issues</span>
+            </div>
+
+            <div className="flex flex-col items-center justify-center rounded-md bg-emerald-800/60 p-1.5 border border-purple-700/30 shadow-sm">
+              <div className="flex items-center gap-1 text-purple-400">
+                <Icons.FaHistory className="h-3 w-3" />
+                <span className="font-mono text-[10px] font-medium">{stats.lastUpdated}</span>
+              </div>
+              <span className="mt-0.5 font-mono text-[10px] text-emerald-300">Updated</span>
+            </div>
+          </div>
+        </TabsContent>
       </Tabs>
 
-      <CardFooter className="flex flex-col gap-2 border-t border-emerald-200/40 dark:border-emerald-800/40 bg-emerald-50/50 dark:bg-emerald-900/10 p-2 sm:p-2.5 sm:flex-row sm:gap-2.5">
-        <Button
-          variant="outline"
-          size="sm"
-          className="w-full font-mono text-[10px] xs:text-xs bg-white/80 dark:bg-slate-900/40 hover:bg-white dark:hover:bg-slate-900/60 border-emerald-300 dark:border-emerald-700 hover:border-emerald-400 dark:hover:border-emerald-600 py-1 sm:py-1.5"
-          asChild
-        >
-          <Link href={githubUrl} prefetch={false}>
-            <Icons.FaGithub
-              className="mr-1 h-3 w-3 sm:mr-2 sm:h-4 sm:w-4"
-              aria-hidden="true"
-            />
-            <span className="flex-1">$ git clone</span>
-          </Link>
-        </Button>
-        {isComingSoon ? (
+      {/* Button Section */}
+      <div className="flex">
+        <div className="flex-1">
           <Button
-            variant="secondary"
-            size="sm"
-            className="w-full font-mono text-[10px] xs:text-xs bg-emerald-100/80 dark:bg-emerald-900/40 hover:bg-emerald-200 dark:hover:bg-emerald-800/60 text-emerald-800 dark:text-emerald-300 py-1 sm:py-1.5"
-            disabled
-          >
-            <Icons.FaTerminal
-              className="mr-1 h-3 w-3 sm:mr-2 sm:h-4 sm:w-4"
-              aria-hidden="true"
-            />
-            <span className="flex-1">Coming Soon</span>
-          </Button>
-        ) : isLocal ? (
-          <Button
-            variant="default"
-            size="sm"
-            className="w-full font-mono text-[10px] xs:text-xs bg-emerald-100/80 dark:bg-emerald-900/40 hover:bg-emerald-200 dark:hover:bg-emerald-800/60 text-emerald-800 dark:text-emerald-300 py-1 sm:py-1.5"
-            onClick={handleLocalDemo}
-          >
-            <Icons.FaTerminal
-              className="mr-1 h-3 w-3 sm:mr-2 sm:h-4 sm:w-4"
-              aria-hidden="true"
-            />
-            <span className="flex-1">$ npm run dev</span>
-          </Button>
-        ) : (
-          <Button
-            variant="default"
-            size="sm"
-            className="w-full font-mono text-[10px] xs:text-xs bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white py-1 sm:py-1.5"
+            variant="outline"
+            className="h-8 w-full justify-center rounded-md bg-transparent font-mono text-xs text-emerald-400 hover:text-emerald-300 border-0 border-t border-emerald-800/40"
             asChild
           >
-            <Link href={liveDemoUrl} prefetch={false}>
-              <Icons.FaGlobe
-                className="mr-1 h-3 w-3 sm:mr-2 sm:h-4 sm:w-4"
-                aria-hidden="true"
-              />
-              <span className="flex-1">Live Demo</span>
+            <Link href={githubUrl} target="_blank" rel="noopener noreferrer">
+              <Icons.FaGithub className="mr-2 h-4 w-4" aria-hidden="true" />
+              <span>$ git clone</span>
             </Link>
           </Button>
-        )}
-      </CardFooter>
+        </div>
+
+        <div className="flex-1">
+          {isComingSoon ? (
+            <div className="flex h-8 w-full items-center justify-center font-mono text-xs text-emerald-500/50 bg-transparent border-t border-emerald-800/40">
+              <span>Coming Soon</span>
+            </div>
+          ) : isLocal ? (
+            <Button
+              variant="outline"
+              className="h-8 w-full justify-center rounded-md bg-transparent font-mono text-xs text-emerald-500 hover:text-emerald-400 border-0 border-t border-emerald-800/40"
+              onClick={handleLocalDemo}
+            >
+              <Icons.FaTerminal className="mr-2 h-4 w-4" aria-hidden="true" />
+              <span>$ pnpm run dev</span>
+            </Button>
+          ) : (
+            <Button
+              variant="outline"
+              className="h-8 w-full justify-center rounded-md bg-emerald-700 font-mono text-xs text-white hover:bg-emerald-600 border-0 border-t border-emerald-800/40"
+              asChild
+            >
+              <Link href={liveDemoUrl} target="_blank" rel="noopener noreferrer">
+                <Icons.FaGlobe className="mr-2 h-4 w-4" aria-hidden="true" />
+                <span>Live Demo</span>
+              </Link>
+            </Button>
+          )}
+        </div>
+      </div>
     </Card>
   );
+}
+
+// Helper function to get badge colors based on tech
+function getBadgeColor(tech: string): string {
+  const colorMap: Record<string, string> = {
+    'Next.js': '#0070f3',
+    TypeScript: '#3178c6',
+    React: '#61dafb',
+    JavaScript: '#f7df1e',
+    Node: '#68a063',
+    npm: '#cb3837',
+    NestJS: '#e0234e',
+    Prisma: '#5a67d8',
+    Security: '#e11d48',
+    Encryption: '#6366f1',
+    'Machine Learning': '#8b5cf6',
+    AI: '#a855f7',
+    Blockchain: '#059669',
+    Simulation: '#0ea5e9',
+    'Package Checker': '#f59e0b',
+    'Legal Tech': '#6366f1',
+    'PDF Processing': '#f43f5e',
+    Docker: '#2496ed',
+  };
+
+  return colorMap[tech] || '#64748b'; // Default slate color
 }

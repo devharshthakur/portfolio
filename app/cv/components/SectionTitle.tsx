@@ -1,5 +1,5 @@
-import React from "react";
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import React from 'react';
+import { Card, CardHeader, CardTitle } from '@/components/ui/card';
 
 /**
  * SectionTitle Component
@@ -25,19 +25,58 @@ import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 export function SectionTitle({
   icon,
   title,
-  colorClassName = "border-primary/30 text-primary",
+  colorClassName = 'border-primary/30 text-primary',
 }: {
   icon: React.ReactNode;
   title: React.ReactNode;
   colorClassName?: string;
 }): React.ReactElement {
   return (
-    <Card className={`mb-4 border-2 ${colorClassName} bg-card`}>
-      <CardHeader className="py-2 px-4">
-        <CardTitle className="text-lg font-semibold uppercase tracking-wider flex items-center gap-2">
-          {icon} {title}
-        </CardTitle>
-      </CardHeader>
-    </Card>
+    <div className="mb-3">
+      <div className={`flex items-center gap-2 ${colorClassName}`}>
+        <div
+          className={`w-7 h-7 rounded-md flex items-center justify-center bg-white dark:bg-background border ${colorClassName.split(' ')[0]} shadow-sm`}
+        >
+          {icon}
+        </div>
+        <h2 className="text-lg font-semibold uppercase tracking-wider">{title}</h2>
+      </div>
+      <div
+        className={`mt-1 h-0.5 w-full bg-gradient-to-r ${
+          colorClassName.includes('yellow')
+            ? 'from-yellow-400 to-transparent'
+            : colorClassName.includes('blue')
+              ? 'from-blue-400 to-transparent'
+              : colorClassName.includes('green')
+                ? 'from-green-400 to-transparent'
+                : colorClassName.includes('amber')
+                  ? 'from-amber-400 to-transparent'
+                  : colorClassName.includes('indigo')
+                    ? 'from-indigo-400 to-transparent'
+                    : colorClassName.includes('purple')
+                      ? 'from-purple-400 to-transparent'
+                      : colorClassName.includes('rose')
+                        ? 'from-rose-400 to-transparent'
+                        : 'from-primary to-transparent'
+        } 
+        dark:${
+          colorClassName.includes('yellow')
+            ? 'from-yellow-600'
+            : colorClassName.includes('blue')
+              ? 'from-blue-600'
+              : colorClassName.includes('green')
+                ? 'from-green-600'
+                : colorClassName.includes('amber')
+                  ? 'from-amber-600'
+                  : colorClassName.includes('indigo')
+                    ? 'from-indigo-600'
+                    : colorClassName.includes('purple')
+                      ? 'from-purple-600'
+                      : colorClassName.includes('rose')
+                        ? 'from-rose-600'
+                        : 'from-primary'
+        } dark:to-transparent`}
+      />
+    </div>
   );
 }

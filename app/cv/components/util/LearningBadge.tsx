@@ -1,6 +1,6 @@
-import React from "react";
-import { Sparkles } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import React from 'react';
+import { Sparkles } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 /**
  * LearningBadge Component
@@ -12,35 +12,27 @@ import { Card, CardContent } from "@/components/ui/card";
  * @component
  * @param {Object} props - Component props
  * @param {string} props.skill - The skill or technology being learned
- *
- * @example
- * ```tsx
- * <LearningBadge skill="Rust Programming Language" />
- * ```
+ * @param {React.ReactNode} [props.icon] - Optional custom icon for the badge
  *
  * @returns {React.ReactElement} A styled card highlighting a skill in learning
  */
-export function LearningBadge({
-  skill,
-}: {
-  skill: string;
-}): React.ReactElement {
+export function LearningBadge({ skill, icon }: { skill: string; icon?: React.ReactNode }): React.ReactElement {
   return (
-    <Card className="border-l-4 border-l-indigo-500 bg-indigo-50/30 dark:bg-indigo-950/10 border border-indigo-200 dark:border-indigo-800/40">
-      <CardContent className="p-3">
-        <div className="flex items-start gap-2">
-          <Sparkles
-            size={18}
-            className="text-indigo-600 dark:text-indigo-400 mt-0.5"
-          />
-          <div>
-            <h4 className="text-indigo-700 dark:text-indigo-400 font-medium text-xs uppercase tracking-wider mb-1">
-              Currently Learning:
-            </h4>
-            <p className="text-sm text-foreground font-medium">{skill}</p>
+    <div className="relative">
+      <div className="absolute -inset-1 bg-indigo-400/20 dark:bg-indigo-600/20 rounded-md blur-sm"></div>
+      <Card className="relative bg-white/90 dark:bg-black/40 backdrop-blur-sm border border-l-2 border-l-indigo-500 border-indigo-300 dark:border-indigo-700">
+        <CardContent className="p-2">
+          <div className="flex items-start gap-2">
+            <div className="bg-indigo-100 dark:bg-indigo-900/40 p-1 rounded-full">
+              {icon || <Sparkles size={14} className="text-indigo-600 dark:text-indigo-400" />}
+            </div>
+            <div>
+              <h4 className="text-xs uppercase tracking-wider font-medium text-indigo-700 dark:text-indigo-400 mb-0.5">Currently Learning</h4>
+              <p className="text-sm font-medium text-slate-800 dark:text-slate-200">{skill}</p>
+            </div>
           </div>
-        </div>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
+    </div>
   );
 }
