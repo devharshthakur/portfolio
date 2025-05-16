@@ -16,7 +16,7 @@
  * throughout all sections.
  */
 
-import { Header } from '@/components/custom/header/Header';
+import { Header } from '@/components/custom/home/header/Header';
 import { Profile, Skills, Projects, Packages } from '@/components/custom/home/export';
 
 export default function Home() {

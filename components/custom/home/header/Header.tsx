@@ -14,7 +14,7 @@
  */
 import { ModeToggle } from '@/components/mode-toogle';
 import { ColoredButton } from '@/components/ui/colored-button';
-import { HEADER_LEFT_NAV, HEADER_RIGHT_NAV } from '@/components/custom/header/lib/constants';
+import { HEADER_LEFT_NAV, HEADER_RIGHT_NAV } from '@/components/custom/home/header/lib/constants';
 
 export function Header() {
   return (

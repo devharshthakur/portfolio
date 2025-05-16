@@ -5,8 +5,8 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { COLOR_SCHEMES } from '@/components/custom/header/lib/constants';
-import { ColoredButtonProps, ColorScheme } from '@/components/custom/header/types/types';
+import { COLOR_SCHEMES } from '@/components/custom/home/header/lib/constants';
+import { ColoredButtonProps, ColorScheme } from '@/components/custom/home/header/types/types';
 import { cn } from '@/lib/utils';
 
 /**

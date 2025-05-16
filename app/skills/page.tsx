@@ -13,8 +13,8 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ModeToggle } from '@/components/mode-toogle';
 import { Home, Hammer, Layers, Award, BookOpen, FolderTree } from 'lucide-react';
-import skills, { Skill, SkillCategory, skillCategories } from './data/skills.data';
-import { SkillRow } from './components/SkillRow';
+import skills, { Skill, SkillCategory, skillCategories } from '@/components/custom/skills/data/skills.data';
+import { SkillRow } from '@/components/custom/skills/components/SkillRow';
 
 export default function SkillsPage() {
   const [mounted, setMounted] = useState(false);

@@ -1,10 +1,10 @@
 import type React from 'react';
 import { MapPin, Briefcase, GraduationCap, Mail, Home } from 'lucide-react';
 import { FaSquareXTwitter } from 'react-icons/fa6';
-import { socialLinks } from './data';
-import { SocialIcon } from './components/SocialIcon';
+import { socialLinks } from '@/components/custom/contact/data';
+import { SocialIcon } from '@/components/custom/contact/components/SocialIcon';
 import { ModeToggle } from '@/components/mode-toogle';
-import { ContactForm } from './components/ContactForm';
+import { ContactForm } from '@/components/custom/contact/components/ContactForm';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 

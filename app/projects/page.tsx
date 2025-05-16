@@ -15,11 +15,11 @@ import projects from '@/components/custom/home/project-section/data/projects.dat
 import { Building2, Home, Loader2, ArrowRight, Code, Github, Star, GitFork } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useState, useEffect } from 'react';
-import { NoteDialog } from './components/dailogs/project-section-home-dailog';
+import { NoteDialog } from '@/components/custom/projects/components/dailogs/project-section-home-dailog';
 import { ModeToggle } from '@/components/mode-toogle';
-import { ProjectCard } from './components/project-card';
-import HeaderPattern from './components/svgs/HeaderPattern';
-import ProjectGlow from './components/svgs/ProjectGlow';
+import { ProjectCard } from '@/components/custom/projects/components/project-card';
+import HeaderPattern from '@/components/custom/projects/components/svgs/HeaderPattern';
+import ProjectGlow from '@/components/custom/projects/components/svgs/ProjectGlow';
 
 interface ProjectStats {
   stars: number;
