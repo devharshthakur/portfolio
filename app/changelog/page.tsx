@@ -24,7 +24,7 @@ export default function ChangelogPage() {
   return (
     <div className="relative min-h-screen w-full bg-gradient-to-b from-background to-slate-100/30 dark:to-slate-900/30">
       {/* Fixed header with controls */}
-      <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 dark:border-slate-800/80 bg-background/90 backdrop-blur-sm">
+      <header className="sticky top-0 z-50 w-full border-slate-200/80 dark:border-slate-800/80 bg-background/90 backdrop-blur-sm">
         <div className="w-full mx-auto px-4 sm:px-6 flex h-14 items-center justify-between">
           <Button
             asChild
@@ -75,12 +75,12 @@ export default function ChangelogPage() {
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Badge className="py-1.5 px-3.5 bg-blue-50 text-blue-700 border border-blue-200 dark:bg-blue-900/40 dark:text-blue-200 dark:border-blue-700/50 text-sm font-medium">
+              <Badge className="py-1.5 px-3.5 bg-blue-50 text-blue-700 border-2 border-blue-200 dark:bg-blue-900/40 dark:text-blue-200 dark:border-blue-700/50 text-sm font-medium">
                 <Tag className="mr-1.5 h-4 w-4" />
                 Version 2.0.0
               </Badge>
 
-              <Badge className="py-1.5 px-3.5 bg-green-50 text-green-700 border border-green-200 dark:bg-green-900/40 dark:text-green-200 dark:border-green-700/50 text-sm font-medium">
+              <Badge className="py-1.5 px-3.5 bg-green-50 text-green-700 border-2 border-green-200 dark:bg-green-900/40 dark:text-green-200 dark:border-green-700/50 text-sm font-medium">
                 <Calendar className="mr-1.5 h-4 w-4" />
                 {new Date().toLocaleDateString('en-US', {
                   month: 'long',
@@ -88,8 +88,8 @@ export default function ChangelogPage() {
                 })}
               </Badge>
 
-              <Badge className="py-1.5 px-3.5 bg-purple-50 text-purple-700 border border-purple-200 dark:bg-purple-900/40 dark:text-purple-200 dark:border-purple-700/50 text-sm font-medium">
-                <Code className="mr-1.5 h-4 w-4" />
+              <Badge className="py-1.5 px-3.5 bg-zinc-50 text-zinc-700 border-2 border-zinc-200 dark:bg-zinc-900/40 dark:text-zinc-200 dark:border-zinc-700/50 text-sm font-medium">
+                <GitPullRequest className="mr-1.5 h-4 w-4" />
                 Open Source
               </Badge>
             </div>
@@ -113,6 +113,34 @@ export default function ChangelogPage() {
               </div>
 
               <div className="relative pl-12 border-l-2 border-slate-200 dark:border-slate-800 space-y-20 max-w-4xl mx-auto">
+                {/* Skills Updates */}
+                <div className="relative">
+                  <div className="absolute -left-[29px] top-0">
+                    <div className="h-14 w-14 rounded-full bg-orange-100 dark:bg-orange-900/30 border-4 border-white dark:border-background flex items-center justify-center shadow-sm">
+                      <CheckCircle2 className="h-6 w-6 text-orange-600 dark:text-orange-400" />
+                    </div>
+                  </div>
+
+                  <div className="pl-8">
+                    <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 mb-3">
+                      Content Update
+                    </span>
+                    <h3 className="text-xl md:text-2xl font-bold text-slate-800 dark:text-slate-100 mb-3">Skills Page Additions</h3>
+                    <div className="prose dark:prose-invert prose-slate max-w-none mb-8">
+                      <p>
+                        Updated the skills page with new technologies and refined learning goals. These additions better reflect current expertise and
+                        future learning directions.
+                      </p>
+                      <ul className="mt-3 space-y-1.5">
+                        <li>Added Rust programming language as a currently learning skill</li>
+                        <li>Updated Figma's status to "plan to learn/future goal" to better reflect priorities</li>
+                        <li>Ensured consistent styling across all skill indicators</li>
+                        <li>Maintained balanced color distribution for improved visual hierarchy</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Tailwind Update */}
                 <div className="relative">
                   <div className="absolute -left-[29px] top-0">
@@ -439,20 +467,20 @@ export default function ChangelogPage() {
 
         {/* Open Source Project Section - Full Width */}
         <section className="mt-24 mb-20 relative">
-          <div className="absolute -z-10 top-0 left-1/4 w-64 h-64 bg-indigo-400/10 dark:bg-indigo-400/5 rounded-full blur-3xl"></div>
-          <div className="absolute -z-10 bottom-0 right-1/4 w-64 h-64 bg-blue-400/10 dark:bg-blue-400/5 rounded-full blur-3xl"></div>
+          <div className="absolute -z-10 top-0 left-1/4 w-64 h-64 bg-zinc-400/10 dark:bg-zinc-400/5 rounded-full blur-3xl"></div>
+          <div className="absolute -z-10 bottom-0 right-1/4 w-64 h-64 bg-zinc-400/10 dark:bg-zinc-400/5 rounded-full blur-3xl"></div>
 
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row items-start gap-10 md:gap-16">
               {/* Left Column - Open Source Info */}
               <div className="flex-1 relative">
                 <div className="flex items-center gap-5 mb-8">
-                  <div className="flex-shrink-0 flex items-center justify-center h-16 w-16 bg-gradient-to-br from-indigo-500 to-blue-600 text-white rounded-xl shadow-md">
+                  <div className="flex-shrink-0 flex items-center justify-center h-16 w-16 bg-gradient-to-br from-zinc-600 to-zinc-800 dark:from-zinc-500 dark:to-zinc-700 text-white rounded-xl shadow-md">
                     <Github className="h-8 w-8" />
                   </div>
                   <div>
                     <h2 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-100 tracking-tight">Open Source Project</h2>
-                    <p className="text-indigo-600 dark:text-indigo-400 font-medium">Available for everyone</p>
+                    <p className="text-zinc-600 dark:text-zinc-400 font-medium">Available for everyone</p>
                   </div>
                 </div>
 
@@ -470,7 +498,7 @@ export default function ChangelogPage() {
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button
                     size="lg"
-                    className="bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white shadow-md"
+                    className="bg-gradient-to-r from-zinc-700 to-zinc-900 hover:from-zinc-800 hover:to-zinc-950 text-white shadow-md dark:from-zinc-600 dark:to-zinc-800 dark:hover:from-zinc-500 dark:hover:to-zinc-700"
                     asChild
                   >
                     <a
@@ -487,7 +515,7 @@ export default function ChangelogPage() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-indigo-300 dark:border-indigo-700 text-indigo-700 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30"
+                    className="border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-800"
                     asChild
                   >
                     <a
@@ -502,7 +530,7 @@ export default function ChangelogPage() {
                   </Button>
                 </div>
 
-                <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+                <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
                   <Book className="h-4 w-4" />
                   <span>
                     For historical changes, view the{' '}
@@ -510,7 +538,7 @@ export default function ChangelogPage() {
                       href="https://github.com/devharshthakur/portfolio/commits/main"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1"
+                      className="text-zinc-600 dark:text-zinc-400 hover:underline inline-flex items-center gap-1"
                     >
                       commit history <ArrowRight className="h-3 w-3" />
                     </a>
@@ -521,13 +549,13 @@ export default function ChangelogPage() {
               {/* Right Column - Features */}
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-slate-800 dark:text-slate-100 mb-8 flex items-center gap-2">
-                  <div className="h-5 w-1.5 bg-gradient-to-b from-indigo-500 to-blue-500 rounded-full mr-2"></div>
+                  <div className="h-5 w-1.5 bg-gradient-to-b from-zinc-500 to-zinc-700 rounded-full mr-2"></div>
                   Why Use This Project?
                 </h3>
 
                 <div className="grid gap-8 sm:grid-cols-2">
                   <div className="space-y-3">
-                    <div className="text-indigo-500 dark:text-indigo-400">
+                    <div className="text-zinc-600 dark:text-zinc-400">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -549,7 +577,7 @@ export default function ChangelogPage() {
                   </div>
 
                   <div className="space-y-3">
-                    <div className="text-indigo-500 dark:text-indigo-400">
+                    <div className="text-zinc-600 dark:text-zinc-400">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -570,7 +598,7 @@ export default function ChangelogPage() {
                   </div>
 
                   <div className="space-y-3">
-                    <div className="text-indigo-500 dark:text-indigo-400">
+                    <div className="text-zinc-600 dark:text-zinc-400">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -594,7 +622,7 @@ export default function ChangelogPage() {
                   </div>
 
                   <div className="space-y-3">
-                    <div className="text-indigo-500 dark:text-indigo-400">
+                    <div className="text-zinc-600 dark:text-zinc-400">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"

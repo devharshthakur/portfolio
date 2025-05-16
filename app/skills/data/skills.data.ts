@@ -35,6 +35,7 @@ import {
   SiGo,
   SiPython,
   SiC,
+  SiRust,
 } from 'react-icons/si';
 import { FaAws, FaJava } from 'react-icons/fa';
 import { GiPolarBear } from 'react-icons/gi';
@@ -477,7 +478,7 @@ const skills: Skill[] = [
       light: 'text-purple-500',
       dark: 'text-purple-400',
     },
-    learningStatus: 'learning',
+    learningStatus: 'plan to learn',
   },
 
   // Testing skills
@@ -570,6 +571,25 @@ const skills: Skill[] = [
       dark: 'text-green-400',
     },
     learningStatus: 'basics',
+  },
+  {
+    id: 'rust-lang',
+    name: 'Rust',
+    description:
+      'A systems programming language focused on safety, speed, and concurrency. Rust provides memory safety guarantees without using garbage collection.',
+    shortDescription:
+      'Modern systems language with memory safety without garbage collection, zero-cost abstractions, and powerful concurrency features.',
+    category: 'languages',
+    proficiencyLevel: 2,
+    icon: SiRust,
+    officialUrl: 'https://www.rust-lang.org/',
+    featured: false,
+    yearsExperience: 1,
+    color: {
+      light: 'text-orange-600',
+      dark: 'text-orange-400',
+    },
+    learningStatus: 'learning',
   },
 ];
 

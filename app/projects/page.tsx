@@ -34,7 +34,6 @@ export default function ProjectsPage() {
 
   useEffect(() => {
     setMounted(true);
-
     // Simulate loading project stats
     const loadStats = () => {
       // Generate random stats for demo purposes
@@ -45,7 +44,6 @@ export default function ProjectsPage() {
       setProjectStats(stats);
       setLoading(false);
     };
-
     // Small delay to ensure DOM is ready
     const timer = setTimeout(loadStats, 300);
     return () => clearTimeout(timer);
@@ -58,7 +56,7 @@ export default function ProjectsPage() {
   return (
     <main className="relative min-h-screen w-full bg-gray-50 dark:bg-zinc-900 overflow-hidden">
       {/* Navigation */}
-      <nav className="sticky top-0 left-0 right-0 flex justify-between items-center z-50 p-4 bg-gray-50/90 dark:bg-zinc-900/90 backdrop-blur-sm border-b border-slate-200/50 dark:border-zinc-800/50">
+      <nav className="sticky top-0 left-0 right-0 flex justify-between items-center z-50 p-4 bg-gray-50/90 dark:bg-zinc-900/90 backdrop-blur-sm border-slate-200/50 dark:border-zinc-800/50">
         <Button
           asChild
           variant="outline"

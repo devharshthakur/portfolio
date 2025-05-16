@@ -1,6 +1,6 @@
 import { FaGithub, FaLinkedin, FaDownload, FaCode, FaServer, FaGraduationCap } from 'react-icons/fa';
 import { Mail, User, MapPin, BookOpen, Calendar, Award, Home, Send, Briefcase, ExternalLink, Sparkles, Hammer } from 'lucide-react';
-import { SiGo, SiVitest } from 'react-icons/si';
+import { SiVitest, SiRust } from 'react-icons/si';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-tr from-background via-background to-indigo-50/10 dark:to-indigo-950/10 overflow-hidden">
       {/* Fixed Navigation Bar */}
-      <nav className="sticky top-0 left-0 right-0 flex justify-between items-center z-50 p-4 bg-gradient-to-tr from-background via-background to-indigo-50/10 dark:to-indigo-950/10 backdrop-blur-sm">
+      <nav className="sticky top-0 left-0 right-0 flex justify-between items-center z-50 p-4  backdrop-blur-sm">
         <Button
           asChild
           variant="outline"
@@ -39,7 +39,7 @@ export default function AboutPage() {
       </nav>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
-        {/* Hero Section with Background Elements */}
+        {/* Main Content */}
         <div className="relative">
           {/* Decorative circles */}
           <div className="absolute -right-64 -top-64 w-96 h-96 bg-blue-200/20 dark:bg-blue-900/10 rounded-full blur-3xl"></div>
@@ -343,11 +343,11 @@ export default function AboutPage() {
 
                       <div>
                         <h3 className="font-semibold text-rose-700 dark:text-rose-400 mb-2 flex items-center gap-2">
-                          <SiGo className="h-4 w-4" /> Go Programming Language
+                          <SiRust className="h-4 w-4" /> Rust Programming Language
                         </h3>
                         <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                          Learning Go for its simplicity, efficiency, and excellent concurrency support. Exploring its potential for building
-                          high-performance backend services and microservices.
+                          Learning Rust for its memory safety, zero-cost abstractions, and powerful concurrency model. Exploring systems programming
+                          and high-performance web applications using WebAssembly.
                         </p>
                       </div>
                     </div>

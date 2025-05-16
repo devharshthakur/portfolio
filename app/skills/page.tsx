@@ -42,7 +42,7 @@ export default function SkillsPage() {
   return (
     <div className="relative min-h-screen w-full bg-linear-to-b from-background to-green-50/20 dark:to-green-950/20 overflow-hidden">
       {/* Navigation */}
-      <nav className="sticky top-0 left-0 right-0 flex justify-between items-center z-50 p-4 bg-background/80 backdrop-blur-xs border-b border-slate-200/50 dark:border-slate-800/50">
+      <nav className="sticky top-0 left-0 right-0 flex justify-between items-center z-50 p-4 bg-background/80 backdrop-blur-xs border-slate-200/50 dark:border-slate-800/50">
         <Button
           asChild
           variant="outline"
