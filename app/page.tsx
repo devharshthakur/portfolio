@@ -23,8 +23,8 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header />
-      <main className="flex-1 px-3 py-4 sm:px-4 sm:py-6 md:px-8 lg:px-12 lg:py-10 gap-2">
-        <div className="mx-auto grid max-w-4xl gap-6 sm:gap-8">
+      <main className="flex-1 px-3 py-4 sm:px-4 sm:py-6 md:px-8 lg:px-12 lg:py-10">
+        <div className="mx-auto grid max-w-4xl gap-8 sm:gap-10 md:gap-12">
           <Profile />
           <Skills />
           <Projects />

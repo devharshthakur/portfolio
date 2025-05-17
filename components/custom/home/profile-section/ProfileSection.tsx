@@ -23,8 +23,8 @@ export function Profile() {
 
           <div className="flex flex-col justify-center space-y-3">
             <header>
-              <div className="flex flex-wrap items-center gap-2 mb-1">
-                <h1 id="profile-heading" className="text-3xl font-bold text-slate-800 dark:text-slate-200">
+              <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                <h1 id="profile-heading" className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-800 dark:text-slate-200">
                   Harsh Thakur
                 </h1>
                 <AvailabilityBadge />
@@ -39,7 +39,7 @@ export function Profile() {
               </Badge>
             </header>
 
-            <p className="text-sm text-muted-foreground max-w-prose">
+            <p className="text-sm leading-relaxed text-muted-foreground max-w-prose">
               Building efficient, scalable and maintainable web applications with modern technologies.
             </p>
           </div>

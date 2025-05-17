@@ -19,11 +19,11 @@ export function Packages() {
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
             <Archive className="h-6 w-6 text-red-700 dark:text-red-400" />
-            <h2 className="text-3xl font-bold tracking-tight font-mono text-red-900 dark:text-red-300">NPM Packages</h2>
+            <h2 className="text-3xl font-bold tracking-tight font-mono text-red-900 dark:text-red-300 tracking-[-0.02em]">NPM Packages</h2>
           </div>
           <Button
             variant="outline"
-            className="border-2 border-red-500/90 dark:border-red-600/80 text-red-800 dark:text-red-300 bg-red-50/80 dark:bg-red-900/60 hover:bg-red-100/90 dark:hover:bg-red-800/60 font-mono shadow-sm"
+            className="border-2 border-red-500/90 dark:border-red-600/80 text-red-800 dark:text-red-300 bg-red-50/80 dark:bg-red-900/60 hover:bg-red-100/90 dark:hover:bg-red-800/60 font-mono shadow-sm text-sm"
             asChild
           >
             <Link href="/packages">View All Packages</Link>

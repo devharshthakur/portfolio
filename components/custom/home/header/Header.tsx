@@ -18,7 +18,7 @@ import { HEADER_LEFT_NAV, HEADER_RIGHT_NAV } from '@/components/custom/home/head
 
 export function Header() {
   return (
-    <header className="flex flex-col sm:flex-row items-center justify-between py-3 px-4 sm:px-6 md:px-8 gap-4 sm:gap-0">
+    <header className="sticky top-0 z-50 flex flex-col sm:flex-row items-center justify-between py-3 px-4 sm:px-6 md:px-8 gap-4 sm:gap-0 backdrop-blur-sm bg-background/75 border-b border-border">
       <div className="flex flex-wrap justify-center sm:justify-start gap-3 sm:gap-4">
         {HEADER_LEFT_NAV.map((item) => (
           <ColoredButton

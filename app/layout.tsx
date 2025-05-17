@@ -1,17 +1,17 @@
 import type { Metadata } from 'next';
-import { JetBrains_Mono } from 'next/font/google'; // Changed to JetBrains Mono
+import { Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { Providers } from '@/components/providers';
 
-const jetBrainsMono = JetBrains_Mono({
-  variable: '--font-jetbrains-mono', // Updated variable name
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
   subsets: ['latin'],
   weight: 'variable',
 });
 
 export const metadata: Metadata = {
   title: 'Portfolio',
-  description: 'My Personal Developer Portfolio Website', // Fixed typo in description
+  description: 'My Personal Developer Portfolio Website',
 };
 
 export default function RootLayout({
@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={jetBrainsMono.variable}>
+      <body className={geistMono.variable}>
         <Providers>{children}</Providers>
       </body>
     </html>

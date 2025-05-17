@@ -54,7 +54,7 @@ export function PackageCard({ name, description, githubUrl, npmUrl, downloads, v
     <div className="flex flex-col rounded-lg overflow-hidden border-2 border-red-300/80 dark:border-red-700/80 bg-white dark:bg-red-900/40 shadow-md transition-all duration-300 hover:shadow-xl hover:border-red-400 dark:hover:border-red-600">
       {/* Header section - lighter red */}
       <div className="p-3 flex items-center justify-between border-b border-red-200/80 dark:border-red-700/60 bg-red-100/60 dark:bg-red-800/50">
-        <h3 className="text-xl font-bold font-mono text-red-900 dark:text-red-100">{name}</h3>
+        <h3 className="text-xl font-semibold tracking-tight font-mono text-red-900 dark:text-red-100">{name}</h3>
         <span className="px-2 py-0.5 text-xs rounded-md bg-amber-100 dark:bg-amber-700/70 text-amber-900 dark:text-amber-50 border-2 border-amber-300 dark:border-amber-600/70 font-mono shadow-sm">
           {version || 'v1.0.0'}
         </span>
@@ -66,7 +66,7 @@ export function PackageCard({ name, description, githubUrl, npmUrl, downloads, v
           <Button
             variant="outline"
             className={cn(
-              'w-full font-mono border-2 border-red-300/70 dark:border-red-700/60 bg-red-50/70 dark:bg-red-900/40 hover:bg-red-100/60 dark:hover:bg-red-800/40',
+              'w-full font-mono border-2 border-red-300/70 dark:border-red-700/60 bg-red-50/70 dark:bg-red-900/40 hover:bg-red-100/60 dark:hover:bg-red-800/40 text-sm tracking-tight',
               activeTab === 'info'
                 ? 'bg-red-100/70 dark:bg-red-700/60 text-red-900 dark:text-red-100 border-2 border-red-400/70 dark:border-red-500/70 shadow-sm'
                 : 'text-red-800 dark:text-red-300',
@@ -78,7 +78,7 @@ export function PackageCard({ name, description, githubUrl, npmUrl, downloads, v
           <Button
             variant="outline"
             className={cn(
-              'w-full font-mono border-2 border-red-300/70 dark:border-red-700/60 bg-red-50/70 dark:bg-red-900/40 hover:bg-red-100/60 dark:hover:bg-red-800/40',
+              'w-full font-mono border-2 border-red-300/70 dark:border-red-700/60 bg-red-50/70 dark:bg-red-900/40 hover:bg-red-100/60 dark:hover:bg-red-800/40 text-sm tracking-tight',
               activeTab === 'stats'
                 ? 'bg-red-100/70 dark:bg-red-700/60 text-red-900 dark:text-red-100 border-2 border-red-400/70 dark:border-red-500/70 shadow-sm'
                 : 'text-red-800 dark:text-red-300',
@@ -94,8 +94,8 @@ export function PackageCard({ name, description, githubUrl, npmUrl, downloads, v
       <div className="bg-white/90 dark:bg-red-900/30 p-3 h-[180px] overflow-auto">
         {activeTab === 'info' ? (
           <div className="space-y-2">
-            <h4 className="text-lg font-bold font-mono text-red-900 dark:text-red-100">{name}</h4>
-            <p className="text-red-800 dark:text-red-200 font-mono text-sm">{description}</p>
+            <h4 className="text-lg font-semibold tracking-tight font-mono text-red-900 dark:text-red-100">{name}</h4>
+            <p className="text-red-800 dark:text-red-200 font-mono text-sm leading-relaxed">{description}</p>
 
             {!isUnpublished && (
               <div className="mt-2 inline-flex items-center px-2 py-1 bg-amber-400/90 dark:bg-amber-500/50 rounded-md text-xs text-amber-950 dark:text-amber-50 font-mono border-2 border-amber-500/70 dark:border-amber-600/80 shadow-sm">
@@ -155,7 +155,7 @@ export function PackageCard({ name, description, githubUrl, npmUrl, downloads, v
       <div className="mt-auto grid grid-cols-2 gap-2 p-3 border-t border-red-200/80 dark:border-red-700/60 bg-red-50/80 dark:bg-red-800/30">
         <Button
           variant="outline"
-          className="flex items-center gap-2 font-mono border-2 border-red-500/80 dark:border-red-600/80 text-red-800 dark:text-red-300 bg-red-50/70 dark:bg-red-900/50 hover:bg-red-100/70 dark:hover:bg-red-800/60 shadow-sm"
+          className="flex items-center gap-2 font-mono border-2 border-red-500/80 dark:border-red-600/80 text-red-800 dark:text-red-300 bg-red-50/70 dark:bg-red-900/50 hover:bg-red-100/70 dark:hover:bg-red-800/60 shadow-sm text-sm tracking-tight"
           onClick={() => window.open(githubUrl, '_blank')}
         >
           <Icons.FaGithub className="h-4 w-4" />
@@ -165,7 +165,7 @@ export function PackageCard({ name, description, githubUrl, npmUrl, downloads, v
         {isUnpublished ? (
           <Button
             variant="outline"
-            className="flex items-center gap-2 font-mono opacity-80 cursor-not-allowed border-2 border-red-300/80 dark:border-red-700/60 bg-red-50/50 dark:bg-red-800/40 text-red-600/80 dark:text-red-400/80"
+            className="flex items-center gap-2 font-mono opacity-80 cursor-not-allowed border-2 border-red-300/80 dark:border-red-700/60 bg-red-50/50 dark:bg-red-800/40 text-red-600/80 dark:text-red-400/80 text-sm tracking-tight"
             disabled
           >
             <FaNpm className="h-4 w-4" />
@@ -174,7 +174,7 @@ export function PackageCard({ name, description, githubUrl, npmUrl, downloads, v
         ) : (
           <Button
             variant="outline"
-            className="flex items-center gap-2 font-mono bg-red-600/90 dark:bg-red-600/80 text-white hover:bg-red-700/90 dark:hover:bg-red-500/80 border-2 border-red-500/90 dark:border-red-600/80 shadow-sm"
+            className="flex items-center gap-2 font-mono bg-red-600/90 dark:bg-red-600/80 text-white hover:bg-red-700/90 dark:hover:bg-red-500/80 border-2 border-red-500/90 dark:border-red-600/80 shadow-sm text-sm tracking-tight"
             onClick={() => window.open(npmUrl, '_blank')}
           >
             <FaNpm className="h-4 w-4" />

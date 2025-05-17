@@ -21,11 +21,11 @@ export default function Projects() {
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
             <Building className="h-6 w-6 text-emerald-700 dark:text-emerald-400" />
-            <h2 className="text-3xl font-bold tracking-tight font-mono text-emerald-900 dark:text-emerald-300">Projects</h2>
+            <h2 className="text-3xl font-bold tracking-tight font-mono text-emerald-900 dark:text-emerald-300 tracking-tight">Projects</h2>
           </div>
           <Button
             variant="outline"
-            className="border-2 border-emerald-500/90 dark:border-emerald-600/80 text-emerald-800 dark:text-emerald-300 bg-emerald-50/80 dark:bg-emerald-900/60 hover:bg-emerald-100/90 dark:hover:bg-emerald-800/60 font-mono shadow-sm"
+            className="border-2 border-emerald-500/90 dark:border-emerald-600/80 text-emerald-800 dark:text-emerald-300 bg-emerald-50/80 dark:bg-emerald-900/60 hover:bg-emerald-100/90 dark:hover:bg-emerald-800/60 font-mono shadow-sm text-sm"
             asChild
           >
             <Link href="/projects">View All Projects</Link>
@@ -53,7 +53,7 @@ function ProjectCard({ project }: ProjectCardProps) {
     <div className="flex flex-col rounded-lg overflow-hidden border-2 border-emerald-300/80 dark:border-emerald-700/80 bg-white dark:bg-emerald-900/40 shadow-md transition-all duration-300 hover:shadow-xl hover:border-emerald-400 dark:hover:border-emerald-600">
       {/* Header section - lighter emerald */}
       <div className="p-3 flex items-center justify-between border-b border-emerald-200/80 dark:border-emerald-700/60 bg-emerald-100/60 dark:bg-emerald-800/50">
-        <h3 className="text-xl font-bold font-mono text-emerald-900 dark:text-emerald-100">{project.title}</h3>
+        <h3 className="text-xl font-semibold tracking-tight font-mono text-emerald-900 dark:text-emerald-100">{project.title}</h3>
         <span className="px-2 py-0.5 text-xs rounded-md bg-emerald-50/80 dark:bg-emerald-700/70 text-emerald-700 dark:text-emerald-100 border-2 border-emerald-300/60 dark:border-emerald-600/60 font-mono">
           {project.version || 'v1.0.0'}
         </span>
@@ -65,7 +65,7 @@ function ProjectCard({ project }: ProjectCardProps) {
           <Button
             variant="outline"
             className={cn(
-              'w-full font-mono border-2 border-emerald-300/70 dark:border-emerald-700/60 bg-emerald-50/70 dark:bg-emerald-900/40 hover:bg-emerald-100/60 dark:hover:bg-emerald-800/40',
+              'w-full font-mono border-2 border-emerald-300/70 dark:border-emerald-700/60 bg-emerald-50/70 dark:bg-emerald-900/40 hover:bg-emerald-100/60 dark:hover:bg-emerald-800/40 text-sm tracking-tight',
               activeTab === 'info'
                 ? 'bg-emerald-100/70 dark:bg-emerald-700/60 text-emerald-800 dark:text-emerald-100 border-2 border-emerald-400/70 dark:border-emerald-500/70 shadow-sm'
                 : 'text-emerald-700 dark:text-emerald-300',
@@ -77,7 +77,7 @@ function ProjectCard({ project }: ProjectCardProps) {
           <Button
             variant="outline"
             className={cn(
-              'w-full font-mono border-2 border-emerald-300/70 dark:border-emerald-700/60 bg-emerald-50/70 dark:bg-emerald-900/40 hover:bg-emerald-100/60 dark:hover:bg-emerald-800/40',
+              'w-full font-mono border-2 border-emerald-300/70 dark:border-emerald-700/60 bg-emerald-50/70 dark:bg-emerald-900/40 hover:bg-emerald-100/60 dark:hover:bg-emerald-800/40 text-sm tracking-tight',
               activeTab === 'stats'
                 ? 'bg-emerald-100/70 dark:bg-emerald-700/60 text-emerald-800 dark:text-emerald-100 border-2 border-emerald-400/70 dark:border-emerald-500/70 shadow-sm'
                 : 'text-emerald-700 dark:text-emerald-300',
@@ -93,8 +93,8 @@ function ProjectCard({ project }: ProjectCardProps) {
       <div className="bg-white/90 dark:bg-emerald-900/30 p-3 h-[180px] overflow-auto">
         {activeTab === 'info' ? (
           <div className="space-y-2">
-            <h4 className="text-lg font-bold font-mono text-emerald-900 dark:text-emerald-100">{project.title}</h4>
-            <p className="text-emerald-800 dark:text-emerald-200 font-mono text-sm">{project.description}</p>
+            <h4 className="text-lg font-semibold tracking-tight font-mono text-emerald-900 dark:text-emerald-100">{project.title}</h4>
+            <p className="text-emerald-800 dark:text-emerald-200 font-mono text-sm leading-relaxed">{project.description}</p>
             <div className="flex flex-wrap gap-2">
               {project.tags.map((tag) => (
                 <TechnologyBadge key={tag} technology={tag} />
@@ -163,7 +163,7 @@ function ProjectCard({ project }: ProjectCardProps) {
       <div className="mt-auto grid grid-cols-2 gap-2 p-3 border-t border-emerald-200/80 dark:border-emerald-700/60 bg-emerald-50/80 dark:bg-emerald-800/30">
         <Button
           variant="outline"
-          className="flex items-center gap-2 font-mono border-2 border-emerald-400/80 dark:border-emerald-600/80 text-emerald-700 dark:text-emerald-300 bg-emerald-50/70 dark:bg-emerald-900/50 hover:bg-emerald-100/70 dark:hover:bg-emerald-800/60 shadow-sm"
+          className="flex items-center gap-2 font-mono border-2 border-emerald-400/80 dark:border-emerald-600/80 text-emerald-700 dark:text-emerald-300 bg-emerald-50/70 dark:bg-emerald-900/50 hover:bg-emerald-100/70 dark:hover:bg-emerald-800/60 shadow-sm text-sm tracking-tight"
           onClick={() => window.open(project.githubUrl, '_blank')}
         >
           <FaGithub className="h-4 w-4" />
@@ -173,7 +173,7 @@ function ProjectCard({ project }: ProjectCardProps) {
         {project.isInDevelopment ? (
           <Button
             variant="outline"
-            className="flex items-center gap-2 font-mono border-2 border-emerald-300/80 dark:border-emerald-700/60 opacity-80 cursor-not-allowed bg-emerald-50/50 dark:bg-emerald-800/40 text-emerald-500/80 dark:text-emerald-400/80"
+            className="flex items-center gap-2 font-mono border-2 border-emerald-300/80 dark:border-emerald-700/60 opacity-80 cursor-not-allowed bg-emerald-50/50 dark:bg-emerald-800/40 text-emerald-500/80 dark:text-emerald-400/80 text-sm tracking-tight"
             disabled
           >
             <FaPlay className="h-4 w-4" />
@@ -182,7 +182,7 @@ function ProjectCard({ project }: ProjectCardProps) {
         ) : project.liveDemoUrl === 'local' ? (
           <Button
             variant="outline"
-            className="flex items-center gap-2 font-mono border-2 border-emerald-400/80 dark:border-emerald-600/80 bg-emerald-50/70 dark:bg-emerald-900/50 hover:bg-emerald-100/70 dark:hover:bg-emerald-800/60 shadow-sm text-emerald-600/90 dark:text-emerald-400/90"
+            className="flex items-center gap-2 font-mono border-2 border-emerald-400/80 dark:border-emerald-600/80 bg-emerald-50/70 dark:bg-emerald-900/50 hover:bg-emerald-100/70 dark:hover:bg-emerald-800/60 shadow-sm text-emerald-600/90 dark:text-emerald-400/90 text-sm tracking-tight"
             onClick={() => alert('This project is not yet deployed. You can run it locally by following the steps in the README of this repository.')}
           >
             <FaGlobe className="h-4 w-4" />
@@ -191,7 +191,7 @@ function ProjectCard({ project }: ProjectCardProps) {
         ) : (
           <Button
             variant="outline"
-            className="flex items-center gap-2 font-mono bg-emerald-600/80 dark:bg-emerald-600/80 text-white hover:bg-emerald-700/80 dark:hover:bg-emerald-500/80 border-2 border-emerald-500/80 dark:border-emerald-600/80 shadow-sm"
+            className="flex items-center gap-2 font-mono bg-emerald-600/80 dark:bg-emerald-600/80 text-white hover:bg-emerald-700/80 dark:hover:bg-emerald-500/80 border-2 border-emerald-500/80 dark:border-emerald-600/80 shadow-sm text-sm tracking-tight"
             onClick={() => window.open(project.liveDemoUrl, '_blank')}
           >
             <FaGlobe className="h-4 w-4" />

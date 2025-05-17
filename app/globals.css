@@ -98,7 +98,7 @@
 
 @layer utilities {
   body {
-    font-family: var(--font-jetbrains-mono);
+    font-family: var(--font-geist-mono);
   }
 }
 
