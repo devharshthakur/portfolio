@@ -12,7 +12,7 @@ import { ExternalLink, Github, Terminal, Clock, Calendar } from 'lucide-react';
 import { BsCpuFill } from 'react-icons/bs';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import type { Project } from '@/components/custom/home/project-section/data/projects.data';
+import type { Project } from '@/data/projects.data';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 

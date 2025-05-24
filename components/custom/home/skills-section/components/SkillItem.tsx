@@ -19,7 +19,7 @@
 'use client';
 import { motion } from 'motion/react';
 import { Icons } from '@/components/custom/home/skills-section/utils/icon.export';
-import { Skill } from '../data/skills.data';
+import { Skill } from '../../../../../data/skills.data';
 import Link from 'next/link';
 
 interface SkillItemProps {

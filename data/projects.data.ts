@@ -29,7 +29,7 @@ const projects: Project[] = [
     date: '2024-03',
     duration: '1 week',
     tags: ['Next.js', 'TypeScript', 'Encryption', 'Security'],
-    version: 'v1.0.0',
+    version: '1.0.0',
     stats: {
       stars: 12,
       forks: 3,
@@ -38,7 +38,7 @@ const projects: Project[] = [
     },
   },
   {
-    title: 'NPM Package Checker',
+    title: 'Npm Package Checker',
     description: 'A sleek, lightning-fast utility to check if an npm package name is available.',
     longDescription:
       'NPM Package Checker provides an elegant, intuitive interface to instantly verify if a package name is already taken on the npm registry. No more guessing or manual searching!',
@@ -48,7 +48,7 @@ const projects: Project[] = [
     duration: '3 weeks',
     tags: ['Next.js', 'TypeScript', 'npm', 'Package Checker'],
     imageUrl: 'https://upf2833czf.ufs.sh/f/5esi0CuHtzvb13Dt3MdlX0ewzUr8IgHD534qfWcJTGjdv7Ap',
-    version: 'v1.2.0',
+    version: '1.2.0',
     stats: {
       stars: 25,
       forks: 5,
@@ -57,8 +57,8 @@ const projects: Project[] = [
     },
   },
   {
-    title: 'Legal AI PDF',
-    description: 'An AI based Legal Assistant (FINAL YEAR MAJOR PROJECT)',
+    title: 'Legal AI Pdf',
+    description: 'An AI based Legal Assistant (Final year major project )',
     longDescription: 'A comprehensive AI-driven legal assistant designed to streamline legal document processing and provide intelligent insights.',
     githubUrl: 'https://github.com/Anuragc123/LegalPDF.git',
     liveDemoUrl: '#',
@@ -66,7 +66,7 @@ const projects: Project[] = [
     duration: '6 months',
     tags: ['AI', 'Legal Tech', 'Machine Learning'],
     isInDevelopment: true,
-    version: 'v0.9.0',
+    version: '0.9.0',
     stats: {
       stars: 8,
       forks: 2,
@@ -75,7 +75,7 @@ const projects: Project[] = [
     },
   },
   {
-    title: 'BlockPredict',
+    title: 'Blockpredict',
     description: 'A Simple ML based prediction simulation using BlockChain',
     longDescription: 'An innovative tool that simulates the prediction done by ML models using blockchain for weight management.',
     githubUrl: 'https://github.com/devharshthakur/blockpredict.git',
@@ -83,30 +83,12 @@ const projects: Project[] = [
     date: '2024-05',
     duration: '1 month',
     tags: ['Machine Learning', 'Blockchain', 'Simulation'],
-    version: 'v1.0.1',
+    version: '1.0.1',
     stats: {
       stars: 15,
       forks: 4,
       issues: 3,
       lastUpdated: '5 days ago',
-    },
-  },
-  {
-    title: 'Orrbit',
-    description: 'A modern web-based PDF compression tool with secure client-side processing',
-    longDescription:
-      "A full-stack web application that enables users to compress PDF files efficiently without compromising quality, featuring real-time compression progress and secure file handling where files never leave the user's device.",
-    githubUrl: 'https://github.com/devharshthakur/orrbit.git',
-    liveDemoUrl: 'local',
-    date: '2024-03',
-    duration: '2 months',
-    tags: ['Next.js', 'NestJS', 'TypeScript', 'PDF Processing', 'Prisma'],
-    version: 'v1.1.0',
-    stats: {
-      stars: 20,
-      forks: 6,
-      issues: 2,
-      lastUpdated: '1 day ago',
     },
   },
 ];

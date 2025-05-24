@@ -1,6 +1,6 @@
 import React, { JSX } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
-import type { Project } from '@/components/custom/home/project-section/data/projects.data';
+import type { Project } from '@/data/projects.data';
 
 interface ProjectLinkIconProps {
   project: Project;

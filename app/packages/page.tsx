@@ -14,7 +14,7 @@ import { ModeToggle } from '@/components/mode-toogle';
 import { Home, ExternalLink, BookOpen } from 'lucide-react';
 import { HeroSection } from '@/components/custom/packages/components/HeroSection';
 import { PackageCard } from '@/components/custom/packages/components/PackageCard';
-import packages from '@/components/custom/packages/data/packages';
+import packages from '@/data/packages.data';
 
 export default function PackagesPage() {
   const [mounted, setMounted] = useState(false);

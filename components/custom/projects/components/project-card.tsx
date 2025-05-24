@@ -26,12 +26,12 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, Star, GitFork, Github, ExternalLink, ArrowUpRight, Building, Code, Terminal, Clock } from 'lucide-react';
+import { Calendar, Star, GitFork, Github, ExternalLink, ArrowUpRight, Building, Code, Terminal, Clock, Clock1 } from 'lucide-react';
 import Image from 'next/image';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Project } from '@/components/custom/home/project-section/data/projects.data';
+import { Project } from '@/data/projects.data';
 import { getTechColor } from './util/tech-color-utils';
-import { formatDate, getRowBackground, getRowBorderClass, shouldShowRunLocallyButton, getLinkButtonText } from './util/project-display-utils';
+import { formatDate, shouldShowRunLocallyButton, getLinkButtonText } from './util/project-display-utils';
 
 interface ProjectStats {
   stars: number;
@@ -58,19 +58,16 @@ export function ProjectCard({ project, projectStats = { stars: 0, forks: 0 }, in
     animationDelay: `${index * 100}ms`,
   };
 
-  // Get border class based on position
-  const borderClass = getRowBorderClass(index, totalProjects);
-
   // Only show at most 6 technologies initially
   const hasTechOverflow = tags.length > 6;
 
-  // Apply different background color for odd/even rows
+  // Inline row background logic - enhanced contrast for light mode
   const isEven = index % 2 === 0;
-  const rowBackground = getRowBackground(isEven);
+  const rowBackground = isEven ? 'bg-white dark:bg-zinc-900/30' : 'bg-gray-50/90 dark:bg-zinc-900/60';
 
   return (
     <article className="animate-fadeIn" style={animationDelay}>
-      <div className={`${rowBackground} ${borderClass} border-0 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors duration-200`}>
+      <div className={`${rowBackground} hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors duration-200`}>
         {/* Project Card Layout */}
         <div className="px-6 py-4 md:px-8 md:py-6 bg-linear-to-r from-emerald-50/80 via-white to-transparent dark:bg-linear-to-r dark:from-emerald-900/30 dark:via-emerald-900/10 dark:to-transparent">
           <div className="flex flex-col xl:flex-row gap-6 lg:gap-8">
@@ -101,7 +98,7 @@ export function ProjectCard({ project, projectStats = { stars: 0, forks: 0 }, in
                     </span>
                     {project.version && (
                       <span className="flex items-center px-2 py-0.5 rounded-md bg-teal-100 dark:bg-teal-800/70 text-teal-900 dark:text-teal-50 border border-teal-200 dark:border-teal-700 shadow-sm">
-                        <Code className="mr-1 h-3 w-3 text-teal-700 dark:text-teal-300" />v{project.version}
+                        v{project.version}
                       </span>
                     )}
                   </div>
@@ -256,7 +253,7 @@ export function ProjectCard({ project, projectStats = { stars: 0, forks: 0 }, in
                         {project.version && (
                           <div className="flex items-center p-2 rounded-md bg-white/80 dark:bg-zinc-800/80 border border-slate-100 dark:border-zinc-700/80 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/10 transition-colors group">
                             <span className="w-8 h-8 rounded-md bg-teal-100 dark:bg-teal-800/50 flex items-center justify-center mr-3 group-hover:bg-teal-200 dark:group-hover:bg-teal-800/70 transition-colors">
-                              <Code className="h-4 w-4 text-teal-600 dark:text-teal-300" />
+                              <Clock className="h-4 w-4 text-teal-600 dark:text-teal-300" />
                             </span>
                             <div>
                               <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Current Version</p>

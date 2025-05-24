@@ -10,7 +10,7 @@
  */
 import Link from 'next/link';
 import { useState } from 'react';
-import { Package } from '../data/packages';
+import { Package } from '@/data/packages.data';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Download, ArrowUpRight, Tag, Github, Calendar, Clock, Copy, Check, History } from 'lucide-react';

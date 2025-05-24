@@ -37,7 +37,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Icons } from '@/components/custom/home/skills-section/utils/icon.export';
-import type { Project } from '../data/projects.data';
+import type { Project } from '@/data/projects.data';
 
 export function ProjectCard(props: Project) {
   const {
