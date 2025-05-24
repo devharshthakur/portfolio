@@ -1,13 +1,3 @@
-/**
- * Packages Data
- *
- * Contains information about npm packages published by the author, including:
- * - Package name, version, and description
- * - GitHub and npm links
- * - Download statistics
- * - Technology tags
- */
-
 export interface Package {
   name: string;
   description: string;
@@ -19,23 +9,23 @@ export interface Package {
   tags?: string[];
   publishedDate?: string;
   lastUpdated?: string;
-  installCommand?: string; // Custom installation command
+  installCommand?: string;
 }
 
 const packages: Package[] = [
   {
-    name: 'ht-create-tsapp',
-    description: 'A cli for creating typescript projects running via nodejs',
+    name: 'nodetsp',
+    description: 'A cli for creating typescript project which uses nodejs as runtime with configured by default ',
     longDescription:
-      'This cli creates a ts project with a pre-defined structure with some options on project structure. It helps developers quickly bootstrap TypeScript applications with best practices built-in.',
-    githubUrl: 'https://github.com/devharshthakur/ht-create-tsapp.git',
-    npmUrl: 'https://www.npmjs.com/package/ht-create-tsapp',
+      'This cli creates a ts project with a pre-defined structure with some options on project structure and some config setupe by default like prettier ,eslint etc',
+    githubUrl: 'https://github.com/devharshthakur/nodetsp',
+    npmUrl: 'https://www.npmjs.com/package/nodetsp',
     downloads: '2',
     version: '1.2.0',
-    tags: ['CLI', 'TypeScript', 'Node.js', 'Boilerplate', 'Scaffold'],
+    tags: ['React', 'UI Component', 'Data Table', 'TypeScript'],
     publishedDate: '2023-10-15',
     lastUpdated: '2023-12-08',
-    installCommand: 'npx ht-create-tsapp',
+    installCommand: 'pnpm create nodetsp',
   },
   {
     name: 'trycatch-lib',

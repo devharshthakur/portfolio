@@ -6,7 +6,7 @@
  * - Description
  * - Package statistics
  */
-import { Package } from '../data/packages';
+import { Package } from '@/data/packages.data';
 import { PackageStats } from './PackageStats';
 import { PackageIcon } from 'lucide-react';
 

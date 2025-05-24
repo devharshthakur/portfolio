@@ -5,7 +5,7 @@ import { FaGithub, FaGlobe, FaPlay } from 'react-icons/fa';
 import { Building, Star, GitFork, AlertCircle, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import projects from './data/projects.data';
+import projects from '@/data/projects.data';
 import Link from 'next/link';
 
 // Only show the top 4 projects
@@ -21,7 +21,7 @@ export default function Projects() {
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
             <Building className="h-6 w-6 text-emerald-700 dark:text-emerald-400" />
-            <h2 className="text-3xl font-bold tracking-tight font-mono text-emerald-900 dark:text-emerald-300 tracking-tight">Projects</h2>
+            <h2 className="text-3xl font-bold font-mono text-emerald-900 dark:text-emerald-300 tracking-tight">Projects</h2>
           </div>
           <Button
             variant="outline"
@@ -204,87 +204,72 @@ function ProjectCard({ project }: ProjectCardProps) {
 }
 
 function TechnologyBadge({ technology }: { technology: string }) {
-  // Map technologies to specific colors with improved contrast
-  const colorMap: Record<string, { bg: string; text: string; border: string }> = {
+  // Map technologies to specific colors for outline style badges
+  const colorMap: Record<string, { text: string; border: string }> = {
     'Next.js': {
-      bg: 'bg-slate-900 dark:bg-slate-800',
-      text: 'text-white dark:text-slate-100',
-      border: 'border-slate-700 dark:border-slate-600',
+      text: 'text-slate-700 dark:text-slate-300',
+      border: 'border-slate-500 dark:border-slate-400',
     },
     TypeScript: {
-      bg: 'bg-blue-50 dark:bg-blue-800',
-      text: 'text-blue-800 dark:text-blue-100',
-      border: 'border-blue-300 dark:border-blue-600',
+      text: 'text-blue-700 dark:text-blue-300',
+      border: 'border-blue-500 dark:border-blue-400',
     },
     Encryption: {
-      bg: 'bg-purple-50 dark:bg-purple-800',
-      text: 'text-purple-800 dark:text-purple-100',
-      border: 'border-purple-300 dark:border-purple-600',
+      text: 'text-purple-700 dark:text-purple-300',
+      border: 'border-purple-500 dark:border-purple-400',
     },
     Security: {
-      bg: 'bg-red-50 dark:bg-red-800',
-      text: 'text-red-800 dark:text-red-100',
-      border: 'border-red-300 dark:border-red-600',
+      text: 'text-red-700 dark:text-red-300',
+      border: 'border-red-500 dark:border-red-400',
     },
     npm: {
-      bg: 'bg-red-50 dark:bg-red-800',
-      text: 'text-red-800 dark:text-red-100',
-      border: 'border-red-300 dark:border-red-600',
+      text: 'text-red-700 dark:text-red-300',
+      border: 'border-red-500 dark:border-red-400',
     },
     'Package Checker': {
-      bg: 'bg-purple-50 dark:bg-purple-800',
-      text: 'text-purple-800 dark:text-purple-100',
-      border: 'border-purple-300 dark:border-purple-600',
+      text: 'text-purple-700 dark:text-purple-300',
+      border: 'border-purple-500 dark:border-purple-400',
     },
     AI: {
-      bg: 'bg-amber-50 dark:bg-amber-800',
-      text: 'text-amber-800 dark:text-amber-100',
-      border: 'border-amber-300 dark:border-amber-600',
+      text: 'text-amber-700 dark:text-amber-300',
+      border: 'border-amber-500 dark:border-amber-400',
     },
     'Legal Tech': {
-      bg: 'bg-indigo-50 dark:bg-indigo-800',
-      text: 'text-indigo-800 dark:text-indigo-100',
-      border: 'border-indigo-300 dark:border-indigo-600',
+      text: 'text-indigo-700 dark:text-indigo-300',
+      border: 'border-indigo-500 dark:border-indigo-400',
     },
     'Machine Learning': {
-      bg: 'bg-purple-50 dark:bg-purple-800',
-      text: 'text-purple-800 dark:text-purple-100',
-      border: 'border-purple-300 dark:border-purple-600',
+      text: 'text-purple-700 dark:text-purple-300',
+      border: 'border-purple-500 dark:border-purple-400',
     },
     Blockchain: {
-      bg: 'bg-emerald-50 dark:bg-emerald-800',
-      text: 'text-emerald-800 dark:text-emerald-100',
-      border: 'border-emerald-300 dark:border-emerald-600',
+      text: 'text-emerald-700 dark:text-emerald-300',
+      border: 'border-emerald-500 dark:border-emerald-400',
     },
     Simulation: {
-      bg: 'bg-violet-50 dark:bg-violet-800',
-      text: 'text-violet-800 dark:text-violet-100',
-      border: 'border-violet-300 dark:border-violet-600',
+      text: 'text-violet-700 dark:text-violet-300',
+      border: 'border-violet-500 dark:border-violet-400',
     },
     NestJS: {
-      bg: 'bg-red-50 dark:bg-red-800',
-      text: 'text-red-800 dark:text-red-100',
-      border: 'border-red-300 dark:border-red-600',
+      text: 'text-red-700 dark:text-red-300',
+      border: 'border-red-500 dark:border-red-400',
     },
     'PDF Processing': {
-      bg: 'bg-orange-50 dark:bg-orange-800',
-      text: 'text-orange-800 dark:text-orange-100',
-      border: 'border-orange-300 dark:border-orange-600',
+      text: 'text-orange-700 dark:text-orange-300',
+      border: 'border-orange-500 dark:border-orange-400',
     },
     Prisma: {
-      bg: 'bg-blue-50 dark:bg-blue-800',
-      text: 'text-blue-800 dark:text-blue-100',
-      border: 'border-blue-300 dark:border-blue-600',
+      text: 'text-blue-700 dark:text-blue-300',
+      border: 'border-blue-500 dark:border-blue-400',
     },
   };
 
   const colors = colorMap[technology] || {
-    bg: 'bg-gray-50 dark:bg-gray-800',
-    text: 'text-gray-800 dark:text-gray-100',
-    border: 'border-gray-300 dark:border-gray-600',
+    text: 'text-gray-700 dark:text-gray-300',
+    border: 'border-gray-500 dark:border-gray-400',
   };
 
   return (
-    <span className={`px-2 py-1 text-xs rounded-md ${colors.bg} ${colors.text} border-2 ${colors.border} font-mono shadow-sm`}>{technology}</span>
+    <span className={`px-1.5 py-0.5 text-[10px] rounded-md bg-transparent ${colors.text} border-2 ${colors.border} font-mono`}>{technology}</span>
   );
 }

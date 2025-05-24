@@ -19,32 +19,6 @@ export function formatDate(dateString: string): string {
 }
 
 /**
- * Determines the CSS classes to use for alternating row backgrounds
- *
- * @param isEven - Whether the row is an even-indexed row
- * @returns A string of Tailwind CSS classes for the row background
- */
-export function getRowBackground(isEven: boolean): string {
-  return isEven ? 'bg-white dark:bg-zinc-900/30' : 'bg-gray-50/80 dark:bg-zinc-900/60';
-}
-
-/**
- * Determines the border class to apply based on row position
- *
- * @param index - The index of the current row
- * @param totalItems - The total number of items in the list
- * @returns A string containing the appropriate border class
- */
-export function getRowBorderClass(index: number, totalItems: number): string {
-  if (index === 0) {
-    return 'border-t-0'; // First item
-  } else if (index === totalItems - 1) {
-    return 'border-b-0'; // Last item
-  }
-  return '';
-}
-
-/**
  * Determines whether to show the "Run Locally" button for a project
  *
  * @param isLocalProject - Whether the project is marked as local

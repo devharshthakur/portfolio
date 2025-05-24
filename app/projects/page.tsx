@@ -11,8 +11,8 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import projects from '@/components/custom/home/project-section/data/projects.data';
-import { Building2, Home, Loader2, ArrowRight, Code, Github, Star, GitFork } from 'lucide-react';
+import projects from '@/data/projects.data';
+import { Building2, Home, Loader2, ArrowRight, Star, GitFork } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useState, useEffect } from 'react';
 import { NoteDialog } from '@/components/custom/projects/components/dailogs/project-section-home-dailog';
@@ -20,6 +20,7 @@ import { ModeToggle } from '@/components/mode-toogle';
 import { ProjectCard } from '@/components/custom/projects/components/project-card';
 import HeaderPattern from '@/components/custom/projects/components/svgs/HeaderPattern';
 import ProjectGlow from '@/components/custom/projects/components/svgs/ProjectGlow';
+import { FaGithub } from 'react-icons/fa';
 
 interface ProjectStats {
   stars: number;
@@ -90,7 +91,7 @@ export default function ProjectsPage() {
                 <div className="max-w-2xl">
                   <div className="flex items-center gap-2 mb-4">
                     <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-sm">
-                      <Code className="w-5 h-5" />
+                      <Building2 className="w-5 h-5" />
                     </div>
 
                     <span className="text-sm font-medium bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-300 ml-2">
@@ -161,10 +162,10 @@ export default function ProjectsPage() {
                           View GitHub
                           <ArrowRight className="mr-2 h-3.5 w-3.5" />
                         </a>
-                        <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">@devharshthakur</span>
+                        <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">devharshthakur</span>
                       </div>
                       <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-amber-100 dark:bg-amber-800/50">
-                        <Github className="h-5 w-5 text-amber-600 dark:text-amber-300" />
+                        <FaGithub className="h-5 w-5 text-amber-600 dark:text-amber-300" />
                       </div>
                     </div>
                   </div>
@@ -208,7 +209,7 @@ export default function ProjectsPage() {
           {/* Subtle glow effect */}
           <ProjectGlow />
 
-          <article className="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm bg-white dark:bg-zinc-900 relative z-10">
+          <article className="rounded-xl overflow-hidden border-2 border-gray-300 dark:border-gray-700 shadow-lg bg-white dark:bg-zinc-900 relative z-10">
             {loading ? (
               <div className="py-20 flex items-center justify-center">
                 <div className="flex flex-col items-center space-y-4">
@@ -217,7 +218,7 @@ export default function ProjectsPage() {
                 </div>
               </div>
             ) : (
-              <ul className="divide-y divide-gray-200 dark:divide-zinc-800 relative z-10">
+              <ul className="divide-y-2 divide-gray-300 dark:divide-zinc-800 relative z-10">
                 {projects.map((project, index) => (
                   <li key={index}>
                     <ProjectCard

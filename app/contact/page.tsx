@@ -112,12 +112,12 @@ export default function ContactPage(): React.ReactElement {
         <div className="mx-auto max-w-6xl overflow-hidden rounded-2xl bg-white shadow-xs dark:bg-zinc-900">
           <div className="grid gap-0 md:grid-cols-2">
             {/* Contact Information Section */}
-            <div className="relative overflow-hidden bg-white dark:bg-zinc-900 p-8 md:p-10 rounded-l-2xl shadow-xs border-2 border-yellow-300 dark:border-yellow-700/60">
+            <div className="relative overflow-hidden bg-white dark:bg-zinc-900 p-8 md:p-10 rounded-l-2xl shadow-xs border-2 border-zinc-300 dark:border-zinc-700/60">
               <div className="relative z-10 flex h-full flex-col justify-between space-y-8">
                 <div className="space-y-6">
                   <div>
                     <h2 className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 font-mono">Contact Me</h2>
-                    <div className="mt-2 h-1.5 w-24 rounded-full bg-yellow-500/20"></div>
+                    <div className="mt-2 h-1.5 w-24 rounded-full bg-zinc-500/20"></div>
                   </div>
 
                   <p className="text-lg text-zinc-600 dark:text-zinc-400">

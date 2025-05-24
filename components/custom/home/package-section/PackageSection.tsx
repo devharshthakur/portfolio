@@ -1,6 +1,6 @@
 'use client';
 
-import packages from './data/packages';
+import packages from '@/data/packages.data';
 import { PackageCard } from './components/PackageCard';
 import { Archive } from 'lucide-react';
 import { Button } from '@/components/ui/button';

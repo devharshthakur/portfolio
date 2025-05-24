@@ -1,4 +1,4 @@
-import skills from './data/skills.data';
+import skills from '../../../../data/skills.data';
 import { SkillItem } from './components/SkillItem';
 import { Briefcase, Hammer } from 'lucide-react';
 import { SectionTitle } from '@/components/ui/section-title';

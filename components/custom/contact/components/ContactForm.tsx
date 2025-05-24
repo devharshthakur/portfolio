@@ -59,7 +59,7 @@ export function ContactForm(): React.ReactElement {
 
   return (
     <>
-      <div className="flex flex-col justify-center p-8 md:p-10 bg-gray-50 dark:bg-zinc-800/50 rounded-r-2xl shadow-xs border-2 border-yellow-300 dark:border-yellow-700/60">
+      <div className="flex flex-col justify-center p-8 md:p-10 bg-gray-50 dark:bg-zinc-800/50 rounded-r-2xl shadow-xs border-2 border-zinc-300 dark:border-zinc-700">
         <div className="mb-8">
           <h3 className="text-2xl font-bold font-mono text-zinc-800 dark:text-zinc-100">Send a Message</h3>
           <p className="text-zinc-600 dark:text-zinc-400">Please provide details if its about job opportunity or internship</p>
@@ -120,7 +120,7 @@ export function ContactForm(): React.ReactElement {
                   id="message"
                   name="message"
                   placeholder="Your message here..."
-                  rows={5}
+                  rows={15}
                   value={formData.message}
                   onChange={handleChange}
                   required
@@ -147,7 +147,7 @@ export function ContactForm(): React.ReactElement {
 
       {/* Success Dialog */}
       <AlertDialog open={isAlertOpen} onOpenChange={setIsAlertOpen}>
-        <AlertDialogContent className="max-w-md bg-card border-border">
+        <AlertDialogContent className="max-w-md bg-card border-zinc-300 dark:border-zinc-700">
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
             <CheckCircle2 className="h-8 w-8 text-primary" />
           </div>

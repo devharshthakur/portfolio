@@ -1,4 +1,4 @@
-import { type Project } from '@/components/custom/home/project-section/data/projects.data';
+import { type Project } from '@/data/projects.data';
 
 export interface ProjectImageProps {
   src: string;

@@ -6,7 +6,7 @@
  * - Total downloads
  * - Number of technologies used
  */
-import { Package } from '../data/packages';
+import { Package } from '@/data/packages.data';
 import { PackageIcon, Download, Code } from 'lucide-react';
 
 interface PackageStatsProps {

@@ -1,8 +1,8 @@
 import { Phone, GraduationCap, User, FileText, Briefcase, Home } from 'lucide-react';
 import { FaTools, FaProjectDiagram, FaGithub, FaCode } from 'react-icons/fa';
 import { SiNpm, SiGo, SiVitest } from 'react-icons/si';
-import projects from '@/components/custom/home/project-section/data/projects.data';
-import packages from '@/components/custom/home/package-section/data/packages';
+import projects from '@/data/projects.data';
+import packages from '@/data/packages.data';
 import { skills } from '../../components/custom/cv/data/cv.data';
 import { Card, CardContent } from '@/components/ui/card';
 import { Table, TableBody } from '@/components/ui/table';

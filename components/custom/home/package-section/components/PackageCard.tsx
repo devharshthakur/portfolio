@@ -33,7 +33,7 @@ import { Icons } from '@/components/custom/home/skills-section/utils/icon.export
 import { FaNpm } from 'react-icons/fa';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
-import { Package as PackageType } from '../data/packages';
+import { Package as PackageType } from '@/data/packages.data';
 import { cn } from '@/lib/utils';
 
 interface PackageCardProps extends Omit<PackageType, 'longDescription' | 'tags'> {
@@ -55,7 +55,7 @@ export function PackageCard({ name, description, githubUrl, npmUrl, downloads, v
       {/* Header section - lighter red */}
       <div className="p-3 flex items-center justify-between border-b border-red-200/80 dark:border-red-700/60 bg-red-100/60 dark:bg-red-800/50">
         <h3 className="text-xl font-semibold tracking-tight font-mono text-red-900 dark:text-red-100">{name}</h3>
-        <span className="px-2 py-0.5 text-xs rounded-md bg-amber-100 dark:bg-amber-700/70 text-amber-900 dark:text-amber-50 border-2 border-amber-300 dark:border-amber-600/70 font-mono shadow-sm">
+        <span className="px-1.5 py-0.5 text-[10px] rounded-md bg-transparent text-amber-700 dark:text-amber-300 border-2 border-amber-500 dark:border-amber-400 font-mono">
           {version || 'v1.0.0'}
         </span>
       </div>
@@ -98,15 +98,15 @@ export function PackageCard({ name, description, githubUrl, npmUrl, downloads, v
             <p className="text-red-800 dark:text-red-200 font-mono text-sm leading-relaxed">{description}</p>
 
             {!isUnpublished && (
-              <div className="mt-2 inline-flex items-center px-2 py-1 bg-amber-400/90 dark:bg-amber-500/50 rounded-md text-xs text-amber-950 dark:text-amber-50 font-mono border-2 border-amber-500/70 dark:border-amber-600/80 shadow-sm">
-                <Icons.FaDownload className="h-3 w-3 mr-2 text-amber-800 dark:text-amber-200" />
+              <div className="mt-2 inline-flex items-center px-1.5 py-0.5 bg-transparent rounded-md text-[10px] text-amber-700 dark:text-amber-300 font-mono border-2 border-amber-500 dark:border-amber-400">
+                <Icons.FaDownload className="h-2.5 w-2.5 mr-1 text-amber-700 dark:text-amber-300" />
                 <span className="font-medium">{downloads || 'N/A'}</span>
                 <span className="ml-1">weekly downloads</span>
               </div>
             )}
 
             {isUnpublished && (
-              <div className="mt-2 inline-flex items-center px-2 py-1 bg-amber-200/80 dark:bg-amber-700/60 rounded-md text-xs text-amber-900 dark:text-amber-100 font-mono border-2 border-amber-300/70 dark:border-amber-600/60">
+              <div className="mt-2 inline-flex items-center px-1.5 py-0.5 bg-transparent rounded-md text-[10px] text-amber-700 dark:text-amber-300 font-mono border-2 border-amber-500 dark:border-amber-400">
                 <span className="font-medium">Coming soon</span>
               </div>
             )}

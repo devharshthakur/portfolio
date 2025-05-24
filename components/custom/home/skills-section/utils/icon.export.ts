@@ -1,6 +1,6 @@
 import * as Fa from 'react-icons/fa';
 import * as Si from 'react-icons/si';
-import skills from '../data/skills.data';
+import skills from '../../../../../data/skills.data';
 import {
   FaGithub,
   FaLink,
