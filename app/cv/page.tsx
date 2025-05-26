@@ -1,23 +1,22 @@
 import { Phone, GraduationCap, User, FileText, Briefcase, Home } from 'lucide-react';
 import { FaTools, FaProjectDiagram, FaGithub, FaCode } from 'react-icons/fa';
-import { SiNpm, SiGo, SiVitest } from 'react-icons/si';
+import { SiNpm, SiGo, SiVitest, SiRust } from 'react-icons/si';
 import projects from '@/data/projects.data';
 import packages from '@/data/packages.data';
-import { skills } from '../../components/custom/cv/data/cv.data';
+import { skills } from '@/data/cv.data';
 import { Card, CardContent } from '@/components/ui/card';
 import { Table, TableBody } from '@/components/ui/table';
-import { SectionTitle } from '../../components/custom/cv/components/SectionTitle';
-import { ProjectTableRow } from '../../components/custom/cv/components/util/ProjectTableRow';
-import { SkillsTableRow } from '../../components/custom/cv/components/util/SkillsTableRow';
-import { LanguageTableRow } from '../../components/custom/cv/components/util/LanguageTableRow';
-import { AvailabilityBadge } from '../../components/custom/cv/components/util/AvailabilityBadge';
-import { EducationEntry } from '../../components/custom/cv/components/util/EducationEntry';
-import { ProfileSection } from '../../components/custom/cv/components/ProfileSection';
-import { ContactInfo } from '../../components/custom/cv/components/ContactInfo';
-import { GitHubLink } from '../../components/custom/cv/components/GitHubLink';
-import { LearningBadge } from '../../components/custom/cv/components/util/LearningBadge';
-import { profileBulletPoints } from '../../components/custom/cv/data/cv.data';
-import { DownloadButton } from '../../components/custom/cv/components/util/DownloadButton';
+import { SectionTitle } from '@/components/custom/cv/SectionTitle';
+import { ProjectTableRow } from '@/components/custom/cv/util/ProjectTableRow';
+import { SkillsTableRow } from '@/components/custom/cv/util/SkillsTableRow';
+import { LanguageTableRow } from '@/components/custom/cv/util/LanguageTableRow';
+import { AvailabilityBadge } from '@/components/custom/cv/util/AvailabilityBadge';
+import { EducationEntry } from '@/components/custom/cv/util/EducationEntry';
+import { ProfileSection } from '@/components/custom/cv/ProfileSection';
+import { ContactInfo } from '@/components/custom/cv/ContactInfo';
+import { GitHubLink } from '@/components/custom/cv/GitHubLink';
+import { profileBulletPoints } from '@/data/cv.data';
+import { DownloadButton } from '@/components/custom/cv/util/DownloadButton';
 import { ModeToggle } from '@/components/mode-toogle';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -184,9 +183,9 @@ export default function CVPage() {
                               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                                 <div className="flex items-center gap-2">
                                   <div className="bg-indigo-100 dark:bg-indigo-900/40 p-1.5 rounded-full">
-                                    <SiGo className="text-indigo-600 dark:text-indigo-400" size={12} />
+                                    <SiRust className="text-indigo-600 dark:text-indigo-400" size={12} />
                                   </div>
-                                  <div className="text-sm text-slate-800 dark:text-slate-200">Go Programming Language</div>
+                                  <div className="text-sm text-slate-800 dark:text-slate-200">Rust Programming Language</div>
                                 </div>
                                 <div className="flex items-center gap-2">
                                   <div className="bg-indigo-100 dark:bg-indigo-900/40 p-1.5 rounded-full">

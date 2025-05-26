@@ -96,11 +96,6 @@ export function ProjectCard({ project, projectStats = { stars: 0, forks: 0 }, in
                       <Clock className="mr-1 h-3 w-3" />
                       {project.duration}
                     </span>
-                    {project.version && (
-                      <span className="flex items-center px-2 py-0.5 rounded-md bg-teal-100 dark:bg-teal-800/70 text-teal-900 dark:text-teal-50 border border-teal-200 dark:border-teal-700 shadow-sm">
-                        v{project.version}
-                      </span>
-                    )}
                   </div>
                 </div>
 
@@ -249,18 +244,6 @@ export function ProjectCard({ project, projectStats = { stars: 0, forks: 0 }, in
                             <p className="text-sm font-medium text-slate-700 dark:text-slate-200">{project.duration}</p>
                           </div>
                         </div>
-
-                        {project.version && (
-                          <div className="flex items-center p-2 rounded-md bg-white/80 dark:bg-zinc-800/80 border border-slate-100 dark:border-zinc-700/80 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/10 transition-colors group">
-                            <span className="w-8 h-8 rounded-md bg-teal-100 dark:bg-teal-800/50 flex items-center justify-center mr-3 group-hover:bg-teal-200 dark:group-hover:bg-teal-800/70 transition-colors">
-                              <Clock className="h-4 w-4 text-teal-600 dark:text-teal-300" />
-                            </span>
-                            <div>
-                              <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Current Version</p>
-                              <p className="text-sm font-medium text-teal-700 dark:text-teal-300">v{project.version}</p>
-                            </div>
-                          </div>
-                        )}
                       </div>
                     </div>
                   </div>

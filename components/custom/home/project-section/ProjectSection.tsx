@@ -54,9 +54,6 @@ function ProjectCard({ project }: ProjectCardProps) {
       {/* Header section - lighter emerald */}
       <div className="p-3 flex items-center justify-between border-b border-emerald-200/80 dark:border-emerald-700/60 bg-emerald-100/60 dark:bg-emerald-800/50">
         <h3 className="text-xl font-semibold tracking-tight font-mono text-emerald-900 dark:text-emerald-100">{project.title}</h3>
-        <span className="px-2 py-0.5 text-xs rounded-md bg-emerald-50/80 dark:bg-emerald-700/70 text-emerald-700 dark:text-emerald-100 border-2 border-emerald-300/60 dark:border-emerald-600/60 font-mono">
-          {project.version || 'v1.0.0'}
-        </span>
       </div>
 
       {/* Tab buttons section - medium emerald */}

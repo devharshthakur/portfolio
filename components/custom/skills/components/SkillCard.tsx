@@ -91,14 +91,7 @@ export function SkillCard({ skill, index }: SkillCardProps) {
               <span className="flex items-center gap-1 text-sm font-medium px-2.5 py-1.5 rounded-md bg-white dark:bg-amber-900/20 text-amber-600 dark:text-amber-300 border border-amber-200 dark:border-amber-700/50 shadow-xs">
                 <BookOpen className="h-4 w-4" />
               </span>
-            ) : (
-              <span
-                className={`flex items-center gap-1 text-sm font-medium px-2.5 py-1.5 rounded-md bg-white dark:bg-gray-700/60 ${skill.color.light} dark:text-white border border-gray-100 dark:border-gray-600 shadow-xs`}
-              >
-                <Clock className="h-3.5 w-3.5" />
-                {skill.yearsExperience} {skill.yearsExperience === 1 ? 'year' : 'years'}
-              </span>
-            )}
+            ) : null}
           </div>
         </div>
       </CardHeader>

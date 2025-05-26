@@ -73,9 +73,6 @@ export function ProjectCard(props: Project) {
             {title}
           </h3>
         </div>
-        <Badge variant="outline" className="font-mono text-xs px-2 py-0.5 border-teal-600 bg-teal-900/90 text-teal-200 shadow-sm">
-          {version}
-        </Badge>
       </div>
 
       {/* Tabs Section */}

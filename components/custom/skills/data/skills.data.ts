@@ -36,6 +36,7 @@ import {
   SiPython,
   SiC,
   SiRust,
+  SiNestjs,
 } from 'react-icons/si';
 import { FaAws, FaJava } from 'react-icons/fa';
 import { GiPolarBear } from 'react-icons/gi';
@@ -48,13 +49,11 @@ export interface Skill {
   id: string;
   name: string;
   description: string;
-  shortDescription?: string; // Added for the row layout (3-4 lines max)
-  category: SkillCategory; // Single category for each skill
-  proficiencyLevel: number; // 1-5
+  shortDescription?: string; 
+  category: SkillCategory; 
   icon: IconType;
   officialUrl: string;
   featured: boolean;
-  yearsExperience: number;
   relatedProjects?: string[];
   color: {
     light: string;
@@ -133,11 +132,9 @@ const skills: Skill[] = [
     shortDescription:
       'A JavaScript library for building dynamic user interfaces with reusable components, virtual DOM, and unidirectional data flow.',
     category: 'frontend',
-    proficiencyLevel: 5,
     icon: SiReact,
     officialUrl: 'https://reactjs.org/',
     featured: true,
-    yearsExperience: 3,
     relatedProjects: ['portfolio', 'e-commerce-app'],
     color: {
       light: 'text-blue-600',
@@ -151,11 +148,9 @@ const skills: Skill[] = [
       'A React framework that enables server-side rendering, static site generation, and other advanced features with minimal configuration.',
     shortDescription: 'React framework with server-side rendering, static site generation, and file-based routing for production-ready applications.',
     category: 'frontend',
-    proficiencyLevel: 4,
     icon: SiNextdotjs,
     officialUrl: 'https://nextjs.org/',
     featured: true,
-    yearsExperience: 2,
     relatedProjects: ['portfolio', 'blog-platform'],
     color: {
       light: 'text-slate-800',
@@ -169,11 +164,9 @@ const skills: Skill[] = [
       'A strongly typed programming language that builds on JavaScript, providing better tooling at any scale and enhancing code quality and understandability.',
     shortDescription: 'Strongly typed superset of JavaScript adding static types, interfaces, and advanced type checking for robust applications.',
     category: 'languages',
-    proficiencyLevel: 4,
     icon: SiTypescript,
     officialUrl: 'https://www.typescriptlang.org/',
     featured: true,
-    yearsExperience: 2,
     relatedProjects: ['portfolio', 'task-manager'],
     color: {
       light: 'text-blue-700',
@@ -188,11 +181,9 @@ const skills: Skill[] = [
       'A versatile programming language that conforms to the ECMAScript specification, enabling interactive web pages and being an essential part of web applications.',
     shortDescription: 'Core web programming language powering dynamic websites and applications across browsers with event-driven programming model.',
     category: 'frontend',
-    proficiencyLevel: 5,
     icon: SiJavascript,
     officialUrl: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
     featured: true,
-    yearsExperience: 4,
     relatedProjects: ['weather-app', 'calculator'],
     color: {
       light: 'text-yellow-600',
@@ -207,11 +198,9 @@ const skills: Skill[] = [
     shortDescription:
       'Standard markup language for web pages, providing semantic structure, embedded media support, and canvas for interactive graphics.',
     category: 'frontend',
-    proficiencyLevel: 5,
     icon: SiHtml5,
     officialUrl: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
     featured: false,
-    yearsExperience: 5,
     color: {
       light: 'text-orange-600',
       dark: 'text-orange-400',
@@ -224,11 +213,9 @@ const skills: Skill[] = [
       'A style sheet language used for describing the presentation of a document written in HTML, allowing for responsive and attractive designs.',
     shortDescription: 'Styling language for web content with features like flexbox, grid, animations, and responsive design capabilities.',
     category: 'frontend',
-    proficiencyLevel: 5,
     icon: SiCss3,
     officialUrl: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
     featured: false,
-    yearsExperience: 5,
     color: {
       light: 'text-blue-500',
       dark: 'text-blue-400',
@@ -240,11 +227,9 @@ const skills: Skill[] = [
     description: 'A utility-first CSS framework that allows for rapidly building custom designs directly in your markup without leaving HTML.',
     shortDescription: 'Utility-first CSS framework enabling rapid UI development with composable classes and minimal CSS overhead.',
     category: 'frontend',
-    proficiencyLevel: 3,
     icon: SiTailwindcss,
     officialUrl: 'https://tailwindcss.com/',
     featured: true,
-    yearsExperience: 2,
     relatedProjects: ['portfolio', 'dashboard-ui'],
     color: {
       light: 'text-teal-500',
@@ -257,11 +242,9 @@ const skills: Skill[] = [
     description: 'A small, fast and scalable state-management solution for React, utilizing simplified flux principles with minimal boilerplate.',
     shortDescription: 'Minimalist state management for React with hooks-based API, built on flux principles with minimal boilerplate.',
     category: 'frontend',
-    proficiencyLevel: 1,
     icon: GiPolarBear,
     officialUrl: 'https://github.com/pmndrs/zustand',
     featured: false,
-    yearsExperience: 1,
     color: {
       light: 'text-amber-600',
       dark: 'text-amber-400',
@@ -276,11 +259,9 @@ const skills: Skill[] = [
     description: "A JavaScript runtime built on Chrome's V8 JavaScript engine that allows for executing JavaScript code server-side.",
     shortDescription: 'Server-side JavaScript runtime enabling non-blocking I/O operations for fast, scalable network applications.',
     category: 'backend',
-    proficiencyLevel: 3,
     icon: SiNodedotjs,
     officialUrl: 'https://nodejs.org/',
     featured: true,
-    yearsExperience: 3,
     relatedProjects: ['api-service', 'real-time-chat'],
     color: {
       light: 'text-green-600',
@@ -293,11 +274,9 @@ const skills: Skill[] = [
     description: 'A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.',
     shortDescription: 'Fast, minimalist web framework for Node.js with middleware system for building APIs and web applications.',
     category: 'backend',
-    proficiencyLevel: 3,
     icon: SiExpress,
     officialUrl: 'https://expressjs.com/',
     featured: false,
-    yearsExperience: 3,
     color: {
       light: 'text-gray-600',
       dark: 'text-gray-400',
@@ -310,16 +289,28 @@ const skills: Skill[] = [
       'A query language for APIs and a runtime for executing those queries with your existing data, providing a more efficient alternative to REST.',
     shortDescription: 'Query language and runtime for APIs enabling clients to request exactly the data they need, reducing network overhead.',
     category: 'backend',
-    proficiencyLevel: 0,
     icon: SiGraphql,
     officialUrl: 'https://graphql.org/',
     featured: false,
-    yearsExperience: 1,
     color: {
       light: 'text-pink-600',
       dark: 'text-pink-400',
     },
     learningStatus: 'plan to learn',
+  },
+  {
+    id: 'nestjs',
+    name: 'NestJS',
+    description: 'A progressive Node.js framework for building efficient, reliable, and scalable server-side applications using TypeScript.',
+    shortDescription: 'TypeScript-first Node.js framework for scalable and maintainable server-side applications.',
+    category: 'backend',
+    icon: SiNestjs,
+    officialUrl: 'https://nestjs.com/',
+    featured: false,
+    color: {
+      light: 'text-red-600',
+      dark: 'text-red-400',
+    },
   },
 
   // Database skills
@@ -329,11 +320,9 @@ const skills: Skill[] = [
     description: 'A document-based, distributed NoSQL database designed for modern application developers and for the cloud era.',
     shortDescription: 'Document-oriented NoSQL database with flexible schema design and powerful query capabilities.',
     category: 'database',
-    proficiencyLevel: 3,
     icon: SiMongodb,
     officialUrl: 'https://www.mongodb.com/',
     featured: true,
-    yearsExperience: 3,
     relatedProjects: ['data-analytics', 'user-management'],
     color: {
       light: 'text-green-700',
@@ -347,11 +336,9 @@ const skills: Skill[] = [
       'A powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability.',
     shortDescription: 'Advanced open-source relational database with strong reliability, extensibility, and SQL compliance.',
     category: 'database',
-    proficiencyLevel: 3,
     icon: SiPostgresql,
     officialUrl: 'https://www.postgresql.org/',
     featured: false,
-    yearsExperience: 2,
     color: {
       light: 'text-blue-700',
       dark: 'text-blue-500',
@@ -364,11 +351,9 @@ const skills: Skill[] = [
       'Next-generation ORM for Node.js and TypeScript that helps developers build faster and make fewer errors with an intuitive data model and automated migrations.',
     shortDescription: 'Modern TypeScript ORM with type-safe database access, schema management, and migration tools.',
     category: 'database',
-    proficiencyLevel: 3,
     icon: SiPrisma,
     officialUrl: 'https://www.prisma.io/',
     featured: true,
-    yearsExperience: 1,
     color: {
       light: 'text-indigo-600',
       dark: 'text-indigo-400',
@@ -383,11 +368,9 @@ const skills: Skill[] = [
       'A free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.',
     shortDescription: 'Distributed version control system for tracking code changes with branching, merging, and collaboration features.',
     category: 'devops',
-    proficiencyLevel: 4,
     icon: SiGit,
     officialUrl: 'https://git-scm.com/',
     featured: false,
-    yearsExperience: 4,
     color: {
       light: 'text-orange-600',
       dark: 'text-orange-400',
@@ -399,11 +382,9 @@ const skills: Skill[] = [
     description: 'A code hosting platform for version control and collaboration, allowing developers to work together on projects from anywhere.',
     shortDescription: 'Web-based platform for Git repositories with project management tools, CI/CD pipelines, and code review workflows.',
     category: 'devops',
-    proficiencyLevel: 5,
     icon: SiGithub,
     officialUrl: 'https://github.com/',
     featured: false,
-    yearsExperience: 4,
     color: {
       light: 'text-slate-800',
       dark: 'text-slate-200',
@@ -416,11 +397,9 @@ const skills: Skill[] = [
       'A platform that enables developers to build, package, and run applications in lightweight, portable containers that can run anywhere.',
     shortDescription: 'Containerization platform for packaging applications with dependencies for consistent deployment across environments.',
     category: 'devops',
-    proficiencyLevel: 3,
     icon: SiDocker,
     officialUrl: 'https://www.docker.com/',
     featured: false,
-    yearsExperience: 1,
     color: {
       light: 'text-blue-600',
       dark: 'text-blue-400',
@@ -433,11 +412,9 @@ const skills: Skill[] = [
       'A deployment and collaboration platform for frontend developers, providing the ideal workflow to develop, preview, and ship websites.',
     shortDescription: 'Frontend deployment platform with preview deployments, serverless functions, and global CDN distribution.',
     category: 'devops',
-    proficiencyLevel: 4,
     icon: SiVercel,
     officialUrl: 'https://vercel.com/',
     featured: true,
-    yearsExperience: 2,
     relatedProjects: ['portfolio', 'landing-page'],
     color: {
       light: 'text-slate-900',
@@ -450,11 +427,9 @@ const skills: Skill[] = [
     description: 'A comprehensive and broadly adopted cloud platform, offering over 200 fully featured services from data centers globally.',
     shortDescription: 'Comprehensive cloud computing platform with services for computing, storage, databases, networking, and more.',
     category: 'devops',
-    proficiencyLevel: 0,
     icon: FaAws,
     officialUrl: 'https://aws.amazon.com/',
     featured: false,
-    yearsExperience: 1,
     color: {
       light: 'text-orange-500',
       dark: 'text-orange-400',
@@ -469,11 +444,9 @@ const skills: Skill[] = [
     description: 'A collaborative interface design tool that enables teams to design, prototype, and gather feedback in one place.',
     shortDescription: 'Browser-based design tool for UI/UX with real-time collaboration, prototyping, and component libraries.',
     category: 'design',
-    proficiencyLevel: 3,
     icon: SiFigma,
     officialUrl: 'https://www.figma.com/',
     featured: true,
-    yearsExperience: 1,
     color: {
       light: 'text-purple-500',
       dark: 'text-purple-400',
@@ -488,11 +461,9 @@ const skills: Skill[] = [
     description: 'A blazing fast unit test framework powered by Vite with first-class ESM, TypeScript, and JSX support.',
     shortDescription: 'Fast testing framework for Vite projects with ESM, TypeScript and JSX support out of the box.',
     category: 'testing',
-    proficiencyLevel: 2,
     icon: SiVitest,
     officialUrl: 'https://vitest.dev/',
     featured: false,
-    yearsExperience: 1,
     color: {
       light: 'text-green-600',
       dark: 'text-green-400',
@@ -507,11 +478,9 @@ const skills: Skill[] = [
     description: 'An open source programming language supported by Google that makes it easy to build simple, reliable, and efficient software.',
     shortDescription: 'Statically typed, compiled language designed for simplicity, efficiency, and strong concurrency support.',
     category: 'languages',
-    proficiencyLevel: 0,
     icon: SiGo,
     officialUrl: 'https://golang.org/',
     featured: true,
-    yearsExperience: 0,
     color: {
       light: 'text-sky-600',
       dark: 'text-sky-400',
@@ -526,11 +495,9 @@ const skills: Skill[] = [
     shortDescription:
       'Low-level language with manual memory management, often used for system/embedded software and performance-critical applications.',
     category: 'languages',
-    proficiencyLevel: 3,
     icon: SiC,
     officialUrl: 'https://en.cppreference.com/w/c',
     featured: false,
-    yearsExperience: 2,
     color: {
       light: 'text-blue-600',
       dark: 'text-blue-400',
@@ -543,11 +510,9 @@ const skills: Skill[] = [
       "A class-based, object-oriented programming language designed for having fewer implementation dependencies, following the 'write once, run anywhere' approach.",
     shortDescription: 'Object-oriented language with strong typing, platform independence, and a rich ecosystem of libraries and frameworks.',
     category: 'languages',
-    proficiencyLevel: 3,
     icon: FaJava,
     officialUrl: 'https://www.oracle.com/java/',
     featured: false,
-    yearsExperience: 2,
     color: {
       light: 'text-red-600',
       dark: 'text-red-400',
@@ -561,11 +526,9 @@ const skills: Skill[] = [
     shortDescription:
       'Versatile, high-level language with clear syntax, ideal for data science, web development, automation, and AI/ML applications.',
     category: 'languages',
-    proficiencyLevel: 2,
     icon: SiPython,
     officialUrl: 'https://www.python.org/',
     featured: false,
-    yearsExperience: 1,
     color: {
       light: 'text-green-600',
       dark: 'text-green-400',
@@ -580,11 +543,9 @@ const skills: Skill[] = [
     shortDescription:
       'Modern systems language with memory safety without garbage collection, zero-cost abstractions, and powerful concurrency features.',
     category: 'languages',
-    proficiencyLevel: 2,
     icon: SiRust,
     officialUrl: 'https://www.rust-lang.org/',
     featured: false,
-    yearsExperience: 1,
     color: {
       light: 'text-orange-600',
       dark: 'text-orange-400',

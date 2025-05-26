@@ -44,7 +44,7 @@ const projects: Project[] = [
       'NPM Package Checker provides an elegant, intuitive interface to instantly verify if a package name is already taken on the npm registry. No more guessing or manual searching!',
     githubUrl: 'https://github.com/devharshthakur/ispub.git',
     liveDemoUrl: 'https://ispub.fun',
-    date: '2024-02',
+    date: '2025-02-13',
     duration: '3 weeks',
     tags: ['Next.js', 'TypeScript', 'npm', 'Package Checker'],
     imageUrl: 'https://upf2833czf.ufs.sh/f/5esi0CuHtzvb13Dt3MdlX0ewzUr8IgHD534qfWcJTGjdv7Ap',

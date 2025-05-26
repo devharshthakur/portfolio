@@ -15,7 +15,7 @@ export function Packages() {
       {/* Red tint overlay */}
       <div className="absolute inset-0 bg-red-600/5 dark:bg-red-800/20 mix-blend-multiply pointer-events-none"></div>
 
-      <div className="container px-4 md:px-8 lg:px-12 max-w-full relative z-10">
+      <div className="container px-4 md:px-8 lg:px-12 max-w-full relative z-10 overflow-x-hidden">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
             <Archive className="h-6 w-6 text-red-700 dark:text-red-400" />

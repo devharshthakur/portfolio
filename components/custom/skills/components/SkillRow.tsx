@@ -256,12 +256,7 @@ export function SkillRow({ skill, index }: SkillRowProps) {
                     <Calendar className="h-3.5 w-3.5" />
                     Future Goal
                   </span>
-                ) : (
-                  <span className={`flex items-center gap-1 text-sm font-medium px-2.5 py-1 rounded-md ${getTimeBadgeColors()} shadow-sm`}>
-                    <Clock className="h-3.5 w-3.5" />
-                    {skill.yearsExperience} {skill.yearsExperience === 1 ? 'year' : 'years'}
-                  </span>
-                )}
+                ) : null}
               </div>
             </div>
 
