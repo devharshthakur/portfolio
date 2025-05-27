@@ -8,12 +8,11 @@
  * - Link to official resource
  */
 
-import { Skill, categoryBadgeColors } from '../data/skills.data';
-import Link from 'next/link';
-import { ArrowUpRight, Clock, BookOpen, GraduationCap, Calendar } from 'lucide-react';
-import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Skill, categoryBadgeColors } from '@/data/skills.data';
+import { ArrowUpRight, BookOpen, Calendar, GraduationCap } from 'lucide-react';
+import Link from 'next/link';
 
 interface SkillRowProps {
   skill: Skill;
@@ -33,21 +32,21 @@ export function SkillRow({ skill, index }: SkillRowProps) {
 
     if (skill.learningStatus === 'learning') {
       return (
-        <Badge className="flex items-center text-xs font-medium bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-700/50">
+        <Badge className="flex items-center border border-amber-200 bg-amber-100 text-xs font-medium text-amber-700 dark:border-amber-700/50 dark:bg-amber-900/30 dark:text-amber-300">
           <BookOpen className="mr-1 h-3 w-3" />
           Currently learning
         </Badge>
       );
     } else if (skill.learningStatus === 'plan to learn') {
       return (
-        <Badge className="flex items-center text-xs font-medium bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-700/50">
+        <Badge className="flex items-center border border-purple-200 bg-purple-100 text-xs font-medium text-purple-700 dark:border-purple-700/50 dark:bg-purple-900/30 dark:text-purple-300">
           <Calendar className="mr-1 h-3 w-3" />
           Plan to learn
         </Badge>
       );
     } else {
       return (
-        <Badge className="flex items-center text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-700/50">
+        <Badge className="flex items-center border border-blue-200 bg-blue-100 text-xs font-medium text-blue-700 dark:border-blue-700/50 dark:bg-blue-900/30 dark:text-blue-300">
           <GraduationCap className="mr-1 h-3 w-3" />
           Basic knowledge
         </Badge>
@@ -198,23 +197,20 @@ export function SkillRow({ skill, index }: SkillRowProps) {
 
   return (
     <div
-      className="group relative overflow-hidden transition-all duration-300 hover:shadow-lg bg-emerald-50/80 dark:bg-emerald-950/40 border-2 border-emerald-200/70 dark:border-emerald-800/70 rounded-lg mb-4"
-      style={animationDelay}
-    >
+      className="group relative mb-4 overflow-hidden rounded-lg border-2 border-emerald-200/70 bg-emerald-50/80 transition-all duration-300 hover:shadow-lg dark:border-emerald-800/70 dark:bg-emerald-950/40"
+      style={animationDelay}>
       <div className="flex flex-col md:flex-row">
         {/* Thumbnail Section */}
-        <div className="md:w-64 p-4 flex-shrink-0">
+        <div className="flex-shrink-0 p-4 md:w-64">
           <Link
             href={skill.officialUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="block relative aspect-video md:aspect-square overflow-hidden rounded-lg border-2 border-emerald-100/80 dark:border-emerald-800/70 hover:border-emerald-300 dark:hover:border-emerald-700 transition-all"
-          >
+            className="relative block aspect-video overflow-hidden rounded-lg border-2 border-emerald-100/80 transition-all hover:border-emerald-300 md:aspect-square dark:border-emerald-800/70 dark:hover:border-emerald-700">
             {/* Always use icons since images are not available */}
             <div
-              className={`relative w-full h-full ${getBackgroundPattern()} before:content-[''] before:absolute before:inset-0 before:rounded-md ${getIconBackground()} before:opacity-70 before:z-0 flex items-center justify-center`}
-            >
-              <div className="w-full h-full flex items-center justify-center relative z-10">
+              className={`relative h-full w-full ${getBackgroundPattern()} before:absolute before:inset-0 before:rounded-md before:content-[''] ${getIconBackground()} flex items-center justify-center before:z-0 before:opacity-70`}>
+              <div className="relative z-10 flex h-full w-full items-center justify-center">
                 <Icon className={`h-20 w-20 ${getIconColorClass()} drop-shadow-sm transition-transform duration-300 group-hover:scale-110`} />
               </div>
 
@@ -231,7 +227,7 @@ export function SkillRow({ skill, index }: SkillRowProps) {
         </div>
 
         {/* Content Section */}
-        <div className="flex-1 p-4 flex flex-col justify-between">
+        <div className="flex flex-1 flex-col justify-between p-4">
           <div className="space-y-3">
             {/* Header: Name, Experience */}
             <div className="flex items-start justify-between">
@@ -244,15 +240,13 @@ export function SkillRow({ skill, index }: SkillRowProps) {
               <div>
                 {skill.learningStatus === 'learning' ? (
                   <span
-                    className={`flex items-center gap-1 text-sm font-medium px-2.5 py-1 rounded-md bg-amber-50 dark:bg-amber-800/50 text-amber-600 dark:text-amber-300 border border-amber-200 dark:border-amber-700/50 shadow-sm`}
-                  >
+                    className={`flex items-center gap-1 rounded-md border border-amber-200 bg-amber-50 px-2.5 py-1 text-sm font-medium text-amber-600 shadow-sm dark:border-amber-700/50 dark:bg-amber-800/50 dark:text-amber-300`}>
                     <BookOpen className="h-3.5 w-3.5" />
                     Learning
                   </span>
                 ) : skill.learningStatus === 'plan to learn' ? (
                   <span
-                    className={`flex items-center gap-1 text-sm font-medium px-2.5 py-1 rounded-md bg-purple-50 dark:bg-purple-800/50 text-purple-600 dark:text-purple-300 border border-purple-200 dark:border-purple-700/50 shadow-sm`}
-                  >
+                    className={`flex items-center gap-1 rounded-md border border-purple-200 bg-purple-50 px-2.5 py-1 text-sm font-medium text-purple-600 shadow-sm dark:border-purple-700/50 dark:bg-purple-800/50 dark:text-purple-300`}>
                     <Calendar className="h-3.5 w-3.5" />
                     Future Goal
                   </span>
@@ -271,7 +265,7 @@ export function SkillRow({ skill, index }: SkillRowProps) {
               </Badge>
 
               {/* Related categories if any */}
-              {skill.relatedCategories?.map((relatedCategory) => (
+              {skill.relatedCategories?.map(relatedCategory => (
                 <Badge key={relatedCategory} variant="outline" className={`text-xs opacity-75 ${categoryBadgeColors[relatedCategory]}`}>
                   {relatedCategory}
                 </Badge>
@@ -281,7 +275,7 @@ export function SkillRow({ skill, index }: SkillRowProps) {
 
           {/* Footer */}
           <div className="mt-4 flex justify-end">
-            <Button size="sm" variant="outline" asChild className={`border-2 ${getButtonColors()} font-medium text-sm shadow-sm transition-colors`}>
+            <Button size="sm" variant="outline" asChild className={`border-2 ${getButtonColors()} text-sm font-medium shadow-sm transition-colors`}>
               <Link href={skill.officialUrl} target="_blank" rel="noopener noreferrer">
                 Visit Official Site
                 <ArrowUpRight className="ml-1.5 h-3.5 w-3.5" />

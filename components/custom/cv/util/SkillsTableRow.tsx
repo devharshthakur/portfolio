@@ -1,5 +1,5 @@
+import { TableCell, TableRow } from '@/components/ui/table';
 import React from 'react';
-import { TableRow, TableCell } from '@/components/ui/table';
 
 /**
  * SkillsTableRow Component
@@ -28,7 +28,7 @@ export function SkillsTableRow({ name, description }: { name: string; descriptio
   return (
     <TableRow>
       <TableCell>
-        <span className="font-medium text-foreground">{name}:</span> <span className="text-muted-foreground">{description}</span>
+        <span className="text-foreground font-medium">{name}:</span> <span className="text-muted-foreground">{description}</span>
       </TableCell>
     </TableRow>
   );

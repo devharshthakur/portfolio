@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { FaSquareXTwitter, FaGithub, FaLinkedin } from 'react-icons/fa6';
+import { FaGithub, FaLinkedin, FaSquareXTwitter } from 'react-icons/fa6';
 import { SocialLinkType } from './contact.data';
 
 interface SocialIconProps {

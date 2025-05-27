@@ -27,14 +27,13 @@
  * />
  */
 
-import { Button } from '@/components/ui/button';
-import { Tag } from 'lucide-react';
 import { Icons } from '@/components/custom/home/skills-section/utils/icon.export';
-import { FaNpm } from 'react-icons/fa';
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
+import { Button } from '@/components/ui/button';
 import { Package as PackageType } from '@/data/packages.data';
 import { cn } from '@/lib/utils';
+import { Tag } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { FaNpm } from 'react-icons/fa';
 
 interface PackageCardProps extends Omit<PackageType, 'longDescription' | 'tags'> {
   // Props come from PackageType with omitted properties
@@ -42,8 +41,7 @@ interface PackageCardProps extends Omit<PackageType, 'longDescription' | 'tags'>
 
 export function PackageCard({ name, description, githubUrl, npmUrl, downloads, version }: PackageCardProps) {
   const isUnpublished: boolean = npmUrl === '#';
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<'info' | 'stats'>('info');
 
   useEffect(() => {
@@ -51,62 +49,60 @@ export function PackageCard({ name, description, githubUrl, npmUrl, downloads, v
   }, []);
 
   return (
-    <div className="flex flex-col rounded-lg overflow-hidden border-2 border-red-300/80 dark:border-red-700/80 bg-white dark:bg-red-900/40 shadow-md transition-all duration-300 hover:shadow-xl hover:border-red-400 dark:hover:border-red-600">
+    <div className="flex flex-col overflow-hidden rounded-lg border-2 border-red-300/80 bg-white shadow-md transition-all duration-300 hover:border-red-400 hover:shadow-xl dark:border-red-700/80 dark:bg-red-900/40 dark:hover:border-red-600">
       {/* Header section - lighter red */}
-      <div className="p-3 flex items-center justify-between border-b border-red-200/80 dark:border-red-700/60 bg-red-100/60 dark:bg-red-800/50">
-        <h3 className="text-xl font-semibold tracking-tight font-mono text-red-900 dark:text-red-100">{name}</h3>
-        <span className="px-1.5 py-0.5 text-[10px] rounded-md bg-transparent text-amber-700 dark:text-amber-300 border-2 border-amber-500 dark:border-amber-400 font-mono">
+      <div className="flex items-center justify-between border-b border-red-200/80 bg-red-100/60 p-3 dark:border-red-700/60 dark:bg-red-800/50">
+        <h3 className="font-mono text-xl font-semibold tracking-tight text-red-900 dark:text-red-100">{name}</h3>
+        <span className="rounded-md border-2 border-amber-500 bg-transparent px-1.5 py-0.5 font-mono text-[10px] text-amber-700 dark:border-amber-400 dark:text-amber-300">
           {version || 'v1.0.0'}
         </span>
       </div>
 
       {/* Tab buttons section - medium red */}
-      <div className="p-3 border-b border-red-200/80 dark:border-red-700/60 bg-red-50/80 dark:bg-red-800/30">
+      <div className="border-b border-red-200/80 bg-red-50/80 p-3 dark:border-red-700/60 dark:bg-red-800/30">
         <div className="grid grid-cols-2 gap-4">
           <Button
             variant="outline"
             className={cn(
-              'w-full font-mono border-2 border-red-300/70 dark:border-red-700/60 bg-red-50/70 dark:bg-red-900/40 hover:bg-red-100/60 dark:hover:bg-red-800/40 text-sm tracking-tight',
+              'w-full border-2 border-red-300/70 bg-red-50/70 font-mono text-sm tracking-tight hover:bg-red-100/60 dark:border-red-700/60 dark:bg-red-900/40 dark:hover:bg-red-800/40',
               activeTab === 'info'
-                ? 'bg-red-100/70 dark:bg-red-700/60 text-red-900 dark:text-red-100 border-2 border-red-400/70 dark:border-red-500/70 shadow-sm'
+                ? 'border-2 border-red-400/70 bg-red-100/70 text-red-900 shadow-sm dark:border-red-500/70 dark:bg-red-700/60 dark:text-red-100'
                 : 'text-red-800 dark:text-red-300',
             )}
-            onClick={() => setActiveTab('info')}
-          >
+            onClick={() => setActiveTab('info')}>
             <span className="mr-1.5">📝</span> Info
           </Button>
           <Button
             variant="outline"
             className={cn(
-              'w-full font-mono border-2 border-red-300/70 dark:border-red-700/60 bg-red-50/70 dark:bg-red-900/40 hover:bg-red-100/60 dark:hover:bg-red-800/40 text-sm tracking-tight',
+              'w-full border-2 border-red-300/70 bg-red-50/70 font-mono text-sm tracking-tight hover:bg-red-100/60 dark:border-red-700/60 dark:bg-red-900/40 dark:hover:bg-red-800/40',
               activeTab === 'stats'
-                ? 'bg-red-100/70 dark:bg-red-700/60 text-red-900 dark:text-red-100 border-2 border-red-400/70 dark:border-red-500/70 shadow-sm'
+                ? 'border-2 border-red-400/70 bg-red-100/70 text-red-900 shadow-sm dark:border-red-500/70 dark:bg-red-700/60 dark:text-red-100'
                 : 'text-red-800 dark:text-red-300',
             )}
-            onClick={() => setActiveTab('stats')}
-          >
+            onClick={() => setActiveTab('stats')}>
             <span className="mr-1.5">📊</span> Stats
           </Button>
         </div>
       </div>
 
       {/* Content section - darker red */}
-      <div className="bg-white/90 dark:bg-red-900/30 p-3 h-[180px] overflow-auto">
+      <div className="h-[180px] overflow-auto bg-white/90 p-3 dark:bg-red-900/30">
         {activeTab === 'info' ? (
           <div className="space-y-2">
-            <h4 className="text-lg font-semibold tracking-tight font-mono text-red-900 dark:text-red-100">{name}</h4>
-            <p className="text-red-800 dark:text-red-200 font-mono text-sm leading-relaxed">{description}</p>
+            <h4 className="font-mono text-lg font-semibold tracking-tight text-red-900 dark:text-red-100">{name}</h4>
+            <p className="font-mono text-sm leading-relaxed text-red-800 dark:text-red-200">{description}</p>
 
             {!isUnpublished && (
-              <div className="mt-2 inline-flex items-center px-1.5 py-0.5 bg-transparent rounded-md text-[10px] text-amber-700 dark:text-amber-300 font-mono border-2 border-amber-500 dark:border-amber-400">
-                <Icons.FaDownload className="h-2.5 w-2.5 mr-1 text-amber-700 dark:text-amber-300" />
+              <div className="mt-2 inline-flex items-center rounded-md border-2 border-amber-500 bg-transparent px-1.5 py-0.5 font-mono text-[10px] text-amber-700 dark:border-amber-400 dark:text-amber-300">
+                <Icons.FaDownload className="mr-1 h-2.5 w-2.5 text-amber-700 dark:text-amber-300" />
                 <span className="font-medium">{downloads || 'N/A'}</span>
                 <span className="ml-1">weekly downloads</span>
               </div>
             )}
 
             {isUnpublished && (
-              <div className="mt-2 inline-flex items-center px-1.5 py-0.5 bg-transparent rounded-md text-[10px] text-amber-700 dark:text-amber-300 font-mono border-2 border-amber-500 dark:border-amber-400">
+              <div className="mt-2 inline-flex items-center rounded-md border-2 border-amber-500 bg-transparent px-1.5 py-0.5 font-mono text-[10px] text-amber-700 dark:border-amber-400 dark:text-amber-300">
                 <span className="font-medium">Coming soon</span>
               </div>
             )}
@@ -116,34 +112,34 @@ export function PackageCard({ name, description, githubUrl, npmUrl, downloads, v
             {/* Removed the stats title heading to give more space */}
 
             {/* Package Stats Card */}
-            <div className="bg-red-50/80 dark:bg-red-800/40 rounded-lg border-2 border-red-200/80 dark:border-red-700/70 p-2 shadow-sm">
-              <h5 className="text-xs uppercase tracking-wider text-red-700 dark:text-red-200 font-mono mb-1 flex items-center">
+            <div className="rounded-lg border-2 border-red-200/80 bg-red-50/80 p-2 shadow-sm dark:border-red-700/70 dark:bg-red-800/40">
+              <h5 className="mb-1 flex items-center font-mono text-xs tracking-wider text-red-700 uppercase dark:text-red-200">
                 <FaNpm className="mr-1.5 h-3 w-3" /> NPM Metrics
               </h5>
 
               <div className="grid grid-cols-2 gap-2 font-mono">
-                <div className="flex items-center space-x-2 p-1.5 rounded-md bg-red-50/90 dark:bg-red-700/50 border-2 border-red-200/80 dark:border-red-600/60">
-                  <div className="bg-amber-400/90 dark:bg-amber-500/90 p-1.5 rounded-full">
+                <div className="flex items-center space-x-2 rounded-md border-2 border-red-200/80 bg-red-50/90 p-1.5 dark:border-red-600/60 dark:bg-red-700/50">
+                  <div className="rounded-full bg-amber-400/90 p-1.5 dark:bg-amber-500/90">
                     <Icons.FaDownload className="h-3 w-3 text-amber-800 dark:text-amber-200" />
                   </div>
                   <div>
-                    <p className="text-red-700 dark:text-red-200 text-xs">Downloads</p>
-                    <p className="font-bold text-amber-900 dark:text-amber-100 text-sm">{downloads || 'N/A'}</p>
+                    <p className="text-xs text-red-700 dark:text-red-200">Downloads</p>
+                    <p className="text-sm font-bold text-amber-900 dark:text-amber-100">{downloads || 'N/A'}</p>
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-2 p-1.5 rounded-md bg-red-50/90 dark:bg-red-700/50 border-2 border-red-200/80 dark:border-red-600/60">
-                  <div className="bg-amber-100 dark:bg-amber-700/80 p-1.5 rounded-full">
+                <div className="flex items-center space-x-2 rounded-md border-2 border-red-200/80 bg-red-50/90 p-1.5 dark:border-red-600/60 dark:bg-red-700/50">
+                  <div className="rounded-full bg-amber-100 p-1.5 dark:bg-amber-700/80">
                     <Tag className="h-3 w-3 text-amber-700 dark:text-amber-200" />
                   </div>
                   <div>
-                    <p className="text-red-700 dark:text-red-200 text-xs">Version</p>
-                    <p className="font-bold text-amber-900 dark:text-amber-100 text-sm">{version || 'v1.0.0'}</p>
+                    <p className="text-xs text-red-700 dark:text-red-200">Version</p>
+                    <p className="text-sm font-bold text-amber-900 dark:text-amber-100">{version || 'v1.0.0'}</p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-1 pt-1 border-t border-red-200/80 dark:border-red-700/70 text-xs text-red-700 dark:text-red-300 font-mono text-center">
+              <div className="mt-1 border-t border-red-200/80 pt-1 text-center font-mono text-xs text-red-700 dark:border-red-700/70 dark:text-red-300">
                 Last synced with NPM {Math.floor(Math.random() * 24)} hours ago
               </div>
             </div>
@@ -152,12 +148,11 @@ export function PackageCard({ name, description, githubUrl, npmUrl, downloads, v
       </div>
 
       {/* Footer section - medium-dark red */}
-      <div className="mt-auto grid grid-cols-2 gap-2 p-3 border-t border-red-200/80 dark:border-red-700/60 bg-red-50/80 dark:bg-red-800/30">
+      <div className="mt-auto grid grid-cols-2 gap-2 border-t border-red-200/80 bg-red-50/80 p-3 dark:border-red-700/60 dark:bg-red-800/30">
         <Button
           variant="outline"
-          className="flex items-center gap-2 font-mono border-2 border-red-500/80 dark:border-red-600/80 text-red-800 dark:text-red-300 bg-red-50/70 dark:bg-red-900/50 hover:bg-red-100/70 dark:hover:bg-red-800/60 shadow-sm text-sm tracking-tight"
-          onClick={() => window.open(githubUrl, '_blank')}
-        >
+          className="flex items-center gap-2 border-2 border-red-500/80 bg-red-50/70 font-mono text-sm tracking-tight text-red-800 shadow-sm hover:bg-red-100/70 dark:border-red-600/80 dark:bg-red-900/50 dark:text-red-300 dark:hover:bg-red-800/60"
+          onClick={() => window.open(githubUrl, '_blank')}>
           <Icons.FaGithub className="h-4 w-4" />
           <span>$ git clone</span>
         </Button>
@@ -165,18 +160,16 @@ export function PackageCard({ name, description, githubUrl, npmUrl, downloads, v
         {isUnpublished ? (
           <Button
             variant="outline"
-            className="flex items-center gap-2 font-mono opacity-80 cursor-not-allowed border-2 border-red-300/80 dark:border-red-700/60 bg-red-50/50 dark:bg-red-800/40 text-red-600/80 dark:text-red-400/80 text-sm tracking-tight"
-            disabled
-          >
+            className="flex cursor-not-allowed items-center gap-2 border-2 border-red-300/80 bg-red-50/50 font-mono text-sm tracking-tight text-red-600/80 opacity-80 dark:border-red-700/60 dark:bg-red-800/40 dark:text-red-400/80"
+            disabled>
             <FaNpm className="h-4 w-4" />
             <span>Coming Soon</span>
           </Button>
         ) : (
           <Button
             variant="outline"
-            className="flex items-center gap-2 font-mono bg-red-600/90 dark:bg-red-600/80 text-white hover:bg-red-700/90 dark:hover:bg-red-500/80 border-2 border-red-500/90 dark:border-red-600/80 shadow-sm text-sm tracking-tight"
-            onClick={() => window.open(npmUrl, '_blank')}
-          >
+            className="flex items-center gap-2 border-2 border-red-500/90 bg-red-600/90 font-mono text-sm tracking-tight text-white shadow-sm hover:bg-red-700/90 dark:border-red-600/80 dark:bg-red-600/80 dark:hover:bg-red-500/80"
+            onClick={() => window.open(npmUrl, '_blank')}>
             <FaNpm className="h-4 w-4" />
             <span>Install Package</span>
           </Button>

@@ -1,7 +1,7 @@
-import React from 'react';
-import { TableRow, TableCell } from '@/components/ui/table';
-import Link from 'next/link';
+import { TableCell, TableRow } from '@/components/ui/table';
 import { Link as LinkIcon } from 'lucide-react';
+import Link from 'next/link';
+import React from 'react';
 
 /**
  * ProjectTableRow Component
@@ -49,19 +49,20 @@ export function ProjectTableRow({
   return (
     <TableRow className={hoverBgClass}>
       <TableCell>
-        <div className="flex items-start gap-2 mb-0.5">
+        <div className="mb-0.5 flex items-start gap-2">
           <LinkIcon size={14} className={`${iconClass} mt-1`} />
           <div>
             <Link
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`font-medium text-slate-800 dark:text-slate-200 ${linkHoverClass} hover:underline block`}
-              prefetch={true}
-            >
+              className={`font-medium text-slate-800 dark:text-slate-200 ${linkHoverClass} block hover:underline`}
+              prefetch={true}>
               {title}
             </Link>
-            <p className="text-sm text-slate-600 dark:text-slate-400">{description}</p>
+            <p className="max-w-full overflow-hidden text-sm break-words text-ellipsis whitespace-normal text-slate-600 dark:text-slate-400">
+              {description}
+            </p>
           </div>
         </div>
       </TableCell>

@@ -3,11 +3,11 @@
  * @description Centralizes type definitions to ensure type safety across the application
  */
 
-import * as React from 'react';
+import { buttonVariants } from '@/components/ui/button';
 import { type VariantProps } from 'class-variance-authority';
 import { LucideIcon } from 'lucide-react';
+import * as React from 'react';
 import { IconType } from 'react-icons';
-import { buttonVariants } from '@/components/ui/button';
 
 /**
  * Represents an icon component from either Lucide React or React Icons

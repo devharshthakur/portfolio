@@ -1,6 +1,6 @@
+import { getTechTagColors } from '@/components/custom/home/project-section/lib/tech-colors';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
-import { getTechTagColors } from '@/components/custom/home/project-section/lib/tech-colors';
 
 interface TechBadgeProps {
   tech: string;
@@ -21,14 +21,13 @@ export function TechBadge({ tech, className }: TechBadgeProps) {
     <Badge
       variant="secondary"
       className={cn(
-        'font-mono text-[10px] xs:text-xs px-1.5 py-0.5 sm:px-2 border',
+        'xs:text-xs border px-1.5 py-0.5 font-mono text-[10px] sm:px-2',
         colors.background,
         colors.text,
         colors.border,
         colors.hover,
         className,
-      )}
-    >
+      )}>
       {tech}
     </Badge>
   );

@@ -3,10 +3,10 @@
  * @description Contains constants for navigation, color schemes, and other UI configuration
  */
 
-import { FaGithub } from 'react-icons/fa';
 import { FileText, History } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
 import { MdContactPage } from 'react-icons/md';
-import { NavItem, ColorScheme, ColorSchemeStyles } from '../types/types';
+import { ColorScheme, ColorSchemeStyles, NavItem } from '../types/types';
 
 /**
  * Navigation items displayed on the left side of the header

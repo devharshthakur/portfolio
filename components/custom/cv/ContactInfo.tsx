@@ -1,5 +1,5 @@
+import { Mail, MapPin, Phone } from 'lucide-react';
 import React from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
 
 /**
  * ContactInfo Component
@@ -28,30 +28,29 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 export function ContactInfo({ phone, email, address }: { phone: string; email: string; address: string }): React.ReactElement {
   return (
     <ul className="space-y-3">
-      <li className="flex items-center gap-2 group">
-        <div className="bg-blue-100 dark:bg-blue-900/30 p-1.5 rounded-md text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800/50">
+      <li className="group flex items-center gap-2">
+        <div className="rounded-md border border-blue-200 bg-blue-100 p-1.5 text-blue-600 dark:border-blue-800/50 dark:bg-blue-900/30 dark:text-blue-400">
           <Phone size={14} />
         </div>
-        <span className="text-sm text-slate-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+        <span className="text-sm text-slate-700 transition-colors group-hover:text-blue-600 dark:text-slate-300 dark:group-hover:text-blue-400">
           {phone}
         </span>
       </li>
-      <li className="flex items-center gap-2 group">
-        <div className="bg-blue-100 dark:bg-blue-900/30 p-1.5 rounded-md text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800/50">
+      <li className="group flex items-center gap-2">
+        <div className="rounded-md border border-blue-200 bg-blue-100 p-1.5 text-blue-600 dark:border-blue-800/50 dark:bg-blue-900/30 dark:text-blue-400">
           <Mail size={14} />
         </div>
         <a
           href={`mailto:${email}`}
-          className="text-sm text-slate-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors break-all"
-        >
+          className="text-sm break-all text-slate-700 transition-colors group-hover:text-blue-600 dark:text-slate-300 dark:group-hover:text-blue-400">
           {email}
         </a>
       </li>
-      <li className="flex items-start gap-2 mt-2">
-        <div className="bg-blue-100 dark:bg-blue-900/30 p-1.5 rounded-md text-blue-600 dark:text-blue-400 mt-0.5 border border-blue-200 dark:border-blue-800/50">
+      <li className="mt-2 flex items-start gap-2">
+        <div className="mt-0.5 rounded-md border border-blue-200 bg-blue-100 p-1.5 text-blue-600 dark:border-blue-800/50 dark:bg-blue-900/30 dark:text-blue-400">
           <MapPin size={14} />
         </div>
-        <span className="text-xs text-slate-600 dark:text-slate-400 leading-tight">{address}</span>
+        <span className="text-xs leading-tight text-slate-600 dark:text-slate-400">{address}</span>
       </li>
     </ul>
   );

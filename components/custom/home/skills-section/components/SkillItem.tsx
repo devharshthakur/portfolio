@@ -17,19 +17,15 @@
  */
 
 'use client';
+import { Skill } from '@/data/skills.data';
 import { motion } from 'motion/react';
-import { Icons } from '@/components/custom/home/skills-section/utils/icon.export';
-import { Skill } from '../../../../../data/skills.data';
-import Link from 'next/link';
 
 interface SkillItemProps {
-  skill: Skill & {
-    icon: keyof typeof Icons;
-  };
+  skill: Skill;
 }
 
 export function SkillItem({ skill }: SkillItemProps) {
-  const IconComponent = Icons[skill.icon];
+  const IconComponent = skill.icon;
 
   const getBorderColor = (skillName: string): string => {
     const nameHash = skillName.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
@@ -49,16 +45,15 @@ export function SkillItem({ skill }: SkillItemProps) {
   };
 
   return (
-    <a href={skill.url || '#'}>
+    <a href={skill.officialUrl || '#'}>
       <motion.div
-        className={`flex flex-col items-center gap-2 rounded-md border-2 p-3 bg-background/50 dark:bg-background/20 shadow-xs ${getBorderColor(skill.name)}`}
+        className={`bg-background/50 dark:bg-background/20 flex flex-col items-center gap-2 rounded-md border-2 p-3 shadow-xs ${getBorderColor(skill.name)}`}
         whileHover={{
           scale: 1.05,
           boxShadow: '0 0 12px rgba(0, 0, 0, 0.15)',
         }}
-        transition={{ type: 'spring', stiffness: 300 }}
-      >
-        {IconComponent && <IconComponent className="h-8 w-8 text-primary" />}
+        transition={{ type: 'spring', stiffness: 300 }}>
+        {IconComponent && <IconComponent className="text-primary h-8 w-8" />}
         <span className="text-sm font-medium">{skill.name}</span>
       </motion.div>
     </a>

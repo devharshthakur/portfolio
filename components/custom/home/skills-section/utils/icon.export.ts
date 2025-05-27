@@ -1,21 +1,20 @@
+import { ComponentType, SVGProps } from 'react';
 import * as Fa from 'react-icons/fa';
-import * as Si from 'react-icons/si';
-import skills from '../../../../../data/skills.data';
 import {
-  FaGithub,
-  FaLink,
   FaCalendarAlt,
   FaClock,
-  FaNpm,
-  FaDownload,
-  FaTerminal,
-  FaStar,
   FaCodeBranch,
+  FaDownload,
   FaExclamationCircle,
-  FaHistory,
+  FaGithub,
   FaGlobe,
+  FaHistory,
+  FaLink,
+  FaNpm,
+  FaStar,
+  FaTerminal,
 } from 'react-icons/fa';
-import { ComponentType, SVGProps } from 'react';
+import * as Si from 'react-icons/si';
 
 /**
  * Type definition for icon libraries.
@@ -61,21 +60,11 @@ const getIconComponent = (iconName: string) => {
 type IconType = ComponentType<{ className?: string; [key: string]: unknown }>;
 
 /**
- * Dynamically creates an Icons object from the skills data.
- * This object maps each skill's icon name to its corresponding React component.
+ * Icons object with commonly used icons
  *
  * @type {Record<string, IconType>}
  */
-const Icons: Record<string, IconType> = skills.reduce(
-  (acc, { icon }) => {
-    const IconComponent = getIconComponent(icon);
-    if (IconComponent) {
-      acc[icon] = IconComponent;
-    }
-    return acc;
-  },
-  {} as Record<string, IconType>,
-);
+const Icons: Record<string, IconType> = {};
 
 Icons.FaGithub = FaGithub;
 Icons.FaLink = FaLink;

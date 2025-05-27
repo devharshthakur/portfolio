@@ -1,6 +1,6 @@
-import React, { JSX } from 'react';
-import { ExternalLink, Github } from 'lucide-react';
 import type { Project } from '@/data/projects.data';
+import { ExternalLink, Github } from 'lucide-react';
+import { JSX } from 'react';
 
 interface ProjectLinkIconProps {
   project: Project;
@@ -41,8 +41,7 @@ export function ProjectLinkIcon({ project, size = 'sm', className = '' }: Projec
 export function ProjectLinkHoverIndicator({ project, size = 'lg', className = '' }: ProjectLinkIconProps): JSX.Element {
   return (
     <div
-      className={`bg-white/90 dark:bg-slate-800/90 p-2 rounded-full transform translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ${className}`}
-    >
+      className={`translate-y-4 transform rounded-full bg-white/90 p-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 dark:bg-slate-800/90 ${className}`}>
       <ProjectLinkIcon project={project} size={size} />
     </div>
   );
