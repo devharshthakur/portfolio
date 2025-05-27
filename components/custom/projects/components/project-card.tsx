@@ -30,8 +30,8 @@ import { Project } from '@/data/projects.data';
 import { ArrowUpRight, Building2, Calendar, Clock, ExternalLink, GitFork, Github, Star, Terminal } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { formatDate, getLinkButtonText, shouldShowRunLocallyButton } from './util/project-display-utils';
-import { getTechColor } from './util/tech-color-utils';
+import { formatDate, getLinkButtonText, shouldShowRunLocallyButton } from '../util/project-display-utils';
+import { getTechColor } from '../util/tech-color-utils';
 
 interface ProjectStats {
   stars: number;
@@ -42,12 +42,9 @@ interface ProjectCardProps {
   project: Project;
   projectStats?: ProjectStats;
   index: number;
-  totalProjects: number;
-  mounted: boolean;
-  resolvedTheme?: string;
 }
 
-export function ProjectCard({ project, projectStats = { stars: 0, forks: 0 }, index, totalProjects, mounted, resolvedTheme }: ProjectCardProps) {
+export function ProjectCard({ project, projectStats = { stars: 0, forks: 0 }, index }: ProjectCardProps) {
   const projectUrl = project.liveDemoUrl || project.githubUrl;
   const isLocalProject = project.liveDemoUrl === 'local';
   const shouldShowRunLocally = shouldShowRunLocallyButton(isLocalProject, project.title);

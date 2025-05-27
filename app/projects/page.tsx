@@ -219,14 +219,7 @@ export default function ProjectsPage() {
               <ul className="relative z-10 divide-y-2 divide-gray-300 dark:divide-zinc-800">
                 {projects.map((project, index) => (
                   <li key={index}>
-                    <ProjectCard
-                      project={project}
-                      projectStats={projectStats[index]}
-                      index={index}
-                      totalProjects={projects.length}
-                      mounted={mounted}
-                      resolvedTheme={resolvedTheme}
-                    />
+                    <ProjectCard project={project} projectStats={projectStats[index]} index={index} />
                   </li>
                 ))}
               </ul>
