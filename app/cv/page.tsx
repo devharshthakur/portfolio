@@ -94,7 +94,7 @@ export default function CVPage() {
                   colorClassName="border-blue-400 text-blue-700 dark:border-blue-600 dark:text-blue-400"
                 />
                 <Card className="border-2 border-blue-400 bg-blue-50/30 dark:border-blue-600 dark:bg-blue-950/10">
-                  <CardContent className="p-3">
+                  <CardContent className="p-3 py-2">
                     <ContactInfo phone="+91 721-985-3301" email="workharshthakur2002@gmail.com" address="Vasai East, Maharashtra, India 401208" />
                   </CardContent>
                 </Card>
@@ -138,7 +138,7 @@ export default function CVPage() {
                   colorClassName="border-green-400 text-green-700 dark:border-green-600 dark:text-green-400"
                 />
                 <Card className="border-2 border-green-400 bg-green-50/30 dark:border-green-600 dark:bg-green-950/10">
-                  <CardContent className="p-3">
+                  <CardContent className="p-3 py-2">
                     <div className="space-y-4">
                       <EducationEntry
                         degree="BE Software Engineering"
@@ -171,7 +171,7 @@ export default function CVPage() {
                         ))}
                         <tr className="border-border border-t">
                           <td colSpan={2} className="p-0">
-                            <div className="p-3 pb-0">
+                            <div className="px-3 py-2">
                               <h4 className="mb-2 flex items-center text-xs font-medium tracking-wider text-indigo-700 uppercase dark:text-indigo-400">
                                 <div className="mr-2 rounded-full bg-indigo-100 p-1 dark:bg-indigo-900/40">
                                   <Sparkles size={12} className="text-indigo-600 dark:text-indigo-400" />

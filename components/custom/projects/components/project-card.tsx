@@ -27,11 +27,12 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Project } from '@/data/projects.data';
-import { ArrowUpRight, Building2, Calendar, Clock, ExternalLink, GitFork, Github, Star, Terminal } from 'lucide-react';
+import { ArrowUpRight, Building2, Calendar, Clock, ExternalLink, GitFork, Star, Terminal } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { formatDate, getLinkButtonText, shouldShowRunLocallyButton } from '../util/project-display-utils';
 import { getTechColor } from '../util/tech-color-utils';
+import { FaGithub } from 'react-icons/fa';
 
 interface ProjectStats {
   stars: number;
@@ -104,7 +105,7 @@ export function ProjectCard({ project, projectStats = { stars: 0, forks: 0 }, in
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center text-emerald-700 transition-colors hover:text-emerald-900 dark:text-emerald-300 dark:hover:text-emerald-100">
-                      <Github className="mr-1.5 h-4 w-4" />
+                      <FaGithub className="mr-1.5 h-4 w-4" />
                       <span className="text-xs font-medium">GitHub</span>
                     </a>
                     <div className="h-4 w-px bg-emerald-200 dark:bg-emerald-700"></div>

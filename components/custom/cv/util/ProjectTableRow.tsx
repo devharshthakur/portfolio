@@ -48,7 +48,7 @@ export function ProjectTableRow({
 
   return (
     <TableRow className={hoverBgClass}>
-      <TableCell>
+      <TableCell className="py-1.5">
         <div className="mb-0.5 flex items-start gap-2">
           <LinkIcon size={14} className={`${iconClass} mt-1`} />
           <div>

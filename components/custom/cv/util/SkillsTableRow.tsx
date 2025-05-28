@@ -27,7 +27,7 @@ import React from 'react';
 export function SkillsTableRow({ name, description }: { name: string; description: string }): React.ReactElement {
   return (
     <TableRow>
-      <TableCell>
+      <TableCell className="py-1.5">
         <span className="text-foreground font-medium">{name}:</span> <span className="text-muted-foreground">{description}</span>
       </TableCell>
     </TableRow>

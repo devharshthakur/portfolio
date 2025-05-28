@@ -10,9 +10,6 @@ const topProjects = projects.slice(0, 4);
 export default function Projects() {
   return (
     <section className="relative w-full overflow-hidden rounded-lg border-2 border-emerald-400/80 bg-emerald-50/80 py-8 shadow-sm backdrop-brightness-[1.02] backdrop-contrast-[1.05] backdrop-saturate-[1.2] dark:border-emerald-700/80 dark:bg-emerald-950/80">
-      {/* Green tint overlay */}
-      <div className="pointer-events-none absolute inset-0 bg-green-600/5 mix-blend-multiply dark:bg-green-800/20"></div>
-
       <div className="relative z-10 container max-w-full px-4 md:px-8 lg:px-12">
         <div className="mb-6 flex items-center justify-between">
           <div className="flex items-center gap-2">

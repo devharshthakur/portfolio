@@ -51,19 +51,8 @@ const getIconComponent = (iconName: string) => {
   return library?.[iconName];
 };
 
-/**
- * Type definition for icon components.
- * This type represents a React component that can accept className and other props.
- *
- * @typedef {React.ComponentType<{ className?: string; [key: string]: unknown }>} IconType
- */
 type IconType = ComponentType<{ className?: string; [key: string]: unknown }>;
 
-/**
- * Icons object with commonly used icons
- *
- * @type {Record<string, IconType>}
- */
 const Icons: Record<string, IconType> = {};
 
 Icons.FaGithub = FaGithub;
@@ -79,10 +68,8 @@ Icons.FaExclamationCircle = FaExclamationCircle;
 Icons.FaHistory = FaHistory;
 Icons.FaGlobe = FaGlobe;
 
-// Type for icon names based on skills data
 export type IconName = keyof typeof Icons;
 
-// Helper function to get icon component by name
 export const getIcon = (name: IconName) => Icons[name];
 
 export { Icons };

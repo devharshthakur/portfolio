@@ -35,9 +35,7 @@ export default function ProjectsPage() {
 
   useEffect(() => {
     setMounted(true);
-    // Simulate loading project stats
     const loadStats = () => {
-      // Generate random stats for demo purposes
       const stats = projects.map(() => ({
         stars: Math.floor(Math.random() * 50),
         forks: Math.floor(Math.random() * 20),
