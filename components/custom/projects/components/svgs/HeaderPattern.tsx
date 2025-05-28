@@ -11,7 +11,7 @@ import React from 'react';
 
 export const HeaderPattern: React.FC = () => {
   return (
-    <svg className="absolute top-0 left-0 right-0 w-full" height="24" viewBox="0 0 1200 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className="absolute top-0 right-0 left-0 w-full" height="24" viewBox="0 0 1200 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 0H1200V24H0V0Z" fill="url(#paint0_linear)" />
       <defs>
         <linearGradient id="paint0_linear" x1="600" y1="0" x2="600" y2="24" gradientUnits="userSpaceOnUse">

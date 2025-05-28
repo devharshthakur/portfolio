@@ -8,14 +8,14 @@
  * - Technology tags
  * - Links to GitHub and npm
  */
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Package } from '@/data/packages.data';
+import { ArrowUpRight, Calendar, Check, Clock, Copy, Download, Github, History, Tag } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Package } from '@/data/packages.data';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Download, ArrowUpRight, Tag, Github, Calendar, Clock, Copy, Check, History } from 'lucide-react';
 import { FaNpm } from 'react-icons/fa';
-import { Button } from '@/components/ui/button';
 
 interface PackageCardProps {
   pkg: Package;
@@ -34,24 +34,22 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
 
   return (
     <Card
-      className="group overflow-hidden transition-all duration-300 hover:shadow-xl border-2 border-border animate-fadeIn relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-xs hover:border-purple-300 dark:hover:border-purple-700"
-      style={{ animationDelay: `${index * 100}ms` }}
-    >
-      <CardHeader className="pb-0 pt-5">
-        <div className="flex justify-between items-start">
+      className="group border-border animate-fadeIn relative overflow-hidden border-2 bg-white/80 backdrop-blur-xs transition-all duration-300 hover:border-purple-300 hover:shadow-xl dark:bg-gray-900/80 dark:hover:border-purple-700"
+      style={{ animationDelay: `${index * 100}ms` }}>
+      <CardHeader className="pt-5 pb-0">
+        <div className="flex items-start justify-between">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-linear-to-br from-white to-purple-50 dark:from-gray-800 dark:to-purple-900/50 border-2 border-purple-200 dark:border-purple-700/70 shadow-md transition-all duration-300 group-hover:shadow-lg">
+            <div className="rounded-xl border-2 border-purple-200 bg-linear-to-br from-white to-purple-50 p-2.5 shadow-md transition-all duration-300 group-hover:shadow-lg dark:border-purple-700/70 dark:from-gray-800 dark:to-purple-900/50">
               <FaNpm className="h-6 w-6 text-red-500 dark:text-red-400" />
             </div>
             <div>
-              <CardTitle className="text-xl font-bold bg-clip-text text-transparent bg-linear-to-r from-purple-600 to-indigo-600 dark:from-purple-300 dark:to-indigo-400">
+              <CardTitle className="bg-linear-to-r from-purple-600 to-indigo-600 bg-clip-text text-xl font-bold text-transparent dark:from-purple-300 dark:to-indigo-400">
                 {pkg.name}
               </CardTitle>
               {pkg.version && (
                 <Badge
                   variant="outline"
-                  className="mt-1 bg-purple-50 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-700/50"
-                >
+                  className="mt-1 border border-purple-200 bg-purple-50 text-purple-700 dark:border-purple-700/50 dark:bg-purple-900/40 dark:text-purple-300">
                   v{pkg.version}
                 </Badge>
               )}
@@ -59,7 +57,7 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
           </div>
 
           {pkg.downloads && (
-            <div className="flex items-center gap-1 px-2.5 py-1.5 rounded-md bg-linear-to-r from-blue-50 to-cyan-50 dark:from-blue-900/30 dark:to-cyan-900/30 text-blue-600 dark:text-blue-300 border border-blue-200 dark:border-blue-700/50 shadow-xs text-sm font-medium">
+            <div className="flex items-center gap-1 rounded-md border border-blue-200 bg-linear-to-r from-blue-50 to-cyan-50 px-2.5 py-1.5 text-sm font-medium text-blue-600 shadow-xs dark:border-blue-700/50 dark:from-blue-900/30 dark:to-cyan-900/30 dark:text-blue-300">
               <Download className="h-3.5 w-3.5" />
               {pkg.downloads} {parseInt(pkg.downloads) === 1 ? 'download' : 'downloads'}
             </div>
@@ -67,19 +65,18 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
         </div>
       </CardHeader>
 
-      <CardContent className="pt-5 space-y-4">
+      <CardContent className="space-y-4 pt-5">
         {/* Install Command */}
-        <div className="flex items-center justify-between rounded-lg border border-gray-200 dark:border-gray-700/50 bg-gray-50 dark:bg-gray-800/50 p-2 overflow-hidden">
+        <div className="flex items-center justify-between overflow-hidden rounded-lg border border-gray-200 bg-gray-50 p-2 dark:border-gray-700/50 dark:bg-gray-800/50">
           <div className="flex items-center space-x-2 pl-2">
-            <FaNpm className="h-4 w-4 text-red-500 dark:text-red-400 shrink-0" />
-            <code className="text-sm font-mono text-gray-800 dark:text-gray-200 truncate">{installCommand}</code>
+            <FaNpm className="h-4 w-4 shrink-0 text-red-500 dark:text-red-400" />
+            <code className="truncate font-mono text-sm text-gray-800 dark:text-gray-200">{installCommand}</code>
           </div>
           <Button
             size="sm"
             variant="ghost"
             onClick={copyToClipboard}
-            className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 p-1 h-8"
-          >
+            className="h-8 p-1 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
             {copied ? (
               <div className="flex items-center space-x-1 text-green-600 dark:text-green-400">
                 <Check className="h-3.5 w-3.5" />
@@ -93,16 +90,16 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
 
         {/* Package Timeline */}
         {(pkg.publishedDate || pkg.lastUpdated) && (
-          <div className="rounded-lg border border-gray-200 dark:border-gray-700/50 bg-linear-to-r from-slate-50 to-gray-50 dark:from-slate-800/30 dark:to-gray-800/30 p-3 overflow-hidden">
-            <div className="flex items-center mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
-              <History className="h-4 w-4 mr-1.5 text-purple-500 dark:text-purple-400" />
+          <div className="overflow-hidden rounded-lg border border-gray-200 bg-linear-to-r from-slate-50 to-gray-50 p-3 dark:border-gray-700/50 dark:from-slate-800/30 dark:to-gray-800/30">
+            <div className="mb-2 flex items-center text-sm font-medium text-gray-700 dark:text-gray-300">
+              <History className="mr-1.5 h-4 w-4 text-purple-500 dark:text-purple-400" />
               Package Timeline
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {pkg.publishedDate && (
-                <div className="flex items-center space-x-2 px-3 py-1.5 bg-white/70 dark:bg-gray-700/50 rounded border border-gray-200 dark:border-gray-600/50 shadow-xs">
+                <div className="flex items-center space-x-2 rounded border border-gray-200 bg-white/70 px-3 py-1.5 shadow-xs dark:border-gray-600/50 dark:bg-gray-700/50">
                   <div className="relative">
-                    <div className="absolute -left-1 -top-1 w-2 h-2 rounded-full bg-green-400 dark:bg-green-500 animate-ping opacity-75"></div>
+                    <div className="absolute -top-1 -left-1 h-2 w-2 animate-ping rounded-full bg-green-400 opacity-75 dark:bg-green-500"></div>
                     <Calendar className="h-4 w-4 text-green-500 dark:text-green-400" />
                   </div>
                   <div className="flex flex-col">
@@ -112,7 +109,7 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
                 </div>
               )}
               {pkg.lastUpdated && (
-                <div className="flex items-center space-x-2 px-3 py-1.5 bg-white/70 dark:bg-gray-700/50 rounded border border-gray-200 dark:border-gray-600/50 shadow-xs">
+                <div className="flex items-center space-x-2 rounded border border-gray-200 bg-white/70 px-3 py-1.5 shadow-xs dark:border-gray-600/50 dark:bg-gray-700/50">
                   <Clock className="h-4 w-4 text-blue-500 dark:text-blue-400" />
                   <div className="flex flex-col">
                     <span className="text-xs font-semibold text-gray-700 dark:text-gray-200">Last Updated</span>
@@ -125,7 +122,7 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
         )}
 
         {/* Description */}
-        <div className="text-sm leading-relaxed text-gray-600 dark:text-gray-300 bg-linear-to-br from-white to-purple-50/30 dark:from-gray-800/50 dark:to-purple-900/20 p-4 rounded-lg border border-gray-200 dark:border-gray-700/50 shadow-xs transition-all duration-300 group-hover:shadow-md">
+        <div className="rounded-lg border border-gray-200 bg-linear-to-br from-white to-purple-50/30 p-4 text-sm leading-relaxed text-gray-600 shadow-xs transition-all duration-300 group-hover:shadow-md dark:border-gray-700/50 dark:from-gray-800/50 dark:to-purple-900/20 dark:text-gray-300">
           {pkg.longDescription || pkg.description}
         </div>
 
@@ -136,9 +133,8 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
               <Badge
                 key={tag}
                 variant="secondary"
-                className="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:border-purple-300 dark:hover:border-purple-700 py-1"
-              >
-                <Tag className="h-3 w-3 mr-1 text-purple-500 dark:text-purple-400" />
+                className="border border-gray-200 bg-gray-100 py-1 text-gray-700 transition-all duration-300 hover:border-purple-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-purple-700">
+                <Tag className="mr-1 h-3 w-3 text-purple-500 dark:text-purple-400" />
                 {tag}
               </Badge>
             ))}
@@ -151,10 +147,9 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
           asChild
           variant="outline"
           size="sm"
-          className="text-gray-600 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition-all duration-300"
-        >
+          className="border-gray-300 text-gray-600 transition-all duration-300 hover:bg-gray-100 hover:text-gray-900 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
           <Link href={pkg.githubUrl} target="_blank" rel="noopener noreferrer">
-            <Github className="h-4 w-4 mr-2" />
+            <Github className="mr-2 h-4 w-4" />
             GitHub
           </Link>
         </Button>
@@ -163,12 +158,11 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
           asChild
           variant="default"
           size="sm"
-          className="bg-red-600 hover:bg-red-700 text-white shadow-md hover:shadow-lg transition-all duration-300"
-        >
+          className="bg-red-600 text-white shadow-md transition-all duration-300 hover:bg-red-700 hover:shadow-lg">
           <Link href={pkg.npmUrl} target="_blank" rel="noopener noreferrer">
-            <FaNpm className="h-4 w-4 mr-2" />
+            <FaNpm className="mr-2 h-4 w-4" />
             npm
-            <ArrowUpRight className="h-3.5 w-3.5 ml-1" />
+            <ArrowUpRight className="ml-1 h-3.5 w-3.5" />
           </Link>
         </Button>
       </CardFooter>

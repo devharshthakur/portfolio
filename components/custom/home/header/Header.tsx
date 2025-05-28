@@ -12,15 +12,15 @@
  *
  * @returns {JSX.Element} The rendered header component.
  */
+import { HEADER_LEFT_NAV, HEADER_RIGHT_NAV } from '@/components/custom/home/header/lib/constants';
 import { ModeToggle } from '@/components/mode-toogle';
 import { ColoredButton } from '@/components/ui/colored-button';
-import { HEADER_LEFT_NAV, HEADER_RIGHT_NAV } from '@/components/custom/home/header/lib/constants';
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 flex flex-col sm:flex-row items-center justify-between py-3 px-4 sm:px-6 md:px-8 gap-4 sm:gap-0 backdrop-blur-sm bg-background/75 border-b border-border">
-      <div className="flex flex-wrap justify-center sm:justify-start gap-3 sm:gap-4">
-        {HEADER_LEFT_NAV.map((item) => (
+    <header className="border-border sticky top-0 z-50 flex flex-col items-center justify-between gap-4 border-b px-4 py-3 backdrop-blur-sm sm:flex-row sm:gap-0 sm:px-6 md:px-8">
+      <div className="flex flex-wrap justify-center gap-3 sm:justify-start sm:gap-4">
+        {HEADER_LEFT_NAV.map(item => (
           <ColoredButton
             key={item.href}
             href={item.href}
@@ -29,11 +29,12 @@ export function Header() {
             colorScheme={item.colorScheme}
             variant="outline"
             isExternal={item.isExternal}
+            className="border-3"
           />
         ))}
       </div>
-      <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 sm:gap-4">
-        {HEADER_RIGHT_NAV.map((item) => (
+      <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-end sm:gap-4">
+        {HEADER_RIGHT_NAV.map(item => (
           <ColoredButton
             key={item.href}
             href={item.href}
@@ -41,6 +42,7 @@ export function Header() {
             icon={item.icon}
             colorScheme={item.colorScheme}
             variant={item.variant || 'outline'}
+            className="border-3"
           />
         ))}
         <ModeToggle />

@@ -1,11 +1,11 @@
 'use client';
 
-import * as React from 'react';
 import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import * as React from 'react';
 
-import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -105,16 +105,14 @@ function Carousel({ orientation = 'horizontal', opts, setApi, plugins, className
         scrollNext,
         canScrollPrev,
         canScrollNext,
-      }}
-    >
+      }}>
       <div
         onKeyDownCapture={handleKeyDown}
         className={cn('relative', className)}
         role="region"
         aria-roledescription="carousel"
         data-slot="carousel"
-        {...props}
-      >
+        {...props}>
         {children}
       </div>
     </CarouselContext.Provider>
@@ -160,8 +158,7 @@ function CarouselPrevious({ className, variant = 'outline', size = 'icon', ...pr
       )}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
-      {...props}
-    >
+      {...props}>
       <ArrowLeft />
       <span className="sr-only">Previous slide</span>
     </Button>
@@ -183,12 +180,11 @@ function CarouselNext({ className, variant = 'outline', size = 'icon', ...props 
       )}
       disabled={!canScrollNext}
       onClick={scrollNext}
-      {...props}
-    >
+      {...props}>
       <ArrowRight />
       <span className="sr-only">Next slide</span>
     </Button>
   );
 }
 
-export { type CarouselApi, Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext };
+export { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi };

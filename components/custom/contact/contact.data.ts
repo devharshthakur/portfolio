@@ -1,6 +1,3 @@
-import { FaSquareXTwitter } from 'react-icons/fa6';
-import { Github, Linkedin } from 'lucide-react';
-
 export type SocialLinkType = {
   name: string;
   url: string;

@@ -3,6 +3,7 @@
 Thank you for considering contributing to this portfolio template! This document outlines the process for contributing to the project and helps to make the contribution process easy and effective for everyone involved.
 
 ## 📋 Table of Contents
+
 - [Code of Conduct](#code-of-conduct)
 - [Getting Started](#getting-started)
 - [Development Workflow](#development-workflow)
@@ -17,25 +18,31 @@ By participating in this project, you are expected to uphold our [Code of Conduc
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - [Node.js](https://nodejs.org/) (v18 or higher)
 - [pnpm](https://pnpm.io/) (preferred package manager)
 
 ### Setup
+
 1. **Fork the repository**:
+
    - Click the Fork button in the top right of the [repository page](https://github.com/devharshthakur/portfolio)
 
 2. **Clone your fork**:
+
    ```bash
    git clone https://github.com/YOUR-USERNAME/portfolio.git
    cd portfolio
    ```
 
 3. **Install dependencies**:
+
    ```bash
    pnpm install
    ```
 
 4. **Start the development server**:
+
    ```bash
    pnpm dev
    ```
@@ -48,11 +55,13 @@ By participating in this project, you are expected to uphold our [Code of Conduc
 ## 🔄 Development Workflow
 
 1. **Create a branch**:
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
-   
+
    Use prefixes like:
+
    - `feature/` for new features
    - `fix/` for bug fixes
    - `docs/` for documentation
@@ -61,6 +70,7 @@ By participating in this project, you are expected to uphold our [Code of Conduc
    - `test/` for adding tests
 
 2. **Make your changes**:
+
    - Write clean, maintainable, and tested code
    - Keep commits small and focused
    - Write clear commit messages
@@ -74,11 +84,13 @@ By participating in this project, you are expected to uphold our [Code of Conduc
 ## 📝 Submitting Changes
 
 1. **Push your changes to your fork**:
+
    ```bash
    git push origin feature/your-feature-name
    ```
 
 2. **Create a Pull Request**:
+
    - Go to the original repository
    - Click "New Pull Request"
    - Choose your fork and branch
@@ -92,22 +104,26 @@ By participating in this project, you are expected to uphold our [Code of Conduc
 ## 💻 Style Guidelines
 
 ### 🖥️ TypeScript
+
 - 🚫 Avoid using `any` type unless absolutely necessary
 - 🛡️ Ensure the codebase remains type-safe
 - 📦 Use interfaces for object shapes
 - 📝 Use meaningful variable names
 
 ### ⚛️ React & Next.js
+
 - 🧩 Follow functional component patterns
 - 🪝 Use proper hooks for state management
 - 🗺️ Follow the Next.js routing conventions
 
 ### 🎨 CSS
+
 - 🌈 Use TailwindCSS classes appropriately
 - 🖌️ Follow the project's existing design patterns
 - 📱 Use responsive design principles
 
 ### 💬 Commit Messages
+
 - 🕰️ Use the present tense ("Add feature" not "Added feature")
 - 🎯 Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
 - 📏 Limit the first line to 72 characters or less
@@ -117,4 +133,4 @@ By participating in this project, you are expected to uphold our [Code of Conduc
 
 Feel free to open an issue if you have questions or need clarification on any aspect of the project!
 
-Thank you for contributing! 🙌 
+Thank you for contributing! 🙌

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card, CardHeader, CardTitle } from '@/components/ui/card';
 
 /**
  * SectionTitle Component
@@ -35,11 +34,10 @@ export function SectionTitle({
     <div className="mb-3">
       <div className={`flex items-center gap-2 ${colorClassName}`}>
         <div
-          className={`w-7 h-7 rounded-md flex items-center justify-center bg-white dark:bg-background border ${colorClassName.split(' ')[0]} shadow-sm`}
-        >
+          className={`dark:bg-background flex h-7 w-7 items-center justify-center rounded-md border bg-white ${colorClassName.split(' ')[0]} shadow-sm`}>
           {icon}
         </div>
-        <h2 className="text-lg font-semibold uppercase tracking-wider">{title}</h2>
+        <h2 className="text-lg font-semibold tracking-wider uppercase">{title}</h2>
       </div>
       <div
         className={`mt-1 h-0.5 w-full bg-gradient-to-r ${
@@ -58,8 +56,7 @@ export function SectionTitle({
                       : colorClassName.includes('rose')
                         ? 'from-rose-400 to-transparent'
                         : 'from-primary to-transparent'
-        } 
-        dark:${
+        } dark:${
           colorClassName.includes('yellow')
             ? 'from-yellow-600'
             : colorClassName.includes('blue')

@@ -3,11 +3,11 @@
  * @description A reusable button component that applies color schemes and handles different link types
  */
 
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import { COLOR_SCHEMES } from '@/components/custom/home/header/lib/constants';
 import { ColoredButtonProps, ColorScheme } from '@/components/custom/home/header/types/types';
+import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 /**
  * ColoredButton component

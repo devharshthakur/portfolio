@@ -1,8 +1,8 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Download } from 'lucide-react';
 import { saveAs } from 'file-saver';
+import { Download } from 'lucide-react';
 
 export function DownloadButton() {
   const downloadCV = () => {

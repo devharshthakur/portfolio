@@ -41,11 +41,11 @@ export function ProfileSection({
       <p className="text-sm leading-relaxed text-slate-700 dark:text-slate-300">{introduction}</p>
 
       <div className="pt-1">
-        <h4 className="text-xs uppercase tracking-wider font-medium text-yellow-700 dark:text-yellow-400 mb-2">Core Competencies</h4>
+        <h4 className="mb-2 text-xs font-medium tracking-wider text-yellow-700 uppercase dark:text-yellow-400">Core Competencies</h4>
         <div className="grid gap-2">
           {bulletPoints.map((point, index) => (
             <div key={index} className="flex items-start gap-2">
-              <div className="h-1.5 w-1.5 rounded-full bg-yellow-600 dark:bg-yellow-500 mt-1.5"></div>
+              <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-yellow-600 dark:bg-yellow-500"></div>
               <p className="text-sm text-slate-600 dark:text-slate-400">
                 <span className="font-medium text-slate-800 dark:text-slate-200">{point.label}:</span> {point.content}
               </p>

@@ -1,11 +1,10 @@
 'use client';
-import * as React from 'react';
+import { COLOR_SCHEMES } from '@/components/custom/home/header/lib/constants';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
-import { useState, useEffect } from 'react';
-import { COLOR_SCHEMES } from '@/components/custom/home/header/lib/constants';
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import { useEffect, useState } from 'react';
 
 interface ModeToggleProps {
   className?: string;

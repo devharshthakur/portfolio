@@ -1,5 +1,5 @@
+import { TableCell, TableRow } from '@/components/ui/table';
 import React from 'react';
-import { TableRow, TableCell } from '@/components/ui/table';
 
 /**
  * SkillsTableRow Component
@@ -27,8 +27,8 @@ import { TableRow, TableCell } from '@/components/ui/table';
 export function SkillsTableRow({ name, description }: { name: string; description: string }): React.ReactElement {
   return (
     <TableRow>
-      <TableCell>
-        <span className="font-medium text-foreground">{name}:</span> <span className="text-muted-foreground">{description}</span>
+      <TableCell className="py-1.5">
+        <span className="text-foreground font-medium">{name}:</span> <span className="text-muted-foreground">{description}</span>
       </TableCell>
     </TableRow>
   );

@@ -36,20 +36,21 @@ I've created and published several npm packages that are featured in the package
 
 ## 🛠️ Tech Stack
 
-| Technology | Purpose |
-|------------|---------|
-| [Next.js 15](https://nextjs.org/) | React framework with server components |
-| [TypeScript](https://www.typescriptlang.org/) | Type-safe development |
-| [Tailwind CSS](https://tailwindcss.com/) | Utility-first styling |
-| [Radix UI](https://www.radix-ui.com/) | Accessible UI components |
-| [Sonner](https://sonner.vercel.app/) | Toast notifications |
-| [Nodemailer](https://nodemailer.com/) | Email functionality |
-| [Zod](https://zod.dev/) | Schema validation |
-| [React Hook Form](https://react-hook-form.com/) | Form handling |
-| [Lucide React](https://lucide.dev/) | Icon library |
-| [next-themes](https://github.com/pacocoursey/next-themes) | Theme management |
+| Technology                                                | Purpose                                |
+| --------------------------------------------------------- | -------------------------------------- |
+| [Next.js 15](https://nextjs.org/)                         | React framework with server components |
+| [TypeScript](https://www.typescriptlang.org/)             | Type-safe development                  |
+| [Tailwind CSS](https://tailwindcss.com/)                  | Utility-first styling                  |
+| [Radix UI](https://www.radix-ui.com/)                     | Accessible UI components               |
+| [Sonner](https://sonner.vercel.app/)                      | Toast notifications                    |
+| [Nodemailer](https://nodemailer.com/)                     | Email functionality                    |
+| [Zod](https://zod.dev/)                                   | Schema validation                      |
+| [React Hook Form](https://react-hook-form.com/)           | Form handling                          |
+| [Lucide React](https://lucide.dev/)                       | Icon library                           |
+| [next-themes](https://github.com/pacocoursey/next-themes) | Theme management                       |
 
 ## 📂 Project Structure
+
 ```
 portfolio/
 ├── app/                    # Next.js app directory with routes
@@ -121,16 +122,16 @@ portfolio/
 
 1. **Clone the repository**
 
-    ```bash
+   ```bash
    git clone https://github.com/yourusername/portfolio.git
-    cd portfolio
-    ```
+   cd portfolio
+   ```
 
 2. **Install dependencies**
 
-    ```bash
-    pnpm install
-    ```
+   ```bash
+   pnpm install
+   ```
 
 3. **Set up environment variables**
 
@@ -140,7 +141,7 @@ portfolio/
     EMAIL_ID=your_email@example.com
     EMAIL_PASSWORD=your_email_password
     RECEIVER_EMAIL=receiver_email@example.com
-    ```
+   ```
 
 4. **Start the development server**
 
@@ -148,7 +149,7 @@ portfolio/
 pnpm dev
 ```
 
-   Visit [http://localhost:3000](http://localhost:3000) to view your portfolio.
+Visit [http://localhost:3000](http://localhost:3000) to view your portfolio.
 
 ### Production Build
 
@@ -191,9 +192,10 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 
 ## 📊 Project Stats
 
-| Metric           | Value         |
-| ---------------- | ------------- |
-| **Stars**        | ⭐ [![GitHub stars](https://img.shields.io/github/stars/devharshthakur/portfolio?style=social)](https://github.com/devharshthakur/portfolio/stargazers) |
-| **Forks**        | 🍴 [![GitHub forks](https://img.shields.io/github/forks/devharshthakur/portfolio?style=social)](https://github.com/devharshthakur/portfolio/network/members) |
-| **Issues**       | ❗ [![GitHub issues](https://img.shields.io/github/issues/devharshthakur/portfolio)](https://github.com/devharshthakur/portfolio/issues) |
+| Metric     | Value                                                                                                                                                        |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Stars**  | ⭐ [![GitHub stars](https://img.shields.io/github/stars/devharshthakur/portfolio?style=social)](https://github.com/devharshthakur/portfolio/stargazers)      |
+| **Forks**  | 🍴 [![GitHub forks](https://img.shields.io/github/forks/devharshthakur/portfolio?style=social)](https://github.com/devharshthakur/portfolio/network/members) |
+| **Issues** | ❗ [![GitHub issues](https://img.shields.io/github/issues/devharshthakur/portfolio)](https://github.com/devharshthakur/portfolio/issues)                     |
+
 ---
