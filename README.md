@@ -185,7 +185,7 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 ---
 
 <p align="center">
-  Made with ❤️ using Next.js and TypeScript
+  Made using Next.js and TypeScript
 </p>
 
 ---
