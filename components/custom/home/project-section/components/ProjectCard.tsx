@@ -44,7 +44,6 @@ export function ProjectCard(props: Project) {
     githubUrl,
     liveDemoUrl = '#',
     tags,
-    version = 'v1.0.0',
     stats = {
       stars: 0,
       forks: 0,
@@ -57,7 +56,6 @@ export function ProjectCard(props: Project) {
     alert('This project needs to be run locally. Please follow the instructions in the GitHub repository.');
   };
 
-  const isDeployed = liveDemoUrl !== '#' && liveDemoUrl !== 'local';
   const isLocal = liveDemoUrl === 'local';
   const isComingSoon = liveDemoUrl === '#';
 
@@ -191,7 +189,6 @@ export function ProjectCard(props: Project) {
   );
 }
 
-// Helper function to get badge colors based on tech
 function getBadgeColor(tech: string): string {
   const colorMap: Record<string, string> = {
     'Next.js': '#0070f3',
