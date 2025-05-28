@@ -3,7 +3,7 @@
  * @description Contains constants for navigation, color schemes, and other UI configuration
  */
 
-import { FileText, History } from 'lucide-react';
+import { FileText, GitPullRequest, History } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import { MdContactPage } from 'react-icons/md';
 import { ColorScheme, ColorSchemeStyles, NavItem } from '../types/types';
@@ -51,9 +51,9 @@ export const HEADER_RIGHT_NAV: NavItem[] = [
     colorScheme: 'purple',
   },
   {
-    href: '/changelog',
-    label: 'Changelog',
-    icon: History,
+    href: '/contribute',
+    label: 'Contribute',
+    icon: GitPullRequest,
     colorScheme: 'slate',
   },
 ];

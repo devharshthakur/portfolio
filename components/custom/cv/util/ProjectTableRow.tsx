@@ -39,7 +39,6 @@ export function ProjectTableRow({
   link: string;
   colorScheme?: 'blue' | 'rose';
 }): React.ReactElement {
-  // Define color classes based on the color scheme
   const hoverBgClass = colorScheme === 'blue' ? 'hover:bg-blue-50/50 dark:hover:bg-blue-950/10' : 'hover:bg-rose-50/50 dark:hover:bg-rose-950/10';
 
   const iconClass = colorScheme === 'blue' ? 'text-blue-600 dark:text-blue-400' : 'text-rose-600 dark:text-rose-400';
