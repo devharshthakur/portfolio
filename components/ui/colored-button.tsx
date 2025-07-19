@@ -3,11 +3,11 @@
  * @description A reusable button component that applies color schemes and handles different link types
  */
 
-import { COLOR_SCHEMES } from '@/components/custom/home/header/lib/constants';
-import { ColoredButtonProps, ColorScheme } from '@/components/custom/home/header/types/types';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
-import Link from 'next/link';
+import { COLOR_SCHEMES } from "@/components/custom/home/header/lib/constants";
+import { ColoredButtonProps, ColorScheme } from "@/components/custom/home/header/types/types";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 /**
  * ColoredButton component
@@ -49,63 +49,63 @@ import Link from 'next/link';
  * @returns {JSX.Element} Rendered button or link component
  */
 export function ColoredButton({
-  colorScheme = 'slate',
-  href,
-  icon: Icon,
-  label,
-  variant = 'outline',
-  className,
-  isExternal = false,
-  ...props
+	colorScheme = "slate",
+	href,
+	icon: Icon,
+	label,
+	variant = "outline",
+	className,
+	isExternal = false,
+	...props
 }: ColoredButtonProps) {
-  // Get the color scheme styles from constants
-  const scheme = COLOR_SCHEMES[colorScheme as ColorScheme];
+	// Get the color scheme styles from constants
+	const scheme = COLOR_SCHEMES[colorScheme as ColorScheme];
 
-  // Combine all the classes from the color scheme
-  const buttonClasses = cn(
-    variant === 'default' && scheme.bg,
-    variant === 'outline' && scheme.border,
-    scheme.hover,
-    scheme.text,
-    scheme.shadow,
-    'text-sm whitespace-nowrap sm:text-base',
-    className,
-  );
+	// Combine all the classes from the color scheme
+	const buttonClasses = cn(
+		variant === "default" && scheme.bg,
+		variant === "outline" && scheme.border,
+		scheme.hover,
+		scheme.text,
+		scheme.shadow,
+		"text-sm whitespace-nowrap sm:text-base",
+		className,
+	);
 
-  // Create the content with icon if present
-  const content = (
-    <>
-      {Icon && <Icon className={cn('h-4 w-4 sm:h-5 sm:w-5', scheme.icon)} />}
-      <span className="truncate">{label}</span>
-    </>
-  );
+	// Create the content with icon if present
+	const content = (
+		<>
+			{Icon && <Icon className={cn("h-4 w-4 sm:h-5 sm:w-5", scheme.icon)} />}
+			<span className="truncate">{label}</span>
+		</>
+	);
 
-  // Regular button (no link)
-  if (!href) {
-    return (
-      <Button variant={variant} className={buttonClasses} {...props}>
-        {content}
-      </Button>
-    );
-  }
+	// Regular button (no link)
+	if (!href) {
+		return (
+			<Button variant={variant} className={buttonClasses} {...props}>
+				{content}
+			</Button>
+		);
+	}
 
-  // External link
-  if (isExternal) {
-    return (
-      <Button variant={variant} asChild className={buttonClasses} {...props}>
-        <a href={href} className="flex items-center gap-1.5 sm:gap-2">
-          {content}
-        </a>
-      </Button>
-    );
-  }
+	// External link
+	if (isExternal) {
+		return (
+			<Button variant={variant} asChild className={buttonClasses} {...props}>
+				<a href={href} className="flex items-center gap-1.5 sm:gap-2">
+					{content}
+				</a>
+			</Button>
+		);
+	}
 
-  // Internal Next.js link
-  return (
-    <Button variant={variant} asChild className={buttonClasses} {...props}>
-      <Link href={href} className="flex items-center gap-1.5 sm:gap-2" prefetch={true}>
-        {content}
-      </Link>
-    </Button>
-  );
+	// Internal Next.js link
+	return (
+		<Button variant={variant} asChild className={buttonClasses} {...props}>
+			<Link href={href} className="flex items-center gap-1.5 sm:gap-2" prefetch={true}>
+				{content}
+			</Link>
+		</Button>
+	);
 }

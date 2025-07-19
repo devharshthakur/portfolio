@@ -1,5 +1,5 @@
-import { TableCell, TableRow } from '@/components/ui/table';
-import React from 'react';
+import { TableCell, TableRow } from "@/components/ui/table";
+import React from "react";
 
 /**
  * SkillsTableRow Component
@@ -24,12 +24,19 @@ import React from 'react';
  *
  * @returns {React.ReactElement} A table row displaying a skill with its description
  */
-export function SkillsTableRow({ name, description }: { name: string; description: string }): React.ReactElement {
-  return (
-    <TableRow>
-      <TableCell className="py-1.5">
-        <span className="text-foreground font-medium">{name}:</span> <span className="text-muted-foreground">{description}</span>
-      </TableCell>
-    </TableRow>
-  );
+export function SkillsTableRow({
+	name,
+	description,
+}: {
+	name: string;
+	description: string;
+}): React.ReactElement {
+	return (
+		<TableRow>
+			<TableCell className="py-1.5">
+				<span className="text-foreground font-medium">{name}:</span>{" "}
+				<span className="text-muted-foreground">{description}</span>
+			</TableCell>
+		</TableRow>
+	);
 }

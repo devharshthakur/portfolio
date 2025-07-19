@@ -1,5 +1,5 @@
-import { TableCell, TableRow } from '@/components/ui/table';
-import React from 'react';
+import { TableCell, TableRow } from "@/components/ui/table";
+import React from "react";
 
 /**
  * LanguageTableRow Component
@@ -23,13 +23,19 @@ import React from 'react';
  *
  * @returns {React.ReactElement} A table row displaying language and proficiency information
  */
-export function LanguageTableRow({ language, proficiency }: { language: string; proficiency: string }): React.ReactElement {
-  return (
-    <TableRow className="hover:bg-amber-50/50 dark:hover:bg-amber-950/10">
-      <TableCell className="py-1.5">
-        <span className="font-medium text-amber-800 dark:text-amber-300">{language}</span>{' '}
-        <span className="text-xs text-amber-700/70 dark:text-amber-400/70">({proficiency})</span>
-      </TableCell>
-    </TableRow>
-  );
+export function LanguageTableRow({
+	language,
+	proficiency,
+}: {
+	language: string;
+	proficiency: string;
+}): React.ReactElement {
+	return (
+		<TableRow className="hover:bg-amber-50/50 dark:hover:bg-amber-950/10">
+			<TableCell className="py-1.5">
+				<span className="font-medium text-amber-800 dark:text-amber-300">{language}</span>{" "}
+				<span className="text-xs text-amber-700/70 dark:text-amber-400/70">({proficiency})</span>
+			</TableCell>
+		</TableRow>
+	);
 }
