@@ -7,12 +7,13 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"format": "pnpm run format:prettier && pnpm run format:biome",
-		"format:biome": "pnpm exec biome format --write",
-		"format:prettier": "prettier --write \"**/*.tsx\"",
+		"format": "pnpm exec biome format --write",
+		"format:css": "prettier --write \"**/*.tsx\"",
+		"format:all": "pnpm run format:css && pnpm run format",
 		"clean": "rimraf .next node_modules/.cache && find . -name '.DS_Store' -delete",
 		"clean:deep": "pnpm run clean && rimraf node_modules .turbo",
-		"clean:cache": "rimraf .next/cache"
+		"clean:cache": "rimraf .next/cache",
+		"prepare": "husky"
 	},
 	"dependencies": {
 		"@hookform/resolvers": "^3.10.0",
@@ -80,6 +81,7 @@
 		"@types/react-dom": "19.1.6",
 		"eslint": "^9",
 		"eslint-config-next": "15.4.2",
+		"husky": "^9.1.7",
 		"postcss": "^8",
 		"prettier": "^3.4.2",
 		"prettier-plugin-tailwindcss": "^0.6.11",

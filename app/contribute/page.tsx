@@ -6,7 +6,6 @@ import { Separator } from "@/components/ui/separator";
 import {
 	ArrowRight,
 	Code2,
-	GitBranch,
 	GitFork,
 	GitPullRequest,
 	Heart,
@@ -56,7 +55,7 @@ export default function ContributePage() {
 					<div className="mb-6 flex items-center justify-center">
 						<div className="rounded-full bg-zinc-100/80 p-3.5 dark:bg-zinc-900/60">
 							<div className="rounded-full bg-zinc-700/90 p-3.5 text-white dark:bg-zinc-600/90">
-								<Code2 className="h-8 w-8" />
+								<GitPullRequest className="h-8 w-8" />
 							</div>
 						</div>
 					</div>

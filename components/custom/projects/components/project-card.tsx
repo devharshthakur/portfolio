@@ -26,7 +26,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Project } from "@/data/projects.data";
+import type { Project } from "@/data/projects.data";
 import {
 	ArrowUpRight,
 	Building2,
@@ -142,11 +142,6 @@ export function ProjectCard({
 									</div>
 								)}
 							</div>
-
-							{/* Short description */}
-							<p className="line-clamp-2 text-sm text-slate-600 md:text-base dark:text-slate-300">
-								{project.description}
-							</p>
 
 							{/* Image for small screens */}
 							<div className="bg-card group relative block aspect-video overflow-hidden rounded-lg border-2 border-emerald-200 shadow-md transition-colors hover:border-emerald-500 dark:border-emerald-800/60 dark:hover:border-emerald-600">

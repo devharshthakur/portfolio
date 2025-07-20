@@ -11,7 +11,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Package } from "@/data/packages.data";
+import type { Package } from "@/data/packages.data";
 import {
 	ArrowUpRight,
 	Calendar,
@@ -68,12 +68,24 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
 						</div>
 					</div>
 
-					{pkg.downloads && (
-						<div className="flex items-center gap-1 rounded-md border border-blue-200 bg-linear-to-r from-blue-50 to-cyan-50 px-2.5 py-1.5 text-sm font-medium text-blue-600 shadow-xs dark:border-blue-700/50 dark:from-blue-900/30 dark:to-cyan-900/30 dark:text-blue-300">
-							<Download className="h-3.5 w-3.5" />
-							{pkg.downloads} {parseInt(pkg.downloads) === 1 ? "download" : "downloads"}
-						</div>
-					)}
+					<div className="flex items-center gap-3">
+						{pkg.downloads && (
+							<div className="flex items-center gap-1 rounded-md border border-blue-200 bg-linear-to-r from-blue-50 to-cyan-50 px-2.5 py-1.5 text-sm font-medium text-blue-600 shadow-xs dark:border-blue-700/50 dark:from-blue-900/30 dark:to-cyan-900/30 dark:text-blue-300">
+								<Download className="h-3.5 w-3.5" />
+								{pkg.downloads} {parseInt(pkg.downloads) === 1 ? "download" : "downloads"}
+							</div>
+						)}
+						<Button
+							asChild
+							variant="outline"
+							size="sm"
+							className="h-8 w-8 border-gray-300 p-0 text-gray-500 hover:border-gray-400 hover:text-gray-700 dark:border-gray-600 dark:text-gray-400 dark:hover:border-gray-500 dark:hover:text-gray-200"
+						>
+							<Link href={pkg.githubUrl} target="_blank" rel="noopener noreferrer">
+								<Github className="h-4 w-4" />
+							</Link>
+						</Button>
+					</div>
 				</div>
 			</CardHeader>
 
@@ -166,19 +178,7 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
 				)}
 			</CardContent>
 
-			<CardFooter className="flex justify-between pt-2 pb-5">
-				<Button
-					asChild
-					variant="outline"
-					size="sm"
-					className="border-gray-300 text-gray-600 transition-all duration-300 hover:bg-gray-100 hover:text-gray-900 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white"
-				>
-					<Link href={pkg.githubUrl} target="_blank" rel="noopener noreferrer">
-						<Github className="mr-2 h-4 w-4" />
-						GitHub
-					</Link>
-				</Button>
-
+			<CardFooter className="flex pt-2 pb-5">
 				<Button
 					asChild
 					variant="default"

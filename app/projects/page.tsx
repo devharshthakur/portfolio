@@ -13,11 +13,9 @@ import { ProjectCard } from "@/components/custom/projects/components/project-car
 import HeaderPattern from "@/components/custom/projects/components/svgs/HeaderPattern";
 import ProjectGlow from "@/components/custom/projects/components/svgs/ProjectGlow";
 import { ModeToggle } from "@/components/mode-toogle";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import projects from "@/data/projects.data";
 import { ArrowRight, Building2, GitFork, Home, Loader2, Star } from "lucide-react";
-import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaGithub } from "react-icons/fa";
@@ -28,10 +26,9 @@ interface ProjectStats {
 }
 
 export default function ProjectsPage() {
-	const { resolvedTheme } = useTheme();
 	const [projectStats, setProjectStats] = useState<ProjectStats[]>([]);
-	const [mounted, setMounted] = useState(false);
-	const [loading, setLoading] = useState(true);
+	const [mounted, setMounted] = useState<boolean>(false);
+	const [loading, setLoading] = useState<boolean>(true);
 
 	useEffect(() => {
 		setMounted(true);
@@ -183,25 +180,6 @@ export default function ProjectsPage() {
 									</div>
 								</div>
 							</div>
-
-							{/* Categories */}
-							<div className="mt-8 flex flex-wrap items-center gap-2">
-								<Badge className="border-0 bg-gradient-to-r from-emerald-500 to-teal-500 px-3 py-1 text-white hover:from-emerald-600 hover:to-teal-600 dark:from-emerald-600 dark:to-teal-700 dark:hover:from-emerald-500 dark:hover:to-teal-600">
-									<span className="flex items-center">
-										<span className="mr-1.5 h-1.5 w-1.5 rounded-full bg-white opacity-80"></span>
-										{projects.length} Projects
-									</span>
-								</Badge>
-								<Badge className="border-0 bg-gradient-to-r from-indigo-500 to-blue-500 px-3 py-1 text-white hover:from-indigo-600 hover:to-blue-600 dark:from-indigo-600 dark:to-blue-700 dark:hover:from-indigo-500 dark:hover:to-blue-600">
-									Full Stack
-								</Badge>
-								<Badge className="border-0 bg-gradient-to-r from-purple-500 to-pink-500 px-3 py-1 text-white hover:from-purple-600 hover:to-pink-600 dark:from-purple-600 dark:to-pink-700 dark:hover:from-purple-500 dark:hover:to-pink-600">
-									Open Source
-								</Badge>
-								<Badge className="border-0 bg-gradient-to-r from-orange-500 to-amber-500 px-3 py-1 text-white hover:from-orange-600 hover:to-amber-600 dark:from-orange-600 dark:to-amber-700 dark:hover:from-orange-500 dark:hover:to-amber-600">
-									Web Development
-								</Badge>
-							</div>
 						</div>
 					</div>
 				</header>
@@ -234,7 +212,7 @@ export default function ProjectsPage() {
 						) : (
 							<ul className="relative z-10 divide-y-2 divide-gray-300 dark:divide-zinc-800">
 								{projects.map((project, index) => (
-									<li key={index}>
+									<li key={project.title}>
 										<ProjectCard
 											project={project}
 											projectStats={projectStats[index]}

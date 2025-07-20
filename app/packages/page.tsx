@@ -12,17 +12,9 @@ import { PackageCard } from "@/components/custom/packages/components/PackageCard
 import { ModeToggle } from "@/components/mode-toogle";
 import { Button } from "@/components/ui/button";
 import packages from "@/data/packages.data";
-import { BookOpen, ExternalLink, Home } from "lucide-react";
+import { Home } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-
 export default function PackagesPage() {
-	const [mounted, setMounted] = useState(false);
-
-	useEffect(() => {
-		setMounted(true);
-	}, []);
-
 	return (
 		<div className="from-background relative min-h-screen w-full overflow-hidden bg-linear-to-b to-purple-50/20 dark:to-purple-950/10">
 			{/* Navigation */}
@@ -52,36 +44,6 @@ export default function PackagesPage() {
 			<main className="relative z-10 container mx-auto max-w-7xl px-4 py-6 sm:px-6 md:py-12">
 				{/* Hero Section */}
 				<HeroSection packages={packages} />
-
-				{/* Documentation Coming Soon Banner */}
-				<div className="mb-10 rounded-lg border-2 border-indigo-200 bg-linear-to-r from-indigo-50 to-purple-50 p-4 shadow-xs dark:border-indigo-800/50 dark:from-indigo-900/30 dark:to-purple-900/30">
-					<div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-						<div className="flex items-center gap-3">
-							<div className="rounded-full bg-indigo-100 p-2 dark:bg-indigo-900/50">
-								<BookOpen className="h-5 w-5 text-indigo-500 dark:text-indigo-300" />
-							</div>
-							<div>
-								<h3 className="text-sm font-medium text-indigo-700 dark:text-indigo-300">
-									Detailed documentation coming soon!
-								</h3>
-								<p className="text-xs text-indigo-600/70 dark:text-indigo-400/70">
-									Comprehensive guides, API references, and examples will be available.
-								</p>
-							</div>
-						</div>
-						<Button
-							asChild
-							variant="default"
-							size="sm"
-							className="bg-indigo-500 text-white shadow-xs transition-all duration-300 hover:bg-indigo-600 hover:shadow-md"
-						>
-							<Link href="https://htpkgs.info" target="_blank" rel="noopener noreferrer">
-								Visit htpkgs.info
-								<ExternalLink className="ml-1.5 h-3.5 w-3.5" />
-							</Link>
-						</Button>
-					</div>
-				</div>
 
 				{/* Packages Grid */}
 				<div className="mb-12 grid grid-cols-1 gap-6 md:grid-cols-2">

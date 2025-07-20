@@ -6,8 +6,8 @@
  * - Total downloads
  * - Number of technologies used
  */
-import { Package } from "@/data/packages.data";
-import { Code, Download, PackageIcon } from "lucide-react";
+import type { Package } from "@/data/packages.data";
+import { Download, PackageIcon } from "lucide-react";
 
 interface PackageStatsProps {
 	packages: Package[];
@@ -19,9 +19,6 @@ export function PackageStats({ packages }: PackageStatsProps) {
 		(total: number, pkg: Package) => total + (parseInt(pkg.downloads || "0") || 0),
 		0,
 	);
-
-	// Calculate unique technologies
-	const uniqueTechnologies = Array.from(new Set(packages.flatMap((pkg) => pkg.tags || []))).length;
 
 	return (
 		<div className="grid grid-cols-2 gap-2 pt-2 sm:grid-cols-3 sm:gap-3">
@@ -43,17 +40,6 @@ export function PackageStats({ packages }: PackageStatsProps) {
 					Total Downloads
 				</div>
 				<div className="text-2xl font-bold text-blue-800 dark:text-blue-200">{totalDownloads}</div>
-			</div>
-
-			{/* Technologies */}
-			<div className="col-span-1 rounded-lg border border-amber-200/50 bg-linear-to-br from-amber-50 to-orange-50 p-3 shadow-xs dark:border-amber-600/50 dark:from-amber-900/30 dark:to-orange-900/30">
-				<div className="flex items-center gap-2 text-sm font-medium text-amber-600 dark:text-amber-300">
-					<Code className="h-4 w-4" />
-					Technologies
-				</div>
-				<div className="text-2xl font-bold text-amber-800 dark:text-amber-200">
-					{uniqueTechnologies}
-				</div>
 			</div>
 		</div>
 	);

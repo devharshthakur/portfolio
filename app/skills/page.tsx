@@ -11,18 +11,10 @@
 import { SkillRow } from "@/components/custom/skills/components/SkillRow";
 import { ModeToggle } from "@/components/mode-toogle";
 import { Button } from "@/components/ui/button";
-import skills, { Skill, SkillCategory, skillCategories } from "@/data/skills.data";
+import skills, { type Skill, type SkillCategory, skillCategories } from "@/data/skills.data";
 import { Award, BookOpen, FolderTree, Hammer, Home, Layers } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-
 export default function SkillsPage() {
-	const [mounted, setMounted] = useState(false);
-
-	useEffect(() => {
-		setMounted(true);
-	}, []);
-
 	// Group skills by category
 	const skillsByCategory = skills.reduce<Record<SkillCategory, Skill[]>>(
 		(acc, skill) => {

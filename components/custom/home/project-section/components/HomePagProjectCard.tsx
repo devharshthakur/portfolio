@@ -10,9 +10,9 @@ type HomePageProjectCardProps = {
 
 export function HomePageProjectCard({ project }: HomePageProjectCardProps) {
 	return (
-		<div className="flex flex-col overflow-hidden rounded-lg border-2 border-emerald-300/80 bg-white shadow-md transition-all duration-300 hover:border-emerald-400 hover:shadow-xl dark:border-emerald-700/80 dark:bg-emerald-900/40 dark:hover:border-emerald-600">
+		<div className="flex flex-col overflow-hidden rounded-lg border-2 border-emerald-300/80 shadow-sm transition-all duration-300 hover:border-emerald-400 hover:shadow-xl dark:border-emerald-700/80 dark:bg-emerald-900/40 dark:hover:border-emerald-600">
 			{/* Header section - lighter emerald */}
-			<div className="flex items-center justify-between border-b border-emerald-200/80 bg-emerald-100/60 p-3 dark:border-emerald-700/60 dark:bg-emerald-800/50">
+			<div className="flex justify-between border-b border-emerald-200/80 bg-emerald-100/60 p-3 dark:border-emerald-700/60 dark:bg-emerald-800/50">
 				<h3 className="font-mono text-xl font-semibold tracking-tight text-emerald-900 dark:text-emerald-100">
 					{project.title}
 				</h3>
@@ -20,10 +20,7 @@ export function HomePageProjectCard({ project }: HomePageProjectCardProps) {
 
 			{/* Content section - darker emerald */}
 			<div className="h-[180px] overflow-auto bg-white/90 p-3 dark:bg-emerald-900/30">
-				<div className="space-y-2">
-					<h4 className="font-mono text-lg font-semibold tracking-tight text-emerald-900 dark:text-emerald-100">
-						{project.title}
-					</h4>
+				<div className="mt-2 flex flex-col space-y-2">
 					<p className="font-mono text-sm leading-relaxed text-emerald-800 dark:text-emerald-200">
 						{project.description}
 					</p>
