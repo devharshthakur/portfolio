@@ -27,23 +27,18 @@ interface ProjectStats {
 
 export default function ProjectsPage() {
 	const [projectStats, setProjectStats] = useState<ProjectStats[]>([]);
-	const [mounted, setMounted] = useState<boolean>(false);
 	const [loading, setLoading] = useState<boolean>(true);
 
 	useEffect(() => {
-		setMounted(true);
-		const loadStats = () => {
+		if (projectStats.length === 0) {
 			const stats = projects.map(() => ({
 				stars: Math.floor(Math.random() * 50),
 				forks: Math.floor(Math.random() * 20),
 			}));
 			setProjectStats(stats);
 			setLoading(false);
-		};
-		// Small delay to ensure DOM is ready
-		const timer = setTimeout(loadStats, 300);
-		return () => clearTimeout(timer);
-	}, []);
+		}
+	}, [projectStats.length]);
 
 	// Calculate total stars and forks for stats display
 	const totalStars = projectStats.reduce((acc, stat) => acc + stat.stars, 0);
@@ -110,71 +105,70 @@ export default function ProjectsPage() {
 								{/* Stats cards */}
 								<div className="grid w-full grid-cols-2 gap-3 md:w-auto md:min-w-[280px] md:grid-cols-2">
 									<div className="rounded-xl border border-emerald-100 bg-gradient-to-br from-emerald-50 to-white p-4 shadow-sm dark:border-emerald-800/50 dark:from-emerald-900/30 dark:to-zinc-900">
-										<div className="flex items-start justify-between">
+										<div className="flex items-center gap-3">
+											<div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100 dark:bg-emerald-800/50">
+												<Building2 className="h-5 w-5 text-emerald-600 dark:text-emerald-300" />
+											</div>
 											<div>
-												<p className="mb-1 text-3xl font-bold text-emerald-600 dark:text-emerald-400">
+												<p className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">
 													{projects.length}
 												</p>
 												<span className="text-xs font-medium text-gray-500 dark:text-gray-400">
 													Total Projects
 												</span>
 											</div>
-											<div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100 dark:bg-emerald-800/50">
-												<Building2 className="h-5 w-5 text-emerald-600 dark:text-emerald-300" />
-											</div>
 										</div>
 									</div>
 
 									<div className="rounded-xl border border-indigo-100 bg-gradient-to-br from-indigo-50 to-white p-4 shadow-sm dark:border-indigo-800/50 dark:from-indigo-900/30 dark:to-zinc-900">
-										<div className="flex items-start justify-between">
+										<div className="flex items-center gap-3">
+											<div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-100 dark:bg-indigo-800/50">
+												<Star className="h-5 w-5 text-indigo-600 dark:text-indigo-300" />
+											</div>
 											<div>
-												<p className="mb-1 text-3xl font-bold text-indigo-600 dark:text-indigo-400">
+												<p className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">
 													{totalStars}
 												</p>
 												<span className="text-xs font-medium text-gray-500 dark:text-gray-400">
 													GitHub Stars
 												</span>
 											</div>
-											<div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-100 dark:bg-indigo-800/50">
-												<Star className="h-5 w-5 text-indigo-600 dark:text-indigo-300" />
-											</div>
 										</div>
 									</div>
 
 									<div className="rounded-xl border border-cyan-100 bg-gradient-to-br from-cyan-50 to-white p-4 shadow-sm dark:border-cyan-800/50 dark:from-cyan-900/30 dark:to-zinc-900">
-										<div className="flex items-start justify-between">
+										<div className="flex items-center gap-3">
+											<div className="flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-100 dark:bg-cyan-800/50">
+												<GitFork className="h-5 w-5 text-cyan-600 dark:text-cyan-300" />
+											</div>
 											<div>
-												<p className="mb-1 text-3xl font-bold text-cyan-600 dark:text-cyan-400">
+												<p className="text-3xl font-bold text-cyan-600 dark:text-cyan-400">
 													{totalForks}
 												</p>
 												<span className="text-xs font-medium text-gray-500 dark:text-gray-400">
 													GitHub Forks
 												</span>
 											</div>
-											<div className="flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-100 dark:bg-cyan-800/50">
-												<GitFork className="h-5 w-5 text-cyan-600 dark:text-cyan-300" />
-											</div>
 										</div>
 									</div>
 
 									<div className="rounded-xl border border-amber-100 bg-gradient-to-br from-amber-50 to-white p-4 shadow-sm dark:border-amber-800/50 dark:from-amber-900/30 dark:to-zinc-900">
-										<div className="flex items-start justify-between">
+										<div className="flex items-center gap-3">
+											<div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-100/80 dark:bg-amber-800/50">
+												<FaGithub className="h-6 w-6 text-amber-600 dark:text-amber-300" />
+											</div>
 											<div>
 												<a
 													href="https://github.com/devharshthakur"
 													target="_blank"
 													rel="noopener noreferrer"
-													className="mt-1 flex items-center text-sm font-medium text-amber-600 transition-colors hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300"
+													className="text-sm font-medium text-amber-600 transition-colors hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300"
 												>
 													View GitHub
-													<ArrowRight className="mr-2 h-3.5 w-3.5" />
 												</a>
 												<span className="text-xs font-medium text-gray-500 dark:text-gray-400">
 													devharshthakur
 												</span>
-											</div>
-											<div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-100 dark:bg-amber-800/50">
-												<FaGithub className="h-5 w-5 text-amber-600 dark:text-amber-300" />
 											</div>
 										</div>
 									</div>
