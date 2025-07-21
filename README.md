@@ -167,17 +167,17 @@ pnpm start
 
 ## 🌟 Features
 
-- **Responsive Design**: Optimized for devices of all sizes
-- **Dark/Light Mode**: Toggle between themes for better user experience
-- **Dynamic Project Display**: Projects displayed with detailed information
-- **Skills Showcase**: Detailed skills section with proficiency levels and experience
-- **NPM Packages Gallery**: Interactive display of published npm packages with installation commands
-- **Contact Form**: Direct messaging functionality
-- **Blog Section**: Share your thoughts and insights
-- **CV/Resume Download**: Easy access to your professional resume
-- **SEO Optimized**: Improved search engine visibility
-- **Timeline Visualization**: Visual representation of package publication and update history
-- **Copy-to-Clipboard**: One-click copying of npm installation commands
+- [x] **Responsive Design**: Optimized for devices of all sizes
+- [x] **Dark/Light Mode**: Toggle between themes for better user experience
+- [x] **Dynamic Project Display**: Projects displayed with detailed information
+- [x] **Skills Showcase**: Detailed skills section with proficiency levels and experience
+- [x] **NPM Packages Gallery**: Interactive display of published npm packages with installation commands
+- [x] **Contact Form**: Direct messaging functionality
+- [x] **Blog Section**: Share your thoughts and insights
+- [x] **CV/Resume Download**: Easy access to your professional resume
+- [x] **SEO Optimized**: Improved search engine visibility
+- [x] **Timeline Visualization**: Visual representation of package publication and update history
+- [x] **Copy-to-Clipboard**: One-click copying of npm installation commands
 
 ## 📫 Contact
 

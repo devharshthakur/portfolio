@@ -10,12 +10,11 @@
 "use client";
 import { NoteDialog } from "@/components/custom/projects/components/dailogs/project-section-home-dailog";
 import { ProjectCard } from "@/components/custom/projects/components/project-card";
-import HeaderPattern from "@/components/custom/projects/components/svgs/HeaderPattern";
 import ProjectGlow from "@/components/custom/projects/components/svgs/ProjectGlow";
 import { ModeToggle } from "@/components/mode-toogle";
 import { Button } from "@/components/ui/button";
 import projects from "@/data/projects.data";
-import { ArrowRight, Building2, GitFork, Home, Loader2, Star } from "lucide-react";
+import { Building2, GitFork, Home, Loader2, Star } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaGithub } from "react-icons/fa";
@@ -70,11 +69,6 @@ export default function ProjectsPage() {
 				{/* Modern Header */}
 				<header className="mb-8 md:mb-16">
 					<div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-md dark:border-zinc-800 dark:bg-zinc-900">
-						{/* Background pattern */}
-						<div className="absolute inset-0 opacity-5 dark:opacity-10">
-							<HeaderPattern />
-						</div>
-
 						<div className="relative z-10 flex flex-col p-8 md:p-10">
 							{/* Title and description */}
 							<div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
@@ -103,13 +97,14 @@ export default function ProjectsPage() {
 								</div>
 
 								{/* Stats cards */}
+								{/* Project Stats */}
 								<div className="grid w-full grid-cols-2 gap-3 md:w-auto md:min-w-[280px] md:grid-cols-2">
 									<div className="rounded-xl border border-emerald-100 bg-gradient-to-br from-emerald-50 to-white p-4 shadow-sm dark:border-emerald-800/50 dark:from-emerald-900/30 dark:to-zinc-900">
-										<div className="flex items-center gap-3">
+										<div className="mt-2 flex items-center gap-3">
 											<div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100 dark:bg-emerald-800/50">
 												<Building2 className="h-5 w-5 text-emerald-600 dark:text-emerald-300" />
 											</div>
-											<div>
+											<div className="flex items-center gap-2">
 												<p className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">
 													{projects.length}
 												</p>
@@ -119,13 +114,13 @@ export default function ProjectsPage() {
 											</div>
 										</div>
 									</div>
-
+									{/* Github Stars Stats */}
 									<div className="rounded-xl border border-indigo-100 bg-gradient-to-br from-indigo-50 to-white p-4 shadow-sm dark:border-indigo-800/50 dark:from-indigo-900/30 dark:to-zinc-900">
-										<div className="flex items-center gap-3">
+										<div className="flex items-center gap-3 text-left">
 											<div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-100 dark:bg-indigo-800/50">
 												<Star className="h-5 w-5 text-indigo-600 dark:text-indigo-300" />
 											</div>
-											<div>
+											<div className="flex flex-col gap-0.5 leading-tight">
 												<p className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">
 													{totalStars}
 												</p>
@@ -135,7 +130,7 @@ export default function ProjectsPage() {
 											</div>
 										</div>
 									</div>
-
+									{/* Github Fork Stats */}
 									<div className="rounded-xl border border-cyan-100 bg-gradient-to-br from-cyan-50 to-white p-4 shadow-sm dark:border-cyan-800/50 dark:from-cyan-900/30 dark:to-zinc-900">
 										<div className="flex items-center gap-3">
 											<div className="flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-100 dark:bg-cyan-800/50">
@@ -152,12 +147,13 @@ export default function ProjectsPage() {
 										</div>
 									</div>
 
+									{/* Github Stats */}
 									<div className="rounded-xl border border-amber-100 bg-gradient-to-br from-amber-50 to-white p-4 shadow-sm dark:border-amber-800/50 dark:from-amber-900/30 dark:to-zinc-900">
-										<div className="flex items-center gap-3">
+										<div className="mt-2 flex items-center gap-3">
 											<div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-100/80 dark:bg-amber-800/50">
 												<FaGithub className="h-6 w-6 text-amber-600 dark:text-amber-300" />
 											</div>
-											<div>
+											<div className="flex flex-col">
 												<a
 													href="https://github.com/devharshthakur"
 													target="_blank"

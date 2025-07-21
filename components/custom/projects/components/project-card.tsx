@@ -25,18 +25,8 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import type { Project } from "@/data/projects.data";
-import {
-	ArrowUpRight,
-	Building2,
-	Calendar,
-	Clock,
-	ExternalLink,
-	GitFork,
-	Star,
-	Terminal,
-} from "lucide-react";
+import { Building2, Calendar, Clock, ExternalLink, GitFork, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -46,7 +36,8 @@ import {
 } from "../util/project-display-utils";
 import { getTechColor } from "../util/tech-color-utils";
 import { FaGithub } from "react-icons/fa";
-
+import { BsCpu } from "react-icons/bs";
+import { IoIosLink } from "react-icons/io";
 interface ProjectStats {
 	stars: number;
 	forks: number;
@@ -127,7 +118,7 @@ export function ProjectCard({
 											rel="noopener noreferrer"
 											className="flex items-center text-emerald-700 transition-colors hover:text-emerald-900 dark:text-emerald-300 dark:hover:text-emerald-100"
 										>
-											<FaGithub className="mr-1.5 h-4 w-4" />
+											<FaGithub className="mr-1 h-4 w-4" />
 											<span className="text-xs font-medium">GitHub</span>
 										</a>
 										<div className="h-4 w-px bg-emerald-200 dark:bg-emerald-700"></div>
@@ -188,7 +179,7 @@ export function ProjectCard({
 										className="border-2 border-emerald-300 bg-emerald-50 font-medium text-emerald-700 shadow-sm hover:bg-emerald-100 dark:border-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300 dark:hover:bg-emerald-800/40"
 									>
 										<Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-											<Terminal className="mr-1.5 h-4 w-4" />
+											<BsCpu className="mr-1.5 h-4 w-4" />
 											Run Locally
 										</Link>
 									</Button>
@@ -200,8 +191,17 @@ export function ProjectCard({
 										className="border-emerald-300 font-medium text-emerald-700 shadow-sm hover:bg-emerald-50 dark:border-emerald-700 dark:text-emerald-300 dark:hover:bg-emerald-900/30"
 									>
 										<Link href={projectUrl} target="_blank" rel="noopener noreferrer">
-											{project.liveDemoUrl ? "View Demo" : "View Project"}
-											<ArrowUpRight className="ml-1.5 h-3.5 w-3.5" />
+											{project.liveDemoUrl !== "#" ? (
+												<>
+													<IoIosLink />
+													View Demo
+												</>
+											) : (
+												<>
+													<FaGithub className="mr-1.5 h-4 w-4" />
+													View Project
+												</>
+											)}
 										</Link>
 									</Button>
 								)}
@@ -231,57 +231,53 @@ export function ProjectCard({
 
 						{/* Long description (for large screens only) */}
 						<div className="hidden h-full w-96 xl:block">
-							<div className="relative flex h-full flex-col border-l-3 border-emerald-200 pl-4 dark:border-emerald-800">
-								<h4 className="mb-2 flex items-center text-base font-medium text-slate-800 dark:text-slate-100">
-									<span className="mr-2 h-2.5 w-2.5 rounded-full bg-emerald-500 dark:bg-emerald-400"></span>
+							<div className="relative flex h-full flex-col border-l border-emerald-200 pl-6 text-left dark:border-emerald-800">
+								<h4 className="mb-2 flex items-center font-medium text-slate-800 dark:text-slate-100">
 									About this project
 								</h4>
-								<ScrollArea className="min-h-[400px] flex-1 pr-4">
-									<div className="space-y-3 text-sm text-slate-600 dark:text-slate-400">
-										<p className="leading-relaxed">{project.longDescription}</p>
+								<div className="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+									<p className="leading-relaxed">{project.longDescription}</p>
 
-										{/* Project details */}
-										<div className="mt-4 rounded-lg border border-slate-200 bg-gradient-to-br from-gray-50 to-white p-4 shadow-sm dark:border-zinc-700/50 dark:from-zinc-900/80 dark:to-zinc-800/50">
-											<h5 className="mb-3 flex items-center font-medium text-slate-700 dark:text-slate-200">
-												<span className="mr-2 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900/50">
-													<Calendar className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
+									{/* Project details */}
+									<div className="mt-4 rounded-lg border border-slate-200 bg-gradient-to-br from-gray-50 to-white p-4 shadow-sm dark:border-zinc-700/50 dark:from-zinc-900/80 dark:to-zinc-800/50">
+										<h5 className="mb-3 flex items-center font-medium text-slate-700 dark:text-slate-200">
+											<span className="mr-2 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900/50">
+												<Calendar className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
+											</span>
+											Project Details
+										</h5>
+
+										<div className="grid grid-cols-1 gap-3">
+											<div className="group flex items-center rounded-md border border-slate-100 bg-white/80 p-2 transition-colors hover:bg-emerald-50/50 dark:border-zinc-700/80 dark:bg-zinc-800/80 dark:hover:bg-emerald-900/10">
+												<span className="mr-3 flex h-8 w-8 items-center justify-center rounded-md bg-blue-50 transition-colors group-hover:bg-blue-100 dark:bg-blue-900/20 dark:group-hover:bg-blue-900/30">
+													<Calendar className="h-4 w-4 text-blue-600 dark:text-blue-400" />
 												</span>
-												Project Details
-											</h5>
-
-											<div className="grid grid-cols-1 gap-3">
-												<div className="group flex items-center rounded-md border border-slate-100 bg-white/80 p-2 transition-colors hover:bg-emerald-50/50 dark:border-zinc-700/80 dark:bg-zinc-800/80 dark:hover:bg-emerald-900/10">
-													<span className="mr-3 flex h-8 w-8 items-center justify-center rounded-md bg-blue-50 transition-colors group-hover:bg-blue-100 dark:bg-blue-900/20 dark:group-hover:bg-blue-900/30">
-														<Calendar className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-													</span>
-													<div>
-														<p className="text-xs font-medium text-slate-500 dark:text-slate-400">
-															Release Date
-														</p>
-														<p className="text-sm font-medium text-slate-700 dark:text-slate-200">
-															{formatDate(project.date)}
-														</p>
-													</div>
+												<div>
+													<p className="text-xs font-medium text-slate-500 dark:text-slate-400">
+														Release Date
+													</p>
+													<p className="text-sm font-medium text-slate-700 dark:text-slate-200">
+														{formatDate(project.date)}
+													</p>
 												</div>
+											</div>
 
-												<div className="group flex items-center rounded-md border border-slate-100 bg-white/80 p-2 transition-colors hover:bg-emerald-50/50 dark:border-zinc-700/80 dark:bg-zinc-800/80 dark:hover:bg-emerald-900/10">
-													<span className="mr-3 flex h-8 w-8 items-center justify-center rounded-md bg-purple-50 transition-colors group-hover:bg-purple-100 dark:bg-purple-900/20 dark:group-hover:bg-purple-900/30">
-														<Clock className="h-4 w-4 text-purple-600 dark:text-purple-400" />
-													</span>
-													<div>
-														<p className="text-xs font-medium text-slate-500 dark:text-slate-400">
-															Development Time
-														</p>
-														<p className="text-sm font-medium text-slate-700 dark:text-slate-200">
-															{project.duration}
-														</p>
-													</div>
+											<div className="group flex items-center rounded-md border border-slate-100 bg-white/80 p-2 transition-colors hover:bg-emerald-50/50 dark:border-zinc-700/80 dark:bg-zinc-800/80 dark:hover:bg-emerald-900/10">
+												<span className="mr-3 flex h-8 w-8 items-center justify-center rounded-md bg-purple-50 transition-colors group-hover:bg-purple-100 dark:bg-purple-900/20 dark:group-hover:bg-purple-900/30">
+													<Clock className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+												</span>
+												<div>
+													<p className="text-xs font-medium text-slate-500 dark:text-slate-400">
+														Development Time
+													</p>
+													<p className="text-sm font-medium text-slate-700 dark:text-slate-200">
+														{project.duration}
+													</p>
 												</div>
 											</div>
 										</div>
 									</div>
-								</ScrollArea>
-								<div className="mt-4 h-0.5 w-full border-emerald-200 dark:border-emerald-800/60"></div>
+								</div>
 							</div>
 						</div>
 					</div>
