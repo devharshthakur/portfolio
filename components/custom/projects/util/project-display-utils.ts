@@ -11,11 +11,11 @@
  * @returns A formatted date string (e.g., "January 15, 2023")
  */
 export function formatDate(dateString: string): string {
-  return new Date(dateString).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
+	return new Date(dateString).toLocaleDateString("en-US", {
+		year: "numeric",
+		month: "long",
+		day: "numeric",
+	});
 }
 
 /**
@@ -26,7 +26,7 @@ export function formatDate(dateString: string): string {
  * @returns A boolean indicating whether to show the Run Locally button
  */
 export function shouldShowRunLocallyButton(isLocalProject: boolean, projectTitle: string): boolean {
-  return isLocalProject || projectTitle === 'Legal AI PDF';
+	return isLocalProject || projectTitle === "Legal AI PDF";
 }
 
 /**
@@ -37,8 +37,8 @@ export function shouldShowRunLocallyButton(isLocalProject: boolean, projectTitle
  * @returns The appropriate button text
  */
 export function getLinkButtonText(showRunLocally: boolean, hasLiveDemo: boolean): string {
-  if (showRunLocally) {
-    return 'View Code';
-  }
-  return hasLiveDemo ? 'View Demo' : 'View Project';
+	if (showRunLocally) {
+		return "View Code";
+	}
+	return hasLiveDemo ? "View Demo" : "View Project";
 }

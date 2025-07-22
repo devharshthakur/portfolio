@@ -8,13 +8,20 @@ Welcome to my personal developer portfolio! This project showcases my skills, pr
 
 ## 📖 Table of Contents
 
-- [✨ About](#-about)
-- [🛠️ Tech Stack](#️-tech-stack)
-- [📂 Project Structure](#-project-structure)
-- [⚙️ Getting Started](#️-getting-started)
-- [🌟 Features](#-features)
-- [📫 Contact](#-contact)
-- [📜 License](#-license)
+- [🚀 My Personal Developer Portfolio](#-my-personal-developer-portfolio)
+  - [📖 Table of Contents](#-table-of-contents)
+  - [✨ About](#-about)
+    - [🔥 Key Projects](#-key-projects)
+    - [📦 Open Source NPM Packages](#-open-source-npm-packages)
+  - [🛠️ Tech Stack](#️-tech-stack)
+  - [📂 Project Structure](#-project-structure)
+  - [⚙️ Getting Started](#️-getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Production Build](#production-build)
+  - [🌟 Features](#-features)
+  - [📫 Contact](#-contact)
+  - [📜 License](#-license)
 
 ## ✨ About
 
@@ -115,7 +122,7 @@ portfolio/
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v18 or higher)
+- [Node.js](https://nodejs.org/) (v22 or higher)
 - [pnpm](https://pnpm.io/) - Fast, disk space efficient package manager
 
 ### Installation
@@ -123,7 +130,7 @@ portfolio/
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/yourusername/portfolio.git
+   git clone https://github.com/devharshthakur/portfolio.git
    cd portfolio
    ```
 
@@ -160,17 +167,17 @@ pnpm start
 
 ## 🌟 Features
 
-- **Responsive Design**: Optimized for devices of all sizes
-- **Dark/Light Mode**: Toggle between themes for better user experience
-- **Dynamic Project Display**: Projects displayed with detailed information
-- **Skills Showcase**: Detailed skills section with proficiency levels and experience
-- **NPM Packages Gallery**: Interactive display of published npm packages with installation commands
-- **Contact Form**: Direct messaging functionality
-- **Blog Section**: Share your thoughts and insights
-- **CV/Resume Download**: Easy access to your professional resume
-- **SEO Optimized**: Improved search engine visibility
-- **Timeline Visualization**: Visual representation of package publication and update history
-- **Copy-to-Clipboard**: One-click copying of npm installation commands
+- [x] **Responsive Design**: Optimized for devices of all sizes
+- [x] **Dark/Light Mode**: Toggle between themes for better user experience
+- [x] **Dynamic Project Display**: Projects displayed with detailed information
+- [x] **Skills Showcase**: Detailed skills section with proficiency levels and experience
+- [x] **NPM Packages Gallery**: Interactive display of published npm packages with installation commands
+- [x] **Contact Form**: Direct messaging functionality
+- [x] **Blog Section**: Share your thoughts and insights
+- [x] **CV/Resume Download**: Easy access to your professional resume
+- [x] **SEO Optimized**: Improved search engine visibility
+- [x] **Timeline Visualization**: Visual representation of package publication and update history
+- [x] **Copy-to-Clipboard**: One-click copying of npm installation commands
 
 ## 📫 Contact
 
@@ -181,21 +188,3 @@ pnpm start
 ## 📜 License
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
-
----
-
-<p align="center">
-  Made using Next.js and TypeScript
-</p>
-
----
-
-## 📊 Project Stats
-
-| Metric     | Value                                                                                                                                                        |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Stars**  | ⭐ [![GitHub stars](https://img.shields.io/github/stars/devharshthakur/portfolio?style=social)](https://github.com/devharshthakur/portfolio/stargazers)      |
-| **Forks**  | 🍴 [![GitHub forks](https://img.shields.io/github/forks/devharshthakur/portfolio?style=social)](https://github.com/devharshthakur/portfolio/network/members) |
-| **Issues** | ❗ [![GitHub issues](https://img.shields.io/github/issues/devharshthakur/portfolio)](https://github.com/devharshthakur/portfolio/issues)                     |
-
----

@@ -1,11 +1,11 @@
-import type { Project } from '@/data/projects.data';
-import { ExternalLink, Github } from 'lucide-react';
-import { JSX } from 'react';
+import type { Project } from "@/data/projects.data";
+import { ExternalLink, Github } from "lucide-react";
+import { JSX } from "react";
 
 interface ProjectLinkIconProps {
-  project: Project;
-  size?: 'sm' | 'md' | 'lg';
-  className?: string;
+	project: Project;
+	size?: "sm" | "md" | "lg";
+	className?: string;
 }
 
 /**
@@ -16,20 +16,31 @@ interface ProjectLinkIconProps {
  * @param {ProjectLinkIconProps} props - The component props including project details and styling options
  * @returns {JSX.Element} The appropriate icon component
  */
-export function ProjectLinkIcon({ project, size = 'sm', className = '' }: ProjectLinkIconProps): JSX.Element {
-  const hasExternalDemo = project.liveDemoUrl && project.liveDemoUrl !== 'local' && project.liveDemoUrl !== '#';
+export function ProjectLinkIcon({
+	project,
+	size = "sm",
+	className = "",
+}: ProjectLinkIconProps): JSX.Element {
+	const hasExternalDemo =
+		project.liveDemoUrl && project.liveDemoUrl !== "local" && project.liveDemoUrl !== "#";
 
-  const sizeClasses = {
-    sm: 'h-3 w-3',
-    md: 'h-4 w-4',
-    lg: 'h-5 w-5',
-  };
+	const sizeClasses = {
+		sm: "h-3 w-3",
+		md: "h-4 w-4",
+		lg: "h-5 w-5",
+	};
 
-  const iconClassName = `${sizeClasses[size]} ${
-    hasExternalDemo ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-700 dark:text-slate-300'
-  } ${className}`;
+	const iconClassName = `${sizeClasses[size]} ${
+		hasExternalDemo
+			? "text-emerald-600 dark:text-emerald-400"
+			: "text-slate-700 dark:text-slate-300"
+	} ${className}`;
 
-  return hasExternalDemo ? <ExternalLink className={iconClassName} /> : <Github className={iconClassName} />;
+	return hasExternalDemo ? (
+		<ExternalLink className={iconClassName} />
+	) : (
+		<Github className={iconClassName} />
+	);
 }
 
 /**
@@ -38,11 +49,16 @@ export function ProjectLinkIcon({ project, size = 'sm', className = '' }: Projec
  * @param {ProjectLinkIconProps} props - The component props
  * @returns {JSX.Element} A styled hover indicator with the appropriate icon
  */
-export function ProjectLinkHoverIndicator({ project, size = 'lg', className = '' }: ProjectLinkIconProps): JSX.Element {
-  return (
-    <div
-      className={`translate-y-4 transform rounded-full bg-white/90 p-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 dark:bg-slate-800/90 ${className}`}>
-      <ProjectLinkIcon project={project} size={size} />
-    </div>
-  );
+export function ProjectLinkHoverIndicator({
+	project,
+	size = "lg",
+	className = "",
+}: ProjectLinkIconProps): JSX.Element {
+	return (
+		<div
+			className={`translate-y-4 transform rounded-full bg-white/90 p-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 dark:bg-slate-800/90 ${className}`}
+		>
+			<ProjectLinkIcon project={project} size={size} />
+		</div>
+	);
 }

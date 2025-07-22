@@ -1,10 +1,10 @@
-import { getTechTagColors } from '@/components/custom/home/project-section/lib/tech-colors';
-import { Badge } from '@/components/ui/badge';
-import { cn } from '@/lib/utils';
+import { getTechTagColors } from "@/components/custom/home/project-section/lib/tech-colors";
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 
 interface TechBadgeProps {
-  tech: string;
-  className?: string;
+	tech: string;
+	className?: string;
 }
 
 /**
@@ -15,20 +15,21 @@ interface TechBadgeProps {
  * @param className - Optional additional CSS classes
  */
 export function TechBadge({ tech, className }: TechBadgeProps) {
-  const colors = getTechTagColors(tech);
+	const colors = getTechTagColors(tech);
 
-  return (
-    <Badge
-      variant="secondary"
-      className={cn(
-        'xs:text-xs border px-1.5 py-0.5 font-mono text-[10px] sm:px-2',
-        colors.background,
-        colors.text,
-        colors.border,
-        colors.hover,
-        className,
-      )}>
-      {tech}
-    </Badge>
-  );
+	return (
+		<Badge
+			variant="secondary"
+			className={cn(
+				"xs:text-xs border px-1.5 py-0.5 font-mono text-[10px] sm:px-2",
+				colors.background,
+				colors.text,
+				colors.border,
+				colors.hover,
+				className,
+			)}
+		>
+			{tech}
+		</Badge>
+	);
 }
