@@ -17,14 +17,7 @@ import {
 	User,
 } from "lucide-react";
 import Link from "next/link";
-import {
-	FaDownload,
-	FaGithub,
-	FaGraduationCap,
-	FaLinkedin,
-	FaReact,
-	FaServer,
-} from "react-icons/fa";
+import { FaDownload, FaGithub, FaGraduationCap, FaLinkedin } from "react-icons/fa";
 import { SiRust, SiVitest } from "react-icons/si";
 
 export default function AboutPage() {
@@ -299,74 +292,6 @@ export default function AboutPage() {
 												As a fresher, I&apos;m always eager to learn and grow in the field of web
 												development.
 											</p>
-										</div>
-									</div>
-								</div>
-							</section>
-
-							{/* Skills Section */}
-							<section className="grid grid-cols-1 gap-6 md:grid-cols-2">
-								{/* Frontend Skills */}
-								<div className="overflow-hidden rounded-xl border-2 border-green-200/80 bg-white/90 shadow-md backdrop-blur-sm transition-all duration-300 hover:border-green-300/80 hover:shadow-lg dark:border-green-800/40 dark:bg-slate-900/90 dark:hover:border-green-700/40">
-									<div className="p-6">
-										<div className="mb-4 flex items-center gap-3">
-											<div className="rounded-xl border border-green-200 bg-green-100 p-2.5 shadow-sm dark:border-green-800/40 dark:bg-green-900/40">
-												<FaReact className="h-5 w-5 text-green-600 dark:text-green-400" />
-											</div>
-											<h3 className="text-lg font-semibold tracking-tight text-green-700 dark:text-green-400">
-												Frontend Technologies
-											</h3>
-										</div>
-
-										<div className="flex flex-wrap gap-2">
-											{[
-												"React",
-												"Next.js",
-												"TypeScript",
-												"TailwindCSS",
-												"HTML/CSS",
-												"Shadcn UI",
-											].map((skill) => (
-												<Badge
-													key={skill}
-													className="border-2 border-green-200 bg-green-50 px-2.5 py-1 font-mono text-green-700 shadow-sm hover:bg-green-100 dark:border-green-700/60 dark:bg-green-900/30 dark:text-green-300 dark:hover:bg-green-800/50"
-												>
-													{skill}
-												</Badge>
-											))}
-										</div>
-									</div>
-								</div>
-
-								{/* Backend Skills */}
-								<div className="overflow-hidden rounded-xl border-2 border-purple-200/80 bg-white/90 shadow-md backdrop-blur-sm transition-all duration-300 hover:border-purple-300/80 hover:shadow-lg dark:border-purple-800/40 dark:bg-slate-900/90 dark:hover:border-purple-700/40">
-									<div className="p-6">
-										<div className="mb-4 flex items-center gap-3">
-											<div className="rounded-xl border border-purple-200 bg-purple-100 p-2.5 shadow-sm dark:border-purple-800/40 dark:bg-purple-900/40">
-												<FaServer className="h-5 w-5 text-purple-600 dark:text-purple-400" />
-											</div>
-											<h3 className="text-lg font-semibold tracking-tight text-purple-700 dark:text-purple-400">
-												Backend Technologies
-											</h3>
-										</div>
-
-										<div className="flex flex-wrap gap-2">
-											{[
-												"Node.js",
-												"Express",
-												"MongoDB",
-												"Prisma",
-												"PostgreSQL",
-												"REST API",
-												"Auth.js",
-											].map((skill) => (
-												<Badge
-													key={skill}
-													className="border-2 border-purple-200 bg-purple-50 px-2.5 py-1 font-mono text-purple-700 shadow-sm hover:bg-purple-100 dark:border-purple-700/60 dark:bg-purple-900/30 dark:text-purple-300 dark:hover:bg-purple-800/50"
-												>
-													{skill}
-												</Badge>
-											))}
 										</div>
 									</div>
 								</div>

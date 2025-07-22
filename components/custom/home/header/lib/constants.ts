@@ -3,10 +3,10 @@
  * @description Contains constants for navigation, color schemes, and other UI configuration
  */
 
-import { FileText, GitPullRequest, History } from "lucide-react";
+import { FileText, GitPullRequest } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { MdContactPage } from "react-icons/md";
-import { ColorScheme, ColorSchemeStyles, NavItem } from "../types/types";
+import type { ColorScheme, ColorSchemeStyles, NavItem } from "../types/types";
 
 /**
  * Navigation items displayed on the left side of the header
@@ -40,7 +40,7 @@ export const HEADER_RIGHT_NAV: NavItem[] = [
 		colorScheme: "blue",
 	},
 	{
-		href: "/blogs",
+		href: "https://www.devharshthakur.blog/",
 		label: "Blogs",
 		colorScheme: "indigo",
 	},
