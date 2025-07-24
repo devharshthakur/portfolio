@@ -1,9 +1,9 @@
 ---
 name: 🐛 Bug Report
 about: Create a report to help improve the portfolio template
-title: '[BUG] '
+title: "[BUG] "
 labels: bug
-assignees: ''
+assignees: ""
 ---
 
 ## 🐛 Bug Description

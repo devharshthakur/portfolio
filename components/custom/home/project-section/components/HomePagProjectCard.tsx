@@ -61,7 +61,7 @@ export function HomePageProjectCard({ project }: HomePageProjectCardProps) {
 						className="flex items-center gap-2 border-2 border-emerald-400/80 bg-emerald-50/70 font-mono text-sm tracking-tight text-emerald-600/90 shadow-sm hover:bg-emerald-100/70 dark:border-emerald-600/80 dark:bg-emerald-900/50 dark:text-emerald-400/90 dark:hover:bg-emerald-800/60"
 						onClick={() =>
 							alert(
-								"This project is not yet deployed. You can run it locally by following the steps in the README of this repository.",
+								"This project is not yet deployed. You can run it locally by following the steps in the README of this repository."
 							)
 						}
 					>

@@ -24,7 +24,7 @@ export default function SkillsPage() {
 			acc[skill.category].push(skill);
 			return acc;
 		},
-		{} as Record<SkillCategory, Skill[]>,
+		{} as Record<SkillCategory, Skill[]>
 	);
 
 	// Calculate stats

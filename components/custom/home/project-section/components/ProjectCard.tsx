@@ -54,7 +54,7 @@ export function ProjectCard(props: Project) {
 
 	const handleLocalDemo = () => {
 		alert(
-			"This project needs to be run locally. Please follow the instructions in the GitHub repository.",
+			"This project needs to be run locally. Please follow the instructions in the GitHub repository."
 		);
 	};
 

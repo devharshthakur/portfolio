@@ -17,7 +17,7 @@ export function PackageStats({ packages }: PackageStatsProps) {
 	// Calculate total downloads
 	const totalDownloads = packages.reduce(
 		(total: number, pkg: Package) => total + (parseInt(pkg.downloads || "0") || 0),
-		0,
+		0
 	);
 
 	return (

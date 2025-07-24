@@ -1,9 +1,9 @@
 ---
 name: 📚 Documentation
 about: Suggest improvements or report missing/unclear documentation
-title: '[DOCS] '
+title: "[DOCS] "
 labels: documentation
-assignees: ''
+assignees: ""
 ---
 
 ## 📚 Documentation Issue

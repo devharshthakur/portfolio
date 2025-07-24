@@ -32,5 +32,5 @@ export const Icons = {
 export type IconName = keyof typeof Icons;
 
 export const getIcon = (
-	name: IconName,
+	name: IconName
 ): ComponentType<{ className?: string; [key: string]: unknown }> => Icons[name];

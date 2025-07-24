@@ -26,7 +26,7 @@ export function TechBadge({ tech, className }: TechBadgeProps) {
 				colors.text,
 				colors.border,
 				colors.hover,
-				className,
+				className
 			)}
 		>
 			{tech}
