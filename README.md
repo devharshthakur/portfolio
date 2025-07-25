@@ -19,7 +19,6 @@ Welcome to my personal developer portfolio! This project showcases my skills, pr
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
     - [Production Build](#production-build)
-  - [🌟 Features](#-features)
   - [📫 Contact](#-contact)
   - [📜 License](#-license)
 
@@ -164,20 +163,6 @@ Visit [http://localhost:3000](http://localhost:3000) to view your portfolio.
 pnpm build
 pnpm start
 ```
-
-## 🌟 Features
-
-- [x] **Responsive Design**: Optimized for devices of all sizes
-- [x] **Dark/Light Mode**: Toggle between themes for better user experience
-- [x] **Dynamic Project Display**: Projects displayed with detailed information
-- [x] **Skills Showcase**: Detailed skills section with proficiency levels and experience
-- [x] **NPM Packages Gallery**: Interactive display of published npm packages with installation commands
-- [x] **Contact Form**: Direct messaging functionality
-- [x] **Blog Section**: Share your thoughts and insights
-- [x] **CV/Resume Download**: Easy access to your professional resume
-- [x] **SEO Optimized**: Improved search engine visibility
-- [x] **Timeline Visualization**: Visual representation of package publication and update history
-- [x] **Copy-to-Clipboard**: One-click copying of npm installation commands
 
 ## 📫 Contact
 
