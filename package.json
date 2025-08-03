@@ -11,6 +11,8 @@
 		"clean": "rimraf .next node_modules/.cache && find . -name '.DS_Store' -delete",
 		"clean:deep": "pnpm run clean && rimraf node_modules .turbo",
 		"clean:cache": "rimraf .next/cache",
+		"deploy:prod": "vercel --prod",
+		"deploy:prev": "vercel",
 		"prepare": "husky"
 	},
 	"dependencies": {
@@ -69,7 +71,6 @@
 		"zod": "^3.24.1"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.1.2",
 		"@eslint/eslintrc": "^3",
 		"@tailwindcss/postcss": "^4.1.5",
 		"@types/file-saver": "^2.0.7",
