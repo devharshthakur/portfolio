@@ -5,13 +5,13 @@ import { Card } from "@/components/ui/card";
 import { Home } from "lucide-react";
 import { TbFileCv } from "react-icons/tb";
 import Link from "next/link";
-import { DownloadButton } from "@/components/custom/cv/util/DownloadButton";
+import { DownloadButton } from "@/components/custom/cv/DownloadButton";
 
 export default function CvPage() {
 	return (
 		<div className="from-background relative min-h-screen w-full overflow-hidden bg-linear-to-b to-indigo-50/20 dark:to-indigo-950/10">
 			<div className="absolute top-4 right-4 z-50">
-				<ModeToggle />
+				<ModeToggle className="border-2" />
 			</div>
 
 			{/* Home Button */}
@@ -20,7 +20,7 @@ export default function CvPage() {
 					asChild
 					variant="outline"
 					size="icon"
-					className="border-indigo-300 text-indigo-700 hover:bg-indigo-100 dark:border-indigo-700 dark:text-indigo-400 dark:hover:bg-indigo-900/30"
+					className="border-2 border-indigo-500 text-indigo-700 hover:bg-indigo-100 dark:border-indigo-700 dark:text-indigo-400 dark:hover:bg-indigo-900/30"
 				>
 					<Link href="/">
 						<Home className="h-[1.2rem] w-[1.2rem] transition-all" />

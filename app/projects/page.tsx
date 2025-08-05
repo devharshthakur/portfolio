@@ -51,7 +51,7 @@ export default function ProjectsPage() {
 					asChild
 					variant="outline"
 					size="icon"
-					className="border-emerald-400 text-emerald-700 hover:bg-emerald-200 dark:border-emerald-700 dark:text-emerald-400 dark:hover:bg-emerald-900/30"
+					className="border-2 border-emerald-400 text-emerald-700 hover:bg-emerald-200 dark:border-emerald-700 dark:text-emerald-400 dark:hover:bg-emerald-900/30"
 				>
 					<Link href="/">
 						<Home className="h-[1.2rem] w-[1.2rem] transition-all" />
@@ -60,7 +60,7 @@ export default function ProjectsPage() {
 				</Button>
 
 				<ModeToggle
-					className="border-emerald-400 hover:bg-emerald-200 dark:border-emerald-700 dark:hover:bg-emerald-900/30"
+					className="border-2 border-emerald-400 dark:border-emerald-700 dark:hover:bg-emerald-900/30"
 					iconClassName="text-emerald-700 dark:text-emerald-400"
 				/>
 			</nav>
@@ -186,9 +186,6 @@ export default function ProjectsPage() {
 				</section>
 
 				<section className="relative mx-auto">
-					{/* Subtle glow effect */}
-					<ProjectGlow />
-
 					<article className="relative z-10 overflow-hidden rounded-xl border-2 border-gray-300 bg-white shadow-lg dark:border-gray-700 dark:bg-zinc-900">
 						{loading ? (
 							<div className="flex items-center justify-center py-20">

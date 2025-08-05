@@ -138,32 +138,32 @@ export function SkillRow({ skill, index }: SkillRowProps) {
 		if (hasDarkIcon) {
 			switch (skill.category) {
 				case "frontend":
-					return "bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-white dark:to-blue-50";
+					return "bg-blue-50 dark:bg-white";
 				case "devops":
-					return "bg-gradient-to-br from-purple-50 to-fuchsia-50 dark:from-white dark:to-purple-50";
+					return "bg-purple-50 dark:bg-white";
 				default:
-					return "bg-gradient-to-br from-slate-50 to-gray-50 dark:from-white dark:to-slate-50";
+					return "bg-slate-50 dark:bg-white";
 			}
 		}
 
 		// Normal backgrounds for other icons
 		switch (skill.category) {
 			case "frontend":
-				return "bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20";
+				return "bg-blue-50 dark:bg-blue-900/20";
 			case "backend":
-				return "bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20";
+				return "bg-green-50 dark:bg-green-900/20";
 			case "database":
-				return "bg-gradient-to-br from-amber-50 to-yellow-50 dark:from-amber-900/20 dark:to-yellow-900/20";
+				return "bg-amber-50 dark:bg-amber-900/20";
 			case "devops":
-				return "bg-gradient-to-br from-purple-50 to-fuchsia-50 dark:from-purple-900/20 dark:to-fuchsia-900/20";
+				return "bg-purple-50 dark:bg-purple-900/20";
 			case "design":
-				return "bg-gradient-to-br from-pink-50 to-rose-50 dark:from-pink-900/20 dark:to-rose-900/20";
+				return "bg-pink-50 dark:bg-pink-900/20";
 			case "testing":
-				return "bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20";
+				return "bg-red-50 dark:bg-red-900/20";
 			case "languages":
-				return "bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-teal-900/20 dark:to-cyan-900/20";
+				return "bg-teal-50 dark:bg-teal-900/20";
 			default:
-				return "bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/20 dark:to-gray-900/20";
+				return "bg-slate-50 dark:bg-slate-900/20";
 		}
 	};
 
