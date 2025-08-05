@@ -7,7 +7,7 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"format": "pnpm prettier --write .",
+		"format": "prettier --write .",
 		"clean": "rimraf .next node_modules/.cache && find . -name '.DS_Store' -delete",
 		"clean:deep": "pnpm run clean && rimraf node_modules .turbo",
 		"clean:cache": "rimraf .next/cache",
