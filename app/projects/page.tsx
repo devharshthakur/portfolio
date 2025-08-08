@@ -68,7 +68,7 @@ export default function ProjectsPage() {
 			<div className="relative z-10 container mx-auto max-w-6xl px-4 py-6 md:py-12">
 				{/* Modern Header */}
 				<header className="mb-8 md:mb-16">
-					<div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-md dark:border-zinc-800 dark:bg-zinc-900">
+					<div className="relative overflow-hidden rounded-2xl border-2 border-green-500 bg-neutral-100 shadow-md dark:border-zinc-800 dark:bg-zinc-900">
 						<div className="relative z-10 flex flex-col p-8 md:p-10">
 							{/* Title and description */}
 							<div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
@@ -78,16 +78,14 @@ export default function ProjectsPage() {
 											<Building2 className="h-5 w-5" />
 										</div>
 
-										<span className="ml-2 bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-sm font-medium text-transparent dark:from-emerald-400 dark:to-teal-300">
+										<span className="ml-2 text-lg font-bold text-emerald-700 underline text-shadow-emerald-100 dark:text-emerald-300">
 											Portfolio Showcase
 										</span>
 									</div>
 
 									<h1 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
 										<span className="text-gray-900 dark:text-white">My </span>
-										<span className="bg-gradient-to-r from-emerald-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400">
-											Projects
-										</span>
+										<span className="text-emerald-600 dark:text-emerald-400">Projects</span>
 									</h1>
 
 									<p className="max-w-2xl text-base leading-relaxed text-gray-600 dark:text-gray-300">
@@ -96,7 +94,6 @@ export default function ProjectsPage() {
 									</p>
 								</div>
 
-								{/* Stats cards */}
 								{/* Project Stats */}
 								<div className="grid w-full grid-cols-2 gap-3 md:w-auto md:min-w-[280px] md:grid-cols-2">
 									<div className="rounded-xl border border-emerald-100 bg-gradient-to-br from-emerald-50 to-white p-4 shadow-sm dark:border-emerald-800/50 dark:from-emerald-900/30 dark:to-zinc-900">
@@ -200,11 +197,7 @@ export default function ProjectsPage() {
 							<ul className="relative z-10 divide-y-2 divide-gray-300 dark:divide-zinc-800">
 								{projects.map((project, index) => (
 									<li key={project.title}>
-										<ProjectCard
-											project={project}
-											projectStats={projectStats[index]}
-											index={index}
-										/>
+										<ProjectCard project={project} index={index} />
 									</li>
 								))}
 							</ul>

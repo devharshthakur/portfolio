@@ -4,12 +4,24 @@ Thank you for considering contributing to this portfolio template! This document
 
 ## 📋 Table of Contents
 
-- [Code of Conduct](#code-of-conduct)
-- [Getting Started](#getting-started)
-- [Development Workflow](#development-workflow)
-- [Submitting Changes](#submitting-changes)
-- [Style Guidelines](#style-guidelines)
-- [Need Help?](#need-help)
+- [How to Contribute to Portfolio 🚀](#how-to-contribute-to-portfolio-)
+  - [📋 Table of Contents](#-table-of-contents)
+  - [🤝 Code of Conduct](#-code-of-conduct)
+  - [🚀 Getting Started](#-getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+  - [🔄 Development Workflow](#-development-workflow)
+  - [📝 Submitting Changes](#-submitting-changes)
+  - [💻 Style Guidelines](#-style-guidelines)
+    - [🖥️ TypeScript](#️-typescript)
+    - [⚛️ React \& Next.js](#️-react--nextjs)
+    - [🎨 CSS](#-css)
+    - [💬 Commit Messages](#-commit-messages)
+      - [Commit Message Format](#commit-message-format)
+      - [Types](#types)
+      - [Examples](#examples)
+      - [Guidelines](#guidelines)
+  - [🤔 Need Help?](#-need-help)
 
 ## 🤝 Code of Conduct
 
@@ -124,10 +136,66 @@ By participating in this project, you are expected to uphold our [Code of Conduc
 
 ### 💬 Commit Messages
 
+We follow the [Conventional Commits](https://www.conventionalcommits.org/) specification for commit messages. This helps with automated changelog generation and semantic versioning.
+
+#### Commit Message Format
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+#### Types
+
+- `feat/` - A new feature
+- `fix/` - A bug fix
+- `perf/` - A performance improvement
+- `chore/` - Changes to build process or auxiliary tools
+- `docs/` - Documentation only changes
+- `style/` - Changes that do not affect the meaning of the code (white-space, formatting, etc)
+- `refactor/` - A code change that neither fixes a bug nor adds a feature
+- `test/` - Adding missing tests or correcting existing tests
+- `ci/` - Changes to CI configuration files and scripts
+- `build/` - Changes that affect the build system or external dependencies
+
+#### Examples
+
+```bash
+# Feature
+git commit -m "feat: add dark mode toggle component"
+
+# Bug fix
+git commit -m "fix: resolve navigation menu overflow issue"
+
+# Performance improvement
+git commit -m "perf: optimize image loading with lazy loading"
+
+# Documentation
+git commit -m "docs: update README with new installation steps"
+
+# Style changes
+git commit -m "style: format code with prettier"
+
+# Refactoring
+git commit -m "refactor: extract reusable button component"
+
+# Tests
+git commit -m "test: add unit tests for contact form validation"
+
+# Chores
+git commit -m "chore: update dependencies to latest versions"
+```
+
+#### Guidelines
+
 - 🕰️ Use the present tense ("Add feature" not "Added feature")
 - 🎯 Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
 - 📏 Limit the first line to 72 characters or less
 - 🔗 Reference issues and pull requests as appropriate
+- 🏷️ Use the appropriate type prefix for your changes
 
 ## 🤔 Need Help?
 

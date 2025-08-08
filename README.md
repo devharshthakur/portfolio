@@ -11,8 +11,6 @@ Welcome to my personal developer portfolio! This project showcases my skills, pr
 - [🚀 My Personal Developer Portfolio](#-my-personal-developer-portfolio)
   - [📖 Table of Contents](#-table-of-contents)
   - [✨ About](#-about)
-    - [🔥 Key Projects](#-key-projects)
-    - [📦 Open Source NPM Packages](#-open-source-npm-packages)
   - [🛠️ Tech Stack](#️-tech-stack)
   - [📂 Project Structure](#-project-structure)
   - [⚙️ Getting Started](#️-getting-started)
@@ -26,20 +24,6 @@ Welcome to my personal developer portfolio! This project showcases my skills, pr
 
 This portfolio showcases my work as a developer, highlighting my skills, projects, and providing a way for visitors to get in touch with me. Built with modern technologies to ensure performance, scalability, and an excellent user experience.
 
-### 🔥 Key Projects
-
-- **SecurePass**: A secure password manager with encryption and search capabilities.
-- **Legal AI PDF**: An AI-driven legal assistant for document processing.
-- **BlockPredict**: ML-based prediction simulation using Blockchain.
-- **Orrbit**: A web-based PDF compression tool with client-side processing.
-
-### 📦 Open Source NPM Packages
-
-I've created and published several npm packages that are featured in the packages section:
-
-- **ht-create-tsapp**: A CLI tool for creating TypeScript projects with pre-defined structure.
-- **trycatch-lib**: A zero-dependency TypeScript utility for tuple-based error handling.
-
 ## 🛠️ Tech Stack
 
 | Technology                                                | Purpose                                |
@@ -50,8 +34,6 @@ I've created and published several npm packages that are featured in the package
 | [Radix UI](https://www.radix-ui.com/)                     | Accessible UI components               |
 | [Sonner](https://sonner.vercel.app/)                      | Toast notifications                    |
 | [Nodemailer](https://nodemailer.com/)                     | Email functionality                    |
-| [Zod](https://zod.dev/)                                   | Schema validation                      |
-| [React Hook Form](https://react-hook-form.com/)           | Form handling                          |
 | [Lucide React](https://lucide.dev/)                       | Icon library                           |
 | [next-themes](https://github.com/pacocoursey/next-themes) | Theme management                       |
 

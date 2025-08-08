@@ -1,1 +1,1 @@
-prettier --write .
+pnpm format

@@ -7,7 +7,6 @@
  * @component ProjectCard
  * @param {Object} props - The component props
  * @param {Project} props.project - The project data object containing title, description, and other details
- * @param {ProjectStats} props.projectStats - Statistics about the project (stars, forks)
  * @param {number} props.index - The index of the project in the list
  * @param {number} props.totalProjects - Total number of projects
  * @param {boolean} props.mounted - Whether the component is mounted
@@ -19,14 +18,13 @@
  * - Theme-aware styling using raw Tailwind CSS classes
  * - Interactive elements (links, buttons)
  * - Tech stack display with custom badges
- * - Project statistics display
  * - Development status indicator
  */
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import type { Project } from "@/data/projects.data";
-import { Building2, Calendar, Clock, ExternalLink, GitFork, Star } from "lucide-react";
+import { Building2, Calendar, Clock, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -38,31 +36,19 @@ import { getTechColor } from "../util/tech-color-utils";
 import { FaGithub } from "react-icons/fa";
 import { BsCpu } from "react-icons/bs";
 import { IoIosLink } from "react-icons/io";
-interface ProjectStats {
-	stars: number;
-	forks: number;
-}
 
 interface ProjectCardProps {
 	project: Project;
-	projectStats?: ProjectStats;
 	index: number;
 }
 
-export function ProjectCard({
-	project,
-	projectStats = { stars: 0, forks: 0 },
-	index,
-}: ProjectCardProps) {
+export function ProjectCard({ project, index }: ProjectCardProps) {
 	const projectUrl = project.liveDemoUrl || project.githubUrl;
 	const isLocalProject = project.liveDemoUrl === "local";
 	const shouldShowRunLocally = shouldShowRunLocallyButton(isLocalProject, project.title);
 
 	const { tags } = project;
 	const limitedTech = tags.slice(0, 6);
-	const animationDelay = {
-		animationDelay: `${index * 100}ms`,
-	};
 
 	// Only show at most 6 technologies initially
 	const hasTechOverflow = tags.length > 6;
@@ -74,7 +60,7 @@ export function ProjectCard({
 		: "bg-gray-50/90 dark:bg-zinc-900/60";
 
 	return (
-		<article className="animate-fadeIn" style={animationDelay}>
+		<article className="animate-fadeIn">
 			<div
 				className={`${rowBackground} transition-colors duration-200 hover:bg-emerald-50 dark:hover:bg-emerald-900/20`}
 			>
@@ -83,7 +69,7 @@ export function ProjectCard({
 					<div className="flex flex-col gap-6 lg:gap-8 xl:flex-row">
 						{/* Content Column */}
 						<div className="flex-1 space-y-4 lg:space-y-6">
-							{/* Header with Title and Stats */}
+							{/* Header with Title */}
 							<div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
 								<div>
 									{/* Title */}
@@ -109,7 +95,7 @@ export function ProjectCard({
 									</div>
 								</div>
 
-								{/* Project Stats Box */}
+								{/* GitHub Link */}
 								{project.githubUrl && (
 									<div className="flex items-center gap-3 rounded-lg border border-emerald-200 bg-emerald-50/80 px-3 py-1 shadow-sm dark:border-emerald-800 dark:bg-emerald-900/40">
 										<a
@@ -121,15 +107,6 @@ export function ProjectCard({
 											<FaGithub className="mr-1 h-4 w-4" />
 											<span className="text-xs font-medium">GitHub</span>
 										</a>
-										<div className="h-4 w-px bg-emerald-200 dark:bg-emerald-700"></div>
-										<div className="flex items-center rounded-md border border-yellow-200 bg-yellow-100 px-1.5 py-0.5 text-yellow-900 shadow-sm dark:border-yellow-700 dark:bg-yellow-800/70 dark:text-yellow-50">
-											<Star className="mr-1 h-3.5 w-3.5 text-yellow-600 dark:text-yellow-300" />
-											<span className="text-xs font-medium">{projectStats.stars}</span>
-										</div>
-										<div className="flex items-center rounded-md border border-blue-200 bg-blue-100 px-1.5 py-0.5 text-blue-900 shadow-sm dark:border-blue-700 dark:bg-blue-800/70 dark:text-blue-50">
-											<GitFork className="mr-1 h-3.5 w-3.5 text-blue-600 dark:text-blue-300" />
-											<span className="text-xs font-medium">{projectStats.forks}</span>
-										</div>
 									</div>
 								)}
 							</div>
@@ -231,7 +208,7 @@ export function ProjectCard({
 
 						{/* Long description (for large screens only) */}
 						<div className="hidden h-full w-96 xl:block">
-							<div className="relative flex h-full flex-col border-l border-emerald-200 pl-6 text-left dark:border-emerald-800">
+							<div className="relative flex flex-col border-l-2 border-emerald-200 pl-6 text-left dark:border-emerald-800">
 								<h4 className="mb-2 flex items-center font-medium text-slate-800 dark:text-slate-100">
 									About this project
 								</h4>
