@@ -7,42 +7,15 @@
  * @returns {JSX.Element} The complete projects page with header, stats, and project list
  */
 
-"use client";
-import { NoteDialog } from "@/components/custom/projects/components/dailogs/project-section-home-dailog";
 import { ProjectCard } from "@/components/custom/projects/components/project-card";
-import ProjectGlow from "@/components/custom/projects/components/svgs/ProjectGlow";
 import { ModeToggle } from "@/components/mode-toogle";
 import { Button } from "@/components/ui/button";
 import projects from "@/data/projects.data";
-import { Building2, GitFork, Home, Loader2, Star } from "lucide-react";
+import { Building2, GitFork, Home, Star } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 
-interface ProjectStats {
-	stars: number;
-	forks: number;
-}
-
 export default function ProjectsPage() {
-	const [projectStats, setProjectStats] = useState<ProjectStats[]>([]);
-	const [loading, setLoading] = useState<boolean>(true);
-
-	useEffect(() => {
-		if (projectStats.length === 0) {
-			const stats = projects.map(() => ({
-				stars: Math.floor(Math.random() * 50),
-				forks: Math.floor(Math.random() * 20),
-			}));
-			setProjectStats(stats);
-			setLoading(false);
-		}
-	}, [projectStats.length]);
-
-	// Calculate total stars and forks for stats display
-	const totalStars = projectStats.reduce((acc, stat) => acc + stat.stars, 0);
-	const totalForks = projectStats.reduce((acc, stat) => acc + stat.forks, 0);
-
 	return (
 		<main className="relative min-h-screen w-full overflow-hidden bg-gray-50 dark:bg-zinc-900">
 			{/* Navigation */}
@@ -93,79 +66,6 @@ export default function ProjectsPage() {
 										project reflects my problem-solving approach and technical expertise.
 									</p>
 								</div>
-
-								{/* Project Stats */}
-								<div className="grid w-full grid-cols-2 gap-3 md:w-auto md:min-w-[280px] md:grid-cols-2">
-									<div className="rounded-xl border border-emerald-100 bg-gradient-to-br from-emerald-50 to-white p-4 shadow-sm dark:border-emerald-800/50 dark:from-emerald-900/30 dark:to-zinc-900">
-										<div className="mt-2 flex items-center gap-3">
-											<div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100 dark:bg-emerald-800/50">
-												<Building2 className="h-5 w-5 text-emerald-600 dark:text-emerald-300" />
-											</div>
-											<div className="flex items-center gap-2">
-												<p className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">
-													{projects.length}
-												</p>
-												<span className="text-xs font-medium text-gray-500 dark:text-gray-400">
-													Total Projects
-												</span>
-											</div>
-										</div>
-									</div>
-									{/* Github Stars Stats */}
-									<div className="rounded-xl border border-indigo-100 bg-gradient-to-br from-indigo-50 to-white p-4 shadow-sm dark:border-indigo-800/50 dark:from-indigo-900/30 dark:to-zinc-900">
-										<div className="flex items-center gap-3 text-left">
-											<div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-100 dark:bg-indigo-800/50">
-												<Star className="h-5 w-5 text-indigo-600 dark:text-indigo-300" />
-											</div>
-											<div className="flex flex-col gap-0.5 leading-tight">
-												<p className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">
-													{totalStars}
-												</p>
-												<span className="text-xs font-medium text-gray-500 dark:text-gray-400">
-													GitHub Stars
-												</span>
-											</div>
-										</div>
-									</div>
-									{/* Github Fork Stats */}
-									<div className="rounded-xl border border-cyan-100 bg-gradient-to-br from-cyan-50 to-white p-4 shadow-sm dark:border-cyan-800/50 dark:from-cyan-900/30 dark:to-zinc-900">
-										<div className="flex items-center gap-3">
-											<div className="flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-100 dark:bg-cyan-800/50">
-												<GitFork className="h-5 w-5 text-cyan-600 dark:text-cyan-300" />
-											</div>
-											<div>
-												<p className="text-3xl font-bold text-cyan-600 dark:text-cyan-400">
-													{totalForks}
-												</p>
-												<span className="text-xs font-medium text-gray-500 dark:text-gray-400">
-													GitHub Forks
-												</span>
-											</div>
-										</div>
-									</div>
-
-									{/* Github Stats */}
-									<div className="rounded-xl border border-amber-100 bg-gradient-to-br from-amber-50 to-white p-4 shadow-sm dark:border-amber-800/50 dark:from-amber-900/30 dark:to-zinc-900">
-										<div className="mt-2 flex items-center gap-3">
-											<div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-100/80 dark:bg-amber-800/50">
-												<FaGithub className="h-6 w-6 text-amber-600 dark:text-amber-300" />
-											</div>
-											<div className="flex flex-col">
-												<a
-													href="https://github.com/devharshthakur"
-													target="_blank"
-													rel="noopener noreferrer"
-													className="text-sm font-medium text-amber-600 transition-colors hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300"
-												>
-													View GitHub
-												</a>
-												<span className="text-xs font-medium text-gray-500 dark:text-gray-400">
-													devharshthakur
-												</span>
-											</div>
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -177,31 +77,19 @@ export default function ProjectsPage() {
 							<span className="h-8 w-1 rounded-full bg-gradient-to-b from-emerald-400 to-emerald-600 dark:from-emerald-500 dark:to-emerald-700"></span>
 							Project Showcase
 						</h2>
-						<NoteDialog />
 					</div>
 					<hr className="h-px border-none bg-gradient-to-r from-emerald-400/60 via-emerald-300/30 to-transparent dark:from-emerald-600/60 dark:via-emerald-600/20 dark:to-transparent" />
 				</section>
 
 				<section className="relative mx-auto">
 					<article className="relative z-10 overflow-hidden rounded-xl border-2 border-gray-300 bg-white shadow-lg dark:border-gray-700 dark:bg-zinc-900">
-						{loading ? (
-							<div className="flex items-center justify-center py-20">
-								<div className="flex flex-col items-center space-y-4">
-									<Loader2 className="h-10 w-10 animate-spin text-emerald-500" />
-									<p className="font-medium text-emerald-700 dark:text-emerald-300">
-										Loading projects...
-									</p>
-								</div>
-							</div>
-						) : (
-							<ul className="relative z-10 divide-y-2 divide-gray-300 dark:divide-zinc-800">
-								{projects.map((project, index) => (
-									<li key={project.title}>
-										<ProjectCard project={project} index={index} />
-									</li>
-								))}
-							</ul>
-						)}
+						<ul className="relative z-10 divide-y-2 divide-gray-300 dark:divide-zinc-800">
+							{projects.map((project, index) => (
+								<li key={project.title}>
+									<ProjectCard project={project} index={index} />
+								</li>
+							))}
+						</ul>
 					</article>
 				</section>
 			</div>

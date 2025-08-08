@@ -18,7 +18,7 @@ import { ColoredButton } from "@/components/ui/colored-button";
 
 export function Header() {
 	return (
-		<header className="border-border z-50 flex flex-col items-center justify-between gap-4 border-b px-4 py-3 backdrop-blur-sm sm:flex-row sm:gap-0 sm:px-6 md:px-8">
+		<header className="z-50 flex flex-col items-center justify-between gap-4 px-4 py-3 backdrop-blur-sm sm:flex-row sm:gap-0 sm:px-6 md:px-8">
 			<div className="flex flex-wrap justify-center gap-3 sm:justify-start sm:gap-4">
 				{HEADER_LEFT_NAV.map((item) => (
 					<ColoredButton
@@ -29,7 +29,7 @@ export function Header() {
 						colorScheme={item.colorScheme}
 						variant="outline"
 						isExternal={item.isExternal}
-						className="border-3"
+						className="border-2"
 					/>
 				))}
 			</div>
@@ -42,7 +42,7 @@ export function Header() {
 						icon={item.icon}
 						colorScheme={item.colorScheme}
 						variant={item.variant || "outline"}
-						className="border-3"
+						className="border-2"
 					/>
 				))}
 				<ModeToggle className="border-2" />

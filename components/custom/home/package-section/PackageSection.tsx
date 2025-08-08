@@ -24,7 +24,7 @@ export function Packages() {
 					</div>
 					<Button
 						variant="outline"
-						className="border-2 border-red-500/90 bg-red-50/80 font-mono text-sm text-red-800 shadow-sm hover:bg-red-100/90 dark:border-red-600/80 dark:bg-red-900/60 dark:text-red-300 dark:hover:bg-red-800/60"
+						className="border-2 border-red-500/90 bg-red-50/80 bg-red-600/5 font-mono text-sm text-red-800 shadow-sm hover:bg-red-100/90 dark:border-red-600/80 dark:text-red-300 dark:hover:bg-red-800/60"
 						asChild
 					>
 						<Link href="/packages">

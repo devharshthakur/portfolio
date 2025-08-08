@@ -51,7 +51,7 @@ export default function SkillsPage() {
 			{/* Main Content */}
 			<main className="relative z-10 container mx-auto max-w-5xl px-4 py-6 sm:px-6 md:py-12">
 				{/* Hero Section */}
-				<section className="bg-background relative mb-8 overflow-hidden rounded-xl border-2 border-green-200/90 p-5 shadow-md backdrop-blur-xs sm:p-8 md:mb-12 md:rounded-2xl md:p-10 dark:border-slate-700/70">
+				<section className="relative mb-8 overflow-hidden rounded-xl border-2 border-green-200/90 bg-emerald-50/10 p-5 shadow-md backdrop-blur-xs sm:p-8 md:mb-12 md:rounded-2xl md:p-10 dark:border-slate-700/70">
 					<div className="relative z-10 flex flex-col gap-6 md:flex-row md:items-start">
 						<div className="max-w-3xl space-y-5 md:space-y-6">
 							{/* Title */}
@@ -96,7 +96,7 @@ export default function SkillsPage() {
 					{Object.entries(skillsByCategory).map(([category, categorySkills]) => (
 						<section key={category} className="animate-fadeIn mb-8">
 							{/* Category Header */}
-							<div className="relative mb-6 rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:mb-8 dark:border-gray-700 dark:bg-gray-800/20">
+							<div className="relative mb-6 rounded-lg border-2 border-emerald-300 bg-emerald-100/10 p-4 md:mb-8 dark:border-emerald-700 dark:bg-gray-800/20">
 								<div className="flex items-center gap-3 pl-3">
 									<div className="flex-1">
 										<h2 className="text-xl font-bold text-gray-800 sm:text-2xl dark:text-white">
