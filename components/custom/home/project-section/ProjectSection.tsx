@@ -20,7 +20,7 @@ export default function Projects() {
 					</div>
 					<Button
 						variant="outline"
-						className="border-2 border-emerald-500/90 bg-emerald-50/80 font-mono text-sm text-emerald-800 shadow-sm hover:bg-emerald-100/90 dark:bg-emerald-800/10 dark:text-emerald-300 dark:hover:bg-emerald-800/60"
+						className="border-2 border-emerald-500/90 bg-emerald-50/80 font-mono text-sm text-emerald-800 shadow-sm hover:bg-emerald-100/90 dark:border-emerald-400 dark:bg-emerald-800/10 dark:text-emerald-300 dark:hover:bg-emerald-800/60"
 						asChild
 					>
 						<Link href="/projects">

@@ -14,7 +14,7 @@ export function Skills() {
 	const displayedSkills = [...featuredSkills, ...nonFeaturedSkills].slice(0, 8);
 
 	return (
-		<Card className="border-2 border-indigo-400 bg-indigo-50/30 p-4 shadow-xs dark:border-indigo-600 dark:bg-indigo-950/10">
+		<Card className="border-2 border-indigo-400 bg-indigo-100/60 p-4 shadow-xs dark:border-indigo-600 dark:bg-indigo-950/35">
 			<div className="space-y-4">
 				<div className="flex items-center justify-between">
 					<SectionTitle
