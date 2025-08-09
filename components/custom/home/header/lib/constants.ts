@@ -3,60 +3,7 @@
  * @description Contains constants for navigation, color schemes, and other UI configuration
  */
 
-import { FileText, GitPullRequest } from "lucide-react";
-import { FaGithub } from "react-icons/fa";
-import { MdContactPage } from "react-icons/md";
-import type { ColorScheme, ColorSchemeStyles, NavItem } from "../types/types";
-
-/**
- * Navigation items displayed on the left side of the header
- * @type {NavItem[]}
- */
-export const HEADER_LEFT_NAV: NavItem[] = [
-	{
-		href: "https://github.com/devharshthakur",
-		label: "@devharshthakur",
-		icon: FaGithub,
-		colorScheme: "teal",
-		isExternal: true,
-	},
-	{
-		href: "/contact",
-		label: "Contact Me",
-		icon: MdContactPage,
-		colorScheme: "orange",
-	},
-];
-
-/**
- * Navigation items displayed on the right side of the header
- * @type {NavItem[]}
- */
-export const HEADER_RIGHT_NAV: NavItem[] = [
-	{
-		href: "/about",
-		label: "About Me",
-		variant: "outline",
-		colorScheme: "blue",
-	},
-	{
-		href: "https://www.devharshthakur.blog/",
-		label: "Blogs",
-		colorScheme: "indigo",
-	},
-	{
-		href: "/cv",
-		label: "CV",
-		icon: FileText,
-		colorScheme: "purple",
-	},
-	{
-		href: "/contribute",
-		label: "Contribute",
-		icon: GitPullRequest,
-		colorScheme: "slate",
-	},
-];
+import type { ColorScheme, ColorSchemeStyles } from "../types/types";
 
 /**
  * CSS class definitions for each color scheme

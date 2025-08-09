@@ -8,18 +8,6 @@ import { IconType } from "react-icons";
 
 export type IconComponent = LucideIcon | IconType;
 
-/**
- * Interface for navigation items used in header, sidebar, and other navigation components
- */
-export interface NavItem {
-	href: string;
-	label: string;
-	icon?: IconComponent;
-	variant?: "default" | "outline";
-	colorScheme?: ColorScheme;
-	isExternal?: boolean;
-}
-
 export type ColorScheme = "slate" | "orange" | "blue" | "indigo" | "purple" | "teal" | "amber";
 
 export interface ColorSchemeStyles {

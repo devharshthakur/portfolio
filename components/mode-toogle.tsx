@@ -12,7 +12,7 @@ interface ModeToggleProps {
 }
 
 export function ModeToggle({ className, iconClassName }: ModeToggleProps) {
-	const [mounted, setMounted] = useState(false);
+	const [mounted, setMounted] = useState<boolean>(false);
 	const { resolvedTheme, setTheme } = useTheme();
 
 	useEffect(() => {
