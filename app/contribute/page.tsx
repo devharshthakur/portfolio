@@ -23,10 +23,7 @@ export default function ContributePage() {
 						</Link>
 					</Button>
 
-					<ModeToggle
-						className="mr-2 border-slate-300 hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-800"
-						iconClassName="text-slate-700 dark:text-slate-300"
-					/>
+					<ModeToggle className="mr-2 border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800" />
 				</div>
 			</header>
 

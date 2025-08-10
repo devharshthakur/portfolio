@@ -8,19 +8,7 @@ import { IconType } from "react-icons";
 
 export type IconComponent = LucideIcon | IconType;
 
-export type ColorScheme = "slate" | "orange" | "blue" | "indigo" | "purple" | "teal" | "amber";
-
-export interface ColorSchemeStyles {
-	border?: string;
-	bg?: string;
-	hover?: string;
-	text: string;
-	icon: string;
-	shadow: string;
-}
-
 export interface ColoredButtonProps {
-	colorScheme?: ColorScheme;
 	href?: string;
 	icon?: IconComponent;
 	label: string;

@@ -29,7 +29,7 @@ export function Skills() {
 						size="sm"
 						className="border-indigo-600 text-indigo-600 hover:border-indigo-700 hover:text-indigo-700 dark:border-indigo-600 dark:text-indigo-400 dark:hover:border-indigo-500 dark:hover:text-indigo-300"
 					>
-						<Link href="/skills" className="flex items-center gap-1.5">
+						<Link href="/skills" className="flex items-center gap-1.5 border-2">
 							<Hammer className="h-3.5 w-3.5" />
 							<span>View All Skills</span>
 						</Link>

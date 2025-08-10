@@ -23,19 +23,18 @@ export function DownloadButton() {
 		<Button
 			onClick={downloadCV}
 			disabled={isDownloading}
-			className="relative overflow-hidden border-2 border-emerald-400 bg-emerald-600 px-9 py-5 text-white shadow-lg transition-all duration-200 hover:scale-105 hover:border-emerald-300 hover:bg-emerald-700 hover:shadow-xl disabled:scale-100 disabled:opacity-75 dark:border-emerald-600 dark:bg-emerald-500 dark:hover:border-emerald-500 dark:hover:bg-emerald-600"
+			className="relative overflow-hidden border-2 border-lime-800 bg-emerald-400 px-9 py-5 text-white shadow-lg hover:bg-emerald-400 hover:text-white disabled:scale-100 disabled:opacity-75 dark:border-emerald-300 dark:bg-emerald-600 dark:hover:bg-emerald-500 dark:hover:text-white"
 		>
 			<div className="flex items-center gap-3">
 				{isDownloading ? (
 					<>
-						<div className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white"></div>
 						<span className="font-medium">Downloading...</span>
 					</>
 				) : (
 					<>
-						<Download className="h-4 w-4" />
-						<span className="font-medium">Download CV</span>
-						<FileText className="h-4 w-4 opacity-70" />
+						<Download className="h-4 w-4 text-neutral-600 dark:text-neutral-100" />
+						<span className="font-medium text-neutral-600 dark:text-neutral-100">Download CV</span>
+						<FileText className="h-4 w-4 text-neutral-600 opacity-70 dark:text-neutral-100" />
 					</>
 				)}
 			</div>

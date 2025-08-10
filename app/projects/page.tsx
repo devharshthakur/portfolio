@@ -32,10 +32,7 @@ export default function ProjectsPage() {
 					</Link>
 				</Button>
 
-				<ModeToggle
-					className="border-2 border-emerald-400 dark:border-emerald-700 dark:hover:bg-emerald-900/30"
-					iconClassName="text-emerald-700 dark:text-emerald-400"
-				/>
+				<ModeToggle className="border-2 border-emerald-400 text-emerald-700 dark:border-emerald-700 dark:text-emerald-400 dark:hover:bg-emerald-900/30" />
 			</nav>
 
 			<div className="relative z-10 container mx-auto max-w-6xl px-4 py-6 md:py-12">

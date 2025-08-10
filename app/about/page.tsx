@@ -43,10 +43,7 @@ export default function AboutPage() {
 					<span>Me</span>
 				</div>
 
-				<ModeToggle
-					className="mr-2 border-blue-300 bg-blue-50/50 hover:bg-blue-100/60 dark:border-blue-700 dark:bg-blue-900/20 dark:hover:bg-blue-900/30"
-					iconClassName="text-blue-700 dark:text-blue-400"
-				/>
+				<ModeToggle className="mr-2 border-blue-300 bg-blue-50/50 text-blue-700 hover:bg-blue-100/60 dark:border-blue-700 dark:bg-blue-900/20 dark:text-blue-400 dark:hover:bg-blue-900/30" />
 			</nav>
 
 			<div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
