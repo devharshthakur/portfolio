@@ -10,12 +10,13 @@ Thank you for considering contributing to this portfolio template! This document
   - [🚀 Getting Started](#-getting-started)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
+    - [Available Scripts](#available-scripts)
   - [🔄 Development Workflow](#-development-workflow)
   - [📝 Submitting Changes](#-submitting-changes)
   - [💻 Style Guidelines](#-style-guidelines)
-    - [🖥️ TypeScript](#️-typescript)
-    - [⚛️ React \& Next.js](#️-react--nextjs)
-    - [🎨 CSS](#-css)
+    - [TypeScript](#typescript)
+    - [React \& Next.js](#react--nextjs)
+    - [CSS](#css)
     - [💬 Commit Messages](#-commit-messages)
       - [Commit Message Format](#commit-message-format)
       - [Types](#types)
@@ -53,16 +54,37 @@ By participating in this project, you are expected to uphold our [Code of Conduc
    pnpm install
    ```
 
-4. **Start the development server**:
+4. **Set up environment variables**:
+
+   Create a `.env` file in the root directory:
+
+   ```env
+   EMAIL_ID=your_email@example.com
+   EMAIL_PASSWORD=your_email_password
+   RECEIVER_EMAIL=receiver_email@example.com
+   ```
+
+   > **Note**: For development, you can use placeholder values or set up a test email account.
+
+5. **Start the development server**:
 
    ```bash
    pnpm dev
    ```
 
-5. **Set up remote**:
+   Visit [http://localhost:3000](http://localhost:3000) to view the nextjs application.
+
+6. **Set up remote**:
    ```bash
    git remote add upstream https://github.com/devharshthakur/portfolio.git
    ```
+
+### Available Scripts
+
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm start` - Start production server
+- `pnpm lint` - Run ESLint
 
 ## 🔄 Development Workflow
 
@@ -115,24 +137,24 @@ By participating in this project, you are expected to uphold our [Code of Conduc
 
 ## 💻 Style Guidelines
 
-### 🖥️ TypeScript
+### TypeScript
 
-- 🚫 Avoid using `any` type unless absolutely necessary
-- 🛡️ Ensure the codebase remains type-safe
-- 📦 Use interfaces for object shapes
-- 📝 Use meaningful variable names
+- [x] Avoid using `any` type unless absolutely necessary
+- [x] Ensure the codebase remains type-safe
+- [x] Use interfaces for object shapes
+- [x] Use meaningful variable names
 
-### ⚛️ React & Next.js
+### React & Next.js
 
-- 🧩 Follow functional component patterns
-- 🪝 Use proper hooks for state management
-- 🗺️ Follow the Next.js routing conventions
+- [x] Follow functional component patterns
+- [x] Use proper hooks for state management
+- [x] Follow the Next.js routing conventions
 
-### 🎨 CSS
+### CSS
 
-- 🌈 Use TailwindCSS classes appropriately
-- 🖌️ Follow the project's existing design patterns
-- 📱 Use responsive design principles
+- [x] Use TailwindCSS classes appropriately
+- [x] Follow the project's existing design patterns
+- [x] Use responsive design principles
 
 ### 💬 Commit Messages
 
@@ -191,11 +213,11 @@ git commit -m "chore: update dependencies to latest versions"
 
 #### Guidelines
 
-- 🕰️ Use the present tense ("Add feature" not "Added feature")
-- 🎯 Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
-- 📏 Limit the first line to 72 characters or less
-- 🔗 Reference issues and pull requests as appropriate
-- 🏷️ Use the appropriate type prefix for your changes
+- [x] Use the present tense ("Add feature" not "Added feature")
+- [x] Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
+- [x] Limit the first line to 72 characters or less
+- [x] Reference issues and pull requests as appropriate
+- [x] Use the appropriate type prefix for your changes
 
 ## 🤔 Need Help?
 
