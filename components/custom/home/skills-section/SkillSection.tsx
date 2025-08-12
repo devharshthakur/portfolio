@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { SectionTitle } from "@/components/ui/section-title";
 import skills from "@/data/skills.data";
 import { Briefcase, Hammer } from "lucide-react";
 import Link from "next/link";
@@ -14,14 +13,17 @@ export function Skills() {
 	const displayedSkills = [...featuredSkills, ...nonFeaturedSkills].slice(0, 8);
 
 	return (
-		<Card className="border-2 border-indigo-400 bg-indigo-100/60 p-4 shadow-xs dark:border-indigo-600 dark:bg-indigo-950/35">
-			<div className="space-y-4">
+		<Card className="border-2 border-indigo-400 bg-indigo-100/60 p-4 shadow-xl dark:border-indigo-600 dark:bg-indigo-950/35">
+			<div className="space-y-4 px-6 pb-4">
 				<div className="flex items-center justify-between">
-					<SectionTitle
-						icon={<Briefcase size={20} className="text-indigo-600 dark:text-indigo-400" />}
-					>
-						Skills & Technologies
-					</SectionTitle>
+					<div className="flex items-center">
+						<h2 className="relative inline-flex items-center gap-2 px-1 py-2 font-mono text-xl font-bold md:text-2xl">
+							<span className="flex items-center">
+								<Briefcase size={25} className="text-indigo-600 dark:text-indigo-400" />
+							</span>
+							<span className="ml-1">Skills & Technologies</span>
+						</h2>
+					</div>
 
 					<Button
 						asChild

@@ -17,9 +17,9 @@ import { FaGithub } from "react-icons/fa";
 
 export default function ProjectsPage() {
 	return (
-		<main className="relative min-h-screen w-full overflow-hidden bg-gray-50 dark:bg-zinc-900">
+		<main className="relative min-h-screen w-full overflow-hidden bg-gray-50 dark:bg-neutral-900">
 			{/* Navigation */}
-			<nav className="sticky top-0 right-0 left-0 z-50 flex items-center justify-between border-slate-200/50 bg-gray-50/90 p-4 backdrop-blur-sm dark:border-zinc-800/50 dark:bg-zinc-900/90">
+			<nav className="sticky top-0 right-0 left-0 z-50 flex items-center justify-between bg-gray-50/90 p-4 backdrop-blur-sm dark:bg-neutral-900/90">
 				<Button
 					asChild
 					variant="outline"
@@ -38,7 +38,7 @@ export default function ProjectsPage() {
 			<div className="relative z-10 container mx-auto max-w-6xl px-4 py-6 md:py-12">
 				{/* Modern Header */}
 				<header className="mb-8 md:mb-16">
-					<div className="relative overflow-hidden rounded-2xl border-2 border-green-500 bg-neutral-100 shadow-md dark:border-zinc-800 dark:bg-zinc-900">
+					<div className="relative overflow-hidden rounded-2xl border-2 border-emerald-500 bg-neutral-100 shadow-md dark:border-emerald-600 dark:bg-neutral-900">
 						<div className="relative z-10 flex flex-col p-8 md:p-10">
 							{/* Title and description */}
 							<div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
@@ -79,8 +79,8 @@ export default function ProjectsPage() {
 				</section>
 
 				<section className="relative mx-auto">
-					<article className="relative z-10 overflow-hidden rounded-xl border-2 border-gray-300 bg-white shadow-lg dark:border-gray-700 dark:bg-zinc-900">
-						<ul className="relative z-10 divide-y-2 divide-gray-300 dark:divide-zinc-800">
+					<article className="relative z-10 overflow-hidden rounded-xl border-2 border-emerald-400 bg-white shadow-lg dark:border-emerald-600 dark:bg-neutral-900">
+						<ul className="relative z-10 divide-y-2 divide-emerald-200 dark:divide-emerald-800">
 							{projects.map((project, index) => (
 								<li key={project.title}>
 									<ProjectCard project={project} index={index} />

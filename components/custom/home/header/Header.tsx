@@ -58,7 +58,7 @@ export function Header() {
 					variant="outline"
 					className="border-2 border-slate-500 text-slate-700 hover:border-slate-500 hover:bg-slate-100 hover:text-slate-900 dark:border-slate-400 dark:text-slate-300 dark:hover:border-slate-500 dark:hover:bg-slate-800 dark:hover:text-slate-100"
 				/>
-				<ModeToggle className="border-2 border-teal-300 hover:bg-teal-50 hover:text-teal-600 dark:border-teal-700 dark:hover:bg-teal-900/30 dark:hover:text-teal-400" />
+				<ModeToggle className="border-2 border-teal-300 shadow-md hover:bg-teal-50 hover:text-teal-600 dark:border-teal-700 dark:hover:bg-teal-900/30 dark:hover:text-teal-400" />
 			</div>
 		</header>
 	);

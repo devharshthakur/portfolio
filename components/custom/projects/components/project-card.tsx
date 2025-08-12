@@ -81,33 +81,18 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 											</span>
 										)}
 									</h3>
-
-									{/* Date and Duration */}
-									<div className="mt-1.5 flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
-										<span className="flex items-center">
-											<Calendar className="mr-1 h-3 w-3" />
-											{formatDate(project.date)}
-										</span>
-										<span className="flex items-center">
-											<Clock className="mr-1 h-3 w-3" />
-											{project.duration}
-										</span>
-									</div>
 								</div>
 
 								{/* GitHub Link */}
 								{project.githubUrl && (
-									<div className="flex items-center gap-3 rounded-lg border border-emerald-200 bg-emerald-50/80 px-3 py-1 shadow-sm dark:border-emerald-800 dark:bg-emerald-900/40">
-										<a
-											href={project.githubUrl}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="flex items-center text-emerald-700 transition-colors hover:text-emerald-900 dark:text-emerald-300 dark:hover:text-emerald-100"
+									<a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+										<Button
+											size="icon"
+											className="border-2 border-emerald-500 bg-white text-emerald-600 shadow-md hover:border-emerald-600 hover:bg-emerald-50 hover:text-emerald-700 dark:border-emerald-600 dark:bg-emerald-900 dark:text-emerald-300 dark:hover:border-emerald-400 dark:hover:bg-emerald-800 dark:hover:text-emerald-200"
 										>
-											<FaGithub className="mr-1 h-4 w-4" />
-											<span className="text-xs font-medium">GitHub</span>
-										</a>
-									</div>
+											<FaGithub className="h-4 w-4" />
+										</Button>
+									</a>
 								)}
 							</div>
 
@@ -209,15 +194,15 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 						{/* Long description (for large screens only) */}
 						<div className="hidden h-full w-96 xl:block">
 							<div className="relative flex flex-col border-l-2 border-emerald-200 pl-6 text-left dark:border-emerald-800">
-								<h4 className="mb-2 flex items-center font-medium text-slate-800 dark:text-slate-100">
+								<h4 className="mb-2 flex items-center text-2xl font-bold font-medium text-neutral-800 dark:text-neutral-100">
 									About this project
 								</h4>
-								<div className="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+								<div className="space-y-3 text-sm text-neutral-900 dark:text-neutral-400">
 									<p className="leading-relaxed">{project.longDescription}</p>
 
 									{/* Project details */}
-									<div className="mt-4 rounded-lg border border-slate-200 bg-gradient-to-br from-gray-50 to-white p-4 shadow-sm dark:border-zinc-700/50 dark:from-zinc-900/80 dark:to-zinc-800/50">
-										<h5 className="mb-3 flex items-center font-medium text-slate-700 dark:text-slate-200">
+									<div className="mt-4 rounded-lg border border-neutral-200 bg-gradient-to-br from-gray-50 to-white p-4 shadow-sm dark:border-zinc-700/50 dark:from-zinc-900/80 dark:to-zinc-800/50">
+										<h5 className="mb-3 flex items-center font-medium text-neutral-700 dark:text-neutral-200">
 											<span className="mr-2 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900/50">
 												<Calendar className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
 											</span>
@@ -225,29 +210,29 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 										</h5>
 
 										<div className="grid grid-cols-1 gap-3">
-											<div className="group flex items-center rounded-md border border-slate-100 bg-white/80 p-2 transition-colors hover:bg-emerald-50/50 dark:border-zinc-700/80 dark:bg-zinc-800/80 dark:hover:bg-emerald-900/10">
+											<div className="group flex items-center rounded-md border border-neutral-100 bg-white/80 p-2 transition-colors hover:bg-emerald-50/50 dark:border-zinc-700/80 dark:bg-zinc-800/80 dark:hover:bg-emerald-900/10">
 												<span className="mr-3 flex h-8 w-8 items-center justify-center rounded-md bg-blue-50 transition-colors group-hover:bg-blue-100 dark:bg-blue-900/20 dark:group-hover:bg-blue-900/30">
 													<Calendar className="h-4 w-4 text-blue-600 dark:text-blue-400" />
 												</span>
 												<div>
-													<p className="text-xs font-medium text-slate-500 dark:text-slate-400">
+													<p className="text-xs font-medium text-neutral-500 dark:text-neutral-400">
 														Release Date
 													</p>
-													<p className="text-sm font-medium text-slate-700 dark:text-slate-200">
+													<p className="text-sm font-medium text-neutral-700 dark:text-neutral-200">
 														{formatDate(project.date)}
 													</p>
 												</div>
 											</div>
 
-											<div className="group flex items-center rounded-md border border-slate-100 bg-white/80 p-2 transition-colors hover:bg-emerald-50/50 dark:border-zinc-700/80 dark:bg-zinc-800/80 dark:hover:bg-emerald-900/10">
+											<div className="group flex items-center rounded-md border border-neutral-100 bg-white/80 p-2 transition-colors hover:bg-emerald-50/50 dark:border-zinc-700/80 dark:bg-zinc-800/80 dark:hover:bg-emerald-900/10">
 												<span className="mr-3 flex h-8 w-8 items-center justify-center rounded-md bg-purple-50 transition-colors group-hover:bg-purple-100 dark:bg-purple-900/20 dark:group-hover:bg-purple-900/30">
 													<Clock className="h-4 w-4 text-purple-600 dark:text-purple-400" />
 												</span>
 												<div>
-													<p className="text-xs font-medium text-slate-500 dark:text-slate-400">
+													<p className="text-xs font-medium text-neutral-500 dark:text-neutral-400">
 														Development Time
 													</p>
-													<p className="text-sm font-medium text-slate-700 dark:text-slate-200">
+													<p className="text-sm font-medium text-neutral-700 dark:text-neutral-200">
 														{project.duration}
 													</p>
 												</div>

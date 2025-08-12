@@ -48,7 +48,7 @@ export default function SkillsPage() {
 			{/* Main Content */}
 			<main className="relative z-10 container mx-auto max-w-5xl px-4 py-6 sm:px-6 md:py-12">
 				{/* Hero Section */}
-				<section className="relative mb-8 overflow-hidden rounded-xl border-2 border-green-200/90 bg-emerald-50/10 p-5 shadow-md backdrop-blur-xs sm:p-8 md:mb-12 md:rounded-2xl md:p-10 dark:border-slate-700/70">
+				<section className="relative mb-8 overflow-hidden rounded-xl border-2 border-green-200/90 bg-emerald-50/10 p-5 shadow-md backdrop-blur-xs sm:p-8 md:mb-12 md:rounded-2xl md:p-10 dark:border-slate-700/70 dark:bg-emerald-900/20">
 					<div className="relative z-10 flex flex-col gap-6 md:flex-row md:items-start">
 						<div className="max-w-3xl space-y-5 md:space-y-6">
 							{/* Title */}
@@ -57,14 +57,14 @@ export default function SkillsPage() {
 									<span className="hidden h-8 w-8 items-center justify-center rounded-full bg-green-500 shadow-md sm:flex dark:bg-green-400">
 										<Hammer className="h-4 w-4 text-white" />
 									</span>
-									<span className="inline-block rounded-full bg-gray-100/80 px-3 py-1 text-sm font-medium text-green-600 dark:bg-gray-700/80 dark:text-green-400">
+									<span className="inline-block rounded-full bg-gray-100/80 px-3 py-1 text-sm font-medium text-green-600 dark:bg-emerald-800/60 dark:text-green-400">
 										Skills in detailed manner
 									</span>
 								</div>
 
-								<h1 className="mb-1 text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl md:text-5xl lg:text-6xl dark:text-white">
-									<span className="inline-block">My</span>{" "}
-									<span className="relative inline-block text-green-600 dark:text-green-400">
+								<h1 className="mb-1 text-3xl font-bold tracking-tight text-gray-800 drop-shadow-sm sm:text-4xl md:text-5xl lg:text-6xl dark:text-white dark:drop-shadow-lg">
+									<span className="inline-block drop-shadow-md">My</span>{" "}
+									<span className="relative inline-block text-green-600 drop-shadow-md dark:text-green-400 dark:drop-shadow-lg">
 										Skills
 										<span
 											className="absolute -bottom-1 left-0 h-1 w-full rounded-full bg-green-500 dark:bg-green-400"
@@ -73,13 +73,13 @@ export default function SkillsPage() {
 									</span>
 								</h1>
 
-								<p className="mt-2 text-sm text-gray-500 dark:text-gray-300">
+								<p className="mt-2 text-sm text-gray-500 drop-shadow-sm dark:text-gray-300 dark:drop-shadow-md">
 									Showcasing {skills.length} technologies and tools
 								</p>
 							</div>
 
 							{/* Description */}
-							<p className="text-base leading-relaxed text-gray-700 sm:text-lg dark:text-white">
+							<p className="text-base leading-relaxed text-gray-700 drop-shadow-sm sm:text-lg dark:text-white dark:drop-shadow-md">
 								A comprehensive overview of the technologies, frameworks, and tools that I've
 								mastered throughout my development journey. Each skill is rated based on proficiency
 								and years of experience.
@@ -96,12 +96,12 @@ export default function SkillsPage() {
 							<div className="relative mb-6 rounded-lg border-2 border-emerald-300 bg-emerald-100/10 p-4 md:mb-8 dark:border-emerald-700 dark:bg-gray-800/20">
 								<div className="flex items-center gap-3 pl-3">
 									<div className="flex-1">
-										<h2 className="text-xl font-bold text-gray-800 sm:text-2xl dark:text-white">
+										<h2 className="text-xl font-bold text-gray-800 drop-shadow-sm sm:text-2xl dark:text-white dark:drop-shadow-md">
 											{skillCategories[category as SkillCategory].name}
 										</h2>
-										<p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
+										<p className="mt-1 text-sm text-gray-600 drop-shadow-sm dark:text-gray-300 dark:drop-shadow-md">
 											{skillCategories[category as SkillCategory].description} •{" "}
-											<span className="font-medium text-green-600 dark:text-green-400">
+											<span className="font-medium text-green-600 drop-shadow-sm dark:text-green-400 dark:drop-shadow-md">
 												{categorySkills.length} {categorySkills.length === 1 ? "skill" : "skills"}
 											</span>
 										</p>

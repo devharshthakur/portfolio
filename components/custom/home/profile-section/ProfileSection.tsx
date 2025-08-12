@@ -7,7 +7,7 @@ import { AvailabilityBadge } from "./utils/AvailabilityBadge";
 export function Profile() {
 	return (
 		<section className="space-y-8" aria-labelledby="profile-heading">
-			<Card className="border-2 border-slate-500 bg-slate-100/50 p-4 shadow-xs dark:border-slate-600 dark:bg-slate-800/30">
+			<Card className="border-2 border-slate-500 bg-slate-100/50 p-4 shadow-xl dark:border-slate-600 dark:bg-slate-800/30">
 				<div className="flex flex-col gap-6 sm:flex-row">
 					<div className="shrink-0 border-slate-300 sm:border-r sm:pr-6 dark:border-slate-700">
 						<Image

@@ -60,7 +60,7 @@ export function ColoredButton({
 }: ColoredButtonProps) {
 	// Combine base classes with custom styling
 	const buttonClasses = cn(
-		"text-sm whitespace-nowrap sm:text-base",
+		"text-sm whitespace-nowrap sm:text-base shadow-sm",
 		className,
 	);
 
