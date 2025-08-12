@@ -7,9 +7,9 @@ import { SiTypescript } from "react-icons/si";
 
 export default function ContributePage() {
 	return (
-		<div className="bg-background relative min-h-screen w-full">
+		<div className="relative min-h-screen w-full bg-neutral-900">
 			{/* Fixed header with controls */}
-			<header className="bg-background/90 sticky top-2 z-50 w-full border-slate-200/80 backdrop-blur-sm dark:border-slate-800/80">
+			<header className="sticky top-2 z-50 w-full border-slate-200/80 backdrop-blur-sm dark:border-slate-800/80">
 				<div className="mx-auto flex h-14 w-full items-center justify-between px-4 sm:px-6">
 					<Button
 						asChild
@@ -28,7 +28,7 @@ export default function ContributePage() {
 			</header>
 
 			{/* Main content */}
-			<main className="relative mx-auto my-10 max-w-screen-2xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+			<main className="relative mx-auto my-24 max-w-screen-2xl px-4 sm:px-6 md:py-16 lg:px-8">
 				{/* Hero Section */}
 				<section className="relative mb-20 md:mb-24">
 					<div className="mb-6 flex items-center justify-center">
