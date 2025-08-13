@@ -4,6 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev --turbopack",
+		"prod": "next build && next start",
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
@@ -11,8 +12,8 @@
 		"clean": "rimraf .next node_modules/.cache && find . -name '.DS_Store' -delete",
 		"clean:deep": "pnpm run clean && rimraf node_modules .turbo",
 		"clean:cache": "rimraf .next/cache",
-		"deploy:prod": "vercel --prod",
-		"deploy:prev": "vercel",
+		"deploy:prod": "vercel build && vercel --prod --prebuilt",
+		"deploy:prev": "vercel build && vercel --prebuilt",
 		"prepare": "husky"
 	},
 	"dependencies": {
