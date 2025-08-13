@@ -1,90 +1,86 @@
 import { ModeToggle } from "@/components/mode-toogle";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Home } from "lucide-react";
-import { TbFileCv } from "react-icons/tb";
+import { Home, FileText } from "lucide-react";
+import { FaFileAlt, FaStar } from "react-icons/fa";
 import Link from "next/link";
-import { DownloadButton } from "@/components/custom/cv/util/DownloadButton";
+import { DownloadButton } from "@/components/custom/cv/DownloadButton";
 
 export default function CvPage() {
 	return (
-		<div className="from-background relative min-h-screen w-full overflow-hidden bg-linear-to-b to-indigo-50/20 dark:to-indigo-950/10">
-			<div className="absolute top-4 right-4 z-50">
-				<ModeToggle />
-			</div>
-
-			{/* Home Button */}
-			<div className="absolute top-4 left-4 z-50">
+		<div className="relative min-h-screen w-full bg-white dark:bg-neutral-900/80">
+			{/* Navigation */}
+			<nav className="absolute top-0 right-0 left-0 z-50 flex items-center justify-between p-6">
 				<Button
 					asChild
 					variant="outline"
 					size="icon"
-					className="border-indigo-300 text-indigo-700 hover:bg-indigo-100 dark:border-indigo-700 dark:text-indigo-400 dark:hover:bg-indigo-900/30"
+					className="border-2 border-neutral-400 bg-white text-neutral-800 shadow-md hover:border-neutral-500 hover:bg-neutral-50 hover:shadow-lg dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200 dark:hover:border-neutral-600 dark:hover:bg-neutral-950"
 				>
 					<Link href="/">
-						<Home className="h-[1.2rem] w-[1.2rem] transition-all" />
+						<Home className="h-[1.2rem] w-[1.2rem]" />
 						<span className="sr-only">Back to home</span>
 					</Link>
 				</Button>
-			</div>
+				<ModeToggle className="border-2 border-neutral-400 text-neutral-800 shadow-md hover:border-neutral-500 hover:bg-neutral-50 hover:shadow-lg dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:hover:border-neutral-600 dark:hover:bg-neutral-950" />
+			</nav>
 
-			{/* Main content */}
-			<div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 py-10">
-				<div className="mx-auto w-full max-w-3xl text-center">
-					<div className="relative mx-auto mb-8 flex h-20 w-20 items-center justify-center">
-						<div className="absolute inset-0 rounded-full bg-indigo-200/50 blur-lg dark:bg-indigo-800/30"></div>
-						<div className="relative z-10">
-							<TbFileCv className="h-20 w-20 text-indigo-600 dark:text-indigo-400" />
+			{/* Main Content */}
+			<main className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-20">
+				<div className="mx-auto w-full max-w-2xl">
+					{/* Centered Download CV Section - Cardless Design */}
+					<div className="flex flex-col items-center space-y-8 text-center">
+						{/* Icon with enhanced styling */}
+						<div className="relative">
+							<div className="relative z-10 flex h-28 w-28 items-center justify-center rounded-lg border-4 border-emerald-500 bg-emerald-600 shadow-2xl dark:border-emerald-700 dark:bg-emerald-500">
+								<FileText className="h-14 w-14 text-white drop-shadow-lg" />
+							</div>
+						</div>
+
+						{/* Title */}
+						<div className="space-y-4">
+							<h1 className="text-5xl font-bold tracking-tight text-neutral-900 md:text-6xl dark:text-neutral-50">
+								Download My CV
+							</h1>
+							<p className="z-20 mx-auto max-w-2xl text-xl leading-relaxed text-neutral-700 dark:text-neutral-400">
+								Get the complete PDF version of my curriculum vitae with all my professional
+								details, experience, and achievements
+							</p>
+						</div>
+
+						{/* Download Button */}
+						<div className="pt-1">
+							<DownloadButton className="border-2 border-emerald-500 bg-emerald-50 text-emerald-600 shadow-lg hover:bg-emerald-700 hover:text-neutral-50 dark:border-emerald-500 dark:bg-emerald-600 dark:text-emerald-100 dark:hover:bg-emerald-700 dark:hover:text-white" />
+						</div>
+
+						{/* File Details */}
+						<div className="flex flex-wrap items-center justify-center gap-5 pt-2 text-base">
+							<Button
+								variant="outline"
+								size="lg"
+								className="border-2 border-emerald-500 bg-emerald-50 text-emerald-800 hover:bg-emerald-100 dark:border-green-500 dark:bg-green-900 dark:text-green-200 dark:hover:bg-green-800"
+							>
+								<FileText className="mr-1 h-5 w-5" />
+								PDF Format
+							</Button>
+							<Button
+								variant="outline"
+								size="lg"
+								className="border-2 border-blue-500 bg-blue-50 text-blue-800 hover:bg-blue-100 dark:border-blue-500 dark:bg-blue-900 dark:text-blue-200 dark:hover:bg-blue-800"
+							>
+								<FaFileAlt className="mr-1 h-5 w-5" />1 Page
+							</Button>
+							<Button
+								variant="outline"
+								size="lg"
+								className="border-2 border-purple-500 bg-purple-50 text-purple-800 hover:bg-purple-100 dark:border-purple-500 dark:bg-purple-900 dark:text-purple-200 dark:hover:bg-purple-800"
+							>
+								<FaStar className="mr-1 h-5 w-5" />
+								Updated {new Date().toLocaleDateString("en-US", { month: "long", year: "numeric" })}
+							</Button>
 						</div>
 					</div>
-
-					<h1 className="mb-6 text-3xl font-bold text-slate-800 md:text-5xl dark:text-slate-200">
-						<span className="relative">
-							Download My CV
-							<span className="absolute right-0 -bottom-1 left-0 h-1 bg-indigo-300 opacity-50 dark:bg-indigo-700"></span>
-						</span>
-					</h1>
-
-					<Badge className="mt-2 mb-8 border border-indigo-300 bg-indigo-100 px-3 py-1.5 text-indigo-700 hover:bg-indigo-200 dark:border-indigo-700/60 dark:bg-indigo-900/40 dark:text-indigo-300 dark:hover:bg-indigo-800/60">
-						Showcasing my experience, skills, and education
-					</Badge>
-
-					<Card className="mb-8 border-indigo-200 bg-white/80 p-6 shadow-md backdrop-blur-xs dark:border-indigo-800/50 dark:bg-zinc-900/80">
-						<div className="flex flex-col items-center gap-6 md:flex-row md:justify-center">
-							<div className="flex-1 text-center md:text-left">
-								<h3 className="mb-2 text-lg font-semibold text-slate-800 dark:text-slate-200">
-									What you'll find in my CV
-								</h3>
-								<ul className="list-inside list-disc text-sm text-slate-600 dark:text-slate-400">
-									<li>Professional Experience</li>
-									<li>Technical Skills</li>
-									<li>Education & Certifications</li>
-									<li>Projects & Achievements</li>
-									<li>Contact Information</li>
-								</ul>
-							</div>
-							<div className="flex flex-col items-center justify-center">
-								<DownloadButton />
-								<span className="mt-2 text-xs text-slate-500 dark:text-slate-400">PDF, 1 page</span>
-							</div>
-						</div>
-					</Card>
-
-					<p className="mt-6 text-sm text-slate-500 dark:text-slate-400">
-						For a detailed overview of my background, skills, and accomplishments, download my CV
-						using the button above. If you have any questions or would like to connect, feel free to
-						reach out!
-					</p>
 				</div>
-
-				{/* Footer */}
-				<footer className="absolute bottom-4 w-full text-center">
-					<p className="text-xs text-slate-500 dark:text-slate-500">
-						&copy; {new Date().getFullYear()} devharshthakur.in
-					</p>
-				</footer>
-			</div>
+			</main>
 		</div>
 	);
 }

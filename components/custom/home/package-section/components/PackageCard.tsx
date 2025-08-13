@@ -95,7 +95,7 @@ export function PackageCard({
 			<div className="mt-auto grid grid-cols-2 gap-2 border-t border-red-200/80 bg-red-50/80 p-3 dark:border-red-700/60 dark:bg-red-800/30">
 				<Button
 					variant="outline"
-					className="flex items-center gap-2 border-2 border-red-500/80 bg-red-50/70 font-mono text-sm tracking-tight text-red-800 shadow-sm hover:bg-red-100/70 dark:border-red-600/80 dark:bg-red-900/50 dark:text-red-300 dark:hover:bg-red-800/60"
+					className="flex items-center gap-2 border-2 border-red-500/80 bg-red-50/70 font-mono text-sm tracking-tight text-red-800 shadow-sm hover:bg-red-100/70 dark:border-red-600/80 dark:bg-red-950/10 dark:text-red-300 dark:hover:bg-red-800/60"
 					onClick={() => window.open(githubUrl, "_blank")}
 				>
 					<Icons.FaGithub className="h-4 w-4" />
@@ -114,7 +114,7 @@ export function PackageCard({
 				) : (
 					<Button
 						variant="outline"
-						className="flex items-center gap-2 border-2 border-red-500/90 bg-red-600/90 font-mono text-sm tracking-tight text-white shadow-sm hover:bg-red-700/90 dark:border-red-600/80 dark:bg-red-600/80 dark:hover:bg-red-500/80"
+						className="flex items-center gap-2 border-2 border-red-500/90 bg-red-600/90 font-mono text-sm tracking-tight text-white shadow-sm hover:bg-red-700/90 dark:border-red-600/80 dark:bg-red-600/20 dark:hover:bg-red-500/80"
 						onClick={() => window.open(npmUrl, "_blank")}
 					>
 						<FaNpm className="h-4 w-4" />

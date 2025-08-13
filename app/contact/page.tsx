@@ -12,12 +12,12 @@ export default function ContactPage(): React.ReactElement {
 	return (
 		<main className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
 			{/* Theme Toggle */}
-			<div className="absolute top-4 right-4 z-50">
+			<div className="absolute top-6 right-6 z-50">
 				<ModeToggle />
 			</div>
 
 			{/* Home Button */}
-			<div className="absolute top-4 left-4 z-50">
+			<div className="absolute top-6 left-6 z-50">
 				<Button
 					asChild
 					variant="outline"
@@ -69,7 +69,7 @@ export default function ContactPage(): React.ReactElement {
 							</h3>
 							<p className="mb-4 text-zinc-600 dark:text-zinc-400">Final Year / Last Semester</p>
 							<div className="mt-auto">
-								<span className="inline-flex items-center rounded-full border border-yellow-200 bg-yellow-50 px-4 py-1.5 text-sm font-medium text-yellow-700 dark:border-yellow-700/40 dark:bg-yellow-900/30 dark:text-yellow-300">
+								<span className="inline-flex items-center rounded-md border border-yellow-200 bg-yellow-50 px-4 py-1.5 text-sm font-medium text-yellow-700 dark:border-yellow-700/40 dark:bg-yellow-900/30 dark:text-yellow-300">
 									Bachelor of Engineering (BE)
 								</span>
 							</div>
@@ -89,7 +89,7 @@ export default function ContactPage(): React.ReactElement {
 								Fresher with no industry experience
 							</p>
 							<div className="mt-auto">
-								<span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 px-4 py-1.5 text-sm font-medium text-indigo-700 dark:border-indigo-700/40 dark:bg-indigo-900/30 dark:text-indigo-300">
+								<span className="inline-flex items-center rounded-md border border-indigo-200 bg-indigo-50 px-4 py-1.5 text-sm font-medium text-indigo-700 dark:border-indigo-700/40 dark:bg-indigo-900/30 dark:text-indigo-300">
 									Seeking Full-time & Paid Internships
 								</span>
 							</div>
@@ -107,7 +107,7 @@ export default function ContactPage(): React.ReactElement {
 							</h3>
 							<p className="mb-4 text-zinc-600 dark:text-zinc-400">Remote, Hybrid, or In-office</p>
 							<div className="mt-auto">
-								<span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 px-4 py-1.5 text-sm font-medium text-rose-700 dark:border-rose-700/40 dark:bg-rose-900/30 dark:text-rose-300">
+								<span className="inline-flex items-center rounded-md border border-rose-200 bg-rose-50 px-4 py-1.5 text-sm font-medium text-rose-700 dark:border-rose-700/40 dark:bg-rose-900/30 dark:text-rose-300">
 									Prefer Mumbai, Pune, Delhi for in-office
 								</span>
 							</div>

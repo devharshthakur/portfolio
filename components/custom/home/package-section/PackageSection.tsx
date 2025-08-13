@@ -10,7 +10,7 @@ export function Packages() {
 	const topPackages = packages.slice(0, 4);
 
 	return (
-		<section className="relative w-full overflow-hidden rounded-lg border-2 border-zinc-300/80 bg-zinc-100/90 py-8 shadow-sm backdrop-brightness-[1.02] backdrop-contrast-[1.05] backdrop-saturate-[1.2] dark:border-zinc-700/80 dark:bg-zinc-900/90">
+		<section className="relative w-full overflow-hidden rounded-lg border-2 border-red-400/80 bg-zinc-100/90 py-8 shadow-xl backdrop-brightness-[1.02] backdrop-contrast-[1.05] backdrop-saturate-[1.2] dark:border-zinc-700/80 dark:bg-zinc-900/90">
 			{/* Red tint overlay */}
 			<div className="pointer-events-none absolute inset-0 bg-red-600/5 mix-blend-multiply dark:bg-red-800/20"></div>
 
@@ -24,7 +24,7 @@ export function Packages() {
 					</div>
 					<Button
 						variant="outline"
-						className="border-2 border-red-500/90 bg-red-50/80 font-mono text-sm text-red-800 shadow-sm hover:bg-red-100/90 dark:border-red-600/80 dark:bg-red-900/60 dark:text-red-300 dark:hover:bg-red-800/60"
+						className="border-2 border-red-500/90 bg-red-600/5 font-mono text-sm text-red-800 shadow-sm hover:bg-red-100/90 dark:border-red-600/80 dark:text-red-300 dark:hover:bg-red-800/60"
 						asChild
 					>
 						<Link href="/packages">
